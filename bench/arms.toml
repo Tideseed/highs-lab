@@ -59,3 +59,7 @@ options = { mip_heuristic_effort = 0.1 }
 [v2-heur20]
 binary = "~/git_repositories/highs-builds/dts-v2/bin/highs"
 options = { mip_heuristic_effort = 0.2 }
+
+[lab-dsm]
+# lab/dual-substitution-mirrored (X1)
+binary = "~/git_repositories/highs-builds/lab-dsm/bin/highs"

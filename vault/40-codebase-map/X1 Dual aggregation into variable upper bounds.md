@@ -1,12 +1,12 @@
 ---
 id: X1
 area: presolve
-status: candidate
+status: branch (screening)
 gate: full
 effort: 1-2 d
 verified_in_source: true
-profiled_share: null
-branch: null
+profiled_share: n/a (presolve rule)
+branch: lab/dual-substitution-mirrored
 ---
 # X1: Dual aggregation into variable upper bounds
 
@@ -21,3 +21,8 @@ Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.
+- 2026-09-25 evening: HiGHS already has this rule (dualFixing → substituteCol, Achterberg et al. 4.4 "dual
+  substitution") but only in one orientation (x = 1 − y). Added the mirrored orientation (x = y), tried after the
+  existing one so earlier reductions are unchanged. neos-787933: presolve 1897×236376 → 131×1213 (SCIP: 1764 vars),
+  solved to optimality 30 in 2.5 s at the root (was unsolved at 300 s). Solution feasible against the original model
+  (bench/solcheck.py), 101/101 unit tests. Branch c81725e48f. Next: reach scan over 240 instances, hard + small screens.
