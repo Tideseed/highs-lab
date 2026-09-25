@@ -1,0 +1,68 @@
+{
+ "arm": "v2-zi",
+ "instance": "supportcase22",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "69b86a13d312e653",
+ "core": 15,
+ "wall": 62.86641573905945,
+ "overrun": 2.8664157390594482,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   8.2,
+   0.0,
+   Infinity
+  ],
+  [
+   17.0,
+   0.0,
+   Infinity
+  ],
+  [
+   23.7,
+   0.0,
+   Infinity
+  ],
+  [
+   28.8,
+   0.0,
+   Infinity
+  ],
+  [
+   35.8,
+   0.0,
+   Infinity
+  ],
+  [
+   49.0,
+   0.0,
+   Infinity
+  ],
+  [
+   60.6,
+   0.0,
+   Infinity
+  ],
+  [
+   60.6,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.59,
+ "presolve_time": 4.95,
+ "nodes": 0,
+ "lp_iterations": 5924
+}
