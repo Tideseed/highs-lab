@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "CMS750_4",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 18,
+ "wall": 60.16831421852112,
+ "overrun": 0.16831421852111816,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 606.0,
+ "dual_bound": 250.0,
+ "gap": "58.75%",
+ "pd_integral": 38.5375545722,
+ "solver_time": 60.02,
+ "presolve_time": 1.83,
+ "nodes": 935,
+ "lp_iterations": 126548
+}

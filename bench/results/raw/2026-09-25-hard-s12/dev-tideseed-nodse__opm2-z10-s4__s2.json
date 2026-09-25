@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "opm2-z10-s4",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 9,
+ "wall": 60.55100393295288,
+ "overrun": 0.5510039329528809,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 0.0,
+ "dual_bound": -315461.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.02,
+ "presolve_time": 6.14,
+ "nodes": 0,
+ "lp_iterations": 16603
+}

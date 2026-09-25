@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "neos-4763324-toguru",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 16,
+ "wall": 61.00057291984558,
+ "overrun": 1.000572919845581,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6336.08730478,
+ "dual_bound": 1133.44140368,
+ "gap": "82.11%",
+ "pd_integral": 33.0928155169,
+ "solver_time": 60.23,
+ "presolve_time": 5.61,
+ "nodes": 0,
+ "lp_iterations": 12032
+}

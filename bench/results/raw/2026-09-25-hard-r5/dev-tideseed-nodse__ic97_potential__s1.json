@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "ic97_potential",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 5,
+ "wall": 60.1357216835022,
+ "overrun": 0.13572168350219727,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 3949.0,
+ "dual_bound": 3915.90212182,
+ "gap": "0.838%",
+ "pd_integral": 0.668277175729,
+ "solver_time": 60.01,
+ "presolve_time": 1.71,
+ "nodes": 10952,
+ "lp_iterations": 774266
+}

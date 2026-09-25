@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "mas74",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 15,
+ "wall": 60.08403968811035,
+ "overrun": 0.08403968811035156,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 11801.185729,
+ "dual_bound": 10915.70904,
+ "gap": "7.5%",
+ "pd_integral": 5.78042806,
+ "solver_time": 60.0,
+ "presolve_time": 0.66,
+ "nodes": 203022,
+ "lp_iterations": 1486707
+}

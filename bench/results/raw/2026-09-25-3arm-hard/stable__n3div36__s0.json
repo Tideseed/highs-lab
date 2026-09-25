@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "n3div36",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 16,
+ "wall": 60.62433648109436,
+ "overrun": 0.6243364810943604,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 135600.0,
+ "dual_bound": 121200.0,
+ "gap": "10.62%",
+ "pd_integral": 10.2168233831,
+ "solver_time": 60.05,
+ "presolve_time": 3.03,
+ "nodes": 56,
+ "lp_iterations": 38549
+}

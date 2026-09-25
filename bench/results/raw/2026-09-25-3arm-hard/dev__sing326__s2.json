@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "sing326",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 7,
+ "wall": 60.82593107223511,
+ "overrun": 0.8259310722351074,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 19690965.1258,
+ "dual_bound": 7735737.68023,
+ "gap": "60.71%",
+ "pd_integral": 31.649766843,
+ "solver_time": 60.29,
+ "presolve_time": 1.18,
+ "nodes": 0,
+ "lp_iterations": 45558
+}

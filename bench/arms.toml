@@ -25,3 +25,7 @@ binary = "~/git_repositories/highs-builds/lab-dse/bin/highs"
 
 [dev-tideseed-nodse]
 binary = "~/git_repositories/highs-builds/dev-tideseed-nodse/bin/highs"
+
+[stable]
+# latest release v1.15.1
+binary = "~/git_repositories/highs-builds/stable/bin/highs"

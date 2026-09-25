@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "neos-3656078-kumeu",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 19,
+ "wall": 60.12405467033386,
+ "overrun": 0.1240546703338623,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -17811.3,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.01,
+ "presolve_time": 0.38,
+ "nodes": 0,
+ "lp_iterations": 235840
+}

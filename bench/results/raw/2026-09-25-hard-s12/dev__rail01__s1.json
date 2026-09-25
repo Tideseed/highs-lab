@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "rail01",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 6,
+ "wall": 60.74913287162781,
+ "overrun": 0.7491328716278076,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -185.058575983,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.01,
+ "presolve_time": 2.73,
+ "nodes": 0,
+ "lp_iterations": 91833
+}

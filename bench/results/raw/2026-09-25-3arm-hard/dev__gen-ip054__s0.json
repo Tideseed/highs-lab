@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 16,
+ "wall": 60.10645532608032,
+ "overrun": 0.10645532608032227,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6850.17962893,
+ "dual_bound": 6781.78511834,
+ "gap": "0.998%",
+ "pd_integral": 0.694984863421,
+ "solver_time": 60.0,
+ "presolve_time": 0.34,
+ "nodes": 458770,
+ "lp_iterations": 1839771
+}

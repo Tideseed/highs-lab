@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "dws008-01",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 9,
+ "wall": 60.24924159049988,
+ "overrun": 0.24924159049987793,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 49407.3245071,
+ "dual_bound": 11346.4649459,
+ "gap": "77.03%",
+ "pd_integral": 23.1466312857,
+ "solver_time": 60.02,
+ "presolve_time": 4.98,
+ "nodes": 417,
+ "lp_iterations": 227206
+}

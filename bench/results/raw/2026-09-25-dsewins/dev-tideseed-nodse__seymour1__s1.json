@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "seymour1",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "2f86043def351592",
+ "core": 7,
+ "wall": 61.64326858520508,
+ "overrun": -58.35673141479492,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 410.763701395,
+ "dual_bound": 410.723174958,
+ "gap": "0.00987%",
+ "pd_integral": 0.734169452002,
+ "solver_time": 61.58,
+ "presolve_time": 0.09,
+ "nodes": 1708,
+ "lp_iterations": 333725
+}

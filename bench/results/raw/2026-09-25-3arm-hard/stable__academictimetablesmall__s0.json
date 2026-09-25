@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 8,
+ "wall": 60.42901539802551,
+ "overrun": 0.4290153980255127,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 4562.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 57.8218607903,
+ "solver_time": 60.02,
+ "presolve_time": 5.37,
+ "nodes": 0,
+ "lp_iterations": 111495
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "rail507",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 7,
+ "wall": 62.001516342163086,
+ "overrun": 2.001516342163086,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 176.0,
+ "dual_bound": 173.0,
+ "gap": "1.7%",
+ "pd_integral": 6.82949635024,
+ "solver_time": 61.17,
+ "presolve_time": 2.31,
+ "nodes": 101,
+ "lp_iterations": 40102
+}

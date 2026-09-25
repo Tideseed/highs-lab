@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 6,
+ "wall": 60.503018617630005,
+ "overrun": 0.5030186176300049,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 175.0,
+ "dual_bound": 173.0,
+ "gap": "1.14%",
+ "pd_integral": 9.49639876229,
+ "solver_time": 60.05,
+ "presolve_time": 2.85,
+ "nodes": 102,
+ "lp_iterations": 46107
+}

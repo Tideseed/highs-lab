@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "dws008-01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 19,
+ "wall": 60.385732650756836,
+ "overrun": 0.38573265075683594,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 79205.2263595,
+ "dual_bound": 10778.4225897,
+ "gap": "86.39%",
+ "pd_integral": 22.300619039,
+ "solver_time": 60.05,
+ "presolve_time": 14.74,
+ "nodes": 1303,
+ "lp_iterations": 227318
+}

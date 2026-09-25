@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "mad",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 6,
+ "wall": 60.099812746047974,
+ "overrun": 0.09981274604797363,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 0.0997999999994,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9931702614,
+ "solver_time": 60.0,
+ "presolve_time": 0.56,
+ "nodes": 109622,
+ "lp_iterations": 1027896
+}

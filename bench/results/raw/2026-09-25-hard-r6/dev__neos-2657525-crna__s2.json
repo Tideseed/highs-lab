@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "neos-2657525-crna",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 6,
+ "wall": 60.03980350494385,
+ "overrun": 0.039803504943847656,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 1.810748,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 51.4480950832,
+ "solver_time": 60.0,
+ "presolve_time": 1.46,
+ "nodes": 38037,
+ "lp_iterations": 903437
+}

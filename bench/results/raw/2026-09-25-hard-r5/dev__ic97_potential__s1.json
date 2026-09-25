@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "ic97_potential",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 15,
+ "wall": 60.088956117630005,
+ "overrun": 0.08895611763000488,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 3949.0,
+ "dual_bound": 3915.32357473,
+ "gap": "0.853%",
+ "pd_integral": 0.668838778386,
+ "solver_time": 60.0,
+ "presolve_time": 1.66,
+ "nodes": 10801,
+ "lp_iterations": 767066
+}

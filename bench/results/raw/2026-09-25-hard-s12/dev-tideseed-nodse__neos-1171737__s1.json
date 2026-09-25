@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "neos-1171737",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 19,
+ "wall": 60.175387382507324,
+ "overrun": 0.17538738250732422,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -191.0,
+ "dual_bound": -195.0,
+ "gap": "2.09%",
+ "pd_integral": 5.38254433177,
+ "solver_time": 60.01,
+ "presolve_time": 0.48,
+ "nodes": 372,
+ "lp_iterations": 363572
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "seymour1",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 19,
+ "wall": 50.45091390609741,
+ "overrun": -69.54908609390259,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 410.763701395,
+ "dual_bound": 410.723630225,
+ "gap": "0.00976%",
+ "pd_integral": 0.761423237968,
+ "solver_time": 50.32,
+ "presolve_time": 0.05,
+ "nodes": 1545,
+ "lp_iterations": 292246
+}

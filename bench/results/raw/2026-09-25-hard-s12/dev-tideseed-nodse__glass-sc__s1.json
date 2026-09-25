@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "glass-sc",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 9,
+ "wall": 60.18897557258606,
+ "overrun": 0.18897557258605957,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 23.0,
+ "dual_bound": 15.0,
+ "gap": "34.78%",
+ "pd_integral": 21.9919644338,
+ "solver_time": 60.01,
+ "presolve_time": 4.04,
+ "nodes": 1010,
+ "lp_iterations": 162084
+}

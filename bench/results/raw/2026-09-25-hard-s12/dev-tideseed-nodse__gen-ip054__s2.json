@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "gen-ip054",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 18,
+ "wall": 60.056379556655884,
+ "overrun": 0.05637955665588379,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6840.96564179,
+ "dual_bound": 6781.87165891,
+ "gap": "0.864%",
+ "pd_integral": 0.718317926058,
+ "solver_time": 60.0,
+ "presolve_time": 0.31,
+ "nodes": 483619,
+ "lp_iterations": 1868079
+}

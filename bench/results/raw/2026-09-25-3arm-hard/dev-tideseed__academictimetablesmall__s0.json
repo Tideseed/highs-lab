@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 15,
+ "wall": 60.43201208114624,
+ "overrun": 0.43201208114624023,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 94.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 58.8623912334,
+ "solver_time": 60.11,
+ "presolve_time": 2.9,
+ "nodes": 0,
+ "lp_iterations": 111376
+}

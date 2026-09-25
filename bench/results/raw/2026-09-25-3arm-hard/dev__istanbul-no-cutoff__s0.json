@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "istanbul-no-cutoff",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 17,
+ "wall": 60.19243025779724,
+ "overrun": 0.1924302577972412,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 207.830354991,
+ "dual_bound": 75.8777807237,
+ "gap": "63.49%",
+ "pd_integral": 37.9785650483,
+ "solver_time": 60.02,
+ "presolve_time": 0.32,
+ "nodes": 256,
+ "lp_iterations": 525553
+}

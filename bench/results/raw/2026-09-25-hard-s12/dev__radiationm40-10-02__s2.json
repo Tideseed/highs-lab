@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "radiationm40-10-02",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 7,
+ "wall": 61.50665283203125,
+ "overrun": 1.50665283203125,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 155327.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.02,
+ "presolve_time": 2.85,
+ "nodes": 580,
+ "lp_iterations": 216230
+}

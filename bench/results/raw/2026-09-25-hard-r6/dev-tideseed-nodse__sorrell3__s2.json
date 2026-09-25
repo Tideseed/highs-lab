@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "sorrell3",
+ "seed": 2,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 18,
+ "wall": 61.87092924118042,
+ "overrun": 1.87092924118042,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -16.0,
+ "dual_bound": -20.0,
+ "gap": "25%",
+ "pd_integral": 19.7290764157,
+ "solver_time": 60.74,
+ "presolve_time": 15.55,
+ "nodes": 102,
+ "lp_iterations": 82675
+}

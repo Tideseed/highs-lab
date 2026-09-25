@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "neos-3004026-krka",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "2f86043def351592",
+ "core": 16,
+ "wall": 85.09935641288757,
+ "overrun": -34.90064358711243,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 84.86,
+ "presolve_time": 1.79,
+ "nodes": 6709,
+ "lp_iterations": 369900
+}

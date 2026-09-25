@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "opm2-z10-s4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 5,
+ "wall": 61.06104397773743,
+ "overrun": 1.0610439777374268,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 0.0,
+ "dual_bound": -316238.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.06,
+ "presolve_time": 6.88,
+ "nodes": 0,
+ "lp_iterations": 17059
+}

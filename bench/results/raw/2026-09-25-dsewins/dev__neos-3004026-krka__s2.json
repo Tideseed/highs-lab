@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "neos-3004026-krka",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 18,
+ "wall": 92.39898562431335,
+ "overrun": -27.601014375686646,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 92.16,
+ "presolve_time": 1.8,
+ "nodes": 6709,
+ "lp_iterations": 369900
+}

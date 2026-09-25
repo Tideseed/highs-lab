@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed-nodse",
+ "instance": "graphdraw-domain",
+ "seed": 1,
+ "time_limit": 60.0,
+ "binary_sha": "2f86043def351592",
+ "core": 19,
+ "wall": 60.085769176483154,
+ "overrun": 0.0857691764831543,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 20467.0,
+ "dual_bound": 14017.5350242,
+ "gap": "31.51%",
+ "pd_integral": 22.4417401943,
+ "solver_time": 60.01,
+ "presolve_time": 0.27,
+ "nodes": 41189,
+ "lp_iterations": 1264633
+}
