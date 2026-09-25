@@ -1,0 +1,16 @@
+{
+ "arm": "v2-shift",
+ "instance": "neos-2657525-crna",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 17,
+ "wall": 0.015493154525756836,
+ "overrun": -59.98450684547424,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": false
+}

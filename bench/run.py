@@ -47,6 +47,46 @@ def parse_cores(spec: str) -> list[int]:
     return cores
 
 
+def build_sha(binary: str) -> str:
+    """Hash of the highs executable together with the libhighs it loads (the solver lives in the library)."""
+    b = Path(binary)
+    h = hashlib.sha256(sha256(b).encode())
+    for lib in sorted((b.parent.parent / "lib").glob("libhighs.so*")):
+        if lib.is_file() and not lib.is_symlink():
+            h.update(sha256(lib).encode())
+    return h.hexdigest()[:16]
+
+
+def build_info(binary: str) -> dict:
+    """Source SHA, compiler and effective flags from the CMake build directory of the binary."""
+    bdir = Path(binary).parent.parent
+    info = {"build_dir": str(bdir)}
+    cache = bdir / "CMakeCache.txt"
+    if cache.exists():
+        wanted = {"CMAKE_BUILD_TYPE", "CMAKE_CXX_COMPILER", "CMAKE_CXX_FLAGS", "CMAKE_C_FLAGS",
+                  "CMAKE_HOME_DIRECTORY", "CMAKE_INTERPROCEDURAL_OPTIMIZATION", "BUILD_SHARED_LIBS"}
+        for line in cache.read_text().splitlines():
+            key = line.split(":")[0]
+            if key in wanted and "=" in line:
+                info[key] = line.split("=", 1)[1]
+    flags = bdir / "highs/CMakeFiles/highs.dir/flags.make"
+    if flags.exists():
+        m = re.search(r"^CXX_FLAGS = (.*)$", flags.read_text(), re.M)
+        if m:
+            info["effective_cxx_flags"] = m.group(1).strip()
+    src = info.get("CMAKE_HOME_DIRECTORY")
+    if src:
+        r = subprocess.run(["git", "-C", src, "rev-parse", "HEAD"], capture_output=True, text=True)
+        info["source_sha"] = r.stdout.strip()
+        r = subprocess.run(["git", "-C", src, "status", "--porcelain", "--untracked-files=no"], capture_output=True, text=True)
+        info["source_dirty"] = bool(r.stdout.strip())
+    comp = info.get("CMAKE_CXX_COMPILER")
+    if comp:
+        r = subprocess.run([comp, "--version"], capture_output=True, text=True)
+        info["compiler_version"] = r.stdout.splitlines()[0] if r.stdout else ""
+    return info
+
+
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
     with open(path, "rb") as f:
@@ -74,8 +114,26 @@ PATTERNS = {
 }
 
 
+# progress rows of the MIP log: ... | BestBound BestSol Gap | Cuts InLp Confl. | LpIters Time
+PROGRESS = re.compile(r"^\s*[A-Za-z]?\s+\d+\s+\d+\s+\d+\s+[\d.]+%\s+(\S+)\s+(\S+)\s+\S+\s+\d+\s+\d+\s+\d+"
+                      r"\s+\d+\s+([\d.]+)s\s*$", re.M)
+
+
+def to_float(x: str) -> float | None:
+    try:
+        return float(x)
+    except ValueError:
+        return None
+
+
 def parse_log(text: str) -> dict:
     out: dict = {}
+    traj = []
+    for m in PROGRESS.finditer(text):
+        d, p, t = to_float(m.group(1)), to_float(m.group(2)), to_float(m.group(3))
+        traj.append([t, d, p])
+    if traj:
+        out["trajectory"] = traj
     for key, pat in PATTERNS.items():
         m = pat.findall(text)
         if not m:
@@ -93,8 +151,16 @@ def parse_log(text: str) -> dict:
 def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Path) -> dict:
     res_path = out_dir / f"{job['arm']}__{job['instance']}__s{job['seed']}.json"
     if res_path.exists():
-        return json.loads(res_path.read_text())
+        old = json.loads(res_path.read_text())
+        if (old.get("binary_sha") == job["binary_sha"] and old.get("options") == job["options"]
+                and old.get("time_limit") == job["time_limit"] and old.get("model_sha") == job["model_sha"]):
+            return old
+        res_path.rename(res_path.with_suffix(".stale.json"))
     core = core_pool.get()
+    # the binary (or its shared library) must not change while a run set is in progress
+    if build_sha(job["binary"]) != job["binary_sha"]:
+        core_pool.put(core)
+        raise RuntimeError(f"binary for arm {job['arm']} changed during the run set")
     try:
         work = out_dir / "work" / f"{job['arm']}__{job['instance']}__s{job['seed']}"
         work.mkdir(parents=True, exist_ok=True)
@@ -122,7 +188,7 @@ def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Pat
             stdout = (e.stdout or b"").decode() if isinstance(e.stdout, bytes) else (e.stdout or "")
         wall = time.time() - t0
         (work / "stdout.txt").write_text(stdout or "")
-        rec = {k: job[k] for k in ("arm", "instance", "seed", "time_limit", "binary_sha")}
+        rec = {k: job[k] for k in ("arm", "instance", "seed", "time_limit", "binary_sha", "model_sha")}
         rec.update(core=core, wall=wall, overrun=wall - job["time_limit"], rc=rc, harness_timeout=timed_out,
                    options=job["options"], has_solution=sol.exists())
         rec.update(parse_log(stdout or ""))
@@ -150,7 +216,8 @@ def main() -> None:
         arms = {k: v for k, v in arms.items() if k in a.only_arms}
     for name, arm in arms.items():
         arm["binary"] = str(Path(arm["binary"]).expanduser())
-        arm["sha"] = sha256(Path(arm["binary"]))
+        arm["sha"] = build_sha(arm["binary"])
+        arm["build"] = build_info(arm["binary"])
     names = [l.strip() for l in Path(a.set).read_text().splitlines() if l.strip() and not l.startswith("#")]
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -161,17 +228,19 @@ def main() -> None:
         path = INST_DIR / f"{inst}.mps.gz"
         if not path.exists():
             sys.exit(f"missing instance {path}")
+        model_sha = sha256(path)
         for seed in a.seeds:
             order = list(arms)
             rng.shuffle(order)
             for arm in order:
                 jobs.append(dict(arm=arm, instance=inst, seed=seed, path=path, time_limit=a.time_limit,
-                                 binary=arms[arm]["binary"], binary_sha=arms[arm]["sha"],
+                                 binary=arms[arm]["binary"], binary_sha=arms[arm]["sha"], model_sha=model_sha,
                                  options=arms[arm].get("options", {})))
 
     cores = parse_cores(a.cores)
     meta = dict(started=time.strftime("%Y-%m-%dT%H:%M:%S%z"), argv=sys.argv, cores=cores, mem_cap=a.mem_cap,
-                arms={k: {"binary": v["binary"], "sha": v["sha"], "options": v.get("options", {})}
+                arms={k: {"binary": v["binary"], "sha": v["sha"], "options": v.get("options", {}),
+                          "build": v.get("build", {})}
                       for k, v in arms.items()},
                 n_jobs=len(jobs), loadavg=os.getloadavg(),
                 meminfo_available_kb=int(re.search(r"MemAvailable:\s+(\d+)", Path("/proc/meminfo").read_text())[1]),

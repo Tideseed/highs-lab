@@ -1,0 +1,16 @@
+{
+ "arm": "v2-zi",
+ "instance": "neos-4763324-toguru",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 7,
+ "wall": 0.041762351989746094,
+ "overrun": -59.958237648010254,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": false
+}

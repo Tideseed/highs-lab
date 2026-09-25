@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "cod105",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 18,
+ "wall": 57.55129051208496,
+ "overrun": -62.44870948791504,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -12.0,
+ "dual_bound": -12.0,
+ "gap": "0%",
+ "pd_integral": 48.6180392757,
+ "solver_time": 57.37,
+ "presolve_time": 1.03,
+ "nodes": 211,
+ "lp_iterations": 179665
+}

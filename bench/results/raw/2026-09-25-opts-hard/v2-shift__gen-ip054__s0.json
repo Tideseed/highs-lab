@@ -1,0 +1,25 @@
+{
+ "arm": "v2-shift",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 8,
+ "wall": 60.121296405792236,
+ "overrun": 0.12129640579223633,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6850.74402383,
+ "dual_bound": 6779.81265709,
+ "gap": "1.04%",
+ "pd_integral": 0.76359774426,
+ "solver_time": 60.0,
+ "presolve_time": 0.43,
+ "nodes": 462344,
+ "lp_iterations": 1717335
+}

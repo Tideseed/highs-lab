@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "piperout-27",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 6,
+ "wall": 51.34236693382263,
+ "overrun": -68.65763306617737,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 8124.0,
+ "dual_bound": 8124.0,
+ "gap": "0%",
+ "pd_integral": 0.000607617779462,
+ "solver_time": 51.14,
+ "presolve_time": 50.77,
+ "nodes": 1,
+ "lp_iterations": 5912
+}

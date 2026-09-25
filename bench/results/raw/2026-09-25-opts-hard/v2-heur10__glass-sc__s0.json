@@ -1,0 +1,25 @@
+{
+ "arm": "v2-heur10",
+ "instance": "glass-sc",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 6,
+ "wall": 60.231459856033325,
+ "overrun": 0.2314598560333252,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 23.0,
+ "dual_bound": 16.0,
+ "gap": "30.43%",
+ "pd_integral": 21.9369409689,
+ "solver_time": 60.0,
+ "presolve_time": 2.01,
+ "nodes": 1114,
+ "lp_iterations": 182191
+}

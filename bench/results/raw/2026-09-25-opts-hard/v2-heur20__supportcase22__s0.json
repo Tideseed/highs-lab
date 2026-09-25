@@ -1,0 +1,16 @@
+{
+ "arm": "v2-heur20",
+ "instance": "supportcase22",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 7,
+ "wall": 0.04803180694580078,
+ "overrun": -59.9519681930542,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.2
+ },
+ "has_solution": false
+}

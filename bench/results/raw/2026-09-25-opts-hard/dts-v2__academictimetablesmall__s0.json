@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 8,
+ "wall": 60.821897983551025,
+ "overrun": 0.8218979835510254,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 94.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 58.3846108913,
+ "solver_time": 60.35,
+ "presolve_time": 3.82,
+ "nodes": 0,
+ "lp_iterations": 100848
+}

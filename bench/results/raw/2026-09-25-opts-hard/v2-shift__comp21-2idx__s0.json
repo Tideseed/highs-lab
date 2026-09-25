@@ -1,0 +1,25 @@
+{
+ "arm": "v2-shift",
+ "instance": "comp21-2idx",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 5,
+ "wall": 60.432201623916626,
+ "overrun": 0.432201623916626,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 170.0,
+ "dual_bound": 41.0,
+ "gap": "75.88%",
+ "pd_integral": 46.7789952104,
+ "solver_time": 60.09,
+ "presolve_time": 0.97,
+ "nodes": 434,
+ "lp_iterations": 218062
+}

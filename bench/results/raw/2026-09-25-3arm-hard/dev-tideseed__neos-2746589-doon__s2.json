@@ -19,5 +19,42 @@
  "solver_time": 60.22,
  "presolve_time": 11.69,
  "nodes": 0,
- "lp_iterations": 38352
+ "lp_iterations": 38352,
+ "trajectory": [
+  [
+   4.4,
+   0.0,
+   Infinity
+  ],
+  [
+   9.0,
+   1985.939796,
+   Infinity
+  ],
+  [
+   15.5,
+   1985.939796,
+   Infinity
+  ],
+  [
+   20.9,
+   1990.939796,
+   Infinity
+  ],
+  [
+   26.2,
+   1990.939796,
+   Infinity
+  ],
+  [
+   31.4,
+   1999.052041,
+   Infinity
+  ],
+  [
+   60.2,
+   1999.052041,
+   Infinity
+  ]
+ ]
 }

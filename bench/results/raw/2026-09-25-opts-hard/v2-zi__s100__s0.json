@@ -1,0 +1,16 @@
+{
+ "arm": "v2-zi",
+ "instance": "s100",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 5,
+ "wall": 0.04181647300720215,
+ "overrun": -59.9581835269928,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": false
+}

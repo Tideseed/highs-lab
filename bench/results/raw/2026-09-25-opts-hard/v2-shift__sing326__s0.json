@@ -1,0 +1,16 @@
+{
+ "arm": "v2-shift",
+ "instance": "sing326",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 16,
+ "wall": 0.045081377029418945,
+ "overrun": -59.95491862297058,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": false
+}

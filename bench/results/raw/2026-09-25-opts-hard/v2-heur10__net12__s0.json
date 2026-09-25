@@ -1,0 +1,16 @@
+{
+ "arm": "v2-heur10",
+ "instance": "net12",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 18,
+ "wall": 0.048529863357543945,
+ "overrun": -59.951470136642456,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": false
+}

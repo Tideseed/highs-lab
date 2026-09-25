@@ -1,0 +1,16 @@
+{
+ "arm": "v2-zi",
+ "instance": "neos-3004026-krka",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 17,
+ "wall": 0.035155296325683594,
+ "overrun": -59.964844703674316,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": false
+}

@@ -1,0 +1,25 @@
+{
+ "arm": "v2-zi",
+ "instance": "graphdraw-domain",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 17,
+ "wall": 60.06476974487305,
+ "overrun": 0.06476974487304688,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 20194.0,
+ "dual_bound": 14030.8882863,
+ "gap": "30.52%",
+ "pd_integral": 21.0043197027,
+ "solver_time": 60.0,
+ "presolve_time": 0.22,
+ "nodes": 42064,
+ "lp_iterations": 1384048
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "dano3_3",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 7,
+ "wall": 38.01504898071289,
+ "overrun": -81.98495101928711,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 576.344633031,
+ "dual_bound": 576.308268405,
+ "gap": "0.00631%",
+ "pd_integral": 0.00600145332492,
+ "solver_time": 37.94,
+ "presolve_time": 0.18,
+ "nodes": 1,
+ "lp_iterations": 96845
+}

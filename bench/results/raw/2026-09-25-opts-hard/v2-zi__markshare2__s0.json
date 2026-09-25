@@ -1,0 +1,25 @@
+{
+ "arm": "v2-zi",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 8,
+ "wall": 60.06506705284119,
+ "overrun": 0.06506705284118652,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 37.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9957094193,
+ "solver_time": 60.0,
+ "presolve_time": 1.69,
+ "nodes": 171048,
+ "lp_iterations": 1070140
+}

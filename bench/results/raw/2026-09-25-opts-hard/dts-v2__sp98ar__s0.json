@@ -1,0 +1,14 @@
+{
+ "arm": "dts-v2",
+ "instance": "sp98ar",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 18,
+ "wall": 0.05016589164733887,
+ "overrun": -59.94983410835266,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

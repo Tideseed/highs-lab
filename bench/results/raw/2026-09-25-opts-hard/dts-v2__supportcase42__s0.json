@@ -1,0 +1,14 @@
+{
+ "arm": "dts-v2",
+ "instance": "supportcase42",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 5,
+ "wall": 0.045722007751464844,
+ "overrun": -59.954277992248535,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

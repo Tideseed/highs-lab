@@ -1,0 +1,14 @@
+{
+ "arm": "dts-v2",
+ "instance": "neos-3754480-nidda",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 15,
+ "wall": 0.02398848533630371,
+ "overrun": -59.976011514663696,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

@@ -1,0 +1,16 @@
+{
+ "arm": "v2-shift",
+ "instance": "opm2-z10-s4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 17,
+ "wall": 0.04217338562011719,
+ "overrun": -59.95782661437988,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": false
+}

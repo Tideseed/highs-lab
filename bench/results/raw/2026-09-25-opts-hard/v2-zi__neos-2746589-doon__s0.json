@@ -1,0 +1,16 @@
+{
+ "arm": "v2-zi",
+ "instance": "neos-2746589-doon",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 19,
+ "wall": 0.016407251358032227,
+ "overrun": -59.98359274864197,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": false
+}

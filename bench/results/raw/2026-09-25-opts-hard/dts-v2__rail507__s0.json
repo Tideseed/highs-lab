@@ -1,0 +1,14 @@
+{
+ "arm": "dts-v2",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 17,
+ "wall": 0.04658341407775879,
+ "overrun": -59.95341658592224,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

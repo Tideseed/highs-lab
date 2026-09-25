@@ -1,0 +1,14 @@
+{
+ "arm": "dts-v2",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 19,
+ "wall": 0.0385129451751709,
+ "overrun": -59.96148705482483,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

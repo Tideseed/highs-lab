@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "ic97_potential",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 16,
+ "wall": 60.089009046554565,
+ "overrun": 0.08900904655456543,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 3947.0,
+ "dual_bound": 3913.03042547,
+ "gap": "0.861%",
+ "pd_integral": 0.736240793094,
+ "solver_time": 60.0,
+ "presolve_time": 1.61,
+ "nodes": 11585,
+ "lp_iterations": 823459
+}

@@ -1,0 +1,25 @@
+{
+ "arm": "v2-heur10",
+ "instance": "graphdraw-domain",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 7,
+ "wall": 60.07799935340881,
+ "overrun": 0.07799935340881348,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 19934.0,
+ "dual_bound": 13817.5465174,
+ "gap": "30.68%",
+ "pd_integral": 22.199734282,
+ "solver_time": 60.0,
+ "presolve_time": 0.63,
+ "nodes": 36760,
+ "lp_iterations": 1266988
+}

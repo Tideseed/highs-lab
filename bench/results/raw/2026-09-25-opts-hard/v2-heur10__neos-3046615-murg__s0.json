@@ -1,0 +1,16 @@
+{
+ "arm": "v2-heur10",
+ "instance": "neos-3046615-murg",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 8,
+ "wall": 0.034013986587524414,
+ "overrun": -59.965986013412476,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": false
+}

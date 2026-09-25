@@ -1,0 +1,25 @@
+{
+ "arm": "v2-heur20",
+ "instance": "mas74",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 16,
+ "wall": 60.05576682090759,
+ "overrun": 0.05576682090759277,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.2
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 12001.1670851,
+ "dual_bound": 10742.2395641,
+ "gap": "10.49%",
+ "pd_integral": 6.73748143455,
+ "solver_time": 60.0,
+ "presolve_time": 1.81,
+ "nodes": 76065,
+ "lp_iterations": 871592
+}

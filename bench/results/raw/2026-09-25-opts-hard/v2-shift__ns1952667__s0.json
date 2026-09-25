@@ -1,0 +1,16 @@
+{
+ "arm": "v2-shift",
+ "instance": "ns1952667",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 5,
+ "wall": 0.04595327377319336,
+ "overrun": -59.95404672622681,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": false
+}

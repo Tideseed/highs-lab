@@ -1,0 +1,14 @@
+{
+ "arm": "dts-v2",
+ "instance": "sing326",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 6,
+ "wall": 0.046669721603393555,
+ "overrun": -59.953330278396606,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

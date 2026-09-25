@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "hypothyroid-k1",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 9,
+ "wall": 12.92469072341919,
+ "overrun": -107.07530927658081,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -2851.0,
+ "dual_bound": -2851.0,
+ "gap": "0%",
+ "pd_integral": 5.07065419056,
+ "solver_time": 12.56,
+ "presolve_time": 1.86,
+ "nodes": 1,
+ "lp_iterations": 2983
+}

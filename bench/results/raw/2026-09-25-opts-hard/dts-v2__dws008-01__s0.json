@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "dws008-01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 7,
+ "wall": 60.347229957580566,
+ "overrun": 0.3472299575805664,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 79205.2263595,
+ "dual_bound": 10509.4895675,
+ "gap": "86.73%",
+ "pd_integral": 19.8599711139,
+ "solver_time": 60.02,
+ "presolve_time": 17.85,
+ "nodes": 1155,
+ "lp_iterations": 206501
+}

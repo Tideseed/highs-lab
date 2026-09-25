@@ -1,0 +1,25 @@
+{
+ "arm": "v2-zi",
+ "instance": "mad",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 9,
+ "wall": 60.078492164611816,
+ "overrun": 0.0784921646118164,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 0.0794,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9880723953,
+ "solver_time": 60.0,
+ "presolve_time": 1.12,
+ "nodes": 113651,
+ "lp_iterations": 1143590
+}

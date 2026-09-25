@@ -1,0 +1,16 @@
+{
+ "arm": "v2-shift",
+ "instance": "neos-3046615-murg",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 15,
+ "wall": 0.04087328910827637,
+ "overrun": -59.959126710891724,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": false
+}

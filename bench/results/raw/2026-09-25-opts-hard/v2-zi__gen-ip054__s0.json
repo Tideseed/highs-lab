@@ -1,0 +1,25 @@
+{
+ "arm": "v2-zi",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 17,
+ "wall": 60.10901379585266,
+ "overrun": 0.10901379585266113,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6859.59994909,
+ "dual_bound": 6782.07189477,
+ "gap": "1.13%",
+ "pd_integral": 0.774698277748,
+ "solver_time": 60.0,
+ "presolve_time": 0.32,
+ "nodes": 492520,
+ "lp_iterations": 1845906
+}

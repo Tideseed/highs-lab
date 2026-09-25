@@ -1,1 +1,8 @@
 # lab/<branch> | candidate ids | gate | intent | state(accepted|testing|needs-rebase|parked)
+# dev-tideseed is regenerated as upstream/latest + the accepted branches below, merged in this order.
+lab/clique-partition-marking | C1,C4 | full (find_common fix changes clique results) | find clique neighbours by marking the entries of v's cliques; exact vs corrected pairwise queries incl. same-column rule and query count; includes the HighsHashTree::find_common equal-hash fix | accepted
+lab/symmetry-dense-hash | C3 | identical | dense vertex hash storage in symmetry partition refinement, same semantics | accepted
+lab/free-wins | C6,C7 | identical | skip unused glpsol errors in lpKktCheck; cache column max abs in the initial sweep | accepted
+lab/presolve-changed-col | P1 | identical | count rows with singleEquationChecked set; skip/stop the markChangedCol column walk when none is set | accepted
+lab/dse-carry-weights | C5 | full (weights change pivoting) | reuse dual steepest edge weights across basis restores (hash-keyed cache) and cut row add/delete (carry by variable) | testing
+# lab/hash-tree-find-common | C4 | full | standalone copy of the find_common fix (also contained in clique-partition-marking) | reference

@@ -1,0 +1,81 @@
+{
+ "started": "2026-09-25T15:12:21+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "dts-v2",
+  "v2-zi",
+  "v2-shift",
+  "v2-heur10",
+  "v2-heur20",
+  "--set",
+  "bench/sets/gap-v0.txt",
+  "--seeds",
+  "0",
+  "--time-limit",
+  "60",
+  "--out",
+  "bench/results/raw/2026-09-25-opts-hard"
+ ],
+ "cores": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "dts-v2": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "3e5a1f5929343c39",
+   "options": {}
+  },
+  "v2-zi": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "3e5a1f5929343c39",
+   "options": {
+    "mip_heuristic_run_zi_round": true
+   }
+  },
+  "v2-shift": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "3e5a1f5929343c39",
+   "options": {
+    "mip_heuristic_run_shifting": true
+   }
+  },
+  "v2-heur10": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "3e5a1f5929343c39",
+   "options": {
+    "mip_heuristic_effort": 0.1
+   }
+  },
+  "v2-heur20": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "3e5a1f5929343c39",
+   "options": {
+    "mip_heuristic_effort": 0.2
+   }
+  }
+ },
+ "n_jobs": 210,
+ "loadavg": [
+  5.5146484375,
+  9.31103515625,
+  11.62158203125
+ ],
+ "meminfo_available_kb": 60338516,
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ }
+}

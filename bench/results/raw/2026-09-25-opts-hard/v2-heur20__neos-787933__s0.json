@@ -1,0 +1,16 @@
+{
+ "arm": "v2-heur20",
+ "instance": "neos-787933",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 15,
+ "wall": 0.042635440826416016,
+ "overrun": -59.957364559173584,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.2
+ },
+ "has_solution": false
+}

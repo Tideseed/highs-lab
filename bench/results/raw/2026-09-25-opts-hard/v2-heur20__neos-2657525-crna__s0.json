@@ -1,0 +1,16 @@
+{
+ "arm": "v2-heur20",
+ "instance": "neos-2657525-crna",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 18,
+ "wall": 0.016082048416137695,
+ "overrun": -59.98391795158386,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.2
+ },
+ "has_solution": false
+}

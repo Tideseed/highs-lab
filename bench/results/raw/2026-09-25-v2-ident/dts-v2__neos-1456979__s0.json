@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "neos-1456979",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 15,
+ "wall": 120.14428567886353,
+ "overrun": 0.1442856788635254,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 177.0,
+ "dual_bound": 172.0,
+ "gap": "2.82%",
+ "pd_integral": 5.99068581775,
+ "solver_time": 120.0,
+ "presolve_time": 3.38,
+ "nodes": 7748,
+ "lp_iterations": 645593
+}

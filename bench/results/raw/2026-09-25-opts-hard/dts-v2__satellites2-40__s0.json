@@ -1,0 +1,14 @@
+{
+ "arm": "dts-v2",
+ "instance": "satellites2-40",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 15,
+ "wall": 0.03922271728515625,
+ "overrun": -59.960777282714844,
+ "rc": 127,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

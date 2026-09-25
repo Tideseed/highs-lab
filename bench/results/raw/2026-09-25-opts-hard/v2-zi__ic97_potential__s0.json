@@ -1,0 +1,25 @@
+{
+ "arm": "v2-zi",
+ "instance": "ic97_potential",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 5,
+ "wall": 60.0803439617157,
+ "overrun": 0.08034396171569824,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 3946.0,
+ "dual_bound": 3925.20543023,
+ "gap": "0.527%",
+ "pd_integral": 0.646305421328,
+ "solver_time": 60.01,
+ "presolve_time": 1.59,
+ "nodes": 10760,
+ "lp_iterations": 768202
+}

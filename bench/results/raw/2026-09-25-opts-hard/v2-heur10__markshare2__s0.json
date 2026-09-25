@@ -1,0 +1,25 @@
+{
+ "arm": "v2-heur10",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 17,
+ "wall": 60.07230234146118,
+ "overrun": 0.07230234146118164,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 32.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.995950222,
+ "solver_time": 60.0,
+ "presolve_time": 1.64,
+ "nodes": 174705,
+ "lp_iterations": 1119455
+}

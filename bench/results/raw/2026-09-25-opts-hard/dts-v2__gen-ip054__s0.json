@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 18,
+ "wall": 60.09911823272705,
+ "overrun": 0.09911823272705078,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6859.59994909,
+ "dual_bound": 6782.07189477,
+ "gap": "1.13%",
+ "pd_integral": 0.774599435826,
+ "solver_time": 60.0,
+ "presolve_time": 0.32,
+ "nodes": 492520,
+ "lp_iterations": 1846692
+}
