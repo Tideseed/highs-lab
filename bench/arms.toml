@@ -29,3 +29,6 @@ binary = "~/git_repositories/highs-builds/dev-tideseed-nodse/bin/highs"
 [stable]
 # latest release v1.15.1
 binary = "~/git_repositories/highs-builds/stable/bin/highs"
+
+[dts-native]
+binary = "~/git_repositories/highs-builds/dts-native/bin/highs"

@@ -24,3 +24,16 @@ before the limit is dominated by presolve). No wrong answers, no crashes.
   0.05–2.2×.
 - Open: per-solve cost of caching weights at the end of every solve (O(num_col+num_row) copy); check on small
   instances and the night run.
+
+## 3-arm, 3 seeds (stable v1.15.1 / dev / dev-tideseed), 60 s — `bench/results/2026-09-25-3arm-hard-vs-*.md`
+
+| | stable | dev | dev-tideseed |
+|---|---|---|---|
+| solved / feasible (of 126) | 0 / 96 | 1 / 97 | 2 / 100 |
+| mean gap | 61.9 % | 55.7 % | 55.7 % |
+| PDI vs stable (excl. s100) | 1.000 | 0.744 | 0.756 |
+| worst overrun | 286 s | 282 s | 25 s |
+| wrong / crashed | 0 / 0 | 0 / 0 | 0 / 0 |
+
+Upstream latest ≈ 25 % better PDI than the release. dev-tideseed = dev on quality (PDI +1.7 %, noise), better on
+robustness (overruns, +3 feasible, +1 solved). s100 excluded from PDI ratios: dev reports PDI 0 when it has no bounds.
