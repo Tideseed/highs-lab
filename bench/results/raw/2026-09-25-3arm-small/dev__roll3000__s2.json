@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "roll3000",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 16,
+ "wall": 22.598717212677002,
+ "overrun": -97.401282787323,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 12890.0,
+ "dual_bound": 12888.7629221,
+ "gap": "0.0096%",
+ "pd_integral": 0.618802129418,
+ "solver_time": 22.51,
+ "presolve_time": 0.58,
+ "nodes": 1392,
+ "lp_iterations": 120881
+}

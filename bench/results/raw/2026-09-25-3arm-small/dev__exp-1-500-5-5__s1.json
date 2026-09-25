@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "exp-1-500-5-5",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 17,
+ "wall": 2.5194664001464844,
+ "overrun": -117.48053359985352,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 65887.0,
+ "dual_bound": 65884.0468878,
+ "gap": "0.00448%",
+ "pd_integral": 0.493684721382,
+ "solver_time": 2.48,
+ "presolve_time": 0.04,
+ "nodes": 1,
+ "lp_iterations": 22527
+}

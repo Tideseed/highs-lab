@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "cbs-cta",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 5,
+ "wall": 51.99437427520752,
+ "overrun": -68.00562572479248,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 51.3274757862,
+ "solver_time": 51.61,
+ "presolve_time": 0.23,
+ "nodes": 1760,
+ "lp_iterations": 130020
+}

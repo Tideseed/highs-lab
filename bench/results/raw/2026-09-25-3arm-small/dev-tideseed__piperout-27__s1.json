@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "piperout-27",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 5,
+ "wall": 53.27552628517151,
+ "overrun": -66.72447371482849,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 8124.0,
+ "dual_bound": 8124.0,
+ "gap": "0%",
+ "pd_integral": 0.000929709523933,
+ "solver_time": 52.91,
+ "presolve_time": 52.49,
+ "nodes": 1,
+ "lp_iterations": 6037
+}

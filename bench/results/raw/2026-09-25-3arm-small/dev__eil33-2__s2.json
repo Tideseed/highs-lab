@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "eil33-2",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 7,
+ "wall": 71.18679666519165,
+ "overrun": -48.81320333480835,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 934.007916,
+ "dual_bound": 934.007916,
+ "gap": "0%",
+ "pd_integral": 11.2978501994,
+ "solver_time": 71.12,
+ "presolve_time": 7.26,
+ "nodes": 6413,
+ "lp_iterations": 172320
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "beasleyC3",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 8,
+ "wall": 10.236752986907959,
+ "overrun": -109.76324701309204,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 754.0,
+ "dual_bound": 754.0,
+ "gap": "0%",
+ "pd_integral": 0.537293852658,
+ "solver_time": 10.17,
+ "presolve_time": 0.05,
+ "nodes": 350,
+ "lp_iterations": 71118
+}

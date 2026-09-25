@@ -32,3 +32,13 @@ binary = "~/git_repositories/highs-builds/stable/bin/highs"
 
 [dts-native]
 binary = "~/git_repositories/highs-builds/dts-native/bin/highs"
+
+[dts-pgo]
+binary = "~/git_repositories/highs-builds/dts-pgo/bin/highs"
+
+[dts-v2]
+# dev-tideseed v2: + presolve-changed-col, pairwise cost 64
+binary = "~/git_repositories/highs-builds/dts-v2/bin/highs"
+
+[dts-v2-nodse]
+binary = "~/git_repositories/highs-builds/dts-v2-nodse/bin/highs"

@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "eil33-2",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 5,
+ "wall": 83.01962089538574,
+ "overrun": -36.98037910461426,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 934.007916,
+ "dual_bound": 934.007916,
+ "gap": "0%",
+ "pd_integral": 12.2763498023,
+ "solver_time": 82.95,
+ "presolve_time": 4.55,
+ "nodes": 8883,
+ "lp_iterations": 173486
+}

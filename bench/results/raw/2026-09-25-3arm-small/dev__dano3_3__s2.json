@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "dano3_3",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 8,
+ "wall": 74.34928703308105,
+ "overrun": -45.650712966918945,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 576.344633031,
+ "dual_bound": 576.324824077,
+ "gap": "0.00344%",
+ "pd_integral": 0.0954099468446,
+ "solver_time": 74.27,
+ "presolve_time": 0.31,
+ "nodes": 1,
+ "lp_iterations": 189244
+}

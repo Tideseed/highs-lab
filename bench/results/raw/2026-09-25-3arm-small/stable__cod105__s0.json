@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "cod105",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 17,
+ "wall": 74.01218152046204,
+ "overrun": -45.987818479537964,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -12.0,
+ "dual_bound": -12.0,
+ "gap": "0%",
+ "pd_integral": 657.603707943,
+ "solver_time": 73.95,
+ "presolve_time": 0.91,
+ "nodes": 103,
+ "lp_iterations": 225675
+}

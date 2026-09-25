@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "roll3000",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 17,
+ "wall": 22.090818881988525,
+ "overrun": -97.90918111801147,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 12890.0,
+ "dual_bound": 12888.8159026,
+ "gap": "0.00919%",
+ "pd_integral": 0.647965998416,
+ "solver_time": 22.01,
+ "presolve_time": 0.94,
+ "nodes": 1308,
+ "lp_iterations": 123999
+}

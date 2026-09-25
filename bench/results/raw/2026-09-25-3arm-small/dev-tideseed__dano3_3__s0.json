@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "dano3_3",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 16,
+ "wall": 33.82965350151062,
+ "overrun": -86.17034649848938,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 576.344633031,
+ "dual_bound": 576.308268405,
+ "gap": "0.00631%",
+ "pd_integral": 0.00501294412227,
+ "solver_time": 33.72,
+ "presolve_time": 0.15,
+ "nodes": 1,
+ "lp_iterations": 96845
+}

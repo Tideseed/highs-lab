@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "neos-2978193-inde",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 15,
+ "wall": 32.06813192367554,
+ "overrun": -87.93186807632446,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -2.388061686,
+ "dual_bound": -2.388061686,
+ "gap": "0%",
+ "pd_integral": 2.75954089772,
+ "solver_time": 31.87,
+ "presolve_time": 0.74,
+ "nodes": 2880,
+ "lp_iterations": 168110
+}

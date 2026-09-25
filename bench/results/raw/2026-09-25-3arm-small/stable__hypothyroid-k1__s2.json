@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "hypothyroid-k1",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 8,
+ "wall": 14.06218695640564,
+ "overrun": -105.93781304359436,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -2851.0,
+ "dual_bound": -2851.0,
+ "gap": "0%",
+ "pd_integral": 3323.36407002,
+ "solver_time": 13.77,
+ "presolve_time": 1.82,
+ "nodes": 1,
+ "lp_iterations": 3117
+}

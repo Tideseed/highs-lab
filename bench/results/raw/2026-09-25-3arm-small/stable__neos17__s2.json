@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "neos17",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 8,
+ "wall": 5.337090253829956,
+ "overrun": -114.66290974617004,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 0.150002577423,
+ "dual_bound": 0.149988082514,
+ "gap": "0.00966%",
+ "pd_integral": 0.926031376647,
+ "solver_time": 5.28,
+ "presolve_time": 0.13,
+ "nodes": 927,
+ "lp_iterations": 58689
+}

@@ -49,14 +49,14 @@ cd $LAB
 ls ~/data/optopt/miplib/inst | sed 's/\.mps\.gz$//' | shuf --random-source=<(yes 20260925) > bench/sets/miplib-bench-all.txt
 # hard stop at 06:30 so that Agent Think is back well before the morning (the runner is resumable)
 DEADLINE=$(( $(date -d '06:30' +%s) - $(date +%s) )); [ $DEADLINE -lt 0 ] && DEADLINE=$(( DEADLINE + 86400 ))
-timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms stable dev dev-tideseed dev-tideseed-nodse --set bench/sets/miplib-bench-all.txt \
+timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms stable dev dts-v2 dts-v2-nodse --set bench/sets/miplib-bench-all.txt \
   --seeds $SEEDS --time-limit "$TL" --cores 5-9,15-19 --out "$OUT" > "$OUT.run.log" 2>&1
 python3 bench/analyze.py "$OUT" --control dev --md bench/results/$RUN.md > /dev/null 2>&1
 python3 bench/hard.py "$OUT" --control dev --md bench/results/$RUN-hard.md > /dev/null 2>&1
 
 # 3. restore (trap) and report
 restore; trap - EXIT
-SUMMARY=$(grep -E '^\| (main|dev-tideseed) ' bench/results/$RUN.md | cut -c1-160)
+SUMMARY=$(grep -E '^\| (stable|dts-v2|dts-v2-nodse) ' bench/results/$RUN.md | cut -c1-160)
 post "HiGHS night bench $RUN done (tl=${TL}s, seeds $SEEDS). vs dev:
 $SUMMARY
 Agent Think restored: $(systemctl --user is-active llama-qwen38)."
