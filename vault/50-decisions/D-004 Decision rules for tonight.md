@@ -13,3 +13,9 @@ nights). The 33-instance small set cannot resolve a 3 % gate (CI half-width ≈ 
 3. **Robustness changes** (deadline checks, C1 as a time-limit fix) are judged on overrun (max and count > 5 s) and
    feasible-found count, not on speed.
 4. A branch becomes `accepted` in queue.txt only with the gate artifact named next to it.
+
+**Update 2026-09-25 21:50 (Berk):** Agent Fast is in use by another session tonight, so the clean 240-instance
+acceptance run is **postponed** to a night when both local agents can stop (`scripts/night-bench.sh`, unchanged).
+Tonight the timer runs `scripts/night-lite.sh` instead: no server stops, memory-budgeted lanes, paired runs only —
+(A) hard set dev vs dts-v2 vs dts-v2-nodse (60 s, seed 0) for rule 2 evidence; (B) X1 on its 27 affected instances
+(300 s, seeds 0–1). Rules 1–2 remain undecided until the clean run.
