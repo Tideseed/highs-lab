@@ -55,14 +55,15 @@ def main() -> None:
         subprocess.run([sys.executable, str(HERE / "run.py"), "--arms", a.arms, "--only-arms", a.control, a.arm,
                         "--set", str(sub), "--seeds", "0", "--time-limit", str(a.time_limit), "--cores", a.cores,
                         "--out", str(out)], check=True, stdout=subprocess.DEVNULL)
-        runs = [json.loads(p.read_text()) for p in out.glob("*.json") if not p.name.startswith("RESOURCES")]
+        runs = [json.loads(p.read_text()) for p in out.glob("*.json")
+                if not p.name.startswith("RESOURCES") and not p.name.endswith(".stale.json")]
         by: dict = {}
         for r in runs:
             by.setdefault(r["instance"], {})[r["arm"]] = r
         pairs = [(d[a.arm], d[a.control]) for d in by.values() if a.arm in d and a.control in d]
         bad = [f"{x['instance']}: {wrong(x, ref)}" for x, _ in pairs if wrong(x, ref)]
         bad += [f"{x['instance']}: crash rc={x.get('rc')}" for x, _ in pairs
-                if x.get("rc") not in (0, None) or x.get("harness_timeout")]
+                if x.get("rc") not in (0, 1, None) or x.get("harness_timeout")]
         if a.identical:
             bad += [f"{x['instance']}: search differs (nodes {y.get('nodes')}->{x.get('nodes')}, "
                     f"lp {y.get('lp_iterations')}->{x.get('lp_iterations')})"

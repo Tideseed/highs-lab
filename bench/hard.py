@@ -84,6 +84,11 @@ def main() -> None:
         by[(r["instance"], r["seed"])][r["arm"]] = r
     arms = sorted({r["arm"] for r in runs} - {a.control})
     no_traj = sum(1 for r in runs if not r.get("trajectory"))
+    # a MIP that ran for more than a few seconds always logs progress rows; none means the parser missed them
+    parse_fail = [r for r in runs if not r.get("trajectory") and r.get("solver_time", 0) > 5 and not crashed(r)]
+    if parse_fail:
+        raise SystemExit(f"parser failure: {len(parse_fail)} runs >5 s without a trajectory, e.g. "
+                         f"{parse_fail[0]['arm']} {parse_fail[0]['instance']} s{parse_fail[0]['seed']}")
     out = [f"# Hard-set comparison `{a.dir}` (control `{a.control}`)", "",
            f"{len(runs)} runs; {no_traj} without a logged trajectory (PDGI from final bounds).", "",
            "| arm | pairs (inst) | PDGI arm / ctl | ΔPDGI [95% CI, instance bootstrap] | solved (ctl) | feasible (ctl) | "

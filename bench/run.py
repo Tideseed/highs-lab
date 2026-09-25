@@ -87,6 +87,15 @@ def build_info(binary: str) -> dict:
     return info
 
 
+SERVING_UNITS = ("ornith-vllm", "llama-qwen38")
+
+
+def serving_state() -> dict:
+    """State of the local LLM servers at the end of a job (they share memory bandwidth with the solver)."""
+    return {u: subprocess.run(["systemctl", "--user", "is-active", u], capture_output=True, text=True).stdout.strip()
+            for u in SERVING_UNITS}
+
+
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
     with open(path, "rb") as f:
@@ -189,6 +198,7 @@ def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Pat
         wall = time.time() - t0
         (work / "stdout.txt").write_text(stdout or "")
         rec = {k: job[k] for k in ("arm", "instance", "seed", "time_limit", "binary_sha", "model_sha")}
+        rec.update(serving_units=serving_state(), loadavg=os.getloadavg())
         rec.update(core=core, wall=wall, overrun=wall - job["time_limit"], rc=rc, harness_timeout=timed_out,
                    options=job["options"], has_solution=sol.exists())
         rec.update(parse_log(stdout or ""))
@@ -244,9 +254,7 @@ def main() -> None:
                       for k, v in arms.items()},
                 n_jobs=len(jobs), loadavg=os.getloadavg(),
                 meminfo_available_kb=int(re.search(r"MemAvailable:\s+(\d+)", Path("/proc/meminfo").read_text())[1]),
-                serving_units={u: subprocess.run(["systemctl", "--user", "is-active", u], capture_output=True,
-                                                 text=True).stdout.strip()
-                               for u in ("ornith-vllm", "llama-qwen38")})
+                serving_units=serving_state())
     (out / f"RESOURCES-{time.strftime('%Y%m%d-%H%M%S')}.json").write_text(json.dumps(meta, indent=1))
 
     pool: "queue.Queue[int]" = queue.Queue()

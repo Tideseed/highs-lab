@@ -1,0 +1,58 @@
+{
+ "arm": "v2-zi",
+ "instance": "neos-2746589-doon",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "8066a9ab8bb6bb83",
+ "core": 6,
+ "wall": 60.55681562423706,
+ "overrun": 0.5568156242370605,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   3.4,
+   0.0,
+   Infinity
+  ],
+  [
+   8.5,
+   1985.939796,
+   Infinity
+  ],
+  [
+   14.5,
+   1985.939796,
+   Infinity
+  ],
+  [
+   23.9,
+   1990.939796,
+   Infinity
+  ],
+  [
+   29.0,
+   1999.052041,
+   Infinity
+  ],
+  [
+   60.2,
+   1999.052041,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 1999.1,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.2,
+ "presolve_time": 13.04,
+ "nodes": 0,
+ "lp_iterations": 39570
+}

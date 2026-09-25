@@ -1,0 +1,38 @@
+{
+ "arm": "v2-heur10",
+ "instance": "rail01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "e44f77b68588276a",
+ "core": 18,
+ "wall": 60.759448289871216,
+ "overrun": 0.7594482898712158,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   5.1,
+   -172.7919068,
+   Infinity
+  ],
+  [
+   60.0,
+   -172.7919068,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -172.791906817,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.03,
+ "presolve_time": 4.17,
+ "nodes": 0,
+ "lp_iterations": 103431
+}

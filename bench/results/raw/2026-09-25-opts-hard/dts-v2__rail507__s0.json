@@ -1,0 +1,66 @@
+{
+ "arm": "dts-v2",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "ecd62d6f0a76a9db",
+ "core": 15,
+ "wall": 60.67136240005493,
+ "overrun": 0.6713624000549316,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.4,
+   -Infinity,
+   195.0
+  ],
+  [
+   4.4,
+   172.1455667,
+   195.0
+  ],
+  [
+   19.3,
+   172.1455667,
+   177.0
+  ],
+  [
+   27.5,
+   172.1455667,
+   176.0
+  ],
+  [
+   32.7,
+   172.1455667,
+   176.0
+  ],
+  [
+   33.0,
+   172.1455667,
+   175.0
+  ],
+  [
+   60.0,
+   172.1455667,
+   175.0
+  ],
+  [
+   60.0,
+   172.1455667,
+   175.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 175.0,
+ "dual_bound": 173.0,
+ "gap": "1.14%",
+ "pd_integral": 5.28887916208,
+ "solver_time": 60.04,
+ "presolve_time": 4.18,
+ "nodes": 102,
+ "lp_iterations": 54745
+}

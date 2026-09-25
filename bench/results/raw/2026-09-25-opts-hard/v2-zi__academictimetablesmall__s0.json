@@ -1,0 +1,63 @@
+{
+ "arm": "v2-zi",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "425392581ec53814",
+ "core": 8,
+ "wall": 60.56025505065918,
+ "overrun": 0.5602550506591797,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   2.1,
+   -Infinity,
+   94.0
+  ],
+  [
+   6.1,
+   0.0,
+   94.0
+  ],
+  [
+   11.8,
+   0.0,
+   94.0
+  ],
+  [
+   17.4,
+   0.0,
+   94.0
+  ],
+  [
+   22.6,
+   0.0,
+   94.0
+  ],
+  [
+   28.2,
+   0.0,
+   94.0
+  ],
+  [
+   60.1,
+   0.0,
+   94.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 94.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 57.9087538719,
+ "solver_time": 60.05,
+ "presolve_time": 3.57,
+ "nodes": 0,
+ "lp_iterations": 84335
+}

@@ -1,0 +1,83 @@
+{
+ "arm": "v2-heur20",
+ "instance": "dws008-01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "4fe3b499d33cc5d6",
+ "core": 7,
+ "wall": 60.371922731399536,
+ "overrun": 0.37192273139953613,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.2
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.9,
+   150.0,
+   Infinity
+  ],
+  [
+   1.9,
+   2817.395467,
+   Infinity
+  ],
+  [
+   13.4,
+   9547.442859,
+   Infinity
+  ],
+  [
+   14.2,
+   9547.442859,
+   Infinity
+  ],
+  [
+   14.2,
+   9547.442859,
+   Infinity
+  ],
+  [
+   26.7,
+   9766.282899,
+   Infinity
+  ],
+  [
+   33.3,
+   9812.125952,
+   Infinity
+  ],
+  [
+   45.7,
+   10509.489568,
+   Infinity
+  ],
+  [
+   54.2,
+   10509.489568,
+   Infinity
+  ],
+  [
+   60.1,
+   10509.489568,
+   Infinity
+  ],
+  [
+   60.1,
+   10509.489568,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 10509.4895675,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.05,
+ "presolve_time": 19.91,
+ "nodes": 605,
+ "lp_iterations": 190312
+}

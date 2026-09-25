@@ -1,0 +1,68 @@
+{
+ "arm": "v2-zi",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "ecd62d6f0a76a9db",
+ "core": 19,
+ "wall": 60.7039852142334,
+ "overrun": 0.7039852142333984,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.1,
+   -Infinity,
+   195.0
+  ],
+  [
+   4.6,
+   172.1455667,
+   195.0
+  ],
+  [
+   21.1,
+   172.1455667,
+   177.0
+  ],
+  [
+   28.6,
+   172.1455667,
+   176.0
+  ],
+  [
+   33.7,
+   172.1455667,
+   176.0
+  ],
+  [
+   34.7,
+   172.1455667,
+   175.0
+  ],
+  [
+   60.1,
+   172.1455667,
+   175.0
+  ],
+  [
+   60.1,
+   172.1455667,
+   175.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 175.0,
+ "dual_bound": 173.0,
+ "gap": "1.14%",
+ "pd_integral": 5.69039944896,
+ "solver_time": 60.14,
+ "presolve_time": 4.08,
+ "nodes": 102,
+ "lp_iterations": 52998
+}

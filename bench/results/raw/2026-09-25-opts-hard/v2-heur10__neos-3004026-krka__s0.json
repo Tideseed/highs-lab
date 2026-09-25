@@ -1,0 +1,98 @@
+{
+ "arm": "v2-heur10",
+ "instance": "neos-3004026-krka",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "98e00480fca9f452",
+ "core": 5,
+ "wall": 60.116517305374146,
+ "overrun": 0.11651730537414551,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.3,
+   0.0,
+   Infinity
+  ],
+  [
+   0.4,
+   0.0,
+   Infinity
+  ],
+  [
+   5.9,
+   0.0,
+   Infinity
+  ],
+  [
+   11.6,
+   0.0,
+   Infinity
+  ],
+  [
+   18.1,
+   0.0,
+   Infinity
+  ],
+  [
+   25.9,
+   0.0,
+   Infinity
+  ],
+  [
+   31.4,
+   0.0,
+   Infinity
+  ],
+  [
+   36.6,
+   0.0,
+   Infinity
+  ],
+  [
+   41.3,
+   0.0,
+   Infinity
+  ],
+  [
+   41.4,
+   0.0,
+   Infinity
+  ],
+  [
+   47.3,
+   0.0,
+   Infinity
+  ],
+  [
+   52.5,
+   0.0,
+   Infinity
+  ],
+  [
+   57.5,
+   0.0,
+   Infinity
+  ],
+  [
+   60.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.02,
+ "presolve_time": 3.28,
+ "nodes": 3342,
+ "lp_iterations": 268538
+}

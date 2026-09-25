@@ -1,0 +1,43 @@
+{
+ "arm": "v2-heur10",
+ "instance": "chromaticindex1024-7",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "e498fed6ac5ebd17",
+ "core": 17,
+ "wall": 60.726749658584595,
+ "overrun": 0.7267496585845947,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   35.1,
+   -Infinity,
+   4.0
+  ],
+  [
+   43.2,
+   0.0,
+   4.0
+  ],
+  [
+   60.0,
+   0.0,
+   4.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 4.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 16.8347706795,
+ "solver_time": 60.04,
+ "presolve_time": 34.89,
+ "nodes": 0,
+ "lp_iterations": 37049
+}

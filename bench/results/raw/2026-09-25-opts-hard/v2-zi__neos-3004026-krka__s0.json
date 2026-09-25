@@ -1,0 +1,68 @@
+{
+ "arm": "v2-zi",
+ "instance": "neos-3004026-krka",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "98e00480fca9f452",
+ "core": 18,
+ "wall": 24.52817702293396,
+ "overrun": -35.47182297706604,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.3,
+   0.0,
+   Infinity
+  ],
+  [
+   0.8,
+   0.0,
+   Infinity
+  ],
+  [
+   6.1,
+   0.0,
+   Infinity
+  ],
+  [
+   11.1,
+   0.0,
+   Infinity
+  ],
+  [
+   16.2,
+   0.0,
+   Infinity
+  ],
+  [
+   21.2,
+   0.0,
+   Infinity
+  ],
+  [
+   24.3,
+   0.0,
+   0.0
+  ],
+  [
+   24.3,
+   0.0,
+   0.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 24.34,
+ "presolve_time": 0.8,
+ "nodes": 1338,
+ "lp_iterations": 139179
+}

@@ -1,0 +1,46 @@
+{
+ "arm": "dts-v2",
+ "instance": "ns1952667",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "a871037226d82345",
+ "core": 9,
+ "wall": 62.33025622367859,
+ "overrun": 2.330256223678589,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   2.1,
+   0.0,
+   Infinity
+  ],
+  [
+   3.9,
+   0.0,
+   Infinity
+  ],
+  [
+   16.6,
+   0.0,
+   Infinity
+  ],
+  [
+   62.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 62.04,
+ "presolve_time": 6.96,
+ "nodes": 0,
+ "lp_iterations": 5592
+}

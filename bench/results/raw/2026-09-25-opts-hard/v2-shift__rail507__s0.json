@@ -1,0 +1,68 @@
+{
+ "arm": "v2-shift",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "ecd62d6f0a76a9db",
+ "core": 6,
+ "wall": 60.674617290496826,
+ "overrun": 0.6746172904968262,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   2.0,
+   -Infinity,
+   195.0
+  ],
+  [
+   5.5,
+   172.1455667,
+   195.0
+  ],
+  [
+   22.9,
+   172.1455667,
+   177.0
+  ],
+  [
+   32.9,
+   172.1455667,
+   176.0
+  ],
+  [
+   38.0,
+   172.1455667,
+   176.0
+  ],
+  [
+   39.8,
+   172.1455667,
+   175.0
+  ],
+  [
+   60.0,
+   172.1455667,
+   175.0
+  ],
+  [
+   60.0,
+   172.1455667,
+   175.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 175.0,
+ "dual_bound": 173.0,
+ "gap": "1.14%",
+ "pd_integral": 5.71090886649,
+ "solver_time": 60.04,
+ "presolve_time": 5.1,
+ "nodes": 102,
+ "lp_iterations": 45456
+}

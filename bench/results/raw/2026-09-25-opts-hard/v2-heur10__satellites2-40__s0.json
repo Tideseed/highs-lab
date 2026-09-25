@@ -1,0 +1,43 @@
+{
+ "arm": "v2-heur10",
+ "instance": "satellites2-40",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "b7f9af26c67a7771",
+ "core": 16,
+ "wall": 60.47198677062988,
+ "overrun": 0.4719867706298828,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.1
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   5.1,
+   -Infinity,
+   89.0
+  ],
+  [
+   16.8,
+   -29.875,
+   89.0
+  ],
+  [
+   60.0,
+   -29.875,
+   89.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 89.0,
+ "dual_bound": -29.0,
+ "gap": "132.58%",
+ "pd_integral": 74.0132746656,
+ "solver_time": 60.0,
+ "presolve_time": 4.71,
+ "nodes": 0,
+ "lp_iterations": 86354
+}

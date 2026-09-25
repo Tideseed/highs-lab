@@ -1,0 +1,146 @@
+{
+ "started": "2026-09-25T15:31:03+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "dts-v2",
+  "v2-zi",
+  "v2-shift",
+  "v2-heur10",
+  "v2-heur20",
+  "--set",
+  "bench/sets/gap-v0.txt",
+  "--seeds",
+  "0",
+  "--time-limit",
+  "60",
+  "--out",
+  "bench/results/raw/2026-09-25-opts-hard"
+ ],
+ "cores": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "dts-v2": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "566ba2a688a6bbbf",
+   "options": {},
+   "build": {
+    "build_dir": "/home/coulson/git_repositories/highs-builds/dts-v2",
+    "BUILD_SHARED_LIBS": "ON",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_C_FLAGS": "",
+    "CMAKE_HOME_DIRECTORY": "/home/coulson/git_repositories/highs-wt/dev-tideseed-v2",
+    "effective_cxx_flags": "-std=c++11 -O3 -DNDEBUG -std=c++11 -flto=auto -fno-fat-lto-objects -fPIC -Wall -Wreturn-type -Wmissing-declarations -Wno-unused-variable -Wno-unused-const-variable -Wno-unused-but-set-variable -Wno-comment -Wno-unused-label -Wno-invalid-offsetof",
+    "source_sha": "9e9a3f98f26dea68a9e5209ea5418db79849b897",
+    "source_dirty": false,
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+   }
+  },
+  "v2-zi": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "566ba2a688a6bbbf",
+   "options": {
+    "mip_heuristic_run_zi_round": true
+   },
+   "build": {
+    "build_dir": "/home/coulson/git_repositories/highs-builds/dts-v2",
+    "BUILD_SHARED_LIBS": "ON",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_C_FLAGS": "",
+    "CMAKE_HOME_DIRECTORY": "/home/coulson/git_repositories/highs-wt/dev-tideseed-v2",
+    "effective_cxx_flags": "-std=c++11 -O3 -DNDEBUG -std=c++11 -flto=auto -fno-fat-lto-objects -fPIC -Wall -Wreturn-type -Wmissing-declarations -Wno-unused-variable -Wno-unused-const-variable -Wno-unused-but-set-variable -Wno-comment -Wno-unused-label -Wno-invalid-offsetof",
+    "source_sha": "9e9a3f98f26dea68a9e5209ea5418db79849b897",
+    "source_dirty": false,
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+   }
+  },
+  "v2-shift": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "566ba2a688a6bbbf",
+   "options": {
+    "mip_heuristic_run_shifting": true
+   },
+   "build": {
+    "build_dir": "/home/coulson/git_repositories/highs-builds/dts-v2",
+    "BUILD_SHARED_LIBS": "ON",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_C_FLAGS": "",
+    "CMAKE_HOME_DIRECTORY": "/home/coulson/git_repositories/highs-wt/dev-tideseed-v2",
+    "effective_cxx_flags": "-std=c++11 -O3 -DNDEBUG -std=c++11 -flto=auto -fno-fat-lto-objects -fPIC -Wall -Wreturn-type -Wmissing-declarations -Wno-unused-variable -Wno-unused-const-variable -Wno-unused-but-set-variable -Wno-comment -Wno-unused-label -Wno-invalid-offsetof",
+    "source_sha": "9e9a3f98f26dea68a9e5209ea5418db79849b897",
+    "source_dirty": false,
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+   }
+  },
+  "v2-heur10": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "566ba2a688a6bbbf",
+   "options": {
+    "mip_heuristic_effort": 0.1
+   },
+   "build": {
+    "build_dir": "/home/coulson/git_repositories/highs-builds/dts-v2",
+    "BUILD_SHARED_LIBS": "ON",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_C_FLAGS": "",
+    "CMAKE_HOME_DIRECTORY": "/home/coulson/git_repositories/highs-wt/dev-tideseed-v2",
+    "effective_cxx_flags": "-std=c++11 -O3 -DNDEBUG -std=c++11 -flto=auto -fno-fat-lto-objects -fPIC -Wall -Wreturn-type -Wmissing-declarations -Wno-unused-variable -Wno-unused-const-variable -Wno-unused-but-set-variable -Wno-comment -Wno-unused-label -Wno-invalid-offsetof",
+    "source_sha": "9e9a3f98f26dea68a9e5209ea5418db79849b897",
+    "source_dirty": false,
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+   }
+  },
+  "v2-heur20": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "566ba2a688a6bbbf",
+   "options": {
+    "mip_heuristic_effort": 0.2
+   },
+   "build": {
+    "build_dir": "/home/coulson/git_repositories/highs-builds/dts-v2",
+    "BUILD_SHARED_LIBS": "ON",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_C_FLAGS": "",
+    "CMAKE_HOME_DIRECTORY": "/home/coulson/git_repositories/highs-wt/dev-tideseed-v2",
+    "effective_cxx_flags": "-std=c++11 -O3 -DNDEBUG -std=c++11 -flto=auto -fno-fat-lto-objects -fPIC -Wall -Wreturn-type -Wmissing-declarations -Wno-unused-variable -Wno-unused-const-variable -Wno-unused-but-set-variable -Wno-comment -Wno-unused-label -Wno-invalid-offsetof",
+    "source_sha": "9e9a3f98f26dea68a9e5209ea5418db79849b897",
+    "source_dirty": false,
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+   }
+  }
+ },
+ "n_jobs": 210,
+ "loadavg": [
+  5.82421875,
+  8.63720703125,
+  10.57177734375
+ ],
+ "meminfo_available_kb": 24569464,
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ }
+}

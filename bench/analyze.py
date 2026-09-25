@@ -154,6 +154,10 @@ def main() -> None:
                 reasons.append(f"search differs on {len(identical_diffs[arm][1])}")
             verdicts[arm] = "PASS" if not reasons else "no pass (" + ", ".join(reasons) + ")"
     cov = sum(1 for r in runs if r["instance"] in ref)
+    served = sum(1 for r in runs if "active" in (r.get("serving_units") or {}).values())
+    unknown = sum(1 for r in runs if "serving_units" not in r)
+    lines += ["", f"Contention: {served}/{len(runs)} runs ended with a local LLM server active"
+              + (f" ({unknown} runs predate per-job recording)" if unknown else "") + "."]
     lines += ["", "Gate (ratio <= 0.97, CI upper < 1, no wrong answers, no crashes, solved >= control on paired runs"
               + (", identical search" if a.identical else "") + "): " +
               ", ".join(f"{k} {v}" for k, v in verdicts.items()), "",

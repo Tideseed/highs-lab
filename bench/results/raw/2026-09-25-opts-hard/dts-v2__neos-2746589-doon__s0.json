@@ -1,0 +1,56 @@
+{
+ "arm": "dts-v2",
+ "instance": "neos-2746589-doon",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "8066a9ab8bb6bb83",
+ "core": 17,
+ "wall": 60.543060541152954,
+ "overrun": 0.5430605411529541,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   3.9,
+   0.0,
+   Infinity
+  ],
+  [
+   8.0,
+   1985.939796,
+   Infinity
+  ],
+  [
+   13.9,
+   1985.939796,
+   Infinity
+  ],
+  [
+   22.8,
+   1990.939796,
+   Infinity
+  ],
+  [
+   28.2,
+   1999.052041,
+   Infinity
+  ],
+  [
+   60.0,
+   1999.052041,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 1999.1,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.03,
+ "presolve_time": 13.38,
+ "nodes": 0,
+ "lp_iterations": 43360
+}

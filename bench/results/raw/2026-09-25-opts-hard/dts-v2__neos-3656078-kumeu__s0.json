@@ -1,0 +1,76 @@
+{
+ "arm": "dts-v2",
+ "instance": "neos-3656078-kumeu",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "3cb3b92b40bc6196",
+ "core": 19,
+ "wall": 60.13787269592285,
+ "overrun": 0.13787269592285156,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.6,
+   -18740.5,
+   Infinity
+  ],
+  [
+   1.9,
+   -18000.316914,
+   Infinity
+  ],
+  [
+   9.3,
+   -17871.380582,
+   Infinity
+  ],
+  [
+   15.4,
+   -17824.555894,
+   Infinity
+  ],
+  [
+   24.2,
+   -17663.476812,
+   Infinity
+  ],
+  [
+   32.8,
+   -17553.687013,
+   Infinity
+  ],
+  [
+   43.8,
+   -17483.778691,
+   Infinity
+  ],
+  [
+   50.3,
+   -17013.418421,
+   Infinity
+  ],
+  [
+   56.8,
+   -16053.373793,
+   Infinity
+  ],
+  [
+   60.0,
+   -16053.373793,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -16053.3,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.01,
+ "presolve_time": 0.56,
+ "nodes": 0,
+ "lp_iterations": 275363
+}

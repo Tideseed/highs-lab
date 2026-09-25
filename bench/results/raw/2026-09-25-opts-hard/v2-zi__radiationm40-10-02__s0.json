@@ -1,0 +1,58 @@
+{
+ "arm": "v2-zi",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "f5396c64680852ce",
+ "core": 19,
+ "wall": 61.99657845497131,
+ "overrun": 1.9965784549713135,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_zi_round": true
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.5,
+   3204.0,
+   Infinity
+  ],
+  [
+   2.7,
+   155318.018254,
+   Infinity
+  ],
+  [
+   8.3,
+   155324.591667,
+   Infinity
+  ],
+  [
+   38.3,
+   155324.971503,
+   Infinity
+  ],
+  [
+   57.7,
+   155324.971503,
+   Infinity
+  ],
+  [
+   60.2,
+   155324.971503,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 155325.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.16,
+ "presolve_time": 1.83,
+ "nodes": 918,
+ "lp_iterations": 175130
+}

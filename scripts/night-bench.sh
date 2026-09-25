@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Overnight full benchmark: all MIPLIB 2017 benchmark instances, arms main/dev/dev-tideseed, pinned to the X925 cores.
+# Overnight full benchmark: all MIPLIB 2017 benchmark instances, arms stable/dev/dts-v2/dts-v2-nodse (ARMS below),
+# pinned to the X925 cores.
 # Clean acceptance window (Berk, 2026-09-25): stops BOTH local LLM servers (Agent Think llama-qwen38, Agent Fast
 # ornith-vllm) and pauses the jobs that would call them overnight (tr-power-forecast-think, the two ornith canaries).
 # Everything it stops is restored and verified at the end, and the hold entries expire on their own.
@@ -9,10 +10,16 @@ RUN=$1; TL=${2:-300}; SEEDS=${3:-0}
 LAB=~/git_repositories/highs-lab
 OUT=$LAB/bench/results/raw/$RUN
 LOG=$LAB/bench/results/raw/$RUN.night.log
+ARMS="stable dev dts-v2 dts-v2-nodse"
 JOBS="15e9efd9b30b f663edfdcbff 36f278b0ee63"   # tr-power-forecast-think, local-model-canary, canary-hello
-UNTIL=$(date -d 'tomorrow 07:30' +%Y-%m-%dT07:30:00%:z 2>/dev/null || date -d '07:30' +%Y-%m-%dT07:30:00%:z)
+[ "$(date +%H)" -lt 12 ] && DAY=today || DAY=tomorrow
+UNTIL=$(date -d "$DAY 07:30" +%Y-%m-%dT07:30:00%:z)
 mkdir -p "$(dirname "$LOG")"
 exec >>"$LOG" 2>&1
+# a persistent timer fires at boot if the box was down at the scheduled time: never start in the daytime
+if [ "$(date +%-H)" -ge 6 ] && [ -z "${FORCE_NIGHT_BENCH:-}" ]; then
+  echo "$(date -Is) not starting outside 00:00-05:59"; exit 0
+fi
 echo "== $(date -Is) night bench $RUN tl=$TL seeds=$SEEDS"
 
 post() {
@@ -48,21 +55,30 @@ fi
 post "HiGHS night bench $RUN starting: Agent Fast and Agent Think servers stopped until ~06:30 (clean benchmark window, Berk OK). Canaries and tr-power-forecast-think paused for the window."
 systemctl --user stop llama-qwen38 ornith-vllm
 sleep 15
-echo "stopped: $(systemctl --user is-active llama-qwen38) $(systemctl --user is-active ornith-vllm); MemAvailable $(awk '/MemAvailable/{print int($2/1048576)}' /proc/meminfo) GB"
+A=$(systemctl --user is-active llama-qwen38); B=$(systemctl --user is-active ornith-vllm)
+MEM=$(awk '/MemAvailable/{print int($2/1048576)}' /proc/meminfo)
+echo "stopped: llama-qwen38=$A ornith-vllm=$B; MemAvailable $MEM GB"
+if [ "$A" = active ] || [ "$B" = active ] || [ "$MEM" -lt 80 ]; then
+  echo "ABORT: window not clean (llama-qwen38=$A ornith-vllm=$B MemAvailable=${MEM}G)"
+  post "HiGHS night bench $RUN ABORTED before running: window not clean (Think $A, Fast $B, ${MEM} GB free). Restoring."
+  exit 2
+fi
 
 # 2. run
 cd $LAB
 ls ~/data/optopt/miplib/inst | sed 's/\.mps\.gz$//' | shuf --random-source=<(yes 20260925) > bench/sets/miplib-bench-all.txt
+NI=$(wc -l < bench/sets/miplib-bench-all.txt); NA=$(echo $ARMS | wc -w); NS=$(echo $SEEDS | wc -w)
+echo "budget: $NI instances x $NA arms x $NS seeds = $((NI*NA*NS)) jobs, <= ${TL}s each on 10 cores: worst case $((NI*NA*NS*${TL%.*}/10/3600)) h; window ends 06:30. timeout stops run.py only; HiGHS scopes already running finish on their own (<= ${TL}s). Arms are interleaved per instance, so a partial night stays paired."
 # hard stop at 06:30 so that Agent Think is back well before the morning (the runner is resumable)
 DEADLINE=$(( $(date -d '06:30' +%s) - $(date +%s) )); [ $DEADLINE -lt 0 ] && DEADLINE=$(( DEADLINE + 86400 ))
-timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms stable dev dts-v2 dts-v2-nodse --set bench/sets/miplib-bench-all.txt \
+timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms $ARMS --set bench/sets/miplib-bench-all.txt \
   --seeds $SEEDS --time-limit "$TL" --cores 5-9,15-19 --out "$OUT" > "$OUT.run.log" 2>&1
 python3 bench/analyze.py "$OUT" --control dev --md bench/results/$RUN.md > /dev/null 2>&1
 python3 bench/hard.py "$OUT" --control dev --md bench/results/$RUN-hard.md > /dev/null 2>&1
 
 # 3. restore (trap) and report
 restore; trap - EXIT
-SUMMARY=$(grep -E '^\| (stable|dts-v2|dts-v2-nodse) ' bench/results/$RUN.md | cut -c1-160)
+SUMMARY=$(grep -E "^\| ($(echo $ARMS | tr ' ' '|')) " bench/results/$RUN.md | cut -c1-160)
 post "HiGHS night bench $RUN done (tl=${TL}s, seeds $SEEDS). vs dev:
 $SUMMARY
 Agents restored: Think $(systemctl --user is-active llama-qwen38), Fast $(systemctl --user is-active ornith-vllm)."

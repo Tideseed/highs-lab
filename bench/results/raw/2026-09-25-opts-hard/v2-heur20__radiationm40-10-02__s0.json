@@ -1,0 +1,63 @@
+{
+ "arm": "v2-heur20",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "566ba2a688a6bbbf",
+ "model_sha": "f5396c64680852ce",
+ "core": 9,
+ "wall": 62.18384528160095,
+ "overrun": 2.183845281600952,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_effort": 0.2
+ },
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.6,
+   3204.0,
+   Infinity
+  ],
+  [
+   0.8,
+   155318.018254,
+   Infinity
+  ],
+  [
+   6.1,
+   155324.130952,
+   Infinity
+  ],
+  [
+   29.7,
+   155324.971503,
+   Infinity
+  ],
+  [
+   50.4,
+   155324.971503,
+   Infinity
+  ],
+  [
+   60.1,
+   155324.971503,
+   Infinity
+  ],
+  [
+   60.1,
+   155324.971503,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 155325.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.12,
+ "presolve_time": 1.66,
+ "nodes": 918,
+ "lp_iterations": 221738
+}
