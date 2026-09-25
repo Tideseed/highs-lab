@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "decomp2",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 7,
+ "wall": 2.2232894897460938,
+ "overrun": -117.7767105102539,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -160.0,
+ "dual_bound": -160.0,
+ "gap": "0%",
+ "pd_integral": 0.323423367959,
+ "solver_time": 2.09,
+ "presolve_time": 0.28,
+ "nodes": 1,
+ "lp_iterations": 8254
+}

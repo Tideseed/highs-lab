@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "binkar10_1",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 7,
+ "wall": 20.85974955558777,
+ "overrun": -99.14025044441223,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 6742.200024,
+ "dual_bound": 6741.52626037,
+ "gap": "0.00999%",
+ "pd_integral": 0.202019584119,
+ "solver_time": 20.76,
+ "presolve_time": 0.09,
+ "nodes": 2283,
+ "lp_iterations": 146281
+}

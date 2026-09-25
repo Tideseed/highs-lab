@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "mas76",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 19,
+ "wall": 111.59408402442932,
+ "overrun": -8.405915975570679,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 40005.0541419,
+ "dual_bound": 40001.0537242,
+ "gap": "0.01%",
+ "pd_integral": 1.69813276517,
+ "solver_time": 111.52,
+ "presolve_time": 0.69,
+ "nodes": 450477,
+ "lp_iterations": 3080615
+}

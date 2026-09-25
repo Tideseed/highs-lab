@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "mas76",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 8,
+ "wall": 82.27192378044128,
+ "overrun": -37.728076219558716,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 40005.054141,
+ "dual_bound": 40001.0540672,
+ "gap": "0.01%",
+ "pd_integral": 1.30341130916,
+ "solver_time": 82.22,
+ "presolve_time": 0.6,
+ "nodes": 314377,
+ "lp_iterations": 2171157
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "dano3_3",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 17,
+ "wall": 31.4714035987854,
+ "overrun": -88.5285964012146,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 576.344633031,
+ "dual_bound": 576.29365198,
+ "gap": "0.00885%",
+ "pd_integral": 0.00425358625539,
+ "solver_time": 31.38,
+ "presolve_time": 0.15,
+ "nodes": 1,
+ "lp_iterations": 90201
+}

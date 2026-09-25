@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "cbs-cta",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 18,
+ "wall": 41.7528772354126,
+ "overrun": -78.2471227645874,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 41.279263258,
+ "solver_time": 41.57,
+ "presolve_time": 0.25,
+ "nodes": 1760,
+ "lp_iterations": 130020
+}

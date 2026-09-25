@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "neos-860300",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 9,
+ "wall": 9.911258935928345,
+ "overrun": -110.08874106407166,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 3201.0,
+ "dual_bound": 3201.0,
+ "gap": "0%",
+ "pd_integral": 2.34603161013,
+ "solver_time": 9.69,
+ "presolve_time": 3.85,
+ "nodes": 1,
+ "lp_iterations": 12223
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "roll3000",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 18,
+ "wall": 18.98263716697693,
+ "overrun": -101.01736283302307,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 12890.0,
+ "dual_bound": 12889.3896811,
+ "gap": "0.00473%",
+ "pd_integral": 0.29819712611,
+ "solver_time": 18.87,
+ "presolve_time": 1.04,
+ "nodes": 1134,
+ "lp_iterations": 111781
+}

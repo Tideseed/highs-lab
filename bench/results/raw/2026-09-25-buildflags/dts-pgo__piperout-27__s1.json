@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "piperout-27",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 18,
+ "wall": 49.7504358291626,
+ "overrun": -70.2495641708374,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 8124.0,
+ "dual_bound": 8124.0,
+ "gap": "0%",
+ "pd_integral": 0.000610322079166,
+ "solver_time": 49.52,
+ "presolve_time": 49.22,
+ "nodes": 1,
+ "lp_iterations": 6037
+}

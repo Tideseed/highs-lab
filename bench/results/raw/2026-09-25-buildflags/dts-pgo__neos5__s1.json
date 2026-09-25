@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "neos5",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 18,
+ "wall": 59.406314849853516,
+ "overrun": -60.593685150146484,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 15.0,
+ "dual_bound": 14.9986870179,
+ "gap": "0.00875%",
+ "pd_integral": 3.68011271677,
+ "solver_time": 59.37,
+ "presolve_time": 0.33,
+ "nodes": 183591,
+ "lp_iterations": 2718230
+}

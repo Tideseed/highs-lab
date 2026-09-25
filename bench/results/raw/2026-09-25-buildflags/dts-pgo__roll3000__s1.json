@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "roll3000",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 18,
+ "wall": 12.434885025024414,
+ "overrun": -107.56511497497559,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 12890.0,
+ "dual_bound": 12890.0,
+ "gap": "0%",
+ "pd_integral": 0.254131160858,
+ "solver_time": 12.34,
+ "presolve_time": 0.73,
+ "nodes": 555,
+ "lp_iterations": 79770
+}

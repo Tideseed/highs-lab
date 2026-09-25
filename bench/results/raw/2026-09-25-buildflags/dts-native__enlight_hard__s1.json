@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "enlight_hard",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 5,
+ "wall": 13.166288614273071,
+ "overrun": -106.83371138572693,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 37.0,
+ "dual_bound": 37.0,
+ "gap": "0%",
+ "pd_integral": 0.183417839756,
+ "solver_time": 13.09,
+ "presolve_time": 0.03,
+ "nodes": 6084,
+ "lp_iterations": 202165
+}

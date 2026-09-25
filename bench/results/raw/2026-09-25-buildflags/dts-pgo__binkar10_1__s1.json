@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "binkar10_1",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 6,
+ "wall": 19.993151426315308,
+ "overrun": -100.00684857368469,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 6742.200024,
+ "dual_bound": 6741.52626037,
+ "gap": "0.00999%",
+ "pd_integral": 0.195519216894,
+ "solver_time": 19.89,
+ "presolve_time": 0.09,
+ "nodes": 2283,
+ "lp_iterations": 146281
+}

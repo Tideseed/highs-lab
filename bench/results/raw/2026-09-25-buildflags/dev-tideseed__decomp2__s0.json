@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "decomp2",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 19,
+ "wall": 2.137854814529419,
+ "overrun": -117.86214518547058,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -160.0,
+ "dual_bound": -160.0,
+ "gap": "0%",
+ "pd_integral": 0.315225212662,
+ "solver_time": 2.01,
+ "presolve_time": 0.25,
+ "nodes": 1,
+ "lp_iterations": 8254
+}

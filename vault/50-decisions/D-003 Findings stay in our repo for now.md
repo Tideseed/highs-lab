@@ -9,3 +9,7 @@ The drafts in 70-upstream stay unsent. Posting upstream needs a new explicit yes
 Same checkpoint: DeriBLab analysis runs paused while the lab uses the box (desk-review, research-gpt; research was
 already paused), all three in ~/.config/cronrestore/hold-jobs; paper-book scripts keep running. Night benchmark
 2026-09-26 00:15–06:30 approved: Agent Think stopped, tr-power-forecast-think paused for the night, Agent Fast up.
+
+**Update 2026-09-25 ~15:00 (Berk): "don't add any issues yet".** No new issues anywhere (not ERGO-Code, not
+Tideseed/highs-lab). #1 and #2 had already been filed in highs-lab before this; left open, closing offered to Berk.
+Findings are recorded in the vault (40-codebase-map, 70-upstream drafts) only.
