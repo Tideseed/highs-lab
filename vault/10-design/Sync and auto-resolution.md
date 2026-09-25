@@ -1,0 +1,16 @@
+# Sync and auto-resolution
+
+`scripts/highs-sync`, daily (user timer). Steps:
+1. Fetch upstream `latest` and `master`; exit silently when nothing changed.
+2. Rebase every `lab/*` branch listed in `bench/queue.txt` onto `upstream/latest` (git rerere on). On a conflict,
+   a headless `claude -p` session resolves it in a throwaway worktree: keep upstream's new behaviour, re-apply the
+   branch's intent (branch README section + queue entry); if upstream now does the same thing, drop the change and
+   say so. The resolution is accepted only if the capped build, `ctest`, and the branch's own check (identical-search
+   or smoke) pass. Otherwise the branch keeps its old base, is marked `needs-rebase`, and sits out this cycle; 3
+   failures in a row → human decision.
+3. Regenerate `dev-tideseed` = `latest` + passing branches in queue order.
+4. Build arms (capped). **Memory rule (Berk, 2026-09-25):** build only with >30 GB free. If memory is short and both
+   local agents are idle, the sync may stop them for the build and restart + verify them afterwards; if either is
+   busy, skip the build and notify #agentlog.
+5. `ctest` on `dev-tideseed`; smoke benchmark of main/dev/dev-tideseed.
+6. Report `bench/results/sync-<date>.md`; post only on failure, unresolved conflict, regression or notable upstream shift.

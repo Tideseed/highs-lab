@@ -1,0 +1,49 @@
+{
+ "started": "2026-09-25T11:01:12+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "main",
+  "dev",
+  "--set",
+  "bench/sets/s100.txt",
+  "--seeds",
+  "0",
+  "--time-limit",
+  "60",
+  "--cores",
+  "5,6",
+  "--out",
+  "bench/results/raw/2026-09-25-s100"
+ ],
+ "cores": [
+  5,
+  6
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "main": {
+   "binary": "/home/coulson/git_repositories/highs-builds/main/bin/highs",
+   "sha": "9a208aa4a5371fab",
+   "options": {}
+  },
+  "dev": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dev/bin/highs",
+   "sha": "463bf8b913acdc9f",
+   "options": {}
+  }
+ },
+ "n_jobs": 2,
+ "loadavg": [
+  6.02197265625,
+  2.73681640625,
+  1.27978515625
+ ],
+ "meminfo_available_kb": 116058284,
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ }
+}

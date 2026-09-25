@@ -1,0 +1,4 @@
+bench/results/raw/*/work/
+__pycache__/
+*.perf.data*
+.obsidian/workspace*.json

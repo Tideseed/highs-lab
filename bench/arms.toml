@@ -1,0 +1,9 @@
+# Benchmark arms. Paths are build directories from scripts/build-arm.sh.
+[main]
+binary = "~/git_repositories/highs-builds/main/bin/highs"
+
+[dev]
+binary = "~/git_repositories/highs-builds/dev/bin/highs"
+
+[dev-tideseed]
+binary = "~/git_repositories/highs-builds/dev-tideseed/bin/highs"
