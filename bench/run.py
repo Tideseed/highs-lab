@@ -157,7 +157,38 @@ def parse_log(text: str) -> dict:
     return out
 
 
-def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Path) -> dict:
+ADMIT_LOCK = threading.Lock()
+
+
+def mem_available_gb() -> float:
+    return int(re.search(r"MemAvailable:\s+(\d+)", Path("/proc/meminfo").read_text())[1]) / 1048576
+
+
+def cap_gb(mem_cap: str) -> float:
+    m = re.fullmatch(r"(\d+(?:\.\d+)?)([KMGT]?)", mem_cap.strip().upper())
+    v, u = float(m.group(1)), m.group(2)
+    return v * {"": 1 / 2**30, "K": 1 / 2**20, "M": 1 / 1024, "G": 1, "T": 1024}[u]
+
+
+def admit(job: dict, need_gb: float, reserve_gb: float) -> None:
+    """Block until launching one more run keeps MemAvailable >= reserve + the run's cap (memwatch floors: soft
+    12 GiB sheds the interactive tier, hard 7 GiB sheds Agent Fast). Serialised so check and launch are atomic."""
+    waited = False
+    while True:
+        avail = mem_available_gb()
+        if avail >= reserve_gb + need_gb:
+            if waited:
+                print(f"admit: {job['arm']} {job['instance']} after throttling (MemAvailable {avail:.1f} GB)", flush=True)
+            return
+        if not waited:
+            print(f"throttling: MemAvailable {avail:.1f} GB < reserve {reserve_gb} + cap {need_gb:.1f} GB; "
+                  f"holding {job['arm']} {job['instance']}", flush=True)
+            waited = True
+        time.sleep(5)
+
+
+def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Path,
+            reserve_gb: float = 20.0) -> dict:
     res_path = out_dir / f"{job['arm']}__{job['instance']}__s{job['seed']}.json"
     if res_path.exists():
         old = json.loads(res_path.read_text())
@@ -184,21 +215,33 @@ def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Pat
         cmd = ["systemd-run", "--user", "--scope", "--quiet", "-p", f"MemoryMax={mem_cap}", "-p", "MemorySwapMax=0",
                "taskset", "-c", str(core), job["binary"], "--model_file", str(job["path"]),
                "--options_file", str(work / "options.txt"), "--solution_file", str(sol)]
-        t0 = time.time()
+        cmd = cmd[:1] + ["-p", "MemoryAccounting=yes"] + cmd[1:]
+        cmd = [c for c in cmd]
+        cmd.insert(cmd.index("taskset"), "/usr/bin/time")
+        cmd.insert(cmd.index("taskset"), "-f")
+        cmd.insert(cmd.index("taskset"), "PEAKRSS_KB=%M")
+        with ADMIT_LOCK:
+            admit(job, cap_gb(mem_cap), reserve_gb)
+            t0 = time.time()
+            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            # give the run a moment to allocate before the next admission check
+            time.sleep(1.0)
         # A hard wall-clock guard far above the limit: a solver that ignores time_limit is itself a finding (overrun),
         # but the harness must not hang forever.
         guard = job["time_limit"] * 4 + 600
         try:
-            p = subprocess.run(cmd, capture_output=True, text=True, timeout=guard)
-            rc, timed_out = p.returncode, False
-            stdout = p.stdout
-        except subprocess.TimeoutExpired as e:
+            stdout, stderr = proc.communicate(timeout=max(1.0, guard - (time.time() - t0)))
+            rc, timed_out = proc.returncode, False
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            stdout, stderr = proc.communicate()
             rc, timed_out = None, True
-            stdout = (e.stdout or b"").decode() if isinstance(e.stdout, bytes) else (e.stdout or "")
+        m_rss = re.search(r"PEAKRSS_KB=(\d+)", stderr or "")
         wall = time.time() - t0
         (work / "stdout.txt").write_text(stdout or "")
         rec = {k: job[k] for k in ("arm", "instance", "seed", "time_limit", "binary_sha", "model_sha")}
-        rec.update(serving_units=serving_state(), loadavg=os.getloadavg())
+        rec.update(serving_units=serving_state(), loadavg=os.getloadavg(),
+                   peak_rss_gb=round(int(m_rss.group(1)) / 1048576, 3) if m_rss else None)
         rec.update(core=core, wall=wall, overrun=wall - job["time_limit"], rc=rc, harness_timeout=timed_out,
                    options=job["options"], has_solution=sol.exists())
         rec.update(parse_log(stdout or ""))
@@ -219,6 +262,8 @@ def main() -> None:
     ap.add_argument("--time-limit", type=float, default=300)
     ap.add_argument("--cores", default="5-9,15-19", help="Cortex-X925 cores on the GB10 by default")
     ap.add_argument("--mem-cap", default="8G")
+    ap.add_argument("--mem-reserve-gb", type=float, default=20.0,
+                    help="keep at least this much MemAvailable (memwatch soft floor is 12 GiB)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--shuffle-seed", type=int, default=12345)
     a = ap.parse_args()
@@ -250,7 +295,15 @@ def main() -> None:
                                  options=arms[arm].get("options", {})))
 
     cores = parse_cores(a.cores)
+    # static budget: the caps of all concurrent runs must fit into MemAvailable minus the reserve
+    budget = mem_available_gb() - a.mem_reserve_gb
+    lanes = max(1, min(len(cores), int(budget // cap_gb(a.mem_cap)))) if budget > 0 else 1
+    if lanes < len(cores):
+        print(f"memory budget: MemAvailable-reserve = {budget:.1f} GB, cap {a.mem_cap} -> {lanes} lanes "
+              f"instead of {len(cores)}", flush=True)
+        cores = cores[:lanes]
     meta = dict(started=time.strftime("%Y-%m-%dT%H:%M:%S%z"), argv=sys.argv, cores=cores, mem_cap=a.mem_cap,
+                mem_reserve_gb=a.mem_reserve_gb,
                 arms={k: {"binary": v["binary"], "sha": v["sha"], "options": v.get("options", {}),
                           "build": v.get("build", {})}
                       for k, v in arms.items()},
@@ -265,7 +318,7 @@ def main() -> None:
     done = 0
     lock = threading.Lock()
     with cf.ThreadPoolExecutor(max_workers=len(cores)) as ex:
-        futs = [ex.submit(run_job, j, pool, a.mem_cap, out) for j in jobs]
+        futs = [ex.submit(run_job, j, pool, a.mem_cap, out, a.mem_reserve_gb) for j in jobs]
         for f in cf.as_completed(futs):
             r = f.result()
             with lock:

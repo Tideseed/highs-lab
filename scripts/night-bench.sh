@@ -72,7 +72,7 @@ echo "budget: $NI instances x $NA arms x $NS seeds = $((NI*NA*NS)) jobs, <= ${TL
 # hard stop at 06:30 so that Agent Think is back well before the morning (the runner is resumable)
 DEADLINE=$(( $(date -d '06:30' +%s) - $(date +%s) )); [ $DEADLINE -lt 0 ] && DEADLINE=$(( DEADLINE + 86400 ))
 timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms $ARMS --set bench/sets/miplib-bench-all.txt \
-  --seeds $SEEDS --time-limit "$TL" --cores 5-9,15-19 --out "$OUT" > "$OUT.run.log" 2>&1
+  --seeds $SEEDS --time-limit "$TL" --cores 5-9,15-19 --mem-reserve-gb 20 --out "$OUT" > "$OUT.run.log" 2>&1
 python3 bench/analyze.py "$OUT" --control dev --md bench/results/$RUN.md > /dev/null 2>&1
 python3 bench/hard.py "$OUT" --control dev --md bench/results/$RUN-hard.md > /dev/null 2>&1
 
