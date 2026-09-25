@@ -1,0 +1,66 @@
+{
+ "arm": "dev",
+ "instance": "cbs-cta",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "4f688482bbf0702f",
+ "core": 16,
+ "wall": 41.63423562049866,
+ "overrun": -78.36576437950134,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.2,
+   0.0,
+   Infinity
+  ],
+  [
+   0.3,
+   0.0,
+   10364883.20822
+  ],
+  [
+   7.3,
+   0.0,
+   256509.581477
+  ],
+  [
+   7.8,
+   0.0,
+   256509.581477
+  ],
+  [
+   7.9,
+   0.0,
+   256509.581477
+  ],
+  [
+   30.0,
+   0.0,
+   256509.581477
+  ],
+  [
+   41.3,
+   0.0,
+   0.0
+  ],
+  [
+   41.3,
+   0.0,
+   0.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 40.9551911354,
+ "solver_time": 41.29,
+ "presolve_time": 0.25,
+ "nodes": 1735,
+ "lp_iterations": 137203
+}

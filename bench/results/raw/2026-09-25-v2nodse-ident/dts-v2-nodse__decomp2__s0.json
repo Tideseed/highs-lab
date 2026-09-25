@@ -1,0 +1,46 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "decomp2",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "5403484be4c27538",
+ "core": 5,
+ "wall": 1.9827399253845215,
+ "overrun": -118.01726007461548,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.2,
+   -Infinity,
+   -135.0
+  ],
+  [
+   0.3,
+   -160.0,
+   -135.0
+  ],
+  [
+   1.8,
+   -160.0,
+   -160.0
+  ],
+  [
+   1.8,
+   -160.0,
+   -160.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -160.0,
+ "dual_bound": -160.0,
+ "gap": "0%",
+ "pd_integral": 0.295388036304,
+ "solver_time": 1.83,
+ "presolve_time": 0.19,
+ "nodes": 1,
+ "lp_iterations": 8254
+}

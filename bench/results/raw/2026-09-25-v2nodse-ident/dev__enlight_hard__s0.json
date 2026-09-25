@@ -1,0 +1,51 @@
+{
+ "arm": "dev",
+ "instance": "enlight_hard",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "942168c2126a2a91",
+ "core": 15,
+ "wall": 9.63269829750061,
+ "overrun": -110.36730170249939,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.0,
+   0.0,
+   Infinity
+  ],
+  [
+   0.0,
+   15.5,
+   Infinity
+  ],
+  [
+   5.0,
+   30.40411866,
+   Infinity
+  ],
+  [
+   9.6,
+   33.07698353,
+   37.0
+  ],
+  [
+   9.6,
+   37.0,
+   37.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 37.0,
+ "dual_bound": 37.0,
+ "gap": "0%",
+ "pd_integral": 4.4162271895e-05,
+ "solver_time": 9.59,
+ "presolve_time": 0.03,
+ "nodes": 3758,
+ "lp_iterations": 130333
+}

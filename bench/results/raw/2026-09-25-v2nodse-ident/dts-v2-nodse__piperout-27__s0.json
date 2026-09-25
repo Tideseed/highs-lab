@@ -1,0 +1,41 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "piperout-27",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "0dde1d272f3d2ea0",
+ "core": 7,
+ "wall": 51.25526690483093,
+ "overrun": -68.74473309516907,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   50.7,
+   -122943.0,
+   Infinity
+  ],
+  [
+   51.0,
+   8043.801802,
+   8124.0
+  ],
+  [
+   51.1,
+   8124.0,
+   8124.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 8124.0,
+ "dual_bound": 8124.0,
+ "gap": "0%",
+ "pd_integral": 0.000621296969955,
+ "solver_time": 51.05,
+ "presolve_time": 50.66,
+ "nodes": 1,
+ "lp_iterations": 5912
+}

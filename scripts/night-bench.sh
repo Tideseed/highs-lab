@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Overnight full benchmark: all MIPLIB 2017 benchmark instances, arms main/dev/dev-tideseed, pinned to the X925 cores.
-# Stops ONLY Agent Think's server (llama-qwen38) for the window and pauses its one night job; Agent Fast stays up.
+# Clean acceptance window (Berk, 2026-09-25): stops BOTH local LLM servers (Agent Think llama-qwen38, Agent Fast
+# ornith-vllm) and pauses the jobs that would call them overnight (tr-power-forecast-think, the two ornith canaries).
 # Everything it stops is restored and verified at the end, and the hold entries expire on their own.
 #   night-bench.sh <run-id> [time-limit=300] [seeds="0"]
 set -uo pipefail
@@ -8,7 +9,7 @@ RUN=$1; TL=${2:-300}; SEEDS=${3:-0}
 LAB=~/git_repositories/highs-lab
 OUT=$LAB/bench/results/raw/$RUN
 LOG=$LAB/bench/results/raw/$RUN.night.log
-THINK_JOB=15e9efd9b30b          # tr-power-forecast-think (hourly 00-05)
+JOBS="15e9efd9b30b f663edfdcbff 36f278b0ee63"   # tr-power-forecast-think, local-model-canary, canary-hello
 UNTIL=$(date -d 'tomorrow 07:30' +%Y-%m-%dT07:30:00%:z 2>/dev/null || date -d '07:30' +%Y-%m-%dT07:30:00%:z)
 mkdir -p "$(dirname "$LOG")"
 exec >>"$LOG" 2>&1
@@ -21,28 +22,33 @@ post() {
 }
 
 restore() {
-  systemctl --user start llama-qwen38
-  for i in $(seq 1 60); do
-    [ "$(systemctl --user is-active llama-qwen38)" = active ] && curl -sf -m 5 http://127.0.0.1:8092/health >/dev/null && break
+  systemctl --user start llama-qwen38 ornith-vllm
+  for i in $(seq 1 80); do
+    a=$(systemctl --user is-active llama-qwen38); b=$(systemctl --user is-active ornith-vllm)
+    curl -sf -m 5 http://127.0.0.1:8092/health >/dev/null && curl -sf -m 5 http://127.0.0.1:8094/v1/models >/dev/null \
+      && [ "$a" = active ] && [ "$b" = active ] && break
     sleep 15
   done
-  hermes cron resume $THINK_JOB >/dev/null 2>&1
-  sed -i "/^$THINK_JOB .*highs-lab night/d" ~/.config/cronrestore/hold-jobs
-  sed -i '/^llama-qwen38 .*$/d' ~/.config/cronrestore/hold-units
-  echo "restore: llama-qwen38 $(systemctl --user is-active llama-qwen38), job $THINK_JOB resumed"
+  for j in $JOBS; do hermes cron resume $j >/dev/null 2>&1; sed -i "/^$j .*highs-lab night/d" ~/.config/cronrestore/hold-jobs; done
+  sed -i '/^llama-qwen38 .*$/d; /^ornith-vllm .*$/d' ~/.config/cronrestore/hold-units
+  echo "restore: llama-qwen38 $(systemctl --user is-active llama-qwen38) (health $(curl -sf -m5 -o /dev/null -w %{http_code} http://127.0.0.1:8092/health)), ornith-vllm $(systemctl --user is-active ornith-vllm) (models $(curl -sf -m5 -o /dev/null -w %{http_code} http://127.0.0.1:8094/v1/models)); jobs resumed: $JOBS"
 }
 trap restore EXIT
 
-# 1. hold + pause + stop (only Agent Think)
-echo "llama-qwen38 until $UNTIL" >> ~/.config/cronrestore/hold-units
-echo "$THINK_JOB  tr-power-forecast-think  # highs-lab night bench $RUN, released by the script" >> ~/.config/cronrestore/hold-jobs
-hermes cron pause $THINK_JOB >/dev/null 2>&1
+# 1. hold + pause + stop (both local servers)
+printf 'llama-qwen38 until %s\nornith-vllm until %s\n' "$UNTIL" "$UNTIL" >> ~/.config/cronrestore/hold-units
+for j in $JOBS; do
+  echo "$j  # highs-lab night bench $RUN, released by the script" >> ~/.config/cronrestore/hold-jobs
+  hermes cron pause $j >/dev/null 2>&1
+done
 if [ "$(deep-status 2>/dev/null | grep -c IDLE)" = 0 ]; then
   echo "Agent Think busy at start; waiting up to 30 min"
   for i in $(seq 1 60); do deep-status 2>/dev/null | grep -q IDLE && break; sleep 30; done
 fi
-systemctl --user stop llama-qwen38
-sleep 10
+post "HiGHS night bench $RUN starting: Agent Fast and Agent Think servers stopped until ~06:30 (clean benchmark window, Berk OK). Canaries and tr-power-forecast-think paused for the window."
+systemctl --user stop llama-qwen38 ornith-vllm
+sleep 15
+echo "stopped: $(systemctl --user is-active llama-qwen38) $(systemctl --user is-active ornith-vllm); MemAvailable $(awk '/MemAvailable/{print int($2/1048576)}' /proc/meminfo) GB"
 
 # 2. run
 cd $LAB
@@ -59,5 +65,5 @@ restore; trap - EXIT
 SUMMARY=$(grep -E '^\| (stable|dts-v2|dts-v2-nodse) ' bench/results/$RUN.md | cut -c1-160)
 post "HiGHS night bench $RUN done (tl=${TL}s, seeds $SEEDS). vs dev:
 $SUMMARY
-Agent Think restored: $(systemctl --user is-active llama-qwen38)."
+Agents restored: Think $(systemctl --user is-active llama-qwen38), Fast $(systemctl --user is-active ornith-vllm)."
 echo "== $(date -Is) done"

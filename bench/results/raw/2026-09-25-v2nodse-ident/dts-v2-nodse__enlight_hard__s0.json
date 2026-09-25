@@ -1,0 +1,51 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "enlight_hard",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "942168c2126a2a91",
+ "core": 9,
+ "wall": 9.63583517074585,
+ "overrun": -110.36416482925415,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.0,
+   0.0,
+   Infinity
+  ],
+  [
+   0.0,
+   15.5,
+   Infinity
+  ],
+  [
+   5.0,
+   30.40411866,
+   Infinity
+  ],
+  [
+   9.6,
+   33.07698353,
+   37.0
+  ],
+  [
+   9.6,
+   37.0,
+   37.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 37.0,
+ "dual_bound": 37.0,
+ "gap": "0%",
+ "pd_integral": 4.9218055741e-05,
+ "solver_time": 9.58,
+ "presolve_time": 0.02,
+ "nodes": 3758,
+ "lp_iterations": 130333
+}

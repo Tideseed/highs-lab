@@ -1,0 +1,46 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "hypothyroid-k1",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "489ffe662de76b8d",
+ "core": 16,
+ "wall": 9.689511775970459,
+ "overrun": -110.31048822402954,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   2.4,
+   -Infinity,
+   -1405.0
+  ],
+  [
+   4.6,
+   -2902.852586,
+   -2692.0
+  ],
+  [
+   9.4,
+   -2851.0,
+   -2851.0
+  ],
+  [
+   9.4,
+   -2851.0,
+   -2851.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -2851.0,
+ "dual_bound": -2851.0,
+ "gap": "0%",
+ "pd_integral": 2.67171807666,
+ "solver_time": 9.41,
+ "presolve_time": 1.41,
+ "nodes": 1,
+ "lp_iterations": 2983
+}

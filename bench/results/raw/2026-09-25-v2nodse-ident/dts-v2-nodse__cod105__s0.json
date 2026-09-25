@@ -1,0 +1,71 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "cod105",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "f0007f47d356d70d",
+ "core": 18,
+ "wall": 57.319608211517334,
+ "overrun": -62.680391788482666,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.5,
+   -Infinity,
+   0.0
+  ],
+  [
+   0.5,
+   -Infinity,
+   -12.0
+  ],
+  [
+   6.2,
+   -18.28571429,
+   -12.0
+  ],
+  [
+   14.8,
+   -18.28571429,
+   -12.0
+  ],
+  [
+   32.2,
+   -18.28571429,
+   -12.0
+  ],
+  [
+   42.4,
+   -18.28571429,
+   -12.0
+  ],
+  [
+   47.5,
+   -16.21738478,
+   -12.0
+  ],
+  [
+   52.5,
+   -16.21738478,
+   -12.0
+  ],
+  [
+   57.2,
+   -12.0,
+   -12.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -12.0,
+ "dual_bound": -12.0,
+ "gap": "0%",
+ "pd_integral": 47.5555412961,
+ "solver_time": 57.18,
+ "presolve_time": 1.04,
+ "nodes": 245,
+ "lp_iterations": 178488
+}
