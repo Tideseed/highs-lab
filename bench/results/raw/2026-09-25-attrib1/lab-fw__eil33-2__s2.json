@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "eil33-2",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 7,
+ "wall": 64.57972240447998,
+ "overrun": -55.42027759552002,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 934.007916,
+ "dual_bound": 934.007916,
+ "gap": "0%",
+ "pd_integral": 10.4396760171,
+ "solver_time": 64.49,
+ "presolve_time": 7.2,
+ "nodes": 6413,
+ "lp_iterations": 172320
+}

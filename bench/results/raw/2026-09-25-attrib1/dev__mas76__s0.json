@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "mas76",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 8,
+ "wall": 80.87356615066528,
+ "overrun": -39.12643384933472,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 40005.054142,
+ "dual_bound": 40001.0618287,
+ "gap": "0.00998%",
+ "pd_integral": 1.26738408165,
+ "solver_time": 80.82,
+ "presolve_time": 0.56,
+ "nodes": 301836,
+ "lp_iterations": 2052380
+}

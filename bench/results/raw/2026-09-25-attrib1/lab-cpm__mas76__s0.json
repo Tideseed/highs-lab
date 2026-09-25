@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "mas76",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 16,
+ "wall": 76.73749685287476,
+ "overrun": -43.262503147125244,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 40005.054142,
+ "dual_bound": 40001.0618287,
+ "gap": "0.00998%",
+ "pd_integral": 1.20185742742,
+ "solver_time": 76.68,
+ "presolve_time": 0.53,
+ "nodes": 301836,
+ "lp_iterations": 2052380
+}

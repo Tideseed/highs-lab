@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "mas76",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 7,
+ "wall": 78.46127033233643,
+ "overrun": -41.538729667663574,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 40005.0541416,
+ "dual_bound": 40001.0557425,
+ "gap": "0.00999%",
+ "pd_integral": 1.24026037034,
+ "solver_time": 78.39,
+ "presolve_time": 0.58,
+ "nodes": 290397,
+ "lp_iterations": 2016674
+}

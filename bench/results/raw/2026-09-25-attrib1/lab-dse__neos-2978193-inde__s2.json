@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "neos-2978193-inde",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 7,
+ "wall": 63.25328063964844,
+ "overrun": -56.74671936035156,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -2.388061686,
+ "dual_bound": -2.388061686,
+ "gap": "0%",
+ "pd_integral": 3.37739641136,
+ "solver_time": 63.13,
+ "presolve_time": 0.94,
+ "nodes": 5383,
+ "lp_iterations": 369628
+}

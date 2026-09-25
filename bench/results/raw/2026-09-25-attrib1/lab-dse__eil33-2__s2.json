@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "eil33-2",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 19,
+ "wall": 62.55596113204956,
+ "overrun": -57.44403886795044,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 934.007916,
+ "dual_bound": 934.007916,
+ "gap": "0%",
+ "pd_integral": 10.1235576909,
+ "solver_time": 62.45,
+ "presolve_time": 7.14,
+ "nodes": 6633,
+ "lp_iterations": 185639
+}

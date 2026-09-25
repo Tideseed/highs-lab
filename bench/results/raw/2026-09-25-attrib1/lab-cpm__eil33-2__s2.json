@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "eil33-2",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 5,
+ "wall": 68.80493593215942,
+ "overrun": -51.195064067840576,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 934.007916,
+ "dual_bound": 934.007916,
+ "gap": "0%",
+ "pd_integral": 10.9388955373,
+ "solver_time": 68.71,
+ "presolve_time": 7.25,
+ "nodes": 6413,
+ "lp_iterations": 172320
+}

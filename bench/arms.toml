@@ -22,3 +22,6 @@ binary = "~/git_repositories/highs-builds/lab-sym/bin/highs"
 
 [lab-dse]
 binary = "~/git_repositories/highs-builds/lab-dse/bin/highs"
+
+[dev-tideseed-nodse]
+binary = "~/git_repositories/highs-builds/dev-tideseed-nodse/bin/highs"

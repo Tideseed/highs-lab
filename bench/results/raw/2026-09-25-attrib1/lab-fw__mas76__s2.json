@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "mas76",
+ "seed": 2,
+ "time_limit": 120.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 18,
+ "wall": 76.80077385902405,
+ "overrun": -43.19922614097595,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 40005.054142,
+ "dual_bound": 40001.0541959,
+ "gap": "0.01%",
+ "pd_integral": 1.20660458254,
+ "solver_time": 76.75,
+ "presolve_time": 0.53,
+ "nodes": 300585,
+ "lp_iterations": 2113776
+}
