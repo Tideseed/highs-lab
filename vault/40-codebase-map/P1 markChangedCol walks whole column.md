@@ -1,11 +1,11 @@
 ---
 id: P1
 area: presolve
-status: profiled
+status: merged
 gate: identical
 effort: 0.5-1 d
 verified_in_source: true
-profiled_share: 17.5% toguru
+profiled_share: 21% toguru (presolve 12.5 → 6.2 s)
 branch: null
 ---
 # P1: markChangedCol walks whole column
@@ -21,3 +21,4 @@ Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.
+- 2026-09-25 lab/presolve-changed-col 5816d69698: exact counter; identical search 28/28 (in v2-nodse).

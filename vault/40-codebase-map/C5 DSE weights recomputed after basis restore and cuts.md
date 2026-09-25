@@ -1,7 +1,7 @@
 ---
 id: C5
 area: simplex
-status: gated-quick
+status: merged (decision pending D-004 rule 2)
 gate: full
 effort: 1 d
 verified_in_source: true

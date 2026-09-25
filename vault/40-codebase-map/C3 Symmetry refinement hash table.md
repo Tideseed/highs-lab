@@ -1,7 +1,7 @@
 ---
 id: C3
 area: presolve
-status: gated-quick
+status: merged
 gate: identical
 effort: 2 h
 verified_in_source: true

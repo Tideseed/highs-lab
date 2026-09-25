@@ -1,11 +1,11 @@
 ---
 id: O1
 area: options
-status: candidate
+status: rejected
 gate: full
 effort: machine hours
 verified_in_source: false
-profiled_share: null
+profiled_share: n/a
 branch: null
 ---
 # O1: Options off by default
@@ -21,3 +21,4 @@ Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.
+- 2026-09-25 hard-set sweep: ZI/shift/effort 0.1/0.2 all ΔPDGI ≥ 0 (CIs cross 0). See [[2026-09-25 Option sweep and v2 identical]].

@@ -1,7 +1,7 @@
 ---
 id: C7
 area: presolve
-status: branch
+status: merged
 gate: identical
 effort: 15 min
 verified_in_source: true

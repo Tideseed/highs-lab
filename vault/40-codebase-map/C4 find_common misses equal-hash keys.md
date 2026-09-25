@@ -1,7 +1,7 @@
 ---
 id: C4
 area: util
-status: branch
+status: merged
 gate: full
 effort: 1 h
 verified_in_source: true

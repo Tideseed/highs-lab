@@ -1,7 +1,7 @@
 ---
 id: C1
 area: mip
-status: gated-quick
+status: merged
 gate: identical
 effort: done (branch)
 verified_in_source: true
@@ -22,3 +22,4 @@ Measured share, branch and status: see frontmatter (kept current there only).
 ## Log
 - 2026-09-25 filed from the codebase sweep.
 - 2026-09-25 lab/clique-partition-marking 6ad70a8ec3: s100 time_limit=60: 172 s wall, 0 nodes, no solution → 62 s wall, feasible, gap 57 %. Quick screen (21 instances): identical search, time neutral.
+- 2026-09-25 query-count fix 39367bfe61 (same-column rule), cost 64; shadow-checked.
