@@ -1,0 +1,62 @@
+{
+ "started": "2026-09-25T14:48:32+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "dev-tideseed",
+  "dts-native",
+  "dts-pgo",
+  "--set",
+  "bench/sets/small51.txt",
+  "--seeds",
+  "0",
+  "1",
+  "--time-limit",
+  "120",
+  "--out",
+  "bench/results/raw/2026-09-25-buildflags"
+ ],
+ "cores": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "dev-tideseed": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dev-tideseed/bin/highs",
+   "sha": "9053b08f6f7eddeb",
+   "options": {}
+  },
+  "dts-native": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-native/bin/highs",
+   "sha": "cc44551f469336c0",
+   "options": {}
+  },
+  "dts-pgo": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-pgo/bin/highs",
+   "sha": "7d0f6baaa882a632",
+   "options": {}
+  }
+ },
+ "n_jobs": 198,
+ "loadavg": [
+  9.62890625,
+  14.58203125,
+  16.4833984375
+ ],
+ "meminfo_available_kb": 61017932,
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ }
+}

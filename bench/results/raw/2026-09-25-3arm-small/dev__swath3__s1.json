@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "swath3",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 5,
+ "wall": 109.24469447135925,
+ "overrun": -10.755305528640747,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 397.76134365,
+ "dual_bound": 397.729666521,
+ "gap": "0.00796%",
+ "pd_integral": 10.4068943458,
+ "solver_time": 108.92,
+ "presolve_time": 7.2,
+ "nodes": 11960,
+ "lp_iterations": 314362
+}

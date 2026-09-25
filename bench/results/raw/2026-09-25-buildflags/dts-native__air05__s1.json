@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "air05",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 15,
+ "wall": 14.95464015007019,
+ "overrun": -105.04535984992981,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 26374.0,
+ "dual_bound": 26372.0,
+ "gap": "0.00758%",
+ "pd_integral": 2.62021168408,
+ "solver_time": 14.85,
+ "presolve_time": 0.74,
+ "nodes": 167,
+ "lp_iterations": 61968
+}

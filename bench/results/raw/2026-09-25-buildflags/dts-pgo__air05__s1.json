@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "air05",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 9,
+ "wall": 15.019425630569458,
+ "overrun": -104.98057436943054,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 26374.0,
+ "dual_bound": 26372.0,
+ "gap": "0.00758%",
+ "pd_integral": 2.6552822275,
+ "solver_time": 14.91,
+ "presolve_time": 0.77,
+ "nodes": 167,
+ "lp_iterations": 61968
+}

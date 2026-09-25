@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "snp-02-004-104",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 15,
+ "wall": 61.695778608322144,
+ "overrun": -58.304221391677856,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 586812297.217,
+ "dual_bound": 586783732.23,
+ "gap": "0.00487%",
+ "pd_integral": 0.139595993451,
+ "solver_time": 60.57,
+ "presolve_time": 1.8,
+ "nodes": 1,
+ "lp_iterations": 64877
+}

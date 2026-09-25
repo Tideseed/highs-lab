@@ -1,0 +1,23 @@
+{
+ "arm": "stable",
+ "instance": "uccase12",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3bd6e7be527f0518",
+ "core": 8,
+ "wall": 27.313149213790894,
+ "overrun": -92.6868507862091,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 11507.4050616,
+ "dual_bound": 11507.3689602,
+ "gap": "0.000314%",
+ "pd_integral": 0.820747175353,
+ "solver_time": 26.15,
+ "presolve_time": 1.39,
+ "nodes": 1,
+ "lp_iterations": 38538
+}

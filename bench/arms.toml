@@ -42,3 +42,20 @@ binary = "~/git_repositories/highs-builds/dts-v2/bin/highs"
 
 [dts-v2-nodse]
 binary = "~/git_repositories/highs-builds/dts-v2-nodse/bin/highs"
+
+# ---- option-sweep arms (night 2 candidates), all on dev-tideseed v2
+[v2-zi]
+binary = "~/git_repositories/highs-builds/dts-v2/bin/highs"
+options = { mip_heuristic_run_zi_round = true }
+
+[v2-shift]
+binary = "~/git_repositories/highs-builds/dts-v2/bin/highs"
+options = { mip_heuristic_run_shifting = true }
+
+[v2-heur10]
+binary = "~/git_repositories/highs-builds/dts-v2/bin/highs"
+options = { mip_heuristic_effort = 0.1 }
+
+[v2-heur20]
+binary = "~/git_repositories/highs-builds/dts-v2/bin/highs"
+options = { mip_heuristic_effort = 0.2 }

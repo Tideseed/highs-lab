@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "beasleyC3",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 16,
+ "wall": 6.974072217941284,
+ "overrun": -113.02592778205872,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 754.0,
+ "dual_bound": 754.0,
+ "gap": "0%",
+ "pd_integral": 0.405491366269,
+ "solver_time": 6.91,
+ "presolve_time": 0.05,
+ "nodes": 507,
+ "lp_iterations": 65022
+}

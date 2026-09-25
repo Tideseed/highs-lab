@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "air05",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 8,
+ "wall": 15.153542280197144,
+ "overrun": -104.84645771980286,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 26374.0,
+ "dual_bound": 26372.0,
+ "gap": "0.00758%",
+ "pd_integral": 2.64933034018,
+ "solver_time": 15.04,
+ "presolve_time": 0.79,
+ "nodes": 167,
+ "lp_iterations": 61968
+}
