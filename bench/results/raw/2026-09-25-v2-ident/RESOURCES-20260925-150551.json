@@ -1,0 +1,55 @@
+{
+ "started": "2026-09-25T15:05:51+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "dev-tideseed",
+  "dts-v2",
+  "--set",
+  "bench/sets/small51.txt",
+  "--seeds",
+  "0",
+  "--time-limit",
+  "120",
+  "--out",
+  "bench/results/raw/2026-09-25-v2-ident"
+ ],
+ "cores": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "dev-tideseed": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dev-tideseed/bin/highs",
+   "sha": "9053b08f6f7eddeb",
+   "options": {}
+  },
+  "dts-v2": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dts-v2/bin/highs",
+   "sha": "3e5a1f5929343c39",
+   "options": {}
+  }
+ },
+ "n_jobs": 66,
+ "loadavg": [
+  4.203125,
+  9.3759765625,
+  12.49755859375
+ ],
+ "meminfo_available_kb": 60546824,
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "traininstance6",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 6,
+ "wall": 120.09130048751831,
+ "overrun": 0.09130048751831055,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 29020.0,
+ "dual_bound": 1.00000000023,
+ "gap": "100%",
+ "pd_integral": 118.865512399,
+ "solver_time": 120.0,
+ "presolve_time": 1.68,
+ "nodes": 28357,
+ "lp_iterations": 678619
+}

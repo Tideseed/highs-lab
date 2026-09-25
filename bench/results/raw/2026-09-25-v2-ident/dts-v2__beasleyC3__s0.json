@@ -1,0 +1,23 @@
+{
+ "arm": "dts-v2",
+ "instance": "beasleyC3",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 7,
+ "wall": 7.131355047225952,
+ "overrun": -112.86864495277405,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 754.0,
+ "dual_bound": 754.0,
+ "gap": "0%",
+ "pd_integral": 0.41672027077,
+ "solver_time": 7.04,
+ "presolve_time": 0.06,
+ "nodes": 507,
+ "lp_iterations": 65022
+}

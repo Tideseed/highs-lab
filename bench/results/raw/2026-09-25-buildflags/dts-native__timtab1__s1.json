@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "timtab1",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 18,
+ "wall": 26.280787467956543,
+ "overrun": -93.71921253204346,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 764772.0,
+ "dual_bound": 764699.077925,
+ "gap": "0.00954%",
+ "pd_integral": 3.96139846706,
+ "solver_time": 26.22,
+ "presolve_time": 0.11,
+ "nodes": 10115,
+ "lp_iterations": 465219
+}

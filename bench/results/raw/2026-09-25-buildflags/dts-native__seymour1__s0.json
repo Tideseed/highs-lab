@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "seymour1",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 18,
+ "wall": 39.02903127670288,
+ "overrun": -80.97096872329712,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 410.763701395,
+ "dual_bound": 410.723708398,
+ "gap": "0.00974%",
+ "pd_integral": 0.647531788738,
+ "solver_time": 38.95,
+ "presolve_time": 0.04,
+ "nodes": 1367,
+ "lp_iterations": 246707
+}

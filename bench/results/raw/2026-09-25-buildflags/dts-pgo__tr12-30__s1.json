@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "tr12-30",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 8,
+ "wall": 120.05529737472534,
+ "overrun": 0.0552973747253418,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 130599.0,
+ "dual_bound": 130483.603069,
+ "gap": "0.0884%",
+ "pd_integral": 0.409604943783,
+ "solver_time": 120.0,
+ "presolve_time": 0.43,
+ "nodes": 17375,
+ "lp_iterations": 781213
+}

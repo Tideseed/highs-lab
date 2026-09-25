@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "traininstance6",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 16,
+ "wall": 120.08188891410828,
+ "overrun": 0.08188891410827637,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 28410.0,
+ "dual_bound": 2579.0,
+ "gap": "90.92%",
+ "pd_integral": 117.889059581,
+ "solver_time": 120.0,
+ "presolve_time": 2.02,
+ "nodes": 44212,
+ "lp_iterations": 937378
+}

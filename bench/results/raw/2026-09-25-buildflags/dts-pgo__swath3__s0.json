@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "swath3",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 7,
+ "wall": 98.6335723400116,
+ "overrun": -21.366427659988403,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 397.76134365,
+ "dual_bound": 397.72346145,
+ "gap": "0.00952%",
+ "pd_integral": 8.27200881517,
+ "solver_time": 98.53,
+ "presolve_time": 7.47,
+ "nodes": 12643,
+ "lp_iterations": 344388
+}

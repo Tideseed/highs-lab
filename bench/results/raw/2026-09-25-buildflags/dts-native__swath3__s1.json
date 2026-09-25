@@ -1,0 +1,23 @@
+{
+ "arm": "dts-native",
+ "instance": "swath3",
+ "seed": 1,
+ "time_limit": 120.0,
+ "binary_sha": "cc44551f469336c0",
+ "core": 5,
+ "wall": 108.86229681968689,
+ "overrun": -11.13770318031311,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 397.76134365,
+ "dual_bound": 397.737458933,
+ "gap": "0.006%",
+ "pd_integral": 11.1582581413,
+ "solver_time": 108.69,
+ "presolve_time": 9.03,
+ "nodes": 11390,
+ "lp_iterations": 339331
+}

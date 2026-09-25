@@ -1,0 +1,23 @@
+{
+ "arm": "dts-pgo",
+ "instance": "uccase12",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "7d0f6baaa882a632",
+ "core": 18,
+ "wall": 20.101747512817383,
+ "overrun": -99.89825248718262,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 11507.4050616,
+ "dual_bound": 11507.3689602,
+ "gap": "0.000314%",
+ "pd_integral": 0.445368213232,
+ "solver_time": 19.3,
+ "presolve_time": 1.21,
+ "nodes": 1,
+ "lp_iterations": 37856
+}
