@@ -13,3 +13,7 @@ already paused), all three in ~/.config/cronrestore/hold-jobs; paper-book script
 **Update 2026-09-25 ~15:00 (Berk): "don't add any issues yet".** No new issues anywhere (not ERGO-Code, not
 Tideseed/highs-lab). #1 and #2 had already been filed in highs-lab before this; left open, closing offered to Berk.
 Findings are recorded in the vault (40-codebase-map, 70-upstream drafts) only.
+
+**Update 2026-09-25 evening (Berk):** asked for a review of the day's work and the open issues, to be filed as an issue
+in highs-lab → #4 (review by a second Claude Code session). The "no new issues" rule above still applies to upstream
+and to findings; a review requested by Berk is not a finding.
