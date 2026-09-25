@@ -1,0 +1,70 @@
+{
+ "arm": "dev",
+ "instance": "rocII-5-11",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "34533c669e8eefc9",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  11.9423828125,
+  13.6806640625,
+  10.0830078125
+ ],
+ "core": 19,
+ "wall": 20.446326971054077,
+ "overrun": 0.44632697105407715,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   5.4,
+   -11.86756968,
+   Infinity
+  ],
+  [
+   5.4,
+   -11.86470501,
+   Infinity
+  ],
+  [
+   12.8,
+   -11.84024532,
+   -1.648913771
+  ],
+  [
+   12.8,
+   -11.84024532,
+   -1.648913771
+  ],
+  [
+   13.1,
+   -11.84024532,
+   -2.649648396
+  ],
+  [
+   19.0,
+   -11.84024532,
+   -2.649648396
+  ],
+  [
+   20.0,
+   -11.84003224,
+   -2.649648396
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": -2.64964839622,
+ "dual_bound": -11.8400322394,
+ "gap": "346.85%",
+ "pd_integral": 25.7800441363,
+ "solver_time": 20.01,
+ "presolve_time": 6.09,
+ "nodes": 163,
+ "lp_iterations": 60854
+}

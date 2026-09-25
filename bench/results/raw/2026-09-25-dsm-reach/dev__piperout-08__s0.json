@@ -1,0 +1,40 @@
+{
+ "arm": "dev",
+ "instance": "piperout-08",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "9000694c9a77ac82",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.037109375,
+  14.22998046875,
+  9.939453125
+ ],
+ "core": 18,
+ "wall": 20.906829357147217,
+ "overrun": 0.9068293571472168,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   20.6,
+   -Infinity,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.65,
+ "presolve_time": 20.65,
+ "nodes": 0,
+ "lp_iterations": 0
+}

@@ -1,0 +1,45 @@
+{
+ "arm": "lab-dsm",
+ "instance": "physiciansched3-3",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "fe0b759030c39325",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.12744140625,
+  14.28466796875,
+  9.93359375
+ ],
+ "core": 8,
+ "wall": 21.84658646583557,
+ "overrun": 1.8465864658355713,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   11.6,
+   716505.5,
+   Infinity
+  ],
+  [
+   20.0,
+   716505.5,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 716505.5,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.01,
+ "presolve_time": 10.74,
+ "nodes": 0,
+ "lp_iterations": 27830
+}

@@ -1,0 +1,45 @@
+{
+ "arm": "lab-dsm",
+ "instance": "highschool1-aigio",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "285c05189bea9196",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  24.92333984375,
+  11.95751953125,
+  6.3173828125
+ ],
+ "core": 15,
+ "wall": 22.944039821624756,
+ "overrun": 2.944039821624756,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   7.7,
+   -Infinity,
+   1984.0
+  ],
+  [
+   20.0,
+   0.0,
+   1984.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 1984.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 12.2690596581,
+ "solver_time": 20.0,
+ "presolve_time": 6.99,
+ "nodes": 0,
+ "lp_iterations": 11550
+}

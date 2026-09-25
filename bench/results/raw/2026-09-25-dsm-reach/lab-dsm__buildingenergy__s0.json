@@ -1,0 +1,45 @@
+{
+ "arm": "lab-dsm",
+ "instance": "buildingenergy",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "fcb31cb0ceb622c0",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.09033203125,
+  5.29931640625,
+  3.53173828125
+ ],
+ "core": 15,
+ "wall": 22.539641857147217,
+ "overrun": 2.539641857147217,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   3.2,
+   -Infinity,
+   Infinity
+  ],
+  [
+   20.7,
+   -Infinity,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.71,
+ "presolve_time": 1.97,
+ "nodes": 0,
+ "lp_iterations": 51851
+}

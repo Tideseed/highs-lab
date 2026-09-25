@@ -1,0 +1,45 @@
+{
+ "arm": "lab-dsm",
+ "instance": "nursesched-medium-hint03",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "af57b8bcf52c99fa",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.14501953125,
+  14.55322265625,
+  9.84716796875
+ ],
+ "core": 18,
+ "wall": 20.95569133758545,
+ "overrun": 0.9556913375854492,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   17.7,
+   -Infinity,
+   42171.0
+  ],
+  [
+   20.1,
+   0.0,
+   42171.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 42171.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 2.11768484116,
+ "solver_time": 20.06,
+ "presolve_time": 12.44,
+ "nodes": 0,
+ "lp_iterations": 2557
+}

@@ -21,3 +21,4 @@ Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.
+- 2026-09-25: evidence — neos-3402454-bohle cannot even be parsed within 20 s ("Parser reached timeout", both dev and branches).

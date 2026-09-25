@@ -1,12 +1,12 @@
 ---
 id: X2
 area: mip
-status: candidate
+status: parked
 gate: full
 effort: 0.5-1 d
 verified_in_source: false
 profiled_share: null
-branch: null
+branch: lab/one-opt
 ---
 # X2: One-opt improvement heuristic
 
@@ -21,3 +21,4 @@ Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.
+- 2026-09-25 evening: implemented (lab/one-opt, 70 lines, called after each improving incumbent; 101/101 tests). First screen (5 primal-weak instances, 60 s, A725): one-opt never produced a solution (no H rows); only side effects via changed paths. Parked; diagnose (count candidates/shifts) before any further time.

@@ -1,0 +1,65 @@
+{
+ "arm": "dev",
+ "instance": "peg-solitaire-a3",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "d3d2519a2670d646",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.171875,
+  14.4033203125,
+  9.8994140625
+ ],
+ "core": 15,
+ "wall": 20.102308988571167,
+ "overrun": 0.10230898857116699,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.2,
+   0.0,
+   Infinity
+  ],
+  [
+   0.6,
+   1.0,
+   Infinity
+  ],
+  [
+   5.6,
+   1.0,
+   Infinity
+  ],
+  [
+   10.8,
+   1.0,
+   Infinity
+  ],
+  [
+   16.1,
+   1.0,
+   Infinity
+  ],
+  [
+   20.0,
+   1.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 1.00000000003,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.0,
+ "presolve_time": 0.09,
+ "nodes": 0,
+ "lp_iterations": 72680
+}

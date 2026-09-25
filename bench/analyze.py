@@ -87,7 +87,9 @@ def main() -> None:
 
     wrongs = [(r["arm"], r["instance"], r["seed"], w) for r in runs if (w := wrong(r, ref))]
     # rc 1 is HiGHS's warning status (e.g. time limit reached); anything else non-zero is a crash
-    fails = [r for r in runs if r.get("rc") not in (0, 1, None) or r.get("harness_timeout")]
+    fails = [r for r in runs if (r.get("rc") not in (0, 1, None) or r.get("harness_timeout"))
+             and not r.get("load_timeout")]
+    load_timeouts = [r for r in runs if r.get("load_timeout")]
     identical_diffs: dict = {}
     if a.identical:
         for arm in arms:
@@ -154,6 +156,9 @@ def main() -> None:
                 reasons.append(f"search differs on {len(identical_diffs[arm][1])}")
             verdicts[arm] = "PASS" if not reasons else "no pass (" + ", ".join(reasons) + ")"
     cov = sum(1 for r in runs if r["instance"] in ref)
+    if load_timeouts:
+        lines += ["", f"Load timeouts (model not read within the limit, not counted as crashes): "
+                  + ", ".join(sorted({f"{r['arm']}:{r['instance']}" for r in load_timeouts}))]
     served = sum(1 for r in runs if "active" in (r.get("serving_units") or {}).values())
     unknown = sum(1 for r in runs if "serving_units" not in r)
     lines += ["", f"Contention: {served}/{len(runs)} runs ended with a local LLM server active"

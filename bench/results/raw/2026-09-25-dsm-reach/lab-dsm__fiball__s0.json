@@ -1,0 +1,65 @@
+{
+ "arm": "lab-dsm",
+ "instance": "fiball",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "ee5835347bf31af5",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  13.49609375,
+  8.52734375,
+  4.95654296875
+ ],
+ "core": 15,
+ "wall": 20.8833909034729,
+ "overrun": 0.8833909034729004,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.0,
+   5.0,
+   Infinity
+  ],
+  [
+   1.2,
+   137.0691676,
+   153.0
+  ],
+  [
+   5.8,
+   138.0,
+   152.0
+  ],
+  [
+   12.4,
+   138.0,
+   152.0
+  ],
+  [
+   20.7,
+   138.0,
+   152.0
+  ],
+  [
+   20.7,
+   138.0,
+   152.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 152.0,
+ "dual_bound": 138.0,
+ "gap": "9.21%",
+ "pd_integral": 1.8224644428,
+ "solver_time": 20.66,
+ "presolve_time": 1.1,
+ "nodes": 1,
+ "lp_iterations": 15026
+}

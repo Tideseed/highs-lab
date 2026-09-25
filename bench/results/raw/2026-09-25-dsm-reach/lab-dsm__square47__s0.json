@@ -1,0 +1,40 @@
+{
+ "arm": "lab-dsm",
+ "instance": "square47",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "875d3d4c0b843c19",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.28955078125,
+  13.15380859375,
+  10.3466796875
+ ],
+ "core": 5,
+ "wall": 35.007447957992554,
+ "overrun": 15.007447957992554,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   20.6,
+   -Infinity,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.59,
+ "presolve_time": 20.58,
+ "nodes": 0,
+ "lp_iterations": 0
+}

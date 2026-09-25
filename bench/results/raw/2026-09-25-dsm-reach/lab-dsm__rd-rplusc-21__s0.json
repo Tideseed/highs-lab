@@ -1,0 +1,40 @@
+{
+ "arm": "lab-dsm",
+ "instance": "rd-rplusc-21",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "5454cb822605ba76",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  11.900390625,
+  13.3447265625,
+  10.2158203125
+ ],
+ "core": 7,
+ "wall": 115.59672474861145,
+ "overrun": 95.59672474861145,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   114.5,
+   -Infinity,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 114.51,
+ "presolve_time": 114.51,
+ "nodes": 0,
+ "lp_iterations": 0
+}

@@ -1,0 +1,40 @@
+{
+ "arm": "lab-dsm",
+ "instance": "piperout-27",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "0dde1d272f3d2ea0",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.03369140625,
+  14.19287109375,
+  9.95068359375
+ ],
+ "core": 7,
+ "wall": 21.297707080841064,
+ "overrun": 1.2977070808410645,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   20.9,
+   -Infinity,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.94,
+ "presolve_time": 20.94,
+ "nodes": 0,
+ "lp_iterations": 0
+}

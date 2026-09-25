@@ -1,0 +1,65 @@
+{
+ "arm": "dev",
+ "instance": "comp07-2idx",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "6b26d9f4ab272364",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  14.27001953125,
+  6.74462890625,
+  4.068359375
+ ],
+ "core": 9,
+ "wall": 20.382886171340942,
+ "overrun": 0.3828861713409424,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.6,
+   -Infinity,
+   37.0
+  ],
+  [
+   2.3,
+   0.0,
+   37.0
+  ],
+  [
+   7.9,
+   2.333333333,
+   37.0
+  ],
+  [
+   13.0,
+   6.0,
+   37.0
+  ],
+  [
+   20.0,
+   6.0,
+   8.0
+  ],
+  [
+   20.0,
+   6.0,
+   8.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 8.0,
+ "dual_bound": 6.0,
+ "gap": "25%",
+ "pd_integral": 16.468160461,
+ "solver_time": 20.02,
+ "presolve_time": 1.6,
+ "nodes": 0,
+ "lp_iterations": 30082
+}

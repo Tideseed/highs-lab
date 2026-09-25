@@ -1,0 +1,50 @@
+{
+ "arm": "dev",
+ "instance": "neos-3555904-turama",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "02a3467b46bd51a7",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  21.513671875,
+  16.97412109375,
+  9.42041015625
+ ],
+ "core": 9,
+ "wall": 21.713088512420654,
+ "overrun": 1.7130885124206543,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   15.6,
+   -Infinity,
+   -33.2
+  ],
+  [
+   18.0,
+   -41.45,
+   -33.2
+  ],
+  [
+   20.0,
+   -41.45,
+   -33.2
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": -33.2,
+ "dual_bound": -41.4,
+ "gap": "24.7%",
+ "pd_integral": 2.43073643547,
+ "solver_time": 20.01,
+ "presolve_time": 14.24,
+ "nodes": 0,
+ "lp_iterations": 3908
+}

@@ -1,0 +1,55 @@
+{
+ "arm": "dev",
+ "instance": "CMS750_4",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "ccf626521fc2f677",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  12.7705078125,
+  6.20751953125,
+  3.8681640625
+ ],
+ "core": 5,
+ "wall": 20.182197332382202,
+ "overrun": 0.18219733238220215,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.3,
+   -Infinity,
+   356.0
+  ],
+  [
+   0.4,
+   250.0,
+   356.0
+  ],
+  [
+   15.0,
+   250.0,
+   356.0
+  ],
+  [
+   20.0,
+   250.0,
+   356.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 356.0,
+ "dual_bound": 250.0,
+ "gap": "29.78%",
+ "pd_integral": 5.85779873173,
+ "solver_time": 20.0,
+ "presolve_time": 0.51,
+ "nodes": 328,
+ "lp_iterations": 102576
+}

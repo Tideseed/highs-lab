@@ -1,0 +1,70 @@
+{
+ "arm": "lab-dsm",
+ "instance": "wachplan",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "95207df19040ab0d",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  11.06640625,
+  12.576171875,
+  10.458984375
+ ],
+ "core": 18,
+ "wall": 20.134984970092773,
+ "overrun": 0.13498497009277344,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.2,
+   -23.0,
+   Infinity
+  ],
+  [
+   0.3,
+   -9.0,
+   Infinity
+  ],
+  [
+   5.6,
+   -9.0,
+   Infinity
+  ],
+  [
+   6.3,
+   -9.0,
+   -8.0
+  ],
+  [
+   12.6,
+   -9.0,
+   -8.0
+  ],
+  [
+   19.1,
+   -9.0,
+   -8.0
+  ],
+  [
+   20.0,
+   -9.0,
+   -8.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": -8.0,
+ "dual_bound": -9.0,
+ "gap": "12.5%",
+ "pd_integral": 1.71556311846,
+ "solver_time": 20.0,
+ "presolve_time": 0.95,
+ "nodes": 455,
+ "lp_iterations": 196851
+}

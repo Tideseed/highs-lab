@@ -1,0 +1,50 @@
+{
+ "arm": "dev",
+ "instance": "tbfp-network",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "80269ad17c17581d",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.0595703125,
+  12.9033203125,
+  10.43603515625
+ ],
+ "core": 6,
+ "wall": 20.617077112197876,
+ "overrun": 0.617077112197876,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   4.6,
+   -Infinity,
+   65.10277778
+  ],
+  [
+   17.6,
+   23.26153549,
+   65.10277778
+  ],
+  [
+   20.0,
+   23.26153549,
+   65.10277778
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 65.102777778,
+ "dual_bound": 23.2615354938,
+ "gap": "64.27%",
+ "pd_integral": 14.4896581881,
+ "solver_time": 20.01,
+ "presolve_time": 3.86,
+ "nodes": 0,
+ "lp_iterations": 20546
+}

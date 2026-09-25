@@ -202,6 +202,8 @@ def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Pat
         rec.update(core=core, wall=wall, overrun=wall - job["time_limit"], rc=rc, harness_timeout=timed_out,
                    options=job["options"], has_solution=sol.exists())
         rec.update(parse_log(stdout or ""))
+        # the model could not even be read within the time limit: not a solver crash
+        rec["load_timeout"] = "Parser reached timeout" in (stdout or "")
         res_path.write_text(json.dumps(rec, indent=1))
         return rec
     finally:

@@ -1,0 +1,75 @@
+{
+ "arm": "dev",
+ "instance": "milo-v12-6-r2-40-1",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "a9fdc6d2cbcc4dcd",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  25.32861328125,
+  16.0537109375,
+  8.28515625
+ ],
+ "core": 5,
+ "wall": 20.072700023651123,
+ "overrun": 0.07270002365112305,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.1,
+   177166.29868,
+   Infinity
+  ],
+  [
+   0.1,
+   208637.266892,
+   Infinity
+  ],
+  [
+   2.7,
+   314083.881086,
+   336267.084374
+  ],
+  [
+   3.5,
+   314083.881086,
+   334184.809486
+  ],
+  [
+   9.8,
+   314445.890972,
+   333989.367927
+  ],
+  [
+   14.8,
+   314976.175097,
+   333989.367927
+  ],
+  [
+   19.8,
+   315133.865689,
+   333989.367927
+  ],
+  [
+   20.0,
+   315133.865689,
+   333989.367927
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 333989.367927,
+ "dual_bound": 315133.865689,
+ "gap": "5.65%",
+ "pd_integral": 1.00919227279,
+ "solver_time": 20.0,
+ "presolve_time": 0.24,
+ "nodes": 742,
+ "lp_iterations": 122147
+}

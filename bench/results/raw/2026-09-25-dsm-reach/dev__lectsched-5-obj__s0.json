@@ -1,0 +1,70 @@
+{
+ "arm": "dev",
+ "instance": "lectsched-5-obj",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "06c6c7494c888d94",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  34.15673828125,
+  15.1865234375,
+  7.53759765625
+ ],
+ "core": 18,
+ "wall": 20.550402641296387,
+ "overrun": 0.5504026412963867,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.8,
+   12.0,
+   Infinity
+  ],
+  [
+   2.0,
+   12.0,
+   Infinity
+  ],
+  [
+   8.8,
+   15.0,
+   Infinity
+  ],
+  [
+   9.3,
+   15.0,
+   Infinity
+  ],
+  [
+   9.8,
+   15.0,
+   Infinity
+  ],
+  [
+   15.4,
+   15.0,
+   Infinity
+  ],
+  [
+   20.3,
+   15.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 15.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.33,
+ "presolve_time": 2.51,
+ "nodes": 246,
+ "lp_iterations": 63387
+}

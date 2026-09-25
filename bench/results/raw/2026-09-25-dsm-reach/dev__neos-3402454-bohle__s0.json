@@ -1,0 +1,25 @@
+{
+ "arm": "dev",
+ "instance": "neos-3402454-bohle",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "14f69099fa3304ce",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  21.513671875,
+  16.97412109375,
+  9.42041015625
+ ],
+ "core": 6,
+ "wall": 21.860360383987427,
+ "overrun": 1.8603603839874268,
+ "rc": 255,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false,
+ "load_timeout": true
+}

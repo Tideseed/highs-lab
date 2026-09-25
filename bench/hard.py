@@ -66,7 +66,7 @@ def feasible(r: dict) -> bool:
 
 
 def crashed(r: dict) -> bool:
-    return r.get("rc") not in (0, 1, None) or bool(r.get("harness_timeout"))
+    return (r.get("rc") not in (0, 1, None) or bool(r.get("harness_timeout"))) and not r.get("load_timeout")
 
 
 def main() -> None:

@@ -1,0 +1,40 @@
+{
+ "arm": "dev",
+ "instance": "splice1k1",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "f3cc31ea5d2bfb50",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  11.99169921875,
+  13.14453125,
+  10.29736328125
+ ],
+ "core": 18,
+ "wall": 21.4494469165802,
+ "overrun": 1.4494469165802002,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   20.4,
+   -Infinity,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.41,
+ "presolve_time": 20.4,
+ "nodes": 0,
+ "lp_iterations": 0
+}

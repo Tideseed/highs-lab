@@ -1,0 +1,45 @@
+{
+ "arm": "lab-dsm",
+ "instance": "neos-3988577-wolgan",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "3c45d6a8c29b1a6c",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  18.5849609375,
+  16.60205078125,
+  9.4609375
+ ],
+ "core": 5,
+ "wall": 20.883814573287964,
+ "overrun": 0.8838145732879639,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   4.6,
+   0.0,
+   Infinity
+  ],
+  [
+   20.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.03,
+ "presolve_time": 3.63,
+ "nodes": 0,
+ "lp_iterations": 16109
+}

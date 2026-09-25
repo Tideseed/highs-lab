@@ -1,0 +1,50 @@
+{
+ "arm": "lab-dsm",
+ "instance": "tbfp-network",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "80269ad17c17581d",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.0595703125,
+  12.9033203125,
+  10.43603515625
+ ],
+ "core": 16,
+ "wall": 20.561033487319946,
+ "overrun": 0.5610334873199463,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   4.1,
+   -Infinity,
+   65.10277778
+  ],
+  [
+   14.6,
+   23.26153549,
+   65.10277778
+  ],
+  [
+   20.0,
+   23.26208155,
+   65.10277778
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 65.102777778,
+ "dual_bound": 23.2620815527,
+ "gap": "64.27%",
+ "pd_integral": 13.8891229718,
+ "solver_time": 20.01,
+ "presolve_time": 3.43,
+ "nodes": 0,
+ "lp_iterations": 25663
+}

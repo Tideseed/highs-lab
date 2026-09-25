@@ -1,0 +1,75 @@
+{
+ "arm": "lab-dsm",
+ "instance": "neos-5107597-kakapo",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "53441c15ede747db",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  14.34033203125,
+  15.70849609375,
+  9.60205078125
+ ],
+ "core": 19,
+ "wall": 20.10513401031494,
+ "overrun": 0.1051340103149414,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.1,
+   0.0,
+   Infinity
+  ],
+  [
+   0.1,
+   0.0,
+   Infinity
+  ],
+  [
+   1.2,
+   0.045101773,
+   Infinity
+  ],
+  [
+   1.2,
+   9.042851773,
+   Infinity
+  ],
+  [
+   8.4,
+   591.6758018,
+   Infinity
+  ],
+  [
+   10.0,
+   591.6758018,
+   164502.0
+  ],
+  [
+   15.5,
+   608.4567225,
+   164502.0
+  ],
+  [
+   20.0,
+   699.8861971,
+   164502.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 164502.0,
+ "dual_bound": 699.886197132,
+ "gap": "99.57%",
+ "pd_integral": 9.91905325106,
+ "solver_time": 20.01,
+ "presolve_time": 0.61,
+ "nodes": 433,
+ "lp_iterations": 72407
+}

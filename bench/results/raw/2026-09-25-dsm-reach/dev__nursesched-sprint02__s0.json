@@ -1,0 +1,60 @@
+{
+ "arm": "dev",
+ "instance": "nursesched-sprint02",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "fadbbaaea74c7070",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.14501953125,
+  14.55322265625,
+  9.84716796875
+ ],
+ "core": 7,
+ "wall": 19.183578729629517,
+ "overrun": -0.8164212703704834,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   8.2,
+   -Infinity,
+   542.0
+  ],
+  [
+   9.0,
+   56.16666667,
+   542.0
+  ],
+  [
+   14.1,
+   57.6,
+   542.0
+  ],
+  [
+   18.7,
+   57.6,
+   58.0
+  ],
+  [
+   18.8,
+   58.0,
+   58.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 58.0,
+ "dual_bound": 58.0,
+ "gap": "0%",
+ "pd_integral": 9.35357371814,
+ "solver_time": 18.78,
+ "presolve_time": 7.68,
+ "nodes": 1,
+ "lp_iterations": 4921
+}

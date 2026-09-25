@@ -1,0 +1,45 @@
+{
+ "arm": "lab-dsm",
+ "instance": "irish-electricity",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "00aa54f3e5aab1ae",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  27.4921875,
+  12.70556640625,
+  6.58984375
+ ],
+ "core": 8,
+ "wall": 21.094046354293823,
+ "overrun": 1.0940463542938232,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   8.3,
+   23006.28508,
+   Infinity
+  ],
+  [
+   20.4,
+   23006.28508,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 23006.28508,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 20.4,
+ "presolve_time": 7.22,
+ "nodes": 0,
+ "lp_iterations": 17953
+}

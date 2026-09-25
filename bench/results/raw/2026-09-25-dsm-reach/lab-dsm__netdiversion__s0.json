@@ -1,0 +1,50 @@
+{
+ "arm": "lab-dsm",
+ "instance": "netdiversion",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "5ef14bf4fa7f20b0",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.83154296875,
+  14.9609375,
+  9.7900390625
+ ],
+ "core": 17,
+ "wall": 21.408950805664062,
+ "overrun": 1.4089508056640625,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   7.9,
+   -Infinity,
+   1182.0
+  ],
+  [
+   15.5,
+   230.8,
+   1182.0
+  ],
+  [
+   20.1,
+   230.8,
+   1182.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 1182.0,
+ "dual_bound": 231.0,
+ "gap": "80.46%",
+ "pd_integral": 10.9368232446,
+ "solver_time": 20.08,
+ "presolve_time": 4.44,
+ "nodes": 0,
+ "lp_iterations": 31556
+}

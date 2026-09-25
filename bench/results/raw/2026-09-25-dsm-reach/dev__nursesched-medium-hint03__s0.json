@@ -1,0 +1,45 @@
+{
+ "arm": "dev",
+ "instance": "nursesched-medium-hint03",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "af57b8bcf52c99fa",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  12.14501953125,
+  14.55322265625,
+  9.84716796875
+ ],
+ "core": 15,
+ "wall": 20.977855920791626,
+ "overrun": 0.977855920791626,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   17.8,
+   -Infinity,
+   42171.0
+  ],
+  [
+   20.1,
+   0.0,
+   42171.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 42171.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 1.9883749485,
+ "solver_time": 20.06,
+ "presolve_time": 12.44,
+ "nodes": 0,
+ "lp_iterations": 2743
+}

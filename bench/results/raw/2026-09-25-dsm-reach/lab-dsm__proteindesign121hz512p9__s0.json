@@ -1,0 +1,50 @@
+{
+ "arm": "lab-dsm",
+ "instance": "proteindesign121hz512p9",
+ "seed": 0,
+ "time_limit": 20.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "b90c2e3271c22c5e",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "active"
+ },
+ "loadavg": [
+  11.87060546875,
+  14.123046875,
+  9.951171875
+ ],
+ "core": 19,
+ "wall": 24.782917737960815,
+ "overrun": 4.782917737960815,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   6.5,
+   0.0,
+   Infinity
+  ],
+  [
+   6.9,
+   1423.904449,
+   Infinity
+  ],
+  [
+   23.3,
+   1431.279874,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 1432.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 23.32,
+ "presolve_time": 6.14,
+ "nodes": 0,
+ "lp_iterations": 1414
+}
