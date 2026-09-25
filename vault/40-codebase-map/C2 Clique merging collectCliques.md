@@ -16,8 +16,8 @@ branch: null
 
 **Proposed fix:** Flat per-variable clique lists or a cheaper subsumption test; developers active in cliques (#3312).
 
-**Evidence so far:** static read of `latest` on 2026-09-25 (checked by hand).
-Profile share: not measured yet.
+**Source:** static read of `latest` on 2026-09-25 (checked by hand).
+Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.

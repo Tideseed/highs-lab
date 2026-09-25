@@ -16,8 +16,8 @@ branch: null
 
 **Proposed fix:** Skip basic columns.
 
-**Evidence so far:** static read of `latest` on 2026-09-25 (sweep agent, not yet checked by hand).
-Profile share: not measured yet.
+**Source:** static read of `latest` on 2026-09-25 (sweep agent, not yet checked by hand).
+Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.

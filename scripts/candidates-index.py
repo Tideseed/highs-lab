@@ -20,4 +20,7 @@ rows.sort()
     "| id | title | area | effort | gate | profiled share | status |\n|---|---|---|---|---|---|---|\n"
     + "\n".join(r[2] for r in rows)
     + "\n\nNot performance, report only: `HighsCliqueTable.cpp:~1763` has `exit(0);` in an unused `separateCliques` overload.\n")
+for p in d.glob("*.md"):
+    if p.name != "Candidates.md" and "not measured yet" in p.read_text() and "profiled_share: null" not in p.read_text():
+        print("WARNING: body contradicts frontmatter:", p.name)
 print(len(rows), "candidates")

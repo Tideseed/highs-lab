@@ -16,8 +16,8 @@ branch: null
 
 **Proposed fix:** Cache OptionRecord pointers or write the options struct directly.
 
-**Evidence so far:** static read of `latest` on 2026-09-25 (sweep agent, not yet checked by hand).
-Profile share: not measured yet.
+**Source:** static read of `latest` on 2026-09-25 (sweep agent, not yet checked by hand).
+Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.

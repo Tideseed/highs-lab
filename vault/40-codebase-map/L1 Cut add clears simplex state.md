@@ -16,8 +16,8 @@ branch: null
 
 **Proposed fix:** Enable row extension; keep old DSE weights and compute new cut weights (one BTRAN each); compact on delete.
 
-**Evidence so far:** static read of `latest` on 2026-09-25 (checked by hand).
-Profile share: not measured yet.
+**Source:** static read of `latest` on 2026-09-25 (checked by hand).
+Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.

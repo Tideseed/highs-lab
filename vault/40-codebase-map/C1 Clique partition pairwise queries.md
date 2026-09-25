@@ -16,8 +16,8 @@ branch: lab/clique-partition-marking
 
 **Proposed fix:** Mark the entries of v's cliques, scan the window once; pairwise only if marking touches >16x the window. Identical result and query count.
 
-**Evidence so far:** static read of `latest` on 2026-09-25 (checked by hand).
-Profile share: not measured yet.
+**Source:** static read of `latest` on 2026-09-25 (checked by hand).
+Measured share, branch and status: see frontmatter (kept current there only).
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.

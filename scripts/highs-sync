@@ -331,7 +331,7 @@ def main() -> None:
         git("checkout", "-q", "-B", "dev-tideseed", new, cwd=dts)
         merged = []
         for e in q:
-            if e["state"] != "accepted":
+            if e["state"] not in ("accepted", "merged"):
                 continue
             p = git("merge", "--no-ff", "-q", "-m", f"dev-tideseed: merge {e['branch']}", e["branch"], cwd=dts,
                     check=False)
