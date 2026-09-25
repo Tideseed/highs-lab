@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "binkar10_1",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 15,
+ "wall": 17.40214204788208,
+ "overrun": -42.59785795211792,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 6742.200024,
+ "dual_bound": 6741.56510679,
+ "gap": "0.00942%",
+ "pd_integral": 0.0936032342176,
+ "solver_time": 17.3,
+ "presolve_time": 0.09,
+ "nodes": 2364,
+ "lp_iterations": 139552
+}

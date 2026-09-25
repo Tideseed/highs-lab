@@ -1,7 +1,7 @@
 ---
 id: T1
 area: mip
-status: candidate
+status: explained
 gate: full + overrun metric
 effort: hours
 verified_in_source: false
@@ -21,3 +21,4 @@ Profile share: not measured yet.
 
 ## Log
 - 2026-09-25 filed from the codebase sweep.
+- 2026-09-25 perf on s100 (dev 6293630a84): the overrun is NOT the analytic-centre IPM; 90 % of the run is setupCliquePartition → see [[C1 Clique partition pairwise queries]]. Remaining T1 idea: a time check after setupCliquePartition / in runSetup, so no other setup phase can overrun.

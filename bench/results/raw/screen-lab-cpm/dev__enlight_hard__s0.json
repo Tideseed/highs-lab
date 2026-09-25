@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "enlight_hard",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 15,
+ "wall": 7.988544225692749,
+ "overrun": -52.01145577430725,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 37.0,
+ "dual_bound": 37.0,
+ "gap": "0%",
+ "pd_integral": 4.18366113258e-05,
+ "solver_time": 7.94,
+ "presolve_time": 0.02,
+ "nodes": 3758,
+ "lp_iterations": 130333
+}

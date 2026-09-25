@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "hypothyroid-k1",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 8,
+ "wall": 9.874617576599121,
+ "overrun": -50.12538242340088,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -2851.0,
+ "dual_bound": -2851.0,
+ "gap": "0%",
+ "pd_integral": 2.61568267604,
+ "solver_time": 9.64,
+ "presolve_time": 2.82,
+ "nodes": 1,
+ "lp_iterations": 2983
+}

@@ -1,0 +1,379 @@
+#!/usr/bin/env python3
+"""Daily sync of the HiGHS fork with upstream `latest` (design: vault/10-design/Sync and auto-resolution.md).
+
+  highs-sync [--force] [--no-bench] [--dry-run]
+
+1. fetch upstream latest+master; exit silently if nothing changed since the last successful sync (unless --force)
+2. rebase every active lab branch from bench/queue.txt onto upstream/latest; conflicts go to a headless `claude -p`
+   in the branch's worktree; a resolution is kept only if build + ctest + the branch gate pass
+3. regenerate dev-tideseed = upstream/latest + accepted branches (queue order), push branches to origin
+4. build main/dev/dev-tideseed under the host memory rule (D-002); ctest on dev-tideseed
+5. smoke benchmark (20 instances x seed 0 x 60 s) of main/dev/dev-tideseed
+6. write bench/results/sync-<date>.md; post to #agentlog only on failure, unresolved conflict or regression
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+import os
+import re
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+HOME = Path.home()
+LAB = Path(__file__).resolve().parents[1]
+REPO = HOME / "git_repositories/highs"
+WT = HOME / "git_repositories/highs-wt"
+BUILDS = HOME / "git_repositories/highs-builds"
+STATE = HOME / ".local/state/highs-lab"
+ATTENDED = HOME / ".config/highs-lab/attended"
+BUILD = LAB / "scripts/build-arm.sh"
+QUEUE = LAB / "bench/queue.txt"
+AGENTLOG = "e37b52b0-ef35-49f9-8cc6-d231551ad362"
+RELAY = "https://spark-865d.tail7fc95f.ts.net:3443"
+KEYFILE = HOME / "git_repositories/buzz/.keys/agent-watch.key"
+SERVING = ["ornith-vllm", "llama-qwen38"]
+MIN_AVAIL_GB = 30
+TODAY = dt.date.today().isoformat()
+
+report: list[str] = [f"# highs-sync {TODAY}", ""]
+alerts: list[str] = []
+
+
+def sh(*cmd, cwd=None, check=True, timeout=None, env=None) -> subprocess.CompletedProcess:
+    p = subprocess.run([str(c) for c in cmd], cwd=cwd, capture_output=True, text=True, timeout=timeout, env=env)
+    if check and p.returncode != 0:
+        raise RuntimeError(f"{' '.join(map(str, cmd))} -> rc {p.returncode}\n{p.stdout[-2000:]}\n{p.stderr[-2000:]}")
+    return p
+
+
+def git(*args, cwd=REPO, check=True):
+    return sh("git", *args, cwd=cwd, check=check)
+
+
+def log(msg: str) -> None:
+    print(msg, flush=True)
+    report.append(msg)
+
+
+def post(msg: str) -> None:
+    try:
+        key = re.search(r"Secret key:\s+(\S+)", KEYFILE.read_text()).group(1)
+        sh(HOME / ".local/bin/buzz", "messages", "send", "--channel", AGENTLOG, "--content", msg, check=False,
+           timeout=60, env={**os.environ, "BUZZ_RELAY_URL": RELAY, "BUZZ_PRIVATE_KEY": key})
+    except Exception as e:  # noqa: BLE001
+        print("post failed:", e)
+
+
+def mem_avail_gb() -> int:
+    return int(re.search(r"MemAvailable:\s+(\d+)", Path("/proc/meminfo").read_text())[1]) // 1048576
+
+
+# ---------------------------------------------------------------- queue
+def read_queue() -> list[dict]:
+    out = []
+    for line in QUEUE.read_text().splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        parts = [p.strip() for p in line.split("|")]
+        parts += [""] * (5 - len(parts))
+        out.append(dict(branch=parts[0], ids=parts[1], gate=parts[2], intent=parts[3], state=parts[4] or "testing",
+                        raw=line))
+    return out
+
+
+def write_queue(q: list[dict]) -> None:
+    head = [l for l in QUEUE.read_text().splitlines() if l.startswith("#")]
+    QUEUE.write_text("\n".join(head + [" | ".join([e["branch"], e["ids"], e["gate"], e["intent"], e["state"]])
+                                       for e in q]) + "\n")
+
+
+# ---------------------------------------------------------------- memory rule (D-002)
+def agents_idle() -> bool:
+    try:
+        deep = sh("deep-status", check=False, timeout=60).stdout
+        fast = sh("agent-status", check=False, timeout=120).stdout
+    except Exception:  # noqa: BLE001
+        return False
+    think_idle = "IDLE" in deep
+    # agent-status prints a live-generation line when a bridge is mid-turn
+    fast_busy = re.search(r"generating|in[- ]flight|turn running", fast, re.I) is not None
+    return think_idle and not fast_busy
+
+
+class MemoryWindow:
+    """Ensure >30 GB free for builds: stop idle agents if needed, restore them on exit."""
+
+    def __init__(self) -> None:
+        self.stopped: list[str] = []
+        self.ok = False
+
+    def __enter__(self):
+        if mem_avail_gb() >= MIN_AVAIL_GB:
+            self.ok = True
+            return self
+        if not agents_idle():
+            alerts.append(f"build skipped: {mem_avail_gb()} GB free (< {MIN_AVAIL_GB}) and local agents busy")
+            log("- memory: agents busy, strict rule applied, builds skipped")
+            return self
+        active = [u for u in SERVING if sh("systemctl", "--user", "is-active", u, check=False).stdout.strip() == "active"]
+        sh("systemctl", "--user", "stop", *active)
+        self.stopped = active
+        time.sleep(10)
+        self.ok = mem_avail_gb() >= MIN_AVAIL_GB
+        log(f"- memory: agents idle, stopped {active} for the build window ({mem_avail_gb()} GB free)")
+        return self
+
+    def __exit__(self, *exc):
+        if self.stopped:
+            sh("systemctl", "--user", "start", *self.stopped, check=False)
+            deadline = time.time() + 900
+            while time.time() < deadline:
+                states = [sh("systemctl", "--user", "is-active", u, check=False).stdout.strip() for u in self.stopped]
+                if all(s == "active" for s in states):
+                    break
+                time.sleep(15)
+            states = {u: sh("systemctl", "--user", "is-active", u, check=False).stdout.strip() for u in self.stopped}
+            log(f"- memory: restored {states}")
+            if any(s != "active" for s in states.values()):
+                alerts.append(f"RESTORE FAILED after build window: {states}")
+        return False
+
+
+# ---------------------------------------------------------------- build / test
+def worktree(name: str, ref: str) -> Path:
+    path = WT / name
+    if not path.exists():
+        git("worktree", "add", "--force", "-B", f"arm/{name}" if not name.startswith("lab-") else ref, str(path), ref)
+    return path
+
+
+def build(src: Path, name: str, *extra: str) -> bool:
+    p = sh(BUILD, src, BUILDS / name, "Release", *extra, check=False, timeout=7200)
+    ok = p.returncode == 0
+    log(f"- build {name}: {'ok' if ok else 'FAILED'}")
+    if not ok:
+        alerts.append(f"build {name} failed: {(p.stdout + p.stderr)[-300:]}")
+    return ok
+
+
+def ctest(name: str) -> bool:
+    p = sh("systemd-run", "--user", "--scope", "--quiet", "-p", "MemoryMax=12G", "-p", "CPUQuota=400%",
+           "taskset", "-c", "10-14", "ctest", "-j4", "--timeout", "900", cwd=BUILDS / name, check=False, timeout=7200)
+    m = re.search(r"(\d+)% tests passed, (\d+) tests failed out of (\d+)", p.stdout)
+    ok = p.returncode == 0
+    log(f"- ctest {name}: {m.group(0) if m else 'no summary'}")
+    if not ok:
+        alerts.append(f"ctest {name} failed: {m.group(0) if m else p.stdout[-300:]}")
+    return ok
+
+
+# ---------------------------------------------------------------- conflict resolution
+RESOLVE_PROMPT = """You are resolving a git rebase conflict in a fork of the HiGHS optimization solver.
+Branch: {branch}. Its purpose (keep this behaviour): {intent}
+Candidate ids: {ids}. Upstream moved from {old} to {new}.
+
+Rules:
+- Keep upstream's new behaviour. Re-apply the branch's intent on top of it, in HiGHS's existing code style.
+- If upstream now already does what the branch intends, resolve by taking upstream's version and write the single
+  word DROP on the first line of a file named .sync-verdict in the repository root.
+- Otherwise write RESOLVED on the first line of .sync-verdict and one paragraph explaining the resolution.
+- Resolve every conflicted file (git diff --name-only --diff-filter=U), `git add` them, then run
+  `GIT_EDITOR=true git rebase --continue` until the rebase completes. Do not build, do not push.
+- If you cannot resolve safely, run `git rebase --abort` and write GIVEUP plus the reason in .sync-verdict.
+"""
+
+
+def auto_resolve(entry: dict, path: Path, old: str, new: str) -> str:
+    prompt = RESOLVE_PROMPT.format(branch=entry["branch"], intent=entry["intent"], ids=entry["ids"], old=old[:10],
+                                   new=new[:10])
+    p = sh("claude", "-p", prompt, "--allowedTools", "Bash,Read,Edit,Write", cwd=path, check=False, timeout=3600)
+    if p.returncode != 0:
+        alerts.append(f"claude -p exited rc={p.returncode} while resolving {entry['branch']}")
+        return "GIVEUP"
+    verdict_file = path / ".sync-verdict"
+    verdict = verdict_file.read_text().strip() if verdict_file.exists() else "GIVEUP no verdict"
+    if verdict_file.exists():
+        verdict_file.unlink()
+    return verdict
+
+
+def gate_branch(entry: dict, path: Path) -> bool:
+    name = path.name
+    if not build(path, name + "-test", "-DALL_TESTS=ON") or not ctest(name + "-test"):
+        return False
+    if not build(path, name, "-DBUILD_TESTING=OFF"):
+        return False
+    if "identical" in entry["gate"]:
+        out = LAB / f"bench/results/raw/sync-{TODAY}-{name}"
+        arms = out / "arms.toml"
+        out.mkdir(parents=True, exist_ok=True)
+        arms.write_text(f'[dev]\nbinary = "{BUILDS / "dev/bin/highs"}"\n[{name}]\nbinary = "{BUILDS / name / "bin/highs"}"\n')
+        sh("python3", LAB / "bench/run.py", "--arms", arms, "--set", LAB / "bench/sets/smoke.txt", "--seeds", "0",
+           "--time-limit", "60", "--out", out, check=False, timeout=7200)
+        a = sh("python3", LAB / "bench/analyze.py", out, "--control", "dev", "--identical", check=False).stdout
+        m = re.search(rf"\*\*{re.escape(name)}\*\*: (\d+)/(\d+) identical", a)
+        ok = bool(m) and m.group(1) == m.group(2)
+        log(f"- identical-search check {name}: {m.group(0) if m else 'no result'}")
+        return ok
+    return True
+
+
+def rebase_branch(entry: dict, new: str) -> str:
+    """Returns 'ok', 'dropped' or 'needs-rebase'."""
+    br = entry["branch"]
+    path = WT / br.replace("/", "-")
+    if not path.exists():
+        git("worktree", "add", str(path), br)
+    old = git("merge-base", br, new).stdout.strip()
+    if old == new:
+        return "ok"
+    before = git("rev-parse", br).stdout.strip()
+    p = git("rebase", new, cwd=path, check=False)
+    if p.returncode == 0:
+        log(f"- {br}: rebased cleanly")
+        if git("rev-list", "--count", f"{new}..{br}").stdout.strip() == "0":
+            log(f"- {br}: empty after rebase (upstream contains it) -> dropped")
+            return "dropped"
+        return "ok" if gate_branch(entry, path) else _rollback(br, path, before, "gate failed after clean rebase")
+    log(f"- {br}: conflict, handing to claude -p")
+    verdict = auto_resolve(entry, path, old, new)
+    first = verdict.split()[0] if verdict else "GIVEUP"
+    if first == "DROP":
+        log(f"- {br}: upstream now does this -> dropped. {verdict[5:200]}")
+        git("rebase", "--abort", cwd=path, check=False)
+        return "dropped"
+    if first != "RESOLVED" or git("status", "--porcelain", cwd=path).stdout.strip():
+        git("rebase", "--abort", cwd=path, check=False)
+        return _rollback(br, path, before, f"auto-resolution gave up: {verdict[:200]}")
+    if not gate_branch(entry, path):
+        return _rollback(br, path, before, "auto-resolution failed the gate")
+    git("commit", "--allow-empty", "-m", f"sync: auto-resolved conflict with upstream {new[:10]}\n\n{verdict[:1500]}\n\n"
+        "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>", cwd=path)
+    log(f"- {br}: auto-resolved and gated. {verdict[9:300]}")
+    return "ok"
+
+
+def _rollback(br: str, path: Path, before: str, why: str) -> str:
+    git("rebase", "--abort", cwd=path, check=False)
+    git("reset", "--hard", before, cwd=path)
+    log(f"- {br}: {why}; kept old base, needs-rebase")
+    alerts.append(f"{br}: {why}")
+    return "needs-rebase"
+
+
+# ---------------------------------------------------------------- main
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--force", action="store_true")
+    ap.add_argument("--no-bench", action="store_true")
+    ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+    STATE.mkdir(parents=True, exist_ok=True)
+
+    git("fetch", "-q", "upstream", "latest", "master")
+    new = git("rev-parse", "upstream/latest").stdout.strip()
+    master = git("rev-parse", "upstream/master").stdout.strip()
+    last = json.loads((STATE / "last-sync.json").read_text()) if (STATE / "last-sync.json").exists() else {}
+    if not a.force and last.get("latest") == new and last.get("master") == master:
+        return  # silent when nothing changed
+    n_new = git("rev-list", "--count", f"{last.get('latest', new)}..{new}").stdout.strip() if last else "?"
+    log(f"upstream latest {last.get('latest', '?')[:10]} -> {new[:10]} ({n_new} commits); master {master[:10]}")
+    if a.dry_run:
+        print("\n".join(report))
+        return
+    if not ATTENDED.exists():
+        log("- box unattended (no ~/.config/highs-lab/attended): no builds, fetch only")
+        (LAB / f"bench/results/sync-{TODAY}.md").write_text("\n".join(report) + "\n")
+        return
+
+    q = read_queue()
+    with MemoryWindow() as mw:
+        if not mw.ok:
+            (LAB / f"bench/results/sync-{TODAY}.md").write_text("\n".join(report) + "\n")
+            for m in alerts:
+                post(f"highs-sync: {m}")
+            return
+        # arms main / dev
+        dev = worktree("dev", "upstream/latest")
+        git("checkout", "-q", "-B", "arm/dev", new, cwd=dev)
+        build(dev, "dev", "-DBUILD_TESTING=OFF")
+        if last.get("master") != master or not (BUILDS / "main/bin/highs").exists():
+            main_wt = worktree("main", "upstream/master")
+            git("checkout", "-q", "-B", "arm/main", master, cwd=main_wt)
+            build(main_wt, "main", "-DBUILD_TESTING=OFF")
+        # lab branches
+        for e in q:
+            if e["state"] in ("parked", "dropped"):
+                continue
+            res = rebase_branch(e, new)
+            if res == "dropped":
+                e["state"] = "dropped"
+            elif res == "needs-rebase":
+                fails = int(last.get("fails", {}).get(e["branch"], 0)) + 1
+                last.setdefault("fails", {})[e["branch"]] = fails
+                e["state"] = "needs-rebase" if fails < 3 else "parked"
+                if fails >= 3:
+                    alerts.append(f"{e['branch']} failed auto-resolution 3 syncs in a row: parked, human decision")
+            else:
+                last.setdefault("fails", {}).pop(e["branch"], None)
+                if e["state"] == "needs-rebase":
+                    e["state"] = "accepted" if "accepted" in e["raw"] else "testing"
+                git("push", "-q", "--force-with-lease", "origin", e["branch"], check=False)
+        write_queue(q)
+        # dev-tideseed
+        dts = WT / "dev-tideseed"
+        if not dts.exists():
+            git("worktree", "add", str(dts), "dev-tideseed")
+        git("checkout", "-q", "-B", "dev-tideseed", new, cwd=dts)
+        merged = []
+        for e in q:
+            if e["state"] != "accepted":
+                continue
+            p = git("merge", "--no-ff", "-q", "-m", f"dev-tideseed: merge {e['branch']}", e["branch"], cwd=dts,
+                    check=False)
+            if p.returncode != 0:
+                git("merge", "--abort", cwd=dts, check=False)
+                alerts.append(f"dev-tideseed: {e['branch']} conflicts with an earlier queue branch; left out")
+            else:
+                merged.append(e["branch"])
+        log(f"- dev-tideseed = latest + {merged or 'nothing'}")
+        git("push", "-q", "--force-with-lease", "origin", "dev-tideseed", check=False)
+        ok = build(dts, "dev-tideseed-test", "-DALL_TESTS=ON") and ctest("dev-tideseed-test")
+        ok = build(dts, "dev-tideseed", "-DBUILD_TESTING=OFF") and ok
+
+    if ok and not a.no_bench:
+        out = LAB / f"bench/results/raw/sync-{TODAY}-smoke"
+        sh("python3", LAB / "bench/run.py", "--arms", LAB / "bench/arms.toml", "--set", LAB / "bench/sets/smoke.txt",
+           "--seeds", "0", "--time-limit", "60", "--out", out, check=False, timeout=7200)
+        an = sh("python3", LAB / "bench/analyze.py", out, "--control", "dev", check=False).stdout
+        report.extend(["", "## Smoke benchmark (beside LLM servers: regression detection only)", "", an])
+        m = re.search(r"\| dev-tideseed \| \d+ \| \d+ \| [\d.]+ \| ([\d.]+) \[([\d.]+), ([\d.]+)\]", an)
+        if m and float(m.group(2)) > 1.05:
+            alerts.append(f"smoke regression: dev-tideseed/dev = {m.group(1)} [{m.group(2)}, {m.group(3)}]")
+        if re.search(r"^## Wrong answers", an, re.M):
+            alerts.append("smoke: wrong answers, see sync report")
+        m2 = re.search(r"\| main \| \d+ \| \d+ \| [\d.]+ \| ([\d.]+) \[([\d.]+), ([\d.]+)\]", an)
+        if m2 and (float(m2.group(3)) < 0.85 or float(m2.group(2)) > 1.18):
+            alerts.append(f"notable upstream shift: main/dev = {m2.group(1)}")
+
+    last.update(latest=new, master=master, when=dt.datetime.now().isoformat(timespec="seconds"))
+    (STATE / "last-sync.json").write_text(json.dumps(last, indent=1))
+    rp = LAB / f"bench/results/sync-{TODAY}.md"
+    rp.write_text("\n".join(report + (["", "## Alerts", ""] + [f"- {x}" for x in alerts] if alerts else [])) + "\n")
+    git("add", "bench/results", "bench/queue.txt", cwd=LAB, check=False)
+    git("commit", "-q", "-m", f"sync {TODAY}: latest {new[:10]}", cwd=LAB, check=False)
+    git("push", "-q", cwd=LAB, check=False)
+    for m in alerts:
+        post(f"highs-sync: {m}")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:  # noqa: BLE001
+        post(f"highs-sync crashed: {str(e)[:500]}")
+        raise

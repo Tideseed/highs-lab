@@ -1,0 +1,13 @@
+# varied instances for the profile sweep: quick-solved, B&B-heavy, and unsolved-at-300s
+neos17
+enlight_hard
+timtab1
+roll3000
+binkar10_1
+neos5
+mas76
+seymour1
+cbs-cta
+pk1
+tr12-30
+neos-2978193-inde

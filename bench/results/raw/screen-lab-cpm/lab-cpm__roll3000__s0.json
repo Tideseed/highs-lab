@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "roll3000",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 7,
+ "wall": 20.773142337799072,
+ "overrun": -39.22685766220093,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 12890.0,
+ "dual_bound": 12888.7207752,
+ "gap": "0.00992%",
+ "pd_integral": 0.529157335038,
+ "solver_time": 20.67,
+ "presolve_time": 0.56,
+ "nodes": 1528,
+ "lp_iterations": 127731
+}

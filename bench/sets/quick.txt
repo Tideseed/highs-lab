@@ -1,0 +1,22 @@
+# 3-60 s for HiGHS 1.15.1 in optopt runs300 (H0). Quick screen set.
+decomp2
+exp-1-500-5-5
+neos8
+neos17
+neos-911970
+h80x6320d
+hypothyroid-k1
+beasleyC3
+enlight_hard
+neos-860300
+air05
+roll3000
+binkar10_1
+uccase12
+timtab1
+neos-1445765
+snp-02-004-104
+dano3_3
+piperout-27
+neos-2978193-inde
+cbs-cta

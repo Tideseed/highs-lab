@@ -7,3 +7,6 @@ binary = "~/git_repositories/highs-builds/dev/bin/highs"
 
 [dev-tideseed]
 binary = "~/git_repositories/highs-builds/dev-tideseed/bin/highs"
+
+[lab-cpm]
+binary = "~/git_repositories/highs-builds/lab-cpm/bin/highs"

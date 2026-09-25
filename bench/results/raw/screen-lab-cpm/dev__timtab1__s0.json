@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "timtab1",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 19,
+ "wall": 32.57705307006836,
+ "overrun": -27.42294692993164,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 764774.0,
+ "dual_bound": 764698.781675,
+ "gap": "0.00984%",
+ "pd_integral": 4.2280427526,
+ "solver_time": 32.5,
+ "presolve_time": 0.25,
+ "nodes": 11588,
+ "lp_iterations": 568299
+}

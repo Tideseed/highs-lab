@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "h80x6320d",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 5,
+ "wall": 9.344737529754639,
+ "overrun": -50.65526247024536,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 6382.09905,
+ "dual_bound": 6381.47065256,
+ "gap": "0.00985%",
+ "pd_integral": 3.07492383492,
+ "solver_time": 9.26,
+ "presolve_time": 0.26,
+ "nodes": 11,
+ "lp_iterations": 36778
+}

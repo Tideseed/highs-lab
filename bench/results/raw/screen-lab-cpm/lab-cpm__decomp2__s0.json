@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "decomp2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 6,
+ "wall": 1.8602259159088135,
+ "overrun": -58.13977408409119,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": -160.0,
+ "dual_bound": -160.0,
+ "gap": "0%",
+ "pd_integral": 0.278496168278,
+ "solver_time": 1.73,
+ "presolve_time": 0.17,
+ "nodes": 1,
+ "lp_iterations": 8254
+}

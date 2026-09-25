@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "enlight_hard",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 9,
+ "wall": 8.12003469467163,
+ "overrun": -51.87996530532837,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 37.0,
+ "dual_bound": 37.0,
+ "gap": "0%",
+ "pd_integral": 4.33786253989e-05,
+ "solver_time": 8.08,
+ "presolve_time": 0.02,
+ "nodes": 3758,
+ "lp_iterations": 130333
+}

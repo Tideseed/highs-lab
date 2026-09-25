@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "beasleyC3",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 17,
+ "wall": 8.083460092544556,
+ "overrun": -51.916539907455444,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 754.0,
+ "dual_bound": 754.0,
+ "gap": "0%",
+ "pd_integral": 0.376686280847,
+ "solver_time": 8.04,
+ "presolve_time": 0.04,
+ "nodes": 617,
+ "lp_iterations": 76573
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "air05",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 6,
+ "wall": 11.645456075668335,
+ "overrun": -48.354543924331665,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 26374.0,
+ "dual_bound": 26372.0,
+ "gap": "0.00758%",
+ "pd_integral": 2.46679361469,
+ "solver_time": 11.54,
+ "presolve_time": 0.56,
+ "nodes": 163,
+ "lp_iterations": 55995
+}

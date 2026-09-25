@@ -1,0 +1,42 @@
+{
+ "started": "2026-09-25T11:07:46+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "lab-cpm",
+  "--set",
+  "bench/sets/s100.txt",
+  "--seeds",
+  "0",
+  "--time-limit",
+  "60",
+  "--cores",
+  "5",
+  "--out",
+  "bench/results/raw/2026-09-25-s100"
+ ],
+ "cores": [
+  5
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "lab-cpm": {
+   "binary": "/home/coulson/git_repositories/highs-builds/lab-cpm/bin/highs",
+   "sha": "2a8b8a2d477d9763",
+   "options": {}
+  }
+ },
+ "n_jobs": 1,
+ "loadavg": [
+  3.328125,
+  3.044921875,
+  2.07421875
+ ],
+ "meminfo_available_kb": 117040468,
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ }
+}

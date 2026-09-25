@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "neos-911970",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 18,
+ "wall": 5.485411882400513,
+ "overrun": -54.51458811759949,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 54.76,
+ "dual_bound": 54.7552941176,
+ "gap": "0.00859%",
+ "pd_integral": 0.610406667638,
+ "solver_time": 5.41,
+ "presolve_time": 0.11,
+ "nodes": 1585,
+ "lp_iterations": 95241
+}
