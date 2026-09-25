@@ -1,0 +1,87 @@
+{
+ "arm": "v2-shift",
+ "instance": "CMS750_4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3e5a1f5929343c39",
+ "core": 18,
+ "wall": 60.14619278907776,
+ "overrun": 0.1461927890777588,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {
+  "mip_heuristic_run_shifting": true
+ },
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 302.0,
+ "dual_bound": 250.0,
+ "gap": "17.22%",
+ "pd_integral": 16.6598782786,
+ "solver_time": 60.01,
+ "presolve_time": 1.12,
+ "nodes": 2098,
+ "lp_iterations": 200465,
+ "trajectory": [
+  [
+   0.2,
+   -Infinity,
+   356.0
+  ],
+  [
+   0.4,
+   250.0,
+   356.0
+  ],
+  [
+   14.2,
+   250.0,
+   356.0
+  ],
+  [
+   19.3,
+   250.0,
+   356.0
+  ],
+  [
+   24.3,
+   250.0,
+   356.0
+  ],
+  [
+   27.5,
+   250.0,
+   356.0
+  ],
+  [
+   27.5,
+   250.0,
+   356.0
+  ],
+  [
+   32.6,
+   250.0,
+   356.0
+  ],
+  [
+   37.7,
+   250.0,
+   356.0
+  ],
+  [
+   51.0,
+   250.0,
+   302.0
+  ],
+  [
+   60.0,
+   250.0,
+   302.0
+  ],
+  [
+   60.0,
+   250.0,
+   302.0
+  ]
+ ]
+}

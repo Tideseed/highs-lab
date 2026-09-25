@@ -1,0 +1,61 @@
+{
+ "arm": "dev",
+ "instance": "air05",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "8e03d2b90834dc1f",
+ "core": 5,
+ "wall": 12.983529806137085,
+ "overrun": -107.01647019386292,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.4,
+   -Infinity,
+   50121.0
+  ],
+  [
+   0.5,
+   25877.609268,
+   50121.0
+  ],
+  [
+   5.7,
+   25973.82666,
+   26402.0
+  ],
+  [
+   7.9,
+   25974.031184,
+   26402.0
+  ],
+  [
+   7.9,
+   25974.031184,
+   26402.0
+  ],
+  [
+   12.2,
+   25992.442514,
+   26374.0
+  ],
+  [
+   12.9,
+   26371.5,
+   26374.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 26374.0,
+ "dual_bound": 26372.0,
+ "gap": "0.00758%",
+ "pd_integral": 2.75339301522,
+ "solver_time": 12.89,
+ "presolve_time": 0.72,
+ "nodes": 163,
+ "lp_iterations": 55995
+}
