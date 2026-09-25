@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "comp21-2idx",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 19,
+ "wall": 1.9335708618164062,
+ "overrun": -58.066429138183594,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

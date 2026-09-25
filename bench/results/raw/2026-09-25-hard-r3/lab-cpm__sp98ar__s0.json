@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "sp98ar",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 9,
+ "wall": 60.31759548187256,
+ "overrun": 0.3175954818725586,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 543079796.0,
+ "dual_bound": 526696728.148,
+ "gap": "3.02%",
+ "pd_integral": 6.62690249026,
+ "solver_time": 60.02,
+ "presolve_time": 5.18,
+ "nodes": 287,
+ "lp_iterations": 59519
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "neos-3004026-krka",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 9,
+ "wall": 20.03252363204956,
+ "overrun": -39.96747636795044,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 19.94,
+ "presolve_time": 0.57,
+ "nodes": 1338,
+ "lp_iterations": 139179
+}

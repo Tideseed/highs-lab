@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "CMS750_4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 18,
+ "wall": 60.135005712509155,
+ "overrun": 0.13500571250915527,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 274.0,
+ "dual_bound": 250.0,
+ "gap": "8.76%",
+ "pd_integral": 12.8368716033,
+ "solver_time": 60.02,
+ "presolve_time": 3.13,
+ "nodes": 2409,
+ "lp_iterations": 233313
+}

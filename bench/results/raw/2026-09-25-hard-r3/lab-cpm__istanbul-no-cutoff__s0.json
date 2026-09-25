@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "istanbul-no-cutoff",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 19,
+ "wall": 60.12901711463928,
+ "overrun": 0.12901711463928223,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 207.830354991,
+ "dual_bound": 75.8777807237,
+ "gap": "63.49%",
+ "pd_integral": 37.9421760966,
+ "solver_time": 60.0,
+ "presolve_time": 0.24,
+ "nodes": 339,
+ "lp_iterations": 639298
+}

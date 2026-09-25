@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "supportcase22",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 18,
+ "wall": 61.646934509277344,
+ "overrun": 1.6469345092773438,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.04,
+ "presolve_time": 5.1,
+ "nodes": 0,
+ "lp_iterations": 10226
+}

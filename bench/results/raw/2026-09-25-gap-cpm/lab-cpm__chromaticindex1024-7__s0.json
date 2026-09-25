@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "chromaticindex1024-7",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 17,
+ "wall": 60.49292588233948,
+ "overrun": 0.49292588233947754,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 4.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 36.7181138992,
+ "solver_time": 60.07,
+ "presolve_time": 12.13,
+ "nodes": 0,
+ "lp_iterations": 57587
+}

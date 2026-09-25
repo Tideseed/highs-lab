@@ -5,7 +5,7 @@ status: gated-quick
 gate: identical
 effort: done (branch)
 verified_in_source: true
-profiled_share: 90% (s100)
+profiled_share: 90% s100; 29-44% sorrell3
 branch: lab/clique-partition-marking
 ---
 # C1: Clique partition pairwise queries

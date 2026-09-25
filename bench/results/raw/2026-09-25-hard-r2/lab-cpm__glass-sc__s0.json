@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "glass-sc",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 8,
+ "wall": 21.34381079673767,
+ "overrun": -38.65618920326233,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

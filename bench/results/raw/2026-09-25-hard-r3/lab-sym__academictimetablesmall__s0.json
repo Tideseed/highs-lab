@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 5,
+ "wall": 60.31007695198059,
+ "overrun": 0.3100769519805908,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 94.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 58.7601373196,
+ "solver_time": 60.0,
+ "presolve_time": 2.56,
+ "nodes": 0,
+ "lp_iterations": 126055
+}

@@ -10,3 +10,15 @@ binary = "~/git_repositories/highs-builds/dev-tideseed/bin/highs"
 
 [lab-cpm]
 binary = "~/git_repositories/highs-builds/lab-cpm/bin/highs"
+
+[lab-fw]
+binary = "~/git_repositories/highs-builds/lab-fw/bin/highs"
+
+[lab-ht]
+binary = "~/git_repositories/highs-builds/lab-ht/bin/highs"
+
+[lab-sym]
+binary = "~/git_repositories/highs-builds/lab-sym/bin/highs"
+
+[lab-dse]
+binary = "~/git_repositories/highs-builds/lab-dse/bin/highs"

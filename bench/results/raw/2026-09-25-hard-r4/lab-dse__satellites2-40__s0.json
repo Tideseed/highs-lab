@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "satellites2-40",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 17,
+ "wall": 60.37310743331909,
+ "overrun": 0.3731074333190918,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 89.0,
+ "dual_bound": -29.0,
+ "gap": "132.58%",
+ "pd_integral": 71.5250409986,
+ "solver_time": 60.01,
+ "presolve_time": 6.37,
+ "nodes": 0,
+ "lp_iterations": 87825
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "glass-sc",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 6,
+ "wall": 60.095033407211304,
+ "overrun": 0.09503340721130371,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 23.0,
+ "dual_bound": 16.0,
+ "gap": "30.43%",
+ "pd_integral": 21.4253831046,
+ "solver_time": 60.0,
+ "presolve_time": 3.83,
+ "nodes": 1311,
+ "lp_iterations": 199841
+}

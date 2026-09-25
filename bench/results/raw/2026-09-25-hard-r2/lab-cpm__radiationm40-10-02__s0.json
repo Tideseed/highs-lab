@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 6,
+ "wall": 2.753558874130249,
+ "overrun": -57.24644112586975,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

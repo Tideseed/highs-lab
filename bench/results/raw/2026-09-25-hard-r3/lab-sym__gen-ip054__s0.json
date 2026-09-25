@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 5,
+ "wall": 60.05490303039551,
+ "overrun": 0.05490303039550781,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6840.96564179,
+ "dual_bound": 6782.14527945,
+ "gap": "0.86%",
+ "pd_integral": 0.688399564483,
+ "solver_time": 60.0,
+ "presolve_time": 0.33,
+ "nodes": 480287,
+ "lp_iterations": 1926461
+}

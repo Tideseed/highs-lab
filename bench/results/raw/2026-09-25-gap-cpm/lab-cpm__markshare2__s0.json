@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 16,
+ "wall": 60.03130316734314,
+ "overrun": 0.03130316734313965,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 26.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9971351624,
+ "solver_time": 60.0,
+ "presolve_time": 1.61,
+ "nodes": 233440,
+ "lp_iterations": 1395546
+}

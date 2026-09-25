@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "mad",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 8,
+ "wall": 1.1109070777893066,
+ "overrun": -58.88909292221069,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

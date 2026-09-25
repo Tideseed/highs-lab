@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "rail01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 19,
+ "wall": 61.278656005859375,
+ "overrun": 1.278656005859375,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -90.9438678548,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.84,
+ "presolve_time": 1.98,
+ "nodes": 0,
+ "lp_iterations": 123142
+}

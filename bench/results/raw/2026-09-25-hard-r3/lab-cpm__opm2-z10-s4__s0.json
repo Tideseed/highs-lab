@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "opm2-z10-s4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 19,
+ "wall": 60.69557595252991,
+ "overrun": 0.6955759525299072,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -1874.0,
+ "dual_bound": -46921.0,
+ "gap": "2403.79%",
+ "pd_integral": 197.801165855,
+ "solver_time": 60.24,
+ "presolve_time": 2.87,
+ "nodes": 0,
+ "lp_iterations": 23251
+}

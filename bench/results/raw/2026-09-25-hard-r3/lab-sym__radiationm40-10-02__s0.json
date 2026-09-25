@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 17,
+ "wall": 61.165024518966675,
+ "overrun": 1.1650245189666748,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 155325.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.02,
+ "presolve_time": 1.79,
+ "nodes": 1520,
+ "lp_iterations": 274954
+}

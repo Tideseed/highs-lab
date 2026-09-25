@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "mas74",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "659cfd2ede247800",
+ "core": 18,
+ "wall": 60.038745403289795,
+ "overrun": 0.03874540328979492,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 12052.1520988,
+ "dual_bound": 10893.3596013,
+ "gap": "9.61%",
+ "pd_integral": 6.60431138866,
+ "solver_time": 60.0,
+ "presolve_time": 1.17,
+ "nodes": 171855,
+ "lp_iterations": 1410780
+}

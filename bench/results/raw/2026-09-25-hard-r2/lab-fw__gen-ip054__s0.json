@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 7,
+ "wall": 60.054235219955444,
+ "overrun": 0.054235219955444336,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6840.96564179,
+ "dual_bound": 6782.35699787,
+ "gap": "0.857%",
+ "pd_integral": 0.681276427771,
+ "solver_time": 60.0,
+ "presolve_time": 0.34,
+ "nodes": 498161,
+ "lp_iterations": 2002303
+}

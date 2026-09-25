@@ -1,0 +1,23 @@
+{
+ "arm": "lab-ht",
+ "instance": "mas74",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "5ae97c6d3845a42f",
+ "core": 17,
+ "wall": 60.04330134391785,
+ "overrun": 0.04330134391784668,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 12052.1520988,
+ "dual_bound": 10889.7195551,
+ "gap": "9.65%",
+ "pd_integral": 6.62450718875,
+ "solver_time": 60.0,
+ "presolve_time": 1.16,
+ "nodes": 166502,
+ "lp_iterations": 1369160
+}

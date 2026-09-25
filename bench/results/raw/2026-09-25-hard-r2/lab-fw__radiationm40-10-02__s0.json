@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 7,
+ "wall": 61.154338359832764,
+ "overrun": 1.1543383598327637,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 155325.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.04,
+ "presolve_time": 1.67,
+ "nodes": 1520,
+ "lp_iterations": 258840
+}

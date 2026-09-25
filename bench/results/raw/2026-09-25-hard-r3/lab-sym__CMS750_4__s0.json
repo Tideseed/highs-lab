@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "CMS750_4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 15,
+ "wall": 60.16376090049744,
+ "overrun": 0.16376090049743652,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 274.0,
+ "dual_bound": 250.0,
+ "gap": "8.76%",
+ "pd_integral": 12.8748063659,
+ "solver_time": 60.05,
+ "presolve_time": 2.99,
+ "nodes": 2409,
+ "lp_iterations": 232505
+}

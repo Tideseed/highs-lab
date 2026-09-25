@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "net12",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 19,
+ "wall": 60.137566566467285,
+ "overrun": 0.13756656646728516,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 214.0,
+ "dual_bound": 131.0,
+ "gap": "38.79%",
+ "pd_integral": 25.7984713095,
+ "solver_time": 60.0,
+ "presolve_time": 0.65,
+ "nodes": 369,
+ "lp_iterations": 361086
+}

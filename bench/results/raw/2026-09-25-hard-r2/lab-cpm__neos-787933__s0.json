@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "neos-787933",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 16,
+ "wall": 4.617170572280884,
+ "overrun": -55.382829427719116,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

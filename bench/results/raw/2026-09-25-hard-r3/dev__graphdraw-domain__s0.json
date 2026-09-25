@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "graphdraw-domain",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 7,
+ "wall": 60.03568482398987,
+ "overrun": 0.035684823989868164,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 19850.0,
+ "dual_bound": 14354.3266965,
+ "gap": "27.69%",
+ "pd_integral": 20.0893294009,
+ "solver_time": 60.0,
+ "presolve_time": 0.26,
+ "nodes": 44206,
+ "lp_iterations": 1374974
+}

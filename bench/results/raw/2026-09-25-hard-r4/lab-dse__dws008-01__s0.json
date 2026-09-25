@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "dws008-01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 8,
+ "wall": 60.15310835838318,
+ "overrun": 0.1531083583831787,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 79205.2263595,
+ "dual_bound": 13725.6584388,
+ "gap": "82.67%",
+ "pd_integral": 29.5405100656,
+ "solver_time": 60.0,
+ "presolve_time": 11.75,
+ "nodes": 2824,
+ "lp_iterations": 326265
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "sp98ar",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 15,
+ "wall": 60.44589114189148,
+ "overrun": 0.4458911418914795,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 543079796.0,
+ "dual_bound": 526511657.358,
+ "gap": "3.05%",
+ "pd_integral": 7.68773910926,
+ "solver_time": 60.01,
+ "presolve_time": 5.02,
+ "nodes": 216,
+ "lp_iterations": 51204
+}

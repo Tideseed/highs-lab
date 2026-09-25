@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "air05",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 5,
+ "wall": 13.216796398162842,
+ "overrun": -106.78320360183716,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 26374.0,
+ "dual_bound": 26372.0,
+ "gap": "0.00758%",
+ "pd_integral": 2.77677827945,
+ "solver_time": 13.11,
+ "presolve_time": 0.71,
+ "nodes": 163,
+ "lp_iterations": 55995
+}

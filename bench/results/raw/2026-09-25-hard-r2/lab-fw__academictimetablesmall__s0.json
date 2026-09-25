@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 16,
+ "wall": 60.30218553543091,
+ "overrun": 0.3021855354309082,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 94.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 58.826458931,
+ "solver_time": 60.0,
+ "presolve_time": 2.46,
+ "nodes": 0,
+ "lp_iterations": 129888
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "supportcase26",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 19,
+ "wall": 60.03651833534241,
+ "overrun": 0.03651833534240723,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 1745.12418235,
+ "dual_bound": 1457.86177376,
+ "gap": "16.46%",
+ "pd_integral": 12.265802098,
+ "solver_time": 60.0,
+ "presolve_time": 0.67,
+ "nodes": 51633,
+ "lp_iterations": 992772
+}

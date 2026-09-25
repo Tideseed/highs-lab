@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "glass-sc",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 17,
+ "wall": 60.09007024765015,
+ "overrun": 0.09007024765014648,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 23.0,
+ "dual_bound": 16.0,
+ "gap": "30.43%",
+ "pd_integral": 21.1916366737,
+ "solver_time": 60.0,
+ "presolve_time": 4.39,
+ "nodes": 1411,
+ "lp_iterations": 220081
+}

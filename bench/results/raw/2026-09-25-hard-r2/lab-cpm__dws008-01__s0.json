@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "dws008-01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 19,
+ "wall": 2.3581864833831787,
+ "overrun": -57.64181351661682,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

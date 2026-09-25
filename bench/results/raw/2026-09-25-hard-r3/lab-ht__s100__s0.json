@@ -1,0 +1,23 @@
+{
+ "arm": "lab-ht",
+ "instance": "s100",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "5ae97c6d3845a42f",
+ "core": 19,
+ "wall": 178.87784218788147,
+ "overrun": 118.87784218788147,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 176.46,
+ "presolve_time": 14.02,
+ "nodes": 0,
+ "lp_iterations": 0
+}

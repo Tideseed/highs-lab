@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 17,
+ "wall": 60.52275609970093,
+ "overrun": 0.5227560997009277,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 94.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.0397660732,
+ "solver_time": 60.21,
+ "presolve_time": 2.39,
+ "nodes": 0,
+ "lp_iterations": 117590
+}

@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "neos-3004026-krka",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 19,
+ "wall": 1.430870771408081,
+ "overrun": -58.56912922859192,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

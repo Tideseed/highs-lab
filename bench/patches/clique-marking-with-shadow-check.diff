@@ -1,0 +1,217 @@
+diff --git a/highs/mip/HighsCliqueTable.cpp b/highs/mip/HighsCliqueTable.cpp
+index aef791e3ca..1c1479d121 100644
+--- a/highs/mip/HighsCliqueTable.cpp
++++ b/highs/mip/HighsCliqueTable.cpp
+@@ -484,6 +484,94 @@ void HighsCliqueTable::queryNeighbourhood(
+ 
+   if (numCliques(v) == 0) return;
+ 
++  // Pairwise queries intersect two hash trees each, which costs far more than
++  // marking one clique entry. Unless the cliques containing v have many more
++  // entries than there are candidates, find the neighbours of v by marking the
++  // entries of its cliques and scanning the candidates once. The result, and
++  // the number of queries counted, are the same as for pairwise queries.
++  const int64_t kPairwiseQueryCost = 16;
++  int64_t markWork = 0;
++  auto addWork = [&](HighsInt cliqueid) {
++    markWork += cliques[cliqueid].end - cliques[cliqueid].start;
++  };
++  invertedHashList[v.index()].for_each(addWork);
++  invertedHashListSizeTwo[v.index()].for_each(addWork);
++  if (markWork <= kPairwiseQueryCost * N) {
++    // thread local, since the clique table may be queried concurrently
++    static thread_local std::vector<uint32_t> mark;
++    static thread_local uint32_t stamp = 0;
++    if (mark.size() < numcliquesvar.size()) {
++      mark.assign(numcliquesvar.size(), 0);
++      stamp = 0;
++    }
++    ++stamp;
++    if (stamp == 0) {
++      std::fill(mark.begin(), mark.end(), 0);
++      stamp = 1;
++    }
++    // entries of deleted (fixed) columns stay in their cliques but are no
++    // longer linked to them, so they must not be marked
++    auto markClique = [&](HighsInt cliqueid) {
++      for (HighsInt k = cliques[cliqueid].start; k != cliques[cliqueid].end;
++           ++k)
++        if (!colDeleted[cliqueentries[k].col])
++          mark[cliqueentries[k].index()] = stamp;
++    };
++    invertedHashList[v.index()].for_each(markClique);
++    invertedHashListSizeTwo[v.index()].for_each(markClique);
++    // a pairwise query of v with itself only finds a common clique among the
++    // cliques that are not of size two
++    // haveCommonClique is false for two literals of the same column
++    mark[v.index()] = 0;
++    mark[v.complement().index()] = 0;
++    for (HighsInt i = 0; i < N; ++i)
++      if (mark[q[i].index()] == stamp) neighbourhoodInds.push_back(i);
++#ifdef HIGHS_LAB_SHADOW_CHECK
++    {
++      int64_t dummy = 0;
++      std::vector<HighsInt> ref;
++      for (HighsInt i = 0; i < N; ++i)
++        if (haveCommonClique(dummy, v, q[i])) ref.push_back(i);
++      if (ref != neighbourhoodInds) {
++        fprintf(stderr, "SHADOW MISMATCH v=%d/%d N=%d mark=%d pair=%d\n",
++                (int)v.col, (int)v.val, (int)N, (int)neighbourhoodInds.size(),
++                (int)ref.size());
++        for (HighsInt i : neighbourhoodInds) {
++          if (std::find(ref.begin(), ref.end(), i) != ref.end()) continue;
++          CliqueVar u = q[i];
++          fprintf(stderr, "  extra u=%d/%d same_col=%d deleted=%d ncl(u)=%d\n",
++                  (int)u.col, (int)u.val, (int)(u.col == v.col),
++                  (int)colDeleted[u.col], (int)numCliques(u));
++          auto show = [&](HighsInt c, const char* kind) {
++            bool inU = false;
++            for (HighsInt k = cliques[c].start; k != cliques[c].end; ++k)
++              if (cliqueentries[k] == u) inU = true;
++            if (inU)
++              fprintf(stderr, "   fc(v,u)=%p fc(u,v)=%p vContains=%d emptyV=%d emptyU=%d\n",
++                      (const void*)invertedHashList[v.index()].find_common(invertedHashList[u.index()]),
++                      (const void*)invertedHashList[u.index()].find_common(invertedHashList[v.index()]),
++                      (int)invertedHashList[v.index()].contains(c),
++                      (int)invertedHashList[v.index()].empty(), (int)invertedHashList[u.index()].empty());
++            if (inU)
++              fprintf(stderr, "   via %s clique %d len=%d linkedU=%d linkedU2=%d\n", kind,
++                      (int)c, (int)(cliques[c].end - cliques[c].start),
++                      (int)invertedHashList[u.index()].contains(c),
++                      (int)invertedHashListSizeTwo[u.index()].contains(c));
++          };
++          invertedHashList[v.index()].for_each([&](HighsInt c) { show(c, "big"); });
++          invertedHashListSizeTwo[v.index()].for_each([&](HighsInt c) { show(c, "two"); });
++        }
++        abort();
++      }
++      static int64_t nchecked = 0;
++      if ((++nchecked & 0xfffff) == 0)
++        fprintf(stderr, "SHADOW ok %ld\n", (long)nchecked);
++    }
++#endif
++    numQueries += N;
++    return;
++  }
++
+   if (!allowParallel ||
+       numEntries - sizeTwoCliques.size() * 2 < minEntriesForParallelism) {
+     for (HighsInt i = 0; i < N; ++i) {
+@@ -529,52 +617,6 @@ HighsInt HighsCliqueTable::partitionNeighbourhood(
+   return static_cast<HighsInt>(neighbourhoodInds.size());
+ }
+ 
+-HighsInt HighsCliqueTable::partitionNeighbourhoodByMarking(
+-    std::vector<HighsInt>& neighbourhoodInds, int64_t& numQueries, CliqueVar v,
+-    CliqueVar* q, HighsInt N, std::vector<uint32_t>& mark,
+-    uint32_t& stamp) const {
+-  neighbourhoodInds.clear();
+-
+-  if (numCliques(v) == 0) return 0;
+-
+-  // cost of marking all entries of the cliques containing v; a pairwise
+-  // query intersects two hash trees and costs far more than marking one
+-  // entry, so marking is used unless it touches many more entries than N
+-  const int64_t kPairwiseQueryCost = 16;
+-  int64_t markWork = 0;
+-  auto addWork = [&](HighsInt cliqueid) {
+-    markWork += cliques[cliqueid].end - cliques[cliqueid].start;
+-  };
+-  invertedHashList[v.index()].for_each(addWork);
+-  invertedHashListSizeTwo[v.index()].for_each(addWork);
+-  if (markWork > kPairwiseQueryCost * N)
+-    return partitionNeighbourhood(neighbourhoodInds, numQueries, v, q, N);
+-
+-  // count the queries as the pairwise version does, so that effort limits
+-  // based on the number of neighbourhood queries behave the same
+-  numQueries += N;
+-
+-  ++stamp;
+-  if (stamp == 0) {
+-    std::fill(mark.begin(), mark.end(), 0);
+-    stamp = 1;
+-  }
+-  auto markClique = [&](HighsInt cliqueid) {
+-    for (HighsInt k = cliques[cliqueid].start; k != cliques[cliqueid].end; ++k)
+-      mark[cliqueentries[k].index()] = stamp;
+-  };
+-  invertedHashList[v.index()].for_each(markClique);
+-  invertedHashListSizeTwo[v.index()].for_each(markClique);
+-
+-  for (HighsInt i = 0; i < N; ++i)
+-    if (mark[q[i].index()] == stamp) neighbourhoodInds.push_back(i);
+-
+-  for (size_t i = 0; i < neighbourhoodInds.size(); ++i)
+-    std::swap(q[i], q[neighbourhoodInds[i]]);
+-
+-  return static_cast<HighsInt>(neighbourhoodInds.size());
+-}
+-
+ HighsInt HighsCliqueTable::shrinkToNeighbourhood(
+     std::vector<HighsInt>& neighbourhoodInds, int64_t& numQueries, CliqueVar v,
+     CliqueVar* q, HighsInt N) {
+@@ -1037,8 +1079,6 @@ void HighsCliqueTable::cliquePartition(std::vector<CliqueVar>& clqVars,
+ 
+   std::vector<HighsInt> neighbourhoodInds;
+   neighbourhoodInds.reserve(clqVars.size());
+-  std::vector<uint32_t> mark(numcliquesvar.size(), 0);
+-  uint32_t stamp = 0;
+ 
+   HighsInt numClqVars = clqVars.size();
+   partitionStart.clear();
+@@ -1053,10 +1093,9 @@ void HighsCliqueTable::cliquePartition(std::vector<CliqueVar>& clqVars,
+     CliqueVar v = clqVars[i];
+     HighsInt extensionStart = i + 1;
+     extensionEnd =
+-        partitionNeighbourhoodByMarking(
+-            neighbourhoodInds, numNeighbourhoodQueries, v,
+-            clqVars.data() + extensionStart, extensionEnd - extensionStart,
+-            mark, stamp) +
++        partitionNeighbourhood(neighbourhoodInds, numNeighbourhoodQueries, v,
++                               clqVars.data() + extensionStart,
++                               extensionEnd - extensionStart) +
+         extensionStart;
+   }
+ 
+@@ -1076,8 +1115,6 @@ void HighsCliqueTable::cliquePartition(const std::vector<double>& objective,
+ 
+   std::vector<HighsInt> neighbourhoodInds;
+   neighbourhoodInds.reserve(clqVars.size());
+-  std::vector<uint32_t> mark(numcliquesvar.size(), 0);
+-  uint32_t stamp = 0;
+ 
+   HighsInt numClqVars = clqVars.size();
+   partitionStart.clear();
+@@ -1101,10 +1138,9 @@ void HighsCliqueTable::cliquePartition(const std::vector<double>& objective,
+     CliqueVar v = clqVars[i];
+     HighsInt extensionStart = i + 1;
+     extensionEnd =
+-        partitionNeighbourhoodByMarking(
+-            neighbourhoodInds, numNeighbourhoodQueries, v,
+-            clqVars.data() + extensionStart, extensionEnd - extensionStart,
+-            mark, stamp) +
++        partitionNeighbourhood(neighbourhoodInds, numNeighbourhoodQueries, v,
++                               clqVars.data() + extensionStart,
++                               extensionEnd - extensionStart) +
+         extensionStart;
+     if (!neighbourhoodInds.empty())
+       lastSwappedIndex =
+diff --git a/highs/mip/HighsCliqueTable.h b/highs/mip/HighsCliqueTable.h
+index 40e1dd7ce2..30dd56e2bf 100644
+--- a/highs/mip/HighsCliqueTable.h
++++ b/highs/mip/HighsCliqueTable.h
+@@ -196,14 +196,6 @@ class HighsCliqueTable {
+                                   int64_t& numNeighbourhoodqueries, CliqueVar v,
+                                   CliqueVar* q, HighsInt N) const;
+ 
+-  // same result as partitionNeighbourhood, but finds the neighbours of v by
+-  // marking the entries of the cliques containing v instead of querying each
+-  // pair; falls back to pairwise queries when marking would cost more
+-  HighsInt partitionNeighbourhoodByMarking(
+-      std::vector<HighsInt>& neighbourhoodInds, int64_t& numNeighbourhoodqueries,
+-      CliqueVar v, CliqueVar* q, HighsInt N, std::vector<uint32_t>& mark,
+-      uint32_t& stamp) const;
+-
+   HighsInt shrinkToNeighbourhood(std::vector<HighsInt>& neighbourhoodInds,
+                                  int64_t& numNeighbourhoodqueries, CliqueVar v,
+                                  CliqueVar* q, HighsInt N);

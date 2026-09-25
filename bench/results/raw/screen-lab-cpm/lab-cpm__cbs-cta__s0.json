@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "cbs-cta",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 6,
+ "wall": 35.898289918899536,
+ "overrun": -24.101710081100464,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 0.0,
+ "dual_bound": 0.0,
+ "gap": "0%",
+ "pd_integral": 35.5179476738,
+ "solver_time": 35.74,
+ "presolve_time": 0.14,
+ "nodes": 1735,
+ "lp_iterations": 137203
+}

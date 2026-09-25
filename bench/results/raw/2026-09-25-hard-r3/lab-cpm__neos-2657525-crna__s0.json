@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "neos-2657525-crna",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 18,
+ "wall": 60.03295660018921,
+ "overrun": 0.032956600189208984,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 8.0666482,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 51.1344025135,
+ "solver_time": 60.0,
+ "presolve_time": 1.34,
+ "nodes": 38652,
+ "lp_iterations": 1161500
+}

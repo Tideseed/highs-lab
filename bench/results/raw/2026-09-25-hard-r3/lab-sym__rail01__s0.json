@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "rail01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 16,
+ "wall": 60.706629514694214,
+ "overrun": 0.7066295146942139,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -90.9438678548,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.27,
+ "presolve_time": 1.94,
+ "nodes": 0,
+ "lp_iterations": 123142
+}

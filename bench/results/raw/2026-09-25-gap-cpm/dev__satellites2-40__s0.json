@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "satellites2-40",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 15,
+ "wall": 60.281375885009766,
+ "overrun": 0.2813758850097656,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 89.0,
+ "dual_bound": -29.0,
+ "gap": "132.58%",
+ "pd_integral": 76.4138036035,
+ "solver_time": 60.0,
+ "presolve_time": 2.82,
+ "nodes": 0,
+ "lp_iterations": 112256
+}

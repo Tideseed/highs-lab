@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "opm2-z10-s4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 17,
+ "wall": 60.70318961143494,
+ "overrun": 0.7031896114349365,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -1874.0,
+ "dual_bound": -46921.0,
+ "gap": "2403.79%",
+ "pd_integral": 323.750539341,
+ "solver_time": 60.21,
+ "presolve_time": 3.31,
+ "nodes": 0,
+ "lp_iterations": 25328
+}

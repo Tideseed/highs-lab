@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "n3div36",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 7,
+ "wall": 60.40235376358032,
+ "overrun": 0.40235376358032227,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 135600.0,
+ "dual_bound": 121400.0,
+ "gap": "10.47%",
+ "pd_integral": 9.21961638299,
+ "solver_time": 60.01,
+ "presolve_time": 2.06,
+ "nodes": 386,
+ "lp_iterations": 41120
+}

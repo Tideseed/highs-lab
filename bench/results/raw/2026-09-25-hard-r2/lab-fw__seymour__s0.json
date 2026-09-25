@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "seymour",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 15,
+ "wall": 60.07069540023804,
+ "overrun": 0.07069540023803711,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 424.0,
+ "dual_bound": 410.0,
+ "gap": "3.3%",
+ "pd_integral": 2.39184452815,
+ "solver_time": 60.0,
+ "presolve_time": 1.67,
+ "nodes": 1099,
+ "lp_iterations": 332699
+}

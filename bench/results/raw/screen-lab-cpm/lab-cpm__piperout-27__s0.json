@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "piperout-27",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 8,
+ "wall": 32.04159665107727,
+ "overrun": -27.95840334892273,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 8124.0,
+ "dual_bound": 8124.0,
+ "gap": "0%",
+ "pd_integral": 0.00059176149826,
+ "solver_time": 31.89,
+ "presolve_time": 31.52,
+ "nodes": 1,
+ "lp_iterations": 5912
+}

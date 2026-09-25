@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "net12",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 9,
+ "wall": 60.14325976371765,
+ "overrun": 0.14325976371765137,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 255.0,
+ "dual_bound": 131.0,
+ "gap": "48.63%",
+ "pd_integral": 30.1079978278,
+ "solver_time": 60.0,
+ "presolve_time": 0.69,
+ "nodes": 811,
+ "lp_iterations": 371492
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "CMS750_4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "659cfd2ede247800",
+ "core": 19,
+ "wall": 60.17457461357117,
+ "overrun": 0.174574613571167,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 274.0,
+ "dual_bound": 250.0,
+ "gap": "8.76%",
+ "pd_integral": 12.6090375709,
+ "solver_time": 60.06,
+ "presolve_time": 3.41,
+ "nodes": 2409,
+ "lp_iterations": 238901
+}

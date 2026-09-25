@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "n3div36",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 7,
+ "wall": 60.43527817726135,
+ "overrun": 0.43527817726135254,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 135600.0,
+ "dual_bound": 121600.0,
+ "gap": "10.32%",
+ "pd_integral": 9.21284296952,
+ "solver_time": 60.01,
+ "presolve_time": 2.0,
+ "nodes": 404,
+ "lp_iterations": 42118
+}

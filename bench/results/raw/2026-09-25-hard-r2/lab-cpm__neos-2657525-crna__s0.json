@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "neos-2657525-crna",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 15,
+ "wall": 1.1437122821807861,
+ "overrun": -58.856287717819214,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

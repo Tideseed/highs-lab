@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "sp98ar",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 5,
+ "wall": 60.352731466293335,
+ "overrun": 0.35273146629333496,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 545572268.8,
+ "dual_bound": 526412758.677,
+ "gap": "3.51%",
+ "pd_integral": 7.74048257557,
+ "solver_time": 60.01,
+ "presolve_time": 5.32,
+ "nodes": 203,
+ "lp_iterations": 48047
+}

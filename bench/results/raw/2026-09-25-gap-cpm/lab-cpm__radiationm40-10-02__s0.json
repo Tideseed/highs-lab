@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 18,
+ "wall": 61.05518388748169,
+ "overrun": 1.0551838874816895,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 155325.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.03,
+ "presolve_time": 1.55,
+ "nodes": 1520,
+ "lp_iterations": 290020
+}

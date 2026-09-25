@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "sing326",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 5,
+ "wall": 60.44133520126343,
+ "overrun": 0.44133520126342773,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 13391015.4431,
+ "dual_bound": 7735291.38621,
+ "gap": "42.24%",
+ "pd_integral": 20.1432594809,
+ "solver_time": 60.01,
+ "presolve_time": 1.63,
+ "nodes": 0,
+ "lp_iterations": 47567
+}

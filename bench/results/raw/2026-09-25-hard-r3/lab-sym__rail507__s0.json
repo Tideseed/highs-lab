@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 17,
+ "wall": 60.41261672973633,
+ "overrun": 0.4126167297363281,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 175.0,
+ "dual_bound": 173.0,
+ "gap": "1.14%",
+ "pd_integral": 4.28756066128,
+ "solver_time": 60.02,
+ "presolve_time": 3.65,
+ "nodes": 171,
+ "lp_iterations": 69980
+}

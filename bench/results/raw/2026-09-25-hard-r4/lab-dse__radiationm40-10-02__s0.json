@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "radiationm40-10-02",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 17,
+ "wall": 61.06089496612549,
+ "overrun": 1.0608949661254883,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 155325.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.04,
+ "presolve_time": 1.25,
+ "nodes": 918,
+ "lp_iterations": 316809
+}

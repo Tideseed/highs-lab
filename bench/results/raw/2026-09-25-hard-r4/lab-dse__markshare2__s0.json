@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 9,
+ "wall": 60.053443908691406,
+ "overrun": 0.05344390869140625,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 34.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9974954128,
+ "solver_time": 60.0,
+ "presolve_time": 1.71,
+ "nodes": 194944,
+ "lp_iterations": 1212334
+}

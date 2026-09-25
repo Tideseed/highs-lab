@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "CMS750_4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 9,
+ "wall": 60.129454612731934,
+ "overrun": 0.1294546127319336,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 274.0,
+ "dual_bound": 250.0,
+ "gap": "8.76%",
+ "pd_integral": 12.7537894333,
+ "solver_time": 60.01,
+ "presolve_time": 3.29,
+ "nodes": 2409,
+ "lp_iterations": 234588
+}

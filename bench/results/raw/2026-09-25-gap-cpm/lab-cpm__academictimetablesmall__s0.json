@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "academictimetablesmall",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 15,
+ "wall": 60.4740777015686,
+ "overrun": 0.4740777015686035,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 94.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 58.9571690559,
+ "solver_time": 60.15,
+ "presolve_time": 2.56,
+ "nodes": 0,
+ "lp_iterations": 127108
+}

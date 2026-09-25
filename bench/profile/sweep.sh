@@ -2,7 +2,7 @@
 # Profile a binary on a list of instances (30 s each, 1 thread), 4 in parallel on the given cores.
 # sweep.sh <highs-binary> <set-file> <outdir> [cores]
 BIN=$1; SET=$2; OUT=$3; CORES=${4:-0,1,2,3}
-mkdir -p "$OUT"; printf 'threads = 1\ntime_limit = 30\n' > "$OUT/opts"
+mkdir -p "$OUT"; printf 'threads = 1\ntime_limit = %s\n' "${TL:-30}" > "$OUT/opts"
 IFS=, read -ra C <<< "$CORES"
 i=0
 for inst in $(grep -v '^#' "$SET"); do

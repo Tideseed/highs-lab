@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 9,
+ "wall": 60.432504177093506,
+ "overrun": 0.43250417709350586,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 175.0,
+ "dual_bound": 173.0,
+ "gap": "1.14%",
+ "pd_integral": 4.6848208072,
+ "solver_time": 60.03,
+ "presolve_time": 3.8,
+ "nodes": 145,
+ "lp_iterations": 64747
+}

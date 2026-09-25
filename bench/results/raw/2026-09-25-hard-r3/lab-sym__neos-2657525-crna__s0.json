@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "neos-2657525-crna",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 9,
+ "wall": 60.04757237434387,
+ "overrun": 0.04757237434387207,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 8.0666482,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 50.9451184273,
+ "solver_time": 60.0,
+ "presolve_time": 1.38,
+ "nodes": 36885,
+ "lp_iterations": 1094229
+}

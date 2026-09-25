@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "sorrell3",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 6,
+ "wall": 60.67646408081055,
+ "overrun": 0.6764640808105469,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -16.0,
+ "dual_bound": -20.0,
+ "gap": "25%",
+ "pd_integral": 19.6369005344,
+ "solver_time": 60.03,
+ "presolve_time": 11.23,
+ "nodes": 102,
+ "lp_iterations": 82726
+}

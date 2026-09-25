@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "cryptanalysiskb128n5obj16",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 16,
+ "wall": 62.35937762260437,
+ "overrun": 2.35937762260437,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 61.93,
+ "presolve_time": 5.21,
+ "nodes": 0,
+ "lp_iterations": 32218
+}

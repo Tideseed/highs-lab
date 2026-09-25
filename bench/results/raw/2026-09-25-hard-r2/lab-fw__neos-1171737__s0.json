@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "neos-1171737",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 7,
+ "wall": 60.08734059333801,
+ "overrun": 0.0873405933380127,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -190.0,
+ "dual_bound": -195.0,
+ "gap": "2.63%",
+ "pd_integral": 5.48033398919,
+ "solver_time": 60.01,
+ "presolve_time": 0.43,
+ "nodes": 1028,
+ "lp_iterations": 448268
+}

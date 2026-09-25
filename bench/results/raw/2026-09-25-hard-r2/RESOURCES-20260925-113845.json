@@ -1,0 +1,61 @@
+{
+ "started": "2026-09-25T11:38:45+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "dev",
+  "lab-cpm",
+  "lab-fw",
+  "--set",
+  "bench/sets/gap-v0.txt",
+  "--seeds",
+  "0",
+  "--time-limit",
+  "60",
+  "--out",
+  "bench/results/raw/2026-09-25-hard-r2"
+ ],
+ "cores": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "dev": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dev/bin/highs",
+   "sha": "463bf8b913acdc9f",
+   "options": {}
+  },
+  "lab-cpm": {
+   "binary": "/home/coulson/git_repositories/highs-builds/lab-cpm/bin/highs",
+   "sha": "703ae9c3641ec8e0",
+   "options": {}
+  },
+  "lab-fw": {
+   "binary": "/home/coulson/git_repositories/highs-builds/lab-fw/bin/highs",
+   "sha": "1a71b35ad415b39c",
+   "options": {}
+  }
+ },
+ "n_jobs": 126,
+ "loadavg": [
+  5.8212890625,
+  5.013671875,
+  5.869140625
+ ],
+ "meminfo_available_kb": 117204204,
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ }
+}

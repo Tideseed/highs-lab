@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "opm2-z10-s4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 8,
+ "wall": 53.752695083618164,
+ "overrun": -6.247304916381836,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

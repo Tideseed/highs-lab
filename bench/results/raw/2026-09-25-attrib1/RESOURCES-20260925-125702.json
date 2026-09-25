@@ -1,0 +1,75 @@
+{
+ "started": "2026-09-25T12:57:02+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "dev",
+  "lab-dse",
+  "lab-cpm",
+  "lab-fw",
+  "dev-tideseed",
+  "--set",
+  "bench/sets/attrib1.txt",
+  "--seeds",
+  "0",
+  "1",
+  "2",
+  "--time-limit",
+  "120",
+  "--out",
+  "bench/results/raw/2026-09-25-attrib1"
+ ],
+ "cores": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "mem_cap": "8G",
+ "arms": {
+  "dev": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dev/bin/highs",
+   "sha": "463bf8b913acdc9f",
+   "options": {}
+  },
+  "dev-tideseed": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dev-tideseed/bin/highs",
+   "sha": "9053b08f6f7eddeb",
+   "options": {}
+  },
+  "lab-cpm": {
+   "binary": "/home/coulson/git_repositories/highs-builds/lab-cpm/bin/highs",
+   "sha": "99ab4c765dad735e",
+   "options": {}
+  },
+  "lab-fw": {
+   "binary": "/home/coulson/git_repositories/highs-builds/lab-fw/bin/highs",
+   "sha": "1a71b35ad415b39c",
+   "options": {}
+  },
+  "lab-dse": {
+   "binary": "/home/coulson/git_repositories/highs-builds/lab-dse/bin/highs",
+   "sha": "f483d9f5e45dfcbc",
+   "options": {}
+  }
+ },
+ "n_jobs": 45,
+ "loadavg": [
+  5.38330078125,
+  9.162109375,
+  9.49658203125
+ ],
+ "meminfo_available_kb": 61017044,
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ }
+}

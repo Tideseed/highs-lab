@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "cryptanalysiskb128n5obj16",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 18,
+ "wall": 19.781486749649048,
+ "overrun": -40.21851325035095,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

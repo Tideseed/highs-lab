@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 5,
+ "wall": 60.02897262573242,
+ "overrun": 0.028972625732421875,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 26.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9966304302,
+ "solver_time": 60.0,
+ "presolve_time": 1.63,
+ "nodes": 232374,
+ "lp_iterations": 1382370
+}

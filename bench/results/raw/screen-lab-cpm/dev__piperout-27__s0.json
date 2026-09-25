@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "piperout-27",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 7,
+ "wall": 32.67079305648804,
+ "overrun": -27.329206943511963,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 8124.0,
+ "dual_bound": 8124.0,
+ "gap": "0%",
+ "pd_integral": 0.000586002210729,
+ "solver_time": 32.5,
+ "presolve_time": 32.14,
+ "nodes": 1,
+ "lp_iterations": 5912
+}

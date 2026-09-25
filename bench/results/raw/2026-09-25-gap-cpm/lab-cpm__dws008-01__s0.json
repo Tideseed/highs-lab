@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "dws008-01",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 7,
+ "wall": 60.17715358734131,
+ "overrun": 0.1771535873413086,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 49358.3773294,
+ "dual_bound": 12448.2349187,
+ "gap": "74.78%",
+ "pd_integral": 26.8484564351,
+ "solver_time": 60.03,
+ "presolve_time": 11.58,
+ "nodes": 2924,
+ "lp_iterations": 286527
+}

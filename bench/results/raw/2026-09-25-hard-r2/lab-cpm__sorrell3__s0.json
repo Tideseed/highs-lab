@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "sorrell3",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 19,
+ "wall": 9.741631031036377,
+ "overrun": -50.25836896896362,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

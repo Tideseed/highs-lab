@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "neos-2746589-doon",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 5,
+ "wall": 89.43515276908875,
+ "overrun": 29.435152769088745,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 1999.1,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 89.13,
+ "presolve_time": 10.69,
+ "nodes": 0,
+ "lp_iterations": 48233
+}

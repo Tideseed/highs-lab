@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "neos-3046615-murg",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 5,
+ "wall": 60.02864623069763,
+ "overrun": 0.028646230697631836,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 1600.0,
+ "dual_bound": 1569.0,
+ "gap": "1.94%",
+ "pd_integral": 1.46927158164,
+ "solver_time": 60.0,
+ "presolve_time": 0.71,
+ "nodes": 139510,
+ "lp_iterations": 1699474
+}

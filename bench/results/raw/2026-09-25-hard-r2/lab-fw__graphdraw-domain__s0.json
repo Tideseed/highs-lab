@@ -1,0 +1,23 @@
+{
+ "arm": "lab-fw",
+ "instance": "graphdraw-domain",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "1a71b35ad415b39c",
+ "core": 9,
+ "wall": 60.04005455970764,
+ "overrun": 0.0400545597076416,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 19850.0,
+ "dual_bound": 14348.6357866,
+ "gap": "27.71%",
+ "pd_integral": 20.0780274062,
+ "solver_time": 60.0,
+ "presolve_time": 0.26,
+ "nodes": 43785,
+ "lp_iterations": 1360016
+}

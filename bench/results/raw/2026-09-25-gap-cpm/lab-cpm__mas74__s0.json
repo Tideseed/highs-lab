@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "mas74",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 6,
+ "wall": 60.03544306755066,
+ "overrun": 0.03544306755065918,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 12052.1520988,
+ "dual_bound": 10888.9507758,
+ "gap": "9.65%",
+ "pd_integral": 6.64560573935,
+ "solver_time": 60.0,
+ "presolve_time": 1.18,
+ "nodes": 163210,
+ "lp_iterations": 1340838
+}

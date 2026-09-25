@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "glass-sc",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 18,
+ "wall": 60.10589289665222,
+ "overrun": 0.10589289665222168,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 23.0,
+ "dual_bound": 16.0,
+ "gap": "30.43%",
+ "pd_integral": 21.3664125239,
+ "solver_time": 60.0,
+ "presolve_time": 3.98,
+ "nodes": 1311,
+ "lp_iterations": 205029
+}

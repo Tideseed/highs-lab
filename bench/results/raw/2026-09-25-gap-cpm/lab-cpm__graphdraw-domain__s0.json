@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "graphdraw-domain",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 6,
+ "wall": 60.04243540763855,
+ "overrun": 0.042435407638549805,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 19850.0,
+ "dual_bound": 14340.0501551,
+ "gap": "27.76%",
+ "pd_integral": 20.0775509942,
+ "solver_time": 60.0,
+ "presolve_time": 0.26,
+ "nodes": 43594,
+ "lp_iterations": 1353592
+}

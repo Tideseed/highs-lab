@@ -1,0 +1,23 @@
+{
+ "arm": "lab-ht",
+ "instance": "sorrell3",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "5ae97c6d3845a42f",
+ "core": 6,
+ "wall": 61.04172396659851,
+ "overrun": 1.0417239665985107,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -16.0,
+ "dual_bound": -20.0,
+ "gap": "25%",
+ "pd_integral": 19.4496197153,
+ "solver_time": 60.34,
+ "presolve_time": 11.48,
+ "nodes": 101,
+ "lp_iterations": 82750
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "binkar10_1",
+ "seed": 0,
+ "time_limit": 120.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 9,
+ "wall": 22.437530994415283,
+ "overrun": -97.56246900558472,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 6742.200024,
+ "dual_bound": 6741.56510679,
+ "gap": "0.00942%",
+ "pd_integral": 0.12029126198,
+ "solver_time": 22.31,
+ "presolve_time": 0.11,
+ "nodes": 2364,
+ "lp_iterations": 139552
+}

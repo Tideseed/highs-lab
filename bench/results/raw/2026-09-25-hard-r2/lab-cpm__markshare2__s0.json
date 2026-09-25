@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 6,
+ "wall": 1.2819933891296387,
+ "overrun": -58.71800661087036,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

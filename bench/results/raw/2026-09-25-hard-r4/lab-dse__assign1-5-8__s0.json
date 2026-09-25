@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "assign1-5-8",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 19,
+ "wall": 60.05945706367493,
+ "overrun": 0.05945706367492676,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 212.0,
+ "dual_bound": 197.0,
+ "gap": "7.08%",
+ "pd_integral": 4.33062864062,
+ "solver_time": 60.0,
+ "presolve_time": 1.3,
+ "nodes": 39204,
+ "lp_iterations": 1184381
+}

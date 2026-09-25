@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "sp98ar",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "659cfd2ede247800",
+ "core": 18,
+ "wall": 60.31154108047485,
+ "overrun": 0.3115410804748535,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 535257731.359,
+ "dual_bound": 526696728.148,
+ "gap": "1.6%",
+ "pd_integral": 6.49337255956,
+ "solver_time": 60.03,
+ "presolve_time": 5.31,
+ "nodes": 287,
+ "lp_iterations": 60444
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "seymour",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 16,
+ "wall": 60.068331241607666,
+ "overrun": 0.06833124160766602,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 424.0,
+ "dual_bound": 410.0,
+ "gap": "3.3%",
+ "pd_integral": 2.39143710199,
+ "solver_time": 60.0,
+ "presolve_time": 1.65,
+ "nodes": 1084,
+ "lp_iterations": 330896
+}

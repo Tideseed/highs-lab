@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "seymour",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 16,
+ "wall": 1.5432133674621582,
+ "overrun": -58.45678663253784,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

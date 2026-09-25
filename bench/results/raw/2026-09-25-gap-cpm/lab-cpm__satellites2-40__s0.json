@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "satellites2-40",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 19,
+ "wall": 60.29637908935547,
+ "overrun": 0.29637908935546875,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 89.0,
+ "dual_bound": -29.0,
+ "gap": "132.58%",
+ "pd_integral": 76.450706565,
+ "solver_time": 60.0,
+ "presolve_time": 2.8,
+ "nodes": 0,
+ "lp_iterations": 112349
+}

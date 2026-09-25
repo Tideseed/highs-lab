@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 19,
+ "wall": 60.058481216430664,
+ "overrun": 0.05848121643066406,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6840.96564179,
+ "dual_bound": 6782.37613188,
+ "gap": "0.856%",
+ "pd_integral": 0.681390257346,
+ "solver_time": 60.0,
+ "presolve_time": 0.33,
+ "nodes": 499249,
+ "lp_iterations": 2006568
+}

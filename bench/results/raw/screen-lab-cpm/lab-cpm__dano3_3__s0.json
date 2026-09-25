@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "dano3_3",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 15,
+ "wall": 31.18659472465515,
+ "overrun": -28.81340527534485,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Optimal",
+ "primal_bound": 576.344633031,
+ "dual_bound": 576.308268405,
+ "gap": "0.00631%",
+ "pd_integral": 0.00454738852247,
+ "solver_time": 31.12,
+ "presolve_time": 0.12,
+ "nodes": 1,
+ "lp_iterations": 93695
+}

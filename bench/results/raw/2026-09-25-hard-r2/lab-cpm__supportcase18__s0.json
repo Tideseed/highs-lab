@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "supportcase18",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 16,
+ "wall": 1.3071300983428955,
+ "overrun": -58.692869901657104,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

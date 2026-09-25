@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "comp21-2idx",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 7,
+ "wall": 60.219557762145996,
+ "overrun": 0.2195577621459961,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 166.0,
+ "dual_bound": 43.0,
+ "gap": "74.1%",
+ "pd_integral": 47.1560298735,
+ "solver_time": 60.06,
+ "presolve_time": 1.32,
+ "nodes": 468,
+ "lp_iterations": 242054
+}

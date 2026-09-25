@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "ic97_potential",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 7,
+ "wall": 60.03102350234985,
+ "overrun": 0.031023502349853516,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 3946.0,
+ "dual_bound": 3915.0,
+ "gap": "0.786%",
+ "pd_integral": 0.721867721977,
+ "solver_time": 60.01,
+ "presolve_time": 1.35,
+ "nodes": 13544,
+ "lp_iterations": 872197
+}

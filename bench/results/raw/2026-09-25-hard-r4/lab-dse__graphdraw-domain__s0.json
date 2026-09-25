@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "graphdraw-domain",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 9,
+ "wall": 60.03394412994385,
+ "overrun": 0.033944129943847656,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 20194.0,
+ "dual_bound": 14108.9106405,
+ "gap": "30.13%",
+ "pd_integral": 20.8226220914,
+ "solver_time": 60.0,
+ "presolve_time": 0.2,
+ "nodes": 45177,
+ "lp_iterations": 1477548
+}

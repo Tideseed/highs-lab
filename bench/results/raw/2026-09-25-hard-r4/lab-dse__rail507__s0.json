@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "rail507",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 15,
+ "wall": 60.5538055896759,
+ "overrun": 0.5538055896759033,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 175.0,
+ "dual_bound": 173.0,
+ "gap": "1.14%",
+ "pd_integral": 4.74530588986,
+ "solver_time": 60.02,
+ "presolve_time": 4.42,
+ "nodes": 102,
+ "lp_iterations": 55499
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "neos-4763324-toguru",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 18,
+ "wall": 61.074464082717896,
+ "overrun": 1.0744640827178955,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 3600.14193092,
+ "dual_bound": 1133.70554155,
+ "gap": "68.51%",
+ "pd_integral": 36.7964857693,
+ "solver_time": 60.62,
+ "presolve_time": 7.4,
+ "nodes": 0,
+ "lp_iterations": 12733
+}

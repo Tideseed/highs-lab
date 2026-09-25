@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "opm2-z10-s4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "9053b08f6f7eddeb",
+ "core": 5,
+ "wall": 60.9577853679657,
+ "overrun": 0.9577853679656982,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -1874.0,
+ "dual_bound": -46921.0,
+ "gap": "2403.79%",
+ "pd_integral": 239.19931827,
+ "solver_time": 60.33,
+ "presolve_time": 3.05,
+ "nodes": 0,
+ "lp_iterations": 23590
+}

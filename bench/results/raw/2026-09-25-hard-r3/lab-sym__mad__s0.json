@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "mad",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 6,
+ "wall": 60.04899525642395,
+ "overrun": 0.048995256423950195,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 0.174,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9934039116,
+ "solver_time": 60.0,
+ "presolve_time": 0.69,
+ "nodes": 119811,
+ "lp_iterations": 1119359
+}

@@ -1,0 +1,14 @@
+{
+ "arm": "lab-cpm",
+ "instance": "ic97_potential",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "703ae9c3641ec8e0",
+ "core": 17,
+ "wall": 1.1256780624389648,
+ "overrun": -58.874321937561035,
+ "rc": -6,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "CMS750_4",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 9,
+ "wall": 60.14291858673096,
+ "overrun": 0.14291858673095703,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 270.0,
+ "dual_bound": 250.0,
+ "gap": "7.41%",
+ "pd_integral": 12.2602223713,
+ "solver_time": 60.01,
+ "presolve_time": 3.23,
+ "nodes": 2515,
+ "lp_iterations": 242633
+}

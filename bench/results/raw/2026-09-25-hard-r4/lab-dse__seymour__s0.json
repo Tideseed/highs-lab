@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "seymour",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 19,
+ "wall": 60.13525104522705,
+ "overrun": 0.13525104522705078,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 424.0,
+ "dual_bound": 409.0,
+ "gap": "3.54%",
+ "pd_integral": 2.33648523732,
+ "solver_time": 60.0,
+ "presolve_time": 1.56,
+ "nodes": 1070,
+ "lp_iterations": 336387
+}

@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "seymour",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "99ab4c765dad735e",
+ "core": 17,
+ "wall": 60.0766441822052,
+ "overrun": 0.0766441822052002,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 424.0,
+ "dual_bound": 410.0,
+ "gap": "3.3%",
+ "pd_integral": 2.39140642365,
+ "solver_time": 60.0,
+ "presolve_time": 1.64,
+ "nodes": 1123,
+ "lp_iterations": 335812
+}

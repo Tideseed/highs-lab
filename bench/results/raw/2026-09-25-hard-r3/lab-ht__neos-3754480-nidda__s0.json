@@ -1,0 +1,23 @@
+{
+ "arm": "lab-ht",
+ "instance": "neos-3754480-nidda",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "5ae97c6d3845a42f",
+ "core": 7,
+ "wall": 60.03475332260132,
+ "overrun": 0.03475332260131836,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 14276.5898683,
+ "dual_bound": -688134.13032,
+ "gap": "4920.02%",
+ "pd_integral": 3410.43287734,
+ "solver_time": 60.0,
+ "presolve_time": 0.36,
+ "nodes": 106239,
+ "lp_iterations": 2314400
+}

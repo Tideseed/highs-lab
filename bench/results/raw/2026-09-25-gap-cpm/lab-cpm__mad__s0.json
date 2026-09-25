@@ -1,0 +1,23 @@
+{
+ "arm": "lab-cpm",
+ "instance": "mad",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "2a8b8a2d477d9763",
+ "core": 15,
+ "wall": 60.058395862579346,
+ "overrun": 0.0583958625793457,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 0.174,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9909417629,
+ "solver_time": 60.0,
+ "presolve_time": 0.7,
+ "nodes": 120114,
+ "lp_iterations": 1124816
+}

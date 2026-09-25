@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "sorrell3",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 8,
+ "wall": 61.16919541358948,
+ "overrun": 1.1691954135894775,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -16.0,
+ "dual_bound": -20.0,
+ "gap": "25%",
+ "pd_integral": 19.7146390538,
+ "solver_time": 60.52,
+ "presolve_time": 10.99,
+ "nodes": 102,
+ "lp_iterations": 82873
+}

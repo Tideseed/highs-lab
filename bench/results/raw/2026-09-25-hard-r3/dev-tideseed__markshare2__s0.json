@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "659cfd2ede247800",
+ "core": 7,
+ "wall": 60.02469778060913,
+ "overrun": 0.02469778060913086,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 26.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9975423813,
+ "solver_time": 60.0,
+ "presolve_time": 1.7,
+ "nodes": 234641,
+ "lp_iterations": 1411473
+}

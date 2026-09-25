@@ -1,0 +1,23 @@
+{
+ "arm": "dev-tideseed",
+ "instance": "chromaticindex1024-7",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "659cfd2ede247800",
+ "core": 18,
+ "wall": 60.395790576934814,
+ "overrun": 0.39579057693481445,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 4.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 25.3081231117,
+ "solver_time": 60.02,
+ "presolve_time": 27.93,
+ "nodes": 0,
+ "lp_iterations": 47344
+}

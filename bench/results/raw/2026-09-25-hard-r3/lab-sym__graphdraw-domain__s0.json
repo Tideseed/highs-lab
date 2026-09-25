@@ -1,0 +1,23 @@
+{
+ "arm": "lab-sym",
+ "instance": "graphdraw-domain",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "3746936457c5adde",
+ "core": 19,
+ "wall": 60.03031826019287,
+ "overrun": 0.030318260192871094,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 19850.0,
+ "dual_bound": 14360.0039276,
+ "gap": "27.66%",
+ "pd_integral": 20.016787006,
+ "solver_time": 60.0,
+ "presolve_time": 0.26,
+ "nodes": 44839,
+ "lp_iterations": 1397331
+}

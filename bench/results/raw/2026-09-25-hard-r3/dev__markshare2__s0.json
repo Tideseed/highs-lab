@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "markshare2",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 15,
+ "wall": 60.039878368377686,
+ "overrun": 0.03987836837768555,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 26.0,
+ "dual_bound": 0.0,
+ "gap": "100%",
+ "pd_integral": 59.9978134632,
+ "solver_time": 60.0,
+ "presolve_time": 1.62,
+ "nodes": 232890,
+ "lp_iterations": 1389199
+}

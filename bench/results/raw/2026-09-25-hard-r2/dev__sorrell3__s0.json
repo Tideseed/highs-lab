@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "sorrell3",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 19,
+ "wall": 60.607176542282104,
+ "overrun": 0.6071765422821045,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": -16.0,
+ "dual_bound": -20.0,
+ "gap": "25%",
+ "pd_integral": 20.0836886648,
+ "solver_time": 60.0,
+ "presolve_time": 9.01,
+ "nodes": 102,
+ "lp_iterations": 83198
+}

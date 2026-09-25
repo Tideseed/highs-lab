@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "s100",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 16,
+ "wall": 265.9178054332733,
+ "overrun": 205.91780543327332,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 262.77,
+ "presolve_time": 18.63,
+ "nodes": 0,
+ "lp_iterations": 0
+}

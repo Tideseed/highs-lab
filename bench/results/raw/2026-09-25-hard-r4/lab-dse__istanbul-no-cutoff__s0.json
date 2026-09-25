@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "istanbul-no-cutoff",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 17,
+ "wall": 60.13288164138794,
+ "overrun": 0.13288164138793945,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 207.830354991,
+ "dual_bound": 79.1672381489,
+ "gap": "61.91%",
+ "pd_integral": 37.9474468017,
+ "solver_time": 60.01,
+ "presolve_time": 0.23,
+ "nodes": 337,
+ "lp_iterations": 753088
+}

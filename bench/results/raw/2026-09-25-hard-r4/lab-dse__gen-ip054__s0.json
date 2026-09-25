@@ -1,0 +1,23 @@
+{
+ "arm": "lab-dse",
+ "instance": "gen-ip054",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "f483d9f5e45dfcbc",
+ "core": 15,
+ "wall": 60.05406403541565,
+ "overrun": 0.054064035415649414,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 6859.59994909,
+ "dual_bound": 6782.5893216,
+ "gap": "1.12%",
+ "pd_integral": 0.767932352071,
+ "solver_time": 60.0,
+ "presolve_time": 0.32,
+ "nodes": 534135,
+ "lp_iterations": 1998215
+}

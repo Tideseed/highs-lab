@@ -1,0 +1,23 @@
+{
+ "arm": "dev",
+ "instance": "neos-3046615-murg",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "463bf8b913acdc9f",
+ "core": 5,
+ "wall": 60.03211736679077,
+ "overrun": 0.032117366790771484,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "status": "Time limit reached",
+ "primal_bound": 1600.0,
+ "dual_bound": 1569.0,
+ "gap": "1.94%",
+ "pd_integral": 1.4665096466,
+ "solver_time": 60.0,
+ "presolve_time": 0.73,
+ "nodes": 140003,
+ "lp_iterations": 1710546
+}

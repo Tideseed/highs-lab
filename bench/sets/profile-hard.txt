@@ -1,0 +1,17 @@
+# hard instances (unsolved by HiGHS 1.15.1 at 300 s) for the profile sweep
+academictimetablesmall
+chromaticindex1024-7
+comp21-2idx
+dws008-01
+glass-sc
+rail507
+sp98ar
+supportcase18
+neos-3046615-murg
+radiationm40-10-02
+sorrell3
+opm2-z10-s4
+CMS750_4
+satellites2-40
+istanbul-no-cutoff
+neos-4763324-toguru
