@@ -21,7 +21,7 @@ tomorrow morning.
   (≤ 0.97, CI < 1). Solve flips vs dev: lost krka (seed luck, known), atrato, neos-873061 (dev 97 s — a real loss to
   diagnose), nexp-150-20-8-5, satellites2-60-fs, tbfp-network (dev 257–297 s, at the limit); won istanbul-no-cutoff,
   neos-662469, **neos-787933 (2 s; dev unsolved)**, rocI-4-11.
-- PGO on the same source: identical search, ~0.3–3 % faster (0.997 overall here; 0.970 on the 33-instance screen).
+- PGO on the same source: ~0.3–3 % faster (0.996 on clean1; 0.970 on the 33-instance screen). **Correction (reviews on #5): not identical search** — 90/95 both-solved instances identical to v3 on the full set; the 56/56 on the screen was luck. Judged under the full gate.
 - One v3 run on neos-3402454-bohle was killed by the harness's 8 GB per-run memory cap (8.4 GB; the same code with
   PGO peaked at 6.5 GB, dev at 1.7 GB) — counted as unsolved, not a code crash. neos-5114902-kasavu overruns the time
   limit by ~880 s in stable too (pre-existing).
@@ -65,7 +65,19 @@ mismatch in the clique change (search path changed; fixed and verified identical
 | **dev-tideseed v3** | **0.985 [0.942, 1.022]** | **0.954** | 96 | −0.004 [−0.011, +0.003] | 0 |
 | v3 + PGO | 0.981 [0.938, 1.017] | 0.944 | 96 | −0.004 [−0.009, +0.003] | 0 |
 
-PGO vs v3 (same source, identical search): 0.996 [0.991, 1.001]. **v3 does not pass the gate on seed 0**: ~1.5 %
+PGO vs v3 (same source; NOT identical search, 90/95): 0.996 [0.991, 1.001]. **v3 does not pass the gate on seed 0**: ~1.5 %
 faster overall, ~4.6 % faster on both-solved instances, but 3 fewer solved (most flips within the last minute of
 the 300 s limit; neos-873061 is the clear loss). Seed 1 (dev vs v3) tonight decides how much is seed variability.
 `bench/results/2026-09-26-clean1*.md`.
+
+## Corrections after the reviews on #5 (16:45)
+- PDGI integrated to the last progress row, then credited gap 0 when the run ended Optimal: fixed (final bounds appended
+  at solver_time, stable ordering, nothing credited beyond T). clean1 re-scored: v3 ΔPDGI −0.0011 [−0.0064, +0.0046]
+  (was −0.004), PGO −0.0023, stable +0.0105. 256/960 runs have their last progress row >60 s before the end, so PDGI is
+  a log-sampled estimate.
+- PGO is not identical search (90/95).
+- bohle v3 termination: kernel log 12:07:24 "Memory cgroup out of memory: Killed process 3549045 (highs) … anon-rss:8371736kB",
+  scope run-r09143f5… "Failed with result 'oom-kill'" (8 GB per-run cap). Counted as a crash in the gate. The dev run spent
+  328 s in presolve (0 LP iterations) vs v3-PGO 47.6 s presolve + 1,767 LP iterations, so peaks are from different phases.
+- The combined SGM is driven by X1's 27 instances (excluding them: ~0.996); X1 is presented separately and kept out of the
+  claim for dev-tideseed.

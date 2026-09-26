@@ -38,20 +38,27 @@ def gap_value(d: float | None, p: float | None) -> float:
 
 
 def pdgi(r: dict) -> float:
+    """Log-sampled estimate of the normalised primal-dual gap integral over [0, T], T = time limit.
+
+    The gap between logged rows is the gap of the last observation (last observation held). The final bounds are
+    appended as an observation at the run's actual end time (solver_time), so an optimum reached after the last
+    progress row counts only from the moment it was reached, and nothing is credited beyond T (a run that ends after
+    T keeps its last in-horizon gap). Unlogged improvements between rows cannot be recovered: this is an estimate.
+    """
     T = float(r["time_limit"])
-    traj = [row for row in r.get("trajectory", []) if row[0] is not None]
-    if not traj:
-        # no progress rows: fall back to the final bounds (a run solved at presolve has gap 0 from its end)
-        g = gap_value(r.get("dual_bound"), r.get("primal_bound"))
-        t_end = min(T, r.get("solver_time", T)) if solved(r) else T
-        return (t_end * 1.0 + (T - t_end) * g) / T if solved(r) else 1.0
+    obs = sorted(((row[0], row[1], row[2]) for row in r.get("trajectory", []) if row[0] is not None),
+                 key=lambda o: o[0])  # stable: rows with equal timestamps keep their log order
+    end = r.get("solver_time")
+    if end is not None and (r.get("dual_bound") is not None or r.get("primal_bound") is not None):
+        obs.append((float(end), r.get("dual_bound"), r.get("primal_bound")))
+        obs.sort(key=lambda o: o[0])
     area, t_prev, g_prev = 0.0, 0.0, 1.0
-    for t, d, p in traj:
-        t = min(t, T)
+    for t, d, p in obs:
+        t = min(float(t), T)
         area += g_prev * max(0.0, t - t_prev)
-        t_prev, g_prev = t, gap_value(d, p)
-    if solved(r):
-        g_prev = 0.0 if gap_value(r.get("dual_bound"), r.get("primal_bound")) < 1e-4 else g_prev
+        t_prev, g_prev = max(t_prev, t), gap_value(d, p)
+        if t >= T:
+            break
     area += g_prev * max(0.0, T - t_prev)
     return area / T
 
@@ -86,13 +93,17 @@ def main() -> None:
     no_traj = sum(1 for r in runs if not r.get("trajectory"))
     # a MIP that ran for more than a few seconds always logs progress rows; none means the parser missed them
     parse_fail = [r for r in runs if not r.get("trajectory") and r.get("solver_time", 0) > 5 and not crashed(r)]
+    # a truncated trajectory (last row long before the end) is reported, not hidden
+    truncated = [r for r in runs if r.get("trajectory") and r.get("solver_time")
+                 and r["solver_time"] - max(row[0] or 0 for row in r["trajectory"]) > 60]
     if parse_fail:
         raise SystemExit(f"parser failure: {len(parse_fail)} runs >5 s without a trajectory, e.g. "
                          f"{parse_fail[0]['arm']} {parse_fail[0]['instance']} s{parse_fail[0]['seed']}")
     out = [f"# Hard-set comparison `{a.dir}` (control `{a.control}`)", "",
-           f"{len(runs)} runs; {no_traj} without a logged trajectory (PDGI from final bounds).", "",
+           f"{len(runs)} runs; {no_traj} without a logged trajectory (PDGI from final bounds); "
+           f"{len(truncated)} whose last progress row is >60 s before the end (final bounds appended at the end).", "",
            "| arm | pairs (inst) | PDGI arm / ctl | ΔPDGI [95% CI, instance bootstrap] | solved (ctl) | feasible (ctl) | "
-           "mean final gap % (ctl) | overrun mean/max s (ctl max) | wrong | crashed | ref coverage |",
+           "mean final gap % (ctl) | overrun mean/max s (ctl max) | wrong | crashed | known-optimum coverage |",
            "|---" * 11 + "|"]
     details = []
     for arm in arms:
@@ -114,7 +125,7 @@ def main() -> None:
         lo, hi = boots[int(0.025 * a.boot)], boots[int(0.975 * a.boot) - 1]
         wr = [x for x, _ in P if wrong(x, ref)]
         cr = [x for x, _ in P if crashed(x)]
-        cov = sum(1 for x, _ in P if x["instance"] in ref)
+        cov = sum(1 for x, _ in P if x["instance"] in ref and ref[x["instance"]][1])
         ovx = [x["overrun"] for x, _ in P if not solved(x)]
         ovy = [y["overrun"] for _, y in P if not solved(y)]
         out.append(f"| {arm} | {len(P)} ({len(insts)}) | {mx:.4f} / {my:.4f} | {mx - my:+.4f} [{lo:+.4f}, {hi:+.4f}] | "

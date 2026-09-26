@@ -155,7 +155,9 @@ def main() -> None:
             if a.identical and identical_diffs.get(arm, (0, []))[1]:
                 reasons.append(f"search differs on {len(identical_diffs[arm][1])}")
             verdicts[arm] = "PASS" if not reasons else "no pass (" + ", ".join(reasons) + ")"
-    cov = sum(1 for r in runs if r["instance"] in ref)
+    cov_opt = sum(1 for r in runs if r["instance"] in ref and ref[r["instance"]][1])
+    cov_best = sum(1 for r in runs if r["instance"] in ref and not ref[r["instance"]][1])
+    cov = cov_opt
     if load_timeouts:
         lines += ["", f"Load timeouts (model not read within the limit, not counted as crashes): "
                   + ", ".join(sorted({f"{r['arm']}:{r['instance']}" for r in load_timeouts}))]
@@ -166,8 +168,12 @@ def main() -> None:
     lines += ["", "Gate (ratio <= 0.97, CI upper < 1, no wrong answers, no crashes, solved >= control on paired runs"
               + (", identical search" if a.identical else "") + "): " +
               ", ".join(f"{k} {v}" for k, v in verdicts.items()), "",
-              f"Reference coverage: {cov}/{len(runs)} runs have a known objective in solu.txt; the others cannot "
-              "show a wrong answer and are not evidence of correctness.", ""]
+              f"Reference coverage: {cov_opt}/{len(runs)} runs have a KNOWN OPTIMUM (=opt=, checked: bounds must "
+              f"bracket it, 'Optimal' must match it); {cov_best} have only a best-known value (=best=, not checked); "
+              f"{len(runs) - cov_opt - cov_best} have no reference. Unchecked runs are not evidence of correctness. "
+              "Objective checks do not establish primal feasibility (see bench/solcheck.py).",
+              "Instances without a known optimum: " + ", ".join(sorted({r['instance'] for r in runs
+                                                                         if not (r['instance'] in ref and ref[r['instance']][1])})), ""]
 
     if wrongs:
         lines += ["## Wrong answers", ""] + [f"- {a_} {i} s{s}: {w}" for a_, i, s, w in wrongs] + [""]
