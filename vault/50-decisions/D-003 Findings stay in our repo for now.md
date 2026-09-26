@@ -17,3 +17,5 @@ Findings are recorded in the vault (40-codebase-map, 70-upstream drafts) only.
 **Update 2026-09-25 evening (Berk):** asked for a review of the day's work and the open issues, to be filed as an issue
 in highs-lab → #4 (review by a second Claude Code session). The "no new issues" rule above still applies to upstream
 and to findings; a review requested by Berk is not a finding.
+
+**Update 2026-09-26 ~15:00 (Berk):** interim report posted as Tideseed/highs-lab#5 on his explicit request (for reviewer feedback before the wrap-up). Still nothing to ERGO-Code.
