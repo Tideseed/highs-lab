@@ -14,6 +14,8 @@ ARMS="stable dev dts-v3 dts-v3-pgo"
 JOBS="15e9efd9b30b f663edfdcbff 36f278b0ee63"   # tr-power-forecast-think, local-model-canary, canary-hello
 [ "$(date +%H)" -lt 12 ] && DAY=today || DAY=tomorrow
 UNTIL=$(date -d "$DAY 07:30" +%Y-%m-%dT07:30:00%:z)
+# a daytime start (FORCE_NIGHT_BENCH, Berk's go) holds the servers for the run's own horizon instead
+if [ -n "${FORCE_NIGHT_BENCH:-}" ]; then UNTIL=$(date -d '+11 hours' +%Y-%m-%dT%H:%M:%S%:z); fi
 mkdir -p "$(dirname "$LOG")"
 exec >>"$LOG" 2>&1
 # a persistent timer fires at boot if the box was down at the scheduled time: never start in the daytime
@@ -52,7 +54,7 @@ if [ "$(deep-status 2>/dev/null | grep -c IDLE)" = 0 ]; then
   echo "Agent Think busy at start; waiting up to 30 min"
   for i in $(seq 1 60); do deep-status 2>/dev/null | grep -q IDLE && break; sleep 30; done
 fi
-post "HiGHS night bench $RUN starting: Agent Fast and Agent Think servers stopped until ~06:30 (clean benchmark window, Berk OK). Canaries and tr-power-forecast-think paused for the window."
+post "HiGHS benchmark $RUN starting: Agent Fast and Agent Think servers stopped for the run (clean benchmark window, Berk OK; hold until $UNTIL). Canaries and tr-power-forecast-think paused for the window."
 systemctl --user stop llama-qwen38 ornith-vllm
 sleep 15
 A=$(systemctl --user is-active llama-qwen38); B=$(systemctl --user is-active ornith-vllm)
@@ -71,6 +73,7 @@ NI=$(wc -l < bench/sets/miplib-bench-all.txt); NA=$(echo $ARMS | wc -w); NS=$(ec
 echo "budget: $NI instances x $NA arms x $NS seeds = $((NI*NA*NS)) jobs, <= ${TL}s each on 10 cores: worst case $((NI*NA*NS*${TL%.*}/10/3600)) h; window ends 06:30. timeout stops run.py only; HiGHS scopes already running finish on their own (<= ${TL}s). Arms are interleaved per instance, so a partial night stays paired."
 # hard stop at 06:30 so that Agent Think is back well before the morning (the runner is resumable)
 DEADLINE=$(( $(date -d '06:30' +%s) - $(date +%s) )); [ $DEADLINE -lt 0 ] && DEADLINE=$(( DEADLINE + 86400 ))
+[ -n "${FORCE_NIGHT_BENCH:-}" ] && DEADLINE=36000   # daytime start: 10 h
 timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms $ARMS --set bench/sets/miplib-bench-all.txt \
   --seeds $SEEDS --time-limit "$TL" --cores 5-9,15-19 --mem-reserve-gb 20 --out "$OUT" > "$OUT.run.log" 2>&1
 python3 bench/analyze.py "$OUT" --control dev --md bench/results/$RUN.md > /dev/null 2>&1
