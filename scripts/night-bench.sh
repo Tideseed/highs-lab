@@ -11,7 +11,7 @@ LAB=~/git_repositories/highs-lab
 OUT=$LAB/bench/results/raw/$RUN
 LOG=$LAB/bench/results/raw/$RUN.night.log
 ARMS="${ARMS:-stable dev dts-v3 dts-v3-pgo}"
-JOBS="15e9efd9b30b f663edfdcbff 36f278b0ee63"   # tr-power-forecast-think, local-model-canary, canary-hello
+JOBS="f663edfdcbff 36f278b0ee63"   # local-model-canary, canary-hello (tr-power-forecast-think: postponed by Berk 2026-09-26, not managed here)
 [ "$(date +%H)" -lt 12 ] && DAY=today || DAY=tomorrow
 UNTIL=$(date -d "$DAY 07:30" +%Y-%m-%dT07:30:00%:z)
 # a daytime start (FORCE_NIGHT_BENCH, Berk's go) holds the servers for the run's own horizon instead
