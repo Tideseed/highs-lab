@@ -56,3 +56,16 @@ mismatch in the clique change (search path changed; fixed and verified identical
 3. neos-873061 (dev 97 s, v3 unsolved at 300 s): worth a targeted look before the freeze, or leave as a documented
    loss?
 4. Anything in the method or reporting that would make these numbers untrustworthy?
+
+## Update 16:15 — final seed 0 on all 240 instances (clean window: 0/960 runs with an LLM server active)
+| arm | SGM ratio vs dev [95 % CI] | both-solved | solved | ΔPDGI vs dev [CI] | wrong |
+|---|---|---|---|---|---|
+| stable v1.15.1 | 1.036 [1.001, 1.073] | 1.020 | 94 | +0.007 [−0.011, +0.026] | 0 |
+| dev (latest) | 1 | 1 | 99 | 0 | 0 |
+| **dev-tideseed v3** | **0.985 [0.942, 1.022]** | **0.954** | 96 | −0.004 [−0.011, +0.003] | 0 |
+| v3 + PGO | 0.981 [0.938, 1.017] | 0.944 | 96 | −0.004 [−0.009, +0.003] | 0 |
+
+PGO vs v3 (same source, identical search): 0.996 [0.991, 1.001]. **v3 does not pass the gate on seed 0**: ~1.5 %
+faster overall, ~4.6 % faster on both-solved instances, but 3 fewer solved (most flips within the last minute of
+the 300 s limit; neos-873061 is the clear loss). Seed 1 (dev vs v3) tonight decides how much is seed variability.
+`bench/results/2026-09-26-clean1*.md`.

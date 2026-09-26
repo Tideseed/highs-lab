@@ -1,0 +1,57 @@
+{
+ "arm": "dts-v3-pgo",
+ "instance": "piperout-08",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "a435f74877ae7e06",
+ "model_sha": "9000694c9a77ac82",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.2421875,
+  10.35986328125,
+  10.38623046875
+ ],
+ "peak_rss_gb": 0.259,
+ "core": 19,
+ "wall": 19.659788131713867,
+ "overrun": -280.34021186828613,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   14.7,
+   -2392592.0,
+   Infinity
+  ],
+  [
+   14.8,
+   124991.0,
+   Infinity
+  ],
+  [
+   19.5,
+   125055.0,
+   125055.0
+  ],
+  [
+   19.5,
+   125055.0,
+   125055.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 125055.0,
+ "dual_bound": 125055.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 19.53,
+ "presolve_time": 15.44,
+ "nodes": 1,
+ "lp_iterations": 9131,
+ "load_timeout": false
+}
