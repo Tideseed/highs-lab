@@ -51,9 +51,28 @@ restore() {
   done
   for j in $JOBS; do hermes cron resume $j >/dev/null 2>&1; sed -i "/^$j .*highs-lab night/d" ~/.config/cronrestore/hold-jobs; done
   sed -i '/^llama-qwen38 .*$/d; /^ornith-vllm .*$/d' ~/.config/cronrestore/hold-units
+  [ -n "${CLAIMED:-}" ] && box-window release --who "${WHO:-HiGHS lab (coulson-ca)}" >/dev/null 2>&1
   echo "restore: llama-qwen38 $(systemctl --user is-active llama-qwen38) (health $(curl -sf -m5 -o /dev/null -w %{http_code} http://127.0.0.1:8092/health)), ornith-vllm $(systemctl --user is-active ornith-vllm) (models $(curl -sf -m5 -o /dev/null -w %{http_code} http://127.0.0.1:8094/v1/models)); jobs resumed: $JOBS"
 }
 trap restore EXIT
+
+# 0. shared box lease (box-window, ~/CLAUDE.md "Sharing the box between sessions"): claim before stopping anything;
+#    if another session holds the box, wait up to 15 min, then give up without touching the servers
+WHO="HiGHS lab (coulson-ca)"
+CLAIMED=""
+for i in $(seq 1 30); do
+  if box-window claim --who "$WHO" --why "HiGHS benchmark $RUN (stops both local LLM servers, restores them)" \
+       --until 06:30 --stops ornith-vllm,llama-qwen38 --mem 100 >/dev/null 2>&1; then CLAIMED=1; break; fi
+  sleep 30
+done
+if [ -z "$CLAIMED" ]; then
+  echo "ABORT: box-window held by another session: $(box-window status 2>&1 | head -1)"
+  post "HiGHS benchmark $RUN NOT started: the box is held by another session ($(box-window status 2>&1 | head -1)). Nothing was stopped."
+  # nothing was stopped, so release the jobs paused ahead of the window (their servers are still up)
+  for j in $JOBS; do hermes cron resume $j >/dev/null 2>&1; sed -i "/^$j .*highs-lab night/d" ~/.config/cronrestore/hold-jobs; done
+  trap - EXIT
+  exit 3
+fi
 
 # 1. hold + pause + stop (both local servers)
 printf 'llama-qwen38 until %s\nornith-vllm until %s\n' "$UNTIL" "$UNTIL" >> ~/.config/cronrestore/hold-units
