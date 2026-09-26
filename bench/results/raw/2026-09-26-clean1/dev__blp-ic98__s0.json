@@ -1,0 +1,162 @@
+{
+ "arm": "dev",
+ "instance": "blp-ic98",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "ef71974c56ca7590",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.06396484375,
+  10.2021484375,
+  10.30224609375
+ ],
+ "peak_rss_gb": 0.109,
+ "core": 19,
+ "wall": 304.8258135318756,
+ "overrun": 4.82581353187561,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.5,
+   0.0,
+   Infinity
+  ],
+  [
+   11.4,
+   4331.168353,
+   Infinity
+  ],
+  [
+   22.9,
+   4362.481151,
+   Infinity
+  ],
+  [
+   34.7,
+   4373.106648,
+   Infinity
+  ],
+  [
+   46.7,
+   4379.088173,
+   Infinity
+  ],
+  [
+   58.6,
+   4381.654443,
+   Infinity
+  ],
+  [
+   94.2,
+   4383.34344,
+   Infinity
+  ],
+  [
+   105.9,
+   4386.735367,
+   Infinity
+  ],
+  [
+   118.1,
+   4410.542467,
+   Infinity
+  ],
+  [
+   130.4,
+   4411.572342,
+   Infinity
+  ],
+  [
+   142.6,
+   4411.711736,
+   Infinity
+  ],
+  [
+   154.5,
+   4412.021432,
+   Infinity
+  ],
+  [
+   166.9,
+   4412.234935,
+   Infinity
+  ],
+  [
+   179.3,
+   4412.467481,
+   Infinity
+  ],
+  [
+   191.7,
+   4413.012729,
+   Infinity
+  ],
+  [
+   204.1,
+   4413.223951,
+   Infinity
+  ],
+  [
+   216.6,
+   4413.575556,
+   Infinity
+  ],
+  [
+   229.1,
+   4413.623914,
+   Infinity
+  ],
+  [
+   241.6,
+   4413.766698,
+   Infinity
+  ],
+  [
+   254.1,
+   4413.898322,
+   Infinity
+  ],
+  [
+   266.8,
+   4414.125969,
+   Infinity
+  ],
+  [
+   279.3,
+   4414.19157,
+   Infinity
+  ],
+  [
+   292.0,
+   4414.294121,
+   Infinity
+  ],
+  [
+   304.7,
+   4414.347355,
+   Infinity
+  ],
+  [
+   304.7,
+   4414.347355,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 4414.34735483,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 304.67,
+ "presolve_time": 0.36,
+ "nodes": 0,
+ "lp_iterations": 1544,
+ "load_timeout": false
+}

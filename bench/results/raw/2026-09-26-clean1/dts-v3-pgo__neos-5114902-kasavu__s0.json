@@ -1,0 +1,72 @@
+{
+ "arm": "dts-v3-pgo",
+ "instance": "neos-5114902-kasavu",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "a435f74877ae7e06",
+ "model_sha": "e4a9a8365d74a929",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.49951171875,
+  10.4453125,
+  10.455078125
+ ],
+ "peak_rss_gb": 4.334,
+ "core": 19,
+ "wall": 1178.4502651691437,
+ "overrun": 878.4502651691437,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   11.3,
+   -Infinity,
+   766.0
+  ],
+  [
+   167.2,
+   518.0,
+   766.0
+  ],
+  [
+   185.3,
+   547.0,
+   766.0
+  ],
+  [
+   208.3,
+   605.0,
+   766.0
+  ],
+  [
+   225.8,
+   605.3333333,
+   766.0
+  ],
+  [
+   242.4,
+   606.6666667,
+   766.0
+  ],
+  [
+   1173.2,
+   608.0,
+   766.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 766.0,
+ "dual_bound": 608.0,
+ "gap": "20.63%",
+ "pd_integral": 366.291671011,
+ "solver_time": 1173.21,
+ "presolve_time": 5.67,
+ "nodes": 0,
+ "lp_iterations": 63703,
+ "load_timeout": false
+}

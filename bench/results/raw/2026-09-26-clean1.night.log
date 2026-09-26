@@ -1,0 +1,4 @@
+== 2026-09-26T10:32:25+02:00 night bench 2026-09-26-clean1 tl=300 seeds=0
+stopped: llama-qwen38=inactive ornith-vllm=inactive; MemAvailable 112 GB
+yes: standard output: Broken pipe
+budget: 240 instances x 4 arms x 1 seeds = 960 jobs, <= 300s each on 10 cores: worst case 8 h; window ends 06:30. timeout stops run.py only; HiGHS scopes already running finish on their own (<= 300s). Arms are interleaved per instance, so a partial night stays paired.

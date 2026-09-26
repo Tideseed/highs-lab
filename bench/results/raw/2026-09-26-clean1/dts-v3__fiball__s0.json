@@ -1,0 +1,77 @@
+{
+ "arm": "dts-v3",
+ "instance": "fiball",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "261f94723b95579f",
+ "model_sha": "ee5835347bf31af5",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.6513671875,
+  10.443359375,
+  10.4423828125
+ ],
+ "peak_rss_gb": 0.454,
+ "core": 8,
+ "wall": 42.933900356292725,
+ "overrun": -257.0660996437073,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.7,
+   5.0,
+   Infinity
+  ],
+  [
+   0.8,
+   137.0691676,
+   153.0
+  ],
+  [
+   4.1,
+   138.0,
+   152.0
+  ],
+  [
+   15.6,
+   138.0,
+   140.0
+  ],
+  [
+   22.4,
+   138.0,
+   140.0
+  ],
+  [
+   31.9,
+   138.0,
+   139.0
+  ],
+  [
+   42.8,
+   138.0,
+   138.0
+  ],
+  [
+   42.8,
+   138.0,
+   138.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 138.0,
+ "dual_bound": 138.0,
+ "gap": "0%",
+ "pd_integral": 1.69198824349,
+ "solver_time": 42.77,
+ "presolve_time": 1.6,
+ "nodes": 461,
+ "lp_iterations": 84911,
+ "load_timeout": false
+}

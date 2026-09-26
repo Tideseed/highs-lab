@@ -1,0 +1,57 @@
+{
+ "arm": "stable",
+ "instance": "neos-960392",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "d95219bd60e1b1bd",
+ "model_sha": "3d0f5da52b3cd651",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.2197265625,
+  10.37255859375,
+  10.42138671875
+ ],
+ "peak_rss_gb": 0.344,
+ "core": 19,
+ "wall": 9.440768003463745,
+ "overrun": -290.55923199653625,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.0,
+   -Infinity,
+   0.0
+  ],
+  [
+   1.7,
+   -238.0,
+   0.0
+  ],
+  [
+   9.2,
+   -238.0,
+   -238.0
+  ],
+  [
+   9.2,
+   -238.0,
+   -238.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -238.0,
+ "dual_bound": -238.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 9.23,
+ "presolve_time": 1.43,
+ "nodes": 1,
+ "lp_iterations": 10387,
+ "load_timeout": false
+}

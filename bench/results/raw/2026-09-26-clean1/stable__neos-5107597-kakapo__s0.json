@@ -1,0 +1,142 @@
+{
+ "arm": "stable",
+ "instance": "neos-5107597-kakapo",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "d95219bd60e1b1bd",
+ "model_sha": "53441c15ede747db",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.22998046875,
+  10.39013671875,
+  10.4375
+ ],
+ "peak_rss_gb": 0.244,
+ "core": 18,
+ "wall": 300.1033251285553,
+ "overrun": 0.10332512855529785,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.1,
+   0.0,
+   Infinity
+  ],
+  [
+   0.1,
+   0.0,
+   Infinity
+  ],
+  [
+   30.8,
+   660.3779528,
+   Infinity
+  ],
+  [
+   31.8,
+   660.3779528,
+   Infinity
+  ],
+  [
+   32.1,
+   660.3779528,
+   Infinity
+  ],
+  [
+   37.1,
+   703.2895428,
+   Infinity
+  ],
+  [
+   42.3,
+   703.2895428,
+   Infinity
+  ],
+  [
+   44.0,
+   703.2895428,
+   Infinity
+  ],
+  [
+   44.4,
+   703.2895428,
+   Infinity
+  ],
+  [
+   49.5,
+   703.2895428,
+   Infinity
+  ],
+  [
+   62.3,
+   703.2895428,
+   Infinity
+  ],
+  [
+   67.3,
+   703.2895428,
+   Infinity
+  ],
+  [
+   70.7,
+   703.2895428,
+   Infinity
+  ],
+  [
+   70.8,
+   703.2895428,
+   Infinity
+  ],
+  [
+   92.1,
+   703.2895428,
+   Infinity
+  ],
+  [
+   97.2,
+   703.2895428,
+   Infinity
+  ],
+  [
+   102.2,
+   703.2895428,
+   Infinity
+  ],
+  [
+   105.9,
+   703.2895428,
+   Infinity
+  ],
+  [
+   106.0,
+   703.2895428,
+   Infinity
+  ],
+  [
+   115.8,
+   703.2895428,
+   91080.0
+  ],
+  [
+   120.9,
+   703.2895428,
+   91080.0
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 52380.0,
+ "dual_bound": 742.535244361,
+ "gap": "98.58%",
+ "pd_integral": 182.188729754,
+ "solver_time": 300.01,
+ "presolve_time": 3.54,
+ "nodes": 27702,
+ "lp_iterations": 2423698,
+ "load_timeout": false
+}

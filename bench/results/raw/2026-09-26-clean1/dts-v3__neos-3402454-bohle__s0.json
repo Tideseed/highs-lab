@@ -1,0 +1,93 @@
+{
+ "arm": "dts-v3",
+ "instance": "neos-3402454-bohle",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "261f94723b95579f",
+ "model_sha": "14f69099fa3304ce",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  12.8837890625,
+  10.87744140625,
+  10.552734375
+ ],
+ "peak_rss_gb": null,
+ "core": 15,
+ "wall": 297.2894687652588,
+ "overrun": -2.710531234741211,
+ "rc": -15,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": false,
+ "trajectory": [
+  [
+   125.4,
+   0.0,
+   Infinity
+  ],
+  [
+   150.7,
+   0.0,
+   Infinity
+  ],
+  [
+   160.2,
+   0.014916,
+   Infinity
+  ],
+  [
+   166.2,
+   0.02176,
+   Infinity
+  ],
+  [
+   181.1,
+   0.02176,
+   Infinity
+  ],
+  [
+   191.5,
+   0.06725,
+   Infinity
+  ],
+  [
+   216.4,
+   0.06725,
+   Infinity
+  ],
+  [
+   228.0,
+   0.06725,
+   Infinity
+  ],
+  [
+   238.2,
+   0.06725,
+   Infinity
+  ],
+  [
+   250.1,
+   0.06725,
+   Infinity
+  ],
+  [
+   260.3,
+   0.06725,
+   Infinity
+  ],
+  [
+   268.0,
+   0.06725,
+   Infinity
+  ],
+  [
+   277.1,
+   0.06725,
+   Infinity
+  ]
+ ],
+ "load_timeout": false
+}
