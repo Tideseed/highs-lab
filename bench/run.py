@@ -158,6 +158,7 @@ def parse_log(text: str) -> dict:
 
 
 ADMIT_LOCK = threading.Lock()
+SCOPE_COUNTER = 0
 
 
 def mem_available_gb() -> float:
@@ -212,7 +213,14 @@ def run_job(job: dict, core_pool: "queue.Queue[int]", mem_cap: str, out_dir: Pat
         (work / "options.txt").write_text("".join(f"{k} = {str(v).lower() if isinstance(v, bool) else v}\n"
                                                   for k, v in opts.items()))
         sol = work / "solution.sol"
-        cmd = ["systemd-run", "--user", "--scope", "--quiet", "-p", f"MemoryMax={mem_cap}", "-p", "MemorySwapMax=0",
+        # named scope so a wrapper (night-bench.sh) can stop and await every solver of this lab before restoring
+        # the LLM servers: hlab-<runner pid>-<job counter>
+        with ADMIT_LOCK:
+            global SCOPE_COUNTER
+            SCOPE_COUNTER += 1
+            scope = f"hlab-{os.getpid()}-{SCOPE_COUNTER}"
+        cmd = ["systemd-run", "--user", "--scope", "--quiet", f"--unit={scope}", "-p", f"MemoryMax={mem_cap}",
+               "-p", "MemorySwapMax=0",
                "taskset", "-c", str(core), job["binary"], "--model_file", str(job["path"]),
                "--options_file", str(work / "options.txt"), "--solution_file", str(sol)]
         cmd = cmd[:1] + ["-p", "MemoryAccounting=yes"] + cmd[1:]

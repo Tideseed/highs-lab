@@ -30,7 +30,18 @@ post() {
     ~/.local/bin/buzz messages send --channel e37b52b0-ef35-49f9-8cc6-d231551ad362 --content "$1" >/dev/null 2>&1 || true
 }
 
+stop_solvers() {
+  # timeout stops run.py only: stop every lab solver scope and wait until none is left before restoring the servers
+  systemctl --user stop 'hlab-*.scope' >/dev/null 2>&1 || true
+  for i in $(seq 1 60); do
+    [ "$(systemctl --user list-units 'hlab-*.scope' --no-legend 2>/dev/null | wc -l)" = 0 ] && break
+    sleep 5
+  done
+  echo "solver scopes left: $(systemctl --user list-units 'hlab-*.scope' --no-legend 2>/dev/null | wc -l)"
+}
+
 restore() {
+  stop_solvers
   systemctl --user start llama-qwen38 ornith-vllm
   for i in $(seq 1 80); do
     a=$(systemctl --user is-active llama-qwen38); b=$(systemctl --user is-active ornith-vllm)
@@ -72,12 +83,26 @@ ls ~/data/optopt/miplib/inst | sed 's/\.mps\.gz$//' | shuf --random-source=<(yes
 NI=$(wc -l < bench/sets/miplib-bench-all.txt); NA=$(echo $ARMS | wc -w); NS=$(echo $SEEDS | wc -w)
 echo "budget: $NI instances x $NA arms x $NS seeds = $((NI*NA*NS)) jobs, <= ${TL}s each on 10 cores: worst case $((NI*NA*NS*${TL%.*}/10/3600)) h; window ends 06:30. timeout stops run.py only; HiGHS scopes already running finish on their own (<= ${TL}s). Arms are interleaved per instance, so a partial night stays paired."
 # hard stop at 06:30 so that Agent Think is back well before the morning (the runner is resumable)
+START=$(date +%s)
 DEADLINE=$(( $(date -d '06:30' +%s) - $(date +%s) )); [ $DEADLINE -lt 0 ] && DEADLINE=$(( DEADLINE + 86400 ))
 [ -n "${FORCE_NIGHT_BENCH:-}" ] && DEADLINE=36000   # daytime start: 10 h
 timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms $ARMS --set bench/sets/miplib-bench-all.txt \
   --seeds $SEEDS --time-limit "$TL" --cores 5-9,15-19 --mem-reserve-gb 20 --out "$OUT" > "$OUT.run.log" 2>&1
 python3 bench/analyze.py "$OUT" --control dev --md bench/results/$RUN.md > /dev/null 2>&1
-python3 bench/hard.py "$OUT" --control dev --md bench/results/$RUN-hard.md > /dev/null 2>&1
+(cd bench && python3 hard.py "results/raw/$RUN" --control dev --md results/$RUN-hard.md > /dev/null 2>&1)
+# optional second phase (e.g. an ablation on targeted instances) within the same window
+if [ -n "${ABLATION_ARMS:-}" ]; then
+  LEFT=$(( START + DEADLINE - $(date +%s) - 900 ))
+  if [ $LEFT -gt 600 ]; then
+    timeout $LEFT python3 bench/run.py --arms bench/arms.toml --only-arms $ABLATION_ARMS --set "$ABLATION_SET" \
+      --seeds ${ABLATION_SEEDS:-0 1} --time-limit "$TL" --cores 5-9,15-19 --mem-reserve-gb 20 --out "$OUT-ablation" \
+      > "$OUT-ablation.run.log" 2>&1
+    python3 bench/analyze.py "$OUT-ablation" --control ${ABLATION_CONTROL:-dev} --md bench/results/$RUN-ablation.md > /dev/null 2>&1
+    (cd bench && python3 hard.py "results/raw/$RUN-ablation" --control ${ABLATION_CONTROL:-dev} --md results/$RUN-ablation-hard.md > /dev/null 2>&1)
+  else
+    echo "ablation skipped: only ${LEFT}s left"
+  fi
+fi
 
 # 3. restore (trap) and report
 restore; trap - EXIT

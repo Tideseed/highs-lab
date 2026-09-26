@@ -83,3 +83,11 @@ binary = "~/git_repositories/highs-builds/dts-v3/bin/highs"
 [dts-v3-pgo]
 # same source, PGO (-mcpu=native, non-MIPLIB training set)
 binary = "~/git_repositories/highs-builds/dts-v3-pgo/bin/highs"
+
+[dts-v4]
+# dev-tideseed v4 cfa835da83 = v3 without X1: clique marking + symmetry + free wins + P1 + dse-cache
+binary = "~/git_repositories/highs-builds/dts-v4/bin/highs"
+
+[base-x1]
+# ablation: the four identical-search branches + X1 (33971e2514)
+binary = "~/git_repositories/highs-builds/base-x1/bin/highs"
