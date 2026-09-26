@@ -1,0 +1,182 @@
+{
+ "arm": "dts-v3",
+ "instance": "cryptanalysiskb128n5obj16",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "261f94723b95579f",
+ "model_sha": "9d9b5ca79b0c8f2b",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.72705078125,
+  10.68701171875,
+  10.60595703125
+ ],
+ "peak_rss_gb": 0.551,
+ "core": 19,
+ "wall": 300.5946362018585,
+ "overrun": 0.5946362018585205,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   5.5,
+   0.0,
+   Infinity
+  ],
+  [
+   16.6,
+   0.0,
+   Infinity
+  ],
+  [
+   22.4,
+   0.0,
+   Infinity
+  ],
+  [
+   30.1,
+   0.0,
+   Infinity
+  ],
+  [
+   38.1,
+   0.0,
+   Infinity
+  ],
+  [
+   43.4,
+   0.0,
+   Infinity
+  ],
+  [
+   48.8,
+   0.0,
+   Infinity
+  ],
+  [
+   54.4,
+   0.0,
+   Infinity
+  ],
+  [
+   59.8,
+   0.0,
+   Infinity
+  ],
+  [
+   69.9,
+   0.0,
+   Infinity
+  ],
+  [
+   109.6,
+   0.0,
+   Infinity
+  ],
+  [
+   120.4,
+   0.0,
+   Infinity
+  ],
+  [
+   132.7,
+   0.0,
+   Infinity
+  ],
+  [
+   140.4,
+   0.0,
+   Infinity
+  ],
+  [
+   149.4,
+   0.0,
+   Infinity
+  ],
+  [
+   158.9,
+   0.0,
+   Infinity
+  ],
+  [
+   164.9,
+   0.0,
+   Infinity
+  ],
+  [
+   174.0,
+   0.0,
+   Infinity
+  ],
+  [
+   183.9,
+   0.0,
+   Infinity
+  ],
+  [
+   215.4,
+   0.0,
+   Infinity
+  ],
+  [
+   216.5,
+   0.0,
+   Infinity
+  ],
+  [
+   223.7,
+   0.0,
+   Infinity
+  ],
+  [
+   230.7,
+   0.0,
+   Infinity
+  ],
+  [
+   237.6,
+   0.0,
+   Infinity
+  ],
+  [
+   246.5,
+   0.0,
+   Infinity
+  ],
+  [
+   251.9,
+   0.0,
+   Infinity
+  ],
+  [
+   257.0,
+   0.0,
+   Infinity
+  ],
+  [
+   262.5,
+   0.0,
+   Infinity
+  ],
+  [
+   300.1,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.09,
+ "presolve_time": 6.59,
+ "nodes": 0,
+ "lp_iterations": 269584,
+ "load_timeout": false
+}

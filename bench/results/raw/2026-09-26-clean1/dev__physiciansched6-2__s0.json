@@ -1,0 +1,57 @@
+{
+ "arm": "dev",
+ "instance": "physiciansched6-2",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "6936650caa2cb6d1",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.390625,
+  10.49169921875,
+  10.42431640625
+ ],
+ "peak_rss_gb": 0.181,
+ "core": 7,
+ "wall": 6.878328323364258,
+ "overrun": -293.12167167663574,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.2,
+   -Infinity,
+   105241.0
+  ],
+  [
+   2.0,
+   48924.0,
+   105241.0
+  ],
+  [
+   6.0,
+   49324.0,
+   49324.0
+  ],
+  [
+   6.0,
+   49324.0,
+   49324.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 49324.0,
+ "dual_bound": 49324.0,
+ "gap": "0%",
+ "pd_integral": 2.61650353605,
+ "solver_time": 5.97,
+ "presolve_time": 1.25,
+ "nodes": 1,
+ "lp_iterations": 13375,
+ "load_timeout": false
+}

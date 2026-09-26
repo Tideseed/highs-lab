@@ -1,0 +1,182 @@
+{
+ "arm": "stable",
+ "instance": "satellites2-40",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "d95219bd60e1b1bd",
+ "model_sha": "b7f9af26c67a7771",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.529296875,
+  10.45068359375,
+  10.40283203125
+ ],
+ "peak_rss_gb": 0.604,
+ "core": 16,
+ "wall": 278.86452531814575,
+ "overrun": -21.135474681854248,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   2.8,
+   -39.0,
+   Infinity
+  ],
+  [
+   13.3,
+   -29.875,
+   Infinity
+  ],
+  [
+   46.2,
+   -29.0,
+   Infinity
+  ],
+  [
+   65.8,
+   -29.0,
+   Infinity
+  ],
+  [
+   81.0,
+   -29.0,
+   Infinity
+  ],
+  [
+   96.7,
+   -29.0,
+   Infinity
+  ],
+  [
+   105.0,
+   -29.0,
+   Infinity
+  ],
+  [
+   136.1,
+   -29.0,
+   Infinity
+  ],
+  [
+   154.7,
+   -29.0,
+   Infinity
+  ],
+  [
+   160.2,
+   -29.0,
+   Infinity
+  ],
+  [
+   165.8,
+   -29.0,
+   Infinity
+  ],
+  [
+   171.9,
+   -29.0,
+   Infinity
+  ],
+  [
+   177.1,
+   -29.0,
+   Infinity
+  ],
+  [
+   182.4,
+   -29.0,
+   Infinity
+  ],
+  [
+   187.7,
+   -29.0,
+   Infinity
+  ],
+  [
+   192.8,
+   -29.0,
+   Infinity
+  ],
+  [
+   198.8,
+   -29.0,
+   Infinity
+  ],
+  [
+   203.9,
+   -29.0,
+   Infinity
+  ],
+  [
+   209.7,
+   -29.0,
+   Infinity
+  ],
+  [
+   235.5,
+   -29.0,
+   -19.0
+  ],
+  [
+   241.8,
+   -29.0,
+   -19.0
+  ],
+  [
+   244.4,
+   -29.0,
+   -19.0
+  ],
+  [
+   249.8,
+   -27.0,
+   -19.0
+  ],
+  [
+   254.9,
+   -26.0,
+   -19.0
+  ],
+  [
+   260.4,
+   -26.0,
+   -19.0
+  ],
+  [
+   265.6,
+   -26.0,
+   -19.0
+  ],
+  [
+   270.7,
+   -26.0,
+   -19.0
+  ],
+  [
+   277.6,
+   -23.0,
+   -19.0
+  ],
+  [
+   278.5,
+   -19.0,
+   -19.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -19.0,
+ "dual_bound": -19.0,
+ "gap": "0%",
+ "pd_integral": 16.9967065589,
+ "solver_time": 278.48,
+ "presolve_time": 7.32,
+ "nodes": 108,
+ "lp_iterations": 621772,
+ "load_timeout": false
+}

@@ -1,0 +1,192 @@
+{
+ "arm": "dts-v3",
+ "instance": "cryptanalysiskb128n5obj14",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "261f94723b95579f",
+ "model_sha": "66ebe0bf09d29276",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.390625,
+  10.4130859375,
+  10.39453125
+ ],
+ "peak_rss_gb": 0.966,
+ "core": 15,
+ "wall": 300.5365159511566,
+ "overrun": 0.5365159511566162,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   4.7,
+   0.0,
+   Infinity
+  ],
+  [
+   16.7,
+   0.0,
+   Infinity
+  ],
+  [
+   24.6,
+   0.0,
+   Infinity
+  ],
+  [
+   30.3,
+   0.0,
+   Infinity
+  ],
+  [
+   36.8,
+   0.0,
+   Infinity
+  ],
+  [
+   42.1,
+   0.0,
+   Infinity
+  ],
+  [
+   47.1,
+   0.0,
+   Infinity
+  ],
+  [
+   55.2,
+   0.0,
+   Infinity
+  ],
+  [
+   60.5,
+   0.0,
+   Infinity
+  ],
+  [
+   65.8,
+   0.0,
+   Infinity
+  ],
+  [
+   71.7,
+   0.0,
+   Infinity
+  ],
+  [
+   77.4,
+   0.0,
+   Infinity
+  ],
+  [
+   84.7,
+   0.0,
+   Infinity
+  ],
+  [
+   92.6,
+   0.0,
+   Infinity
+  ],
+  [
+   97.7,
+   0.0,
+   Infinity
+  ],
+  [
+   103.2,
+   0.0,
+   Infinity
+  ],
+  [
+   110.4,
+   0.0,
+   Infinity
+  ],
+  [
+   118.0,
+   0.0,
+   Infinity
+  ],
+  [
+   153.8,
+   0.0,
+   Infinity
+  ],
+  [
+   157.0,
+   0.0,
+   Infinity
+  ],
+  [
+   179.7,
+   0.0,
+   Infinity
+  ],
+  [
+   185.9,
+   0.0,
+   Infinity
+  ],
+  [
+   193.2,
+   0.0,
+   Infinity
+  ],
+  [
+   200.7,
+   0.0,
+   Infinity
+  ],
+  [
+   210.3,
+   0.0,
+   Infinity
+  ],
+  [
+   218.9,
+   0.0,
+   Infinity
+  ],
+  [
+   224.9,
+   0.0,
+   Infinity
+  ],
+  [
+   258.0,
+   0.0,
+   Infinity
+  ],
+  [
+   279.2,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 6.01,
+ "nodes": 8,
+ "lp_iterations": 163476,
+ "load_timeout": false
+}

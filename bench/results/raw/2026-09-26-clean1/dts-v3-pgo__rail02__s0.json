@@ -1,0 +1,47 @@
+{
+ "arm": "dts-v3-pgo",
+ "instance": "rail02",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "a435f74877ae7e06",
+ "model_sha": "6b63d7eba78d4d18",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.26806640625,
+  10.34619140625,
+  10.42333984375
+ ],
+ "peak_rss_gb": 0.459,
+ "core": 18,
+ "wall": 300.9371645450592,
+ "overrun": 0.9371645450592041,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   4.2,
+   -2475.596167,
+   Infinity
+  ],
+  [
+   300.0,
+   -2475.596167,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -2475.59616667,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.02,
+ "presolve_time": 2.97,
+ "nodes": 0,
+ "lp_iterations": 433839,
+ "load_timeout": false
+}
