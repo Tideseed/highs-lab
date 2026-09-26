@@ -75,3 +75,11 @@ binary = "~/git_repositories/highs-builds/dse-cache/bin/highs"
 [dse-carry]
 # DSE: cut-row carry only (diagnostic)
 binary = "~/git_repositories/highs-builds/dse-carry/bin/highs"
+
+[dts-v3]
+# dev-tideseed v3 4a7937f32e: clique marking + symmetry + free wins + P1 + dse-cache + X1
+binary = "~/git_repositories/highs-builds/dts-v3/bin/highs"
+
+[dts-v3-pgo]
+# same source, PGO (-mcpu=native, non-MIPLIB training set)
+binary = "~/git_repositories/highs-builds/dts-v3-pgo/bin/highs"

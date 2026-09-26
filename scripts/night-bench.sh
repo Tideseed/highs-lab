@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Overnight full benchmark: all MIPLIB 2017 benchmark instances, arms stable/dev/dts-v2/dts-v2-nodse (ARMS below),
+# Overnight full benchmark: all MIPLIB 2017 benchmark instances, arms stable/dev/dts-v3/dts-v3-pgo (ARMS below),
 # pinned to the X925 cores.
 # Clean acceptance window (Berk, 2026-09-25): stops BOTH local LLM servers (Agent Think llama-qwen38, Agent Fast
 # ornith-vllm) and pauses the jobs that would call them overnight (tr-power-forecast-think, the two ornith canaries).
@@ -10,7 +10,7 @@ RUN=$1; TL=${2:-300}; SEEDS=${3:-0}
 LAB=~/git_repositories/highs-lab
 OUT=$LAB/bench/results/raw/$RUN
 LOG=$LAB/bench/results/raw/$RUN.night.log
-ARMS="stable dev dts-v2 dts-v2-nodse"
+ARMS="stable dev dts-v3 dts-v3-pgo"
 JOBS="15e9efd9b30b f663edfdcbff 36f278b0ee63"   # tr-power-forecast-think, local-model-canary, canary-hello
 [ "$(date +%H)" -lt 12 ] && DAY=today || DAY=tomorrow
 UNTIL=$(date -d "$DAY 07:30" +%Y-%m-%dT07:30:00%:z)
