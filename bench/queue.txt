@@ -6,5 +6,5 @@ lab/clique-partition-marking | C1,C4 | full (find_common fix changes clique resu
 lab/symmetry-dense-hash | C3 | identical | dense vertex hash storage in symmetry partition refinement, same semantics | merged
 lab/free-wins | C6,C7 | identical | skip unused glpsol errors in lpKktCheck; cache column max abs in the initial sweep | merged
 lab/presolve-changed-col | P1 | identical | count rows with singleEquationChecked set; skip/stop the markChangedCol column walk when none is set | merged
-lab/dse-carry-weights | C5 | full (weights change pivoting) | reuse dual steepest edge weights across basis restores (hash-keyed cache) and cut row add/delete (carry by variable) | testing
+lab/dse-cache | C5 | full (weights change pivoting) | restore dual steepest edge weights of a recently used basis from a hash-keyed cache (the cut-row carry part was measured and dropped) | merged
 # lab/hash-tree-find-common | C4 | full | standalone copy of the find_common fix (also contained in clique-partition-marking) | reference

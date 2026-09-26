@@ -1,0 +1,80 @@
+{
+ "started": "2026-09-26T08:43:45+0200",
+ "argv": [
+  "bench/run.py",
+  "--arms",
+  "bench/arms.toml",
+  "--only-arms",
+  "dev",
+  "lab-dsm",
+  "--set",
+  "bench/sets/dsm-losers.txt",
+  "--seeds",
+  "2",
+  "3",
+  "4",
+  "--time-limit",
+  "300",
+  "--mem-reserve-gb",
+  "20",
+  "--out",
+  "bench/results/raw/2026-09-26-dsm-losers"
+ ],
+ "cores": [
+  5,
+  6,
+  7,
+  8
+ ],
+ "mem_cap": "8G",
+ "mem_reserve_gb": 20.0,
+ "arms": {
+  "dev": {
+   "binary": "/home/coulson/git_repositories/highs-builds/dev/bin/highs",
+   "sha": "6dd634ca13f13c42",
+   "options": {},
+   "build": {
+    "build_dir": "/home/coulson/git_repositories/highs-builds/dev",
+    "BUILD_SHARED_LIBS": "ON",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_C_FLAGS": "",
+    "CMAKE_HOME_DIRECTORY": "/home/coulson/git_repositories/highs-wt/dev",
+    "effective_cxx_flags": "-std=c++11 -O3 -DNDEBUG -std=c++11 -flto=auto -fno-fat-lto-objects -fPIC -Wall -Wreturn-type -Wmissing-declarations -Wno-unused-variable -Wno-unused-const-variable -Wno-unused-but-set-variable -Wno-comment -Wno-unused-label -Wno-invalid-offsetof",
+    "source_sha": "6293630a84612d22e87a542d2f1fd2d1b6f07940",
+    "source_dirty": false,
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+   }
+  },
+  "lab-dsm": {
+   "binary": "/home/coulson/git_repositories/highs-builds/lab-dsm/bin/highs",
+   "sha": "5efc50e7feeddc30",
+   "options": {},
+   "build": {
+    "build_dir": "/home/coulson/git_repositories/highs-builds/lab-dsm",
+    "BUILD_SHARED_LIBS": "ON",
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_C_FLAGS": "",
+    "CMAKE_HOME_DIRECTORY": "/home/coulson/git_repositories/highs-wt/lab-dual-substitution-mirrored",
+    "effective_cxx_flags": "-std=c++11 -O3 -DNDEBUG -std=c++11 -flto=auto -fno-fat-lto-objects -fPIC -Wall -Wreturn-type -Wmissing-declarations -Wno-unused-variable -Wno-unused-const-variable -Wno-unused-but-set-variable -Wno-comment -Wno-unused-label -Wno-invalid-offsetof",
+    "source_sha": "c81725e48fa1c64adbf9e0170c9933a6d16d203d",
+    "source_dirty": false,
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+   }
+  }
+ },
+ "n_jobs": 12,
+ "loadavg": [
+  0.322265625,
+  0.3916015625,
+  0.501953125
+ ],
+ "meminfo_available_kb": 61920996,
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ }
+}

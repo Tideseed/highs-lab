@@ -63,3 +63,15 @@ options = { mip_heuristic_effort = 0.2 }
 [lab-dsm]
 # lab/dual-substitution-mirrored (X1)
 binary = "~/git_repositories/highs-builds/lab-dsm/bin/highs"
+
+[lab-dsm2]
+# X1 restricted to lock rows with >= 3 entries
+binary = "~/git_repositories/highs-builds/lab-dsm2/bin/highs"
+
+[dse-cache]
+# DSE: basis-hash cache only (diagnostic)
+binary = "~/git_repositories/highs-builds/dse-cache/bin/highs"
+
+[dse-carry]
+# DSE: cut-row carry only (diagnostic)
+binary = "~/git_repositories/highs-builds/dse-carry/bin/highs"
