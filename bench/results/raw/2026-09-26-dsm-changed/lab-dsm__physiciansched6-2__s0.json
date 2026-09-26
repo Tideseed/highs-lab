@@ -1,0 +1,57 @@
+{
+ "arm": "lab-dsm",
+ "instance": "physiciansched6-2",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "6936650caa2cb6d1",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  6.14111328125,
+  5.70849609375,
+  5.708984375
+ ],
+ "peak_rss_gb": 0.169,
+ "core": 8,
+ "wall": 7.435838937759399,
+ "overrun": -292.5641610622406,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.6,
+   -Infinity,
+   73539.0
+  ],
+  [
+   2.6,
+   48924.0,
+   73539.0
+  ],
+  [
+   6.4,
+   49324.0,
+   49324.0
+  ],
+  [
+   6.4,
+   49324.0,
+   49324.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 49324.0,
+ "dual_bound": 49324.0,
+ "gap": "0%",
+ "pd_integral": 1.72100341979,
+ "solver_time": 6.36,
+ "presolve_time": 1.55,
+ "nodes": 1,
+ "lp_iterations": 13992,
+ "load_timeout": false
+}

@@ -1,0 +1,182 @@
+{
+ "arm": "lab-dsm",
+ "instance": "cryptanalysiskb128n5obj14",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "66ebe0bf09d29276",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  7.46337890625,
+  6.60791015625,
+  6.2119140625
+ ],
+ "peak_rss_gb": 0.474,
+ "core": 6,
+ "wall": 300.5181813240051,
+ "overrun": 0.518181324005127,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   8.8,
+   0.0,
+   Infinity
+  ],
+  [
+   28.9,
+   0.0,
+   Infinity
+  ],
+  [
+   34.2,
+   0.0,
+   Infinity
+  ],
+  [
+   41.7,
+   0.0,
+   Infinity
+  ],
+  [
+   50.8,
+   0.0,
+   Infinity
+  ],
+  [
+   61.0,
+   0.0,
+   Infinity
+  ],
+  [
+   67.4,
+   0.0,
+   Infinity
+  ],
+  [
+   74.0,
+   0.0,
+   Infinity
+  ],
+  [
+   84.8,
+   0.0,
+   Infinity
+  ],
+  [
+   91.1,
+   0.0,
+   Infinity
+  ],
+  [
+   97.7,
+   0.0,
+   Infinity
+  ],
+  [
+   105.6,
+   0.0,
+   Infinity
+  ],
+  [
+   111.2,
+   0.0,
+   Infinity
+  ],
+  [
+   117.7,
+   0.0,
+   Infinity
+  ],
+  [
+   123.9,
+   0.0,
+   Infinity
+  ],
+  [
+   135.9,
+   0.0,
+   Infinity
+  ],
+  [
+   142.7,
+   0.0,
+   Infinity
+  ],
+  [
+   148.0,
+   0.0,
+   Infinity
+  ],
+  [
+   156.4,
+   0.0,
+   Infinity
+  ],
+  [
+   162.7,
+   0.0,
+   Infinity
+  ],
+  [
+   168.2,
+   0.0,
+   Infinity
+  ],
+  [
+   174.6,
+   0.0,
+   Infinity
+  ],
+  [
+   227.1,
+   0.0,
+   Infinity
+  ],
+  [
+   232.7,
+   0.0,
+   Infinity
+  ],
+  [
+   272.5,
+   0.0,
+   Infinity
+  ],
+  [
+   283.7,
+   0.0,
+   Infinity
+  ],
+  [
+   291.4,
+   0.0,
+   Infinity
+  ],
+  [
+   297.7,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.04,
+ "presolve_time": 8.68,
+ "nodes": 0,
+ "lp_iterations": 109407,
+ "load_timeout": false
+}

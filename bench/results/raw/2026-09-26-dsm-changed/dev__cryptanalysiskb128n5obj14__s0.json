@@ -1,0 +1,187 @@
+{
+ "arm": "dev",
+ "instance": "cryptanalysiskb128n5obj14",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "66ebe0bf09d29276",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  7.35791015625,
+  6.56005859375,
+  6.1923828125
+ ],
+ "peak_rss_gb": 0.489,
+ "core": 8,
+ "wall": 300.7354471683502,
+ "overrun": 0.7354471683502197,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   12.6,
+   0.0,
+   Infinity
+  ],
+  [
+   27.1,
+   0.0,
+   Infinity
+  ],
+  [
+   36.9,
+   0.0,
+   Infinity
+  ],
+  [
+   43.9,
+   0.0,
+   Infinity
+  ],
+  [
+   49.4,
+   0.0,
+   Infinity
+  ],
+  [
+   60.4,
+   0.0,
+   Infinity
+  ],
+  [
+   65.4,
+   0.0,
+   Infinity
+  ],
+  [
+   71.5,
+   0.0,
+   Infinity
+  ],
+  [
+   77.2,
+   0.0,
+   Infinity
+  ],
+  [
+   82.3,
+   0.0,
+   Infinity
+  ],
+  [
+   88.2,
+   0.0,
+   Infinity
+  ],
+  [
+   93.6,
+   0.0,
+   Infinity
+  ],
+  [
+   99.2,
+   0.0,
+   Infinity
+  ],
+  [
+   107.4,
+   0.0,
+   Infinity
+  ],
+  [
+   114.2,
+   0.0,
+   Infinity
+  ],
+  [
+   121.3,
+   0.0,
+   Infinity
+  ],
+  [
+   126.9,
+   0.0,
+   Infinity
+  ],
+  [
+   179.8,
+   0.0,
+   Infinity
+  ],
+  [
+   190.0,
+   0.0,
+   Infinity
+  ],
+  [
+   211.7,
+   0.0,
+   Infinity
+  ],
+  [
+   220.7,
+   0.0,
+   Infinity
+  ],
+  [
+   230.9,
+   0.0,
+   Infinity
+  ],
+  [
+   237.2,
+   0.0,
+   Infinity
+  ],
+  [
+   247.9,
+   0.0,
+   Infinity
+  ],
+  [
+   254.9,
+   0.0,
+   Infinity
+  ],
+  [
+   260.9,
+   0.0,
+   Infinity
+  ],
+  [
+   269.2,
+   0.0,
+   Infinity
+  ],
+  [
+   276.7,
+   0.0,
+   Infinity
+  ],
+  [
+   289.2,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.03,
+ "presolve_time": 13.28,
+ "nodes": 0,
+ "lp_iterations": 108234,
+ "load_timeout": false
+}

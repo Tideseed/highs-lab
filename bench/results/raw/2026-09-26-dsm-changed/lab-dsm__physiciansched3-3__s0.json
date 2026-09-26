@@ -1,0 +1,137 @@
+{
+ "arm": "lab-dsm",
+ "instance": "physiciansched3-3",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "fe0b759030c39325",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  6.24072265625,
+  5.720703125,
+  5.712890625
+ ],
+ "peak_rss_gb": 0.426,
+ "core": 8,
+ "wall": 301.65556812286377,
+ "overrun": 1.6555681228637695,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   7.9,
+   716505.5,
+   Infinity
+  ],
+  [
+   21.0,
+   2586234.088133,
+   Infinity
+  ],
+  [
+   29.1,
+   2586881.856162,
+   Infinity
+  ],
+  [
+   37.0,
+   2587305.792513,
+   Infinity
+  ],
+  [
+   49.8,
+   2593138.213822,
+   Infinity
+  ],
+  [
+   58.1,
+   2599771.867133,
+   Infinity
+  ],
+  [
+   66.7,
+   2602643.167179,
+   Infinity
+  ],
+  [
+   73.1,
+   2604255.465835,
+   Infinity
+  ],
+  [
+   78.3,
+   2604887.039848,
+   Infinity
+  ],
+  [
+   88.3,
+   2606189.93035,
+   Infinity
+  ],
+  [
+   94.9,
+   2609070.619067,
+   Infinity
+  ],
+  [
+   101.3,
+   2609555.11011,
+   Infinity
+  ],
+  [
+   107.2,
+   2609556.320677,
+   Infinity
+  ],
+  [
+   203.3,
+   2609556.320677,
+   Infinity
+  ],
+  [
+   205.1,
+   2609556.320677,
+   Infinity
+  ],
+  [
+   226.0,
+   2609556.320677,
+   Infinity
+  ],
+  [
+   231.7,
+   2609556.320677,
+   Infinity
+  ],
+  [
+   237.6,
+   2609556.320677,
+   Infinity
+  ],
+  [
+   243.2,
+   2609556.320677,
+   Infinity
+  ],
+  [
+   300.0,
+   2609556.320677,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 2609556.32068,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 13.44,
+ "nodes": 0,
+ "lp_iterations": 844044,
+ "load_timeout": false
+}

@@ -1,7 +1,7 @@
 ---
 id: X1
 area: presolve
-status: branch (screening)
+status: branch (mixed: diagnose losses)
 gate: full
 effort: 1-2 d
 verified_in_source: true
@@ -26,3 +26,4 @@ Measured share, branch and status: see frontmatter (kept current there only).
   existing one so earlier reductions are unchanged. neos-787933: presolve 1897×236376 → 131×1213 (SCIP: 1764 vars),
   solved to optimality 30 in 2.5 s at the root (was unsolved at 300 s). Solution feasible against the original model
   (bench/solcheck.py), 101/101 unit tests. Branch c81725e48f. Next: reach scan over 240 instances, hard + small screens.
+- 2026-09-26 night-lite: on its 27 affected instances SGM 0.938 [0.72,1.13], solved 21 vs 22; neos-787933 won, widden (2/2) and comp07-2idx (1/2) lost. Restrict before merging. See [[2026-09-26 Night-lite]].

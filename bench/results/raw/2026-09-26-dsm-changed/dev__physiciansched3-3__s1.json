@@ -1,0 +1,167 @@
+{
+ "arm": "dev",
+ "instance": "physiciansched3-3",
+ "seed": 1,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "fe0b759030c39325",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  5.34814453125,
+  5.58251953125,
+  5.6630859375
+ ],
+ "peak_rss_gb": 0.404,
+ "core": 6,
+ "wall": 301.7515068054199,
+ "overrun": 1.7515068054199219,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   9.7,
+   728020.5,
+   Infinity
+  ],
+  [
+   27.8,
+   2585901.096971,
+   Infinity
+  ],
+  [
+   38.8,
+   2593061.626667,
+   Infinity
+  ],
+  [
+   45.3,
+   2593306.071111,
+   Infinity
+  ],
+  [
+   50.6,
+   2593306.071111,
+   Infinity
+  ],
+  [
+   58.5,
+   2600036.748592,
+   Infinity
+  ],
+  [
+   64.8,
+   2603166.052006,
+   Infinity
+  ],
+  [
+   73.6,
+   2605162.538476,
+   Infinity
+  ],
+  [
+   79.7,
+   2606249.191612,
+   Infinity
+  ],
+  [
+   88.3,
+   2607416.00274,
+   Infinity
+  ],
+  [
+   95.3,
+   2609107.507048,
+   Infinity
+  ],
+  [
+   102.0,
+   2609606.393682,
+   Infinity
+  ],
+  [
+   109.9,
+   2609970.792338,
+   Infinity
+  ],
+  [
+   119.6,
+   2610629.192942,
+   Infinity
+  ],
+  [
+   130.1,
+   2611283.519922,
+   Infinity
+  ],
+  [
+   136.3,
+   2611361.683717,
+   Infinity
+  ],
+  [
+   142.3,
+   2611856.78068,
+   Infinity
+  ],
+  [
+   150.8,
+   2612205.835416,
+   Infinity
+  ],
+  [
+   157.9,
+   2612330.79337,
+   Infinity
+  ],
+  [
+   262.0,
+   2612330.79337,
+   Infinity
+  ],
+  [
+   263.3,
+   2612330.79337,
+   Infinity
+  ],
+  [
+   281.3,
+   2612330.79337,
+   Infinity
+  ],
+  [
+   288.2,
+   2612330.79337,
+   Infinity
+  ],
+  [
+   294.1,
+   2612330.79337,
+   Infinity
+  ],
+  [
+   299.2,
+   2612330.79337,
+   Infinity
+  ],
+  [
+   300.0,
+   2612330.79337,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 2612330.79337,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 12.31,
+ "nodes": 0,
+ "lp_iterations": 593488,
+ "load_timeout": false
+}

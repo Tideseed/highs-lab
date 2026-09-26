@@ -1,0 +1,72 @@
+{
+ "arm": "dev",
+ "instance": "cryptanalysiskb128n5obj16",
+ "seed": 0,
+ "time_limit": 60.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "9d9b5ca79b0c8f2b",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  6.03173828125,
+  4.7041015625,
+  3.06787109375
+ ],
+ "peak_rss_gb": 0.291,
+ "core": 6,
+ "wall": 61.201114654541016,
+ "overrun": 1.2011146545410156,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   9.3,
+   0.0,
+   Infinity
+  ],
+  [
+   27.9,
+   0.0,
+   Infinity
+  ],
+  [
+   34.5,
+   0.0,
+   Infinity
+  ],
+  [
+   40.5,
+   0.0,
+   Infinity
+  ],
+  [
+   48.5,
+   0.0,
+   Infinity
+  ],
+  [
+   56.6,
+   0.0,
+   Infinity
+  ],
+  [
+   60.4,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 60.38,
+ "presolve_time": 8.68,
+ "nodes": 0,
+ "lp_iterations": 22460,
+ "load_timeout": false
+}

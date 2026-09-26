@@ -1,0 +1,157 @@
+{
+ "arm": "lab-dsm",
+ "instance": "physiciansched3-3",
+ "seed": 1,
+ "time_limit": 300.0,
+ "binary_sha": "5efc50e7feeddc30",
+ "model_sha": "fe0b759030c39325",
+ "serving_units": {
+  "ornith-vllm": "active",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  5.16455078125,
+  5.5224609375,
+  5.638671875
+ ],
+ "peak_rss_gb": 0.465,
+ "core": 7,
+ "wall": 301.3926303386688,
+ "overrun": 1.3926303386688232,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   8.6,
+   725671.166667,
+   Infinity
+  ],
+  [
+   22.2,
+   2586138.713581,
+   Infinity
+  ],
+  [
+   28.5,
+   2586311.23381,
+   Infinity
+  ],
+  [
+   37.8,
+   2592022.283778,
+   Infinity
+  ],
+  [
+   50.9,
+   2601178.358005,
+   Infinity
+  ],
+  [
+   56.0,
+   2602659.029599,
+   Infinity
+  ],
+  [
+   61.2,
+   2603091.566885,
+   Infinity
+  ],
+  [
+   66.5,
+   2603320.110678,
+   Infinity
+  ],
+  [
+   73.3,
+   2603964.033286,
+   Infinity
+  ],
+  [
+   80.8,
+   2605783.453938,
+   Infinity
+  ],
+  [
+   86.1,
+   2606599.933708,
+   Infinity
+  ],
+  [
+   93.6,
+   2606947.153576,
+   Infinity
+  ],
+  [
+   99.0,
+   2607037.968315,
+   Infinity
+  ],
+  [
+   104.1,
+   2607121.519337,
+   Infinity
+  ],
+  [
+   109.2,
+   2607285.408125,
+   Infinity
+  ],
+  [
+   114.7,
+   2607298.852451,
+   Infinity
+  ],
+  [
+   213.9,
+   2607298.852451,
+   Infinity
+  ],
+  [
+   215.7,
+   2607298.852451,
+   Infinity
+  ],
+  [
+   236.6,
+   2607300.104558,
+   Infinity
+  ],
+  [
+   242.3,
+   2607300.104558,
+   Infinity
+  ],
+  [
+   247.6,
+   2607300.104558,
+   Infinity
+  ],
+  [
+   252.6,
+   2607300.104558,
+   Infinity
+  ],
+  [
+   263.9,
+   2607300.104558,
+   Infinity
+  ],
+  [
+   300.0,
+   2607300.104558,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 2607300.10456,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 14.28,
+ "nodes": 0,
+ "lp_iterations": 783092,
+ "load_timeout": false
+}
