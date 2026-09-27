@@ -1,0 +1,62 @@
+{
+ "arm": "dev",
+ "instance": "gfd-schedulen180f7d50m30k18",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "4a98fe1d8e019315",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.2802734375,
+  10.3623046875,
+  10.38671875
+ ],
+ "peak_rss_gb": 1.11,
+ "core": 6,
+ "wall": 302.6756522655487,
+ "overrun": 2.675652265548706,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   55.2,
+   1.0,
+   Infinity
+  ],
+  [
+   200.0,
+   1.0,
+   Infinity
+  ],
+  [
+   268.4,
+   1.0,
+   Infinity
+  ],
+  [
+   291.5,
+   1.0,
+   Infinity
+  ],
+  [
+   300.0,
+   1.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 1.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.03,
+ "presolve_time": 53.26,
+ "nodes": 0,
+ "lp_iterations": 86918,
+ "load_timeout": false
+}

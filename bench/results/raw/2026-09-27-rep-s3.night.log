@@ -1,0 +1,8 @@
+== 2026-09-27T14:05:58+02:00 night bench 2026-09-27-rep-s3 tl=300 seeds=3
+stopped: llama-qwen38=inactive ornith-vllm=inactive; MemAvailable 112 GB
+yes: standard output: Broken pipe
+budget: 240 instances x 3 arms x 1 seeds = 720 jobs, <= 300s each on 10 cores: worst case 6 h; window ends 06:30. timeout stops run.py only; HiGHS scopes already running finish on their own (<= 300s). Arms are interleaved per instance, so a partial night stays paired.
+solver scopes left: 4
+restore: llama-qwen38 active (health 200), ornith-vllm active (models 200); jobs resumed: f663edfdcbff 36f278b0ee63
+== 2026-09-27T18:29:58+02:00 done
+2026-09-27T18:30:04+02:00 d006-after 3 OK

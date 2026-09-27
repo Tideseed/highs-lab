@@ -1,0 +1,162 @@
+{
+ "arm": "dev",
+ "instance": "app1-2",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "54f5d2a1a42443d1",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  11.0205078125,
+  10.63671875,
+  10.48193359375
+ ],
+ "peak_rss_gb": 0.732,
+ "core": 6,
+ "wall": 300.3308913707733,
+ "overrun": 0.33089137077331543,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   42.0,
+   -239.0,
+   Infinity
+  ],
+  [
+   42.5,
+   -232.6860307,
+   Infinity
+  ],
+  [
+   47.6,
+   -210.2596364,
+   Infinity
+  ],
+  [
+   96.7,
+   -192.94336,
+   Infinity
+  ],
+  [
+   97.8,
+   -192.94336,
+   Infinity
+  ],
+  [
+   98.5,
+   -192.9433592,
+   Infinity
+  ],
+  [
+   103.5,
+   -167.7402705,
+   Infinity
+  ],
+  [
+   155.7,
+   -163.4387778,
+   Infinity
+  ],
+  [
+   160.8,
+   -160.891507,
+   Infinity
+  ],
+  [
+   165.8,
+   -160.891507,
+   Infinity
+  ],
+  [
+   171.4,
+   -160.891507,
+   Infinity
+  ],
+  [
+   176.4,
+   -160.891507,
+   Infinity
+  ],
+  [
+   181.5,
+   -160.891507,
+   Infinity
+  ],
+  [
+   186.5,
+   -160.891507,
+   Infinity
+  ],
+  [
+   191.5,
+   -160.891507,
+   Infinity
+  ],
+  [
+   196.6,
+   -150.8768582,
+   Infinity
+  ],
+  [
+   198.3,
+   -55.0,
+   Infinity
+  ],
+  [
+   199.7,
+   -53.51179074,
+   Infinity
+  ],
+  [
+   204.8,
+   -48.65733549,
+   Infinity
+  ],
+  [
+   263.0,
+   -48.56786585,
+   Infinity
+  ],
+  [
+   283.2,
+   -48.56786585,
+   Infinity
+  ],
+  [
+   288.2,
+   -48.56786585,
+   Infinity
+  ],
+  [
+   293.3,
+   -48.56786585,
+   Infinity
+  ],
+  [
+   298.3,
+   -48.56786585,
+   Infinity
+  ],
+  [
+   300.0,
+   -48.56786585,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": -48.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 91.23,
+ "nodes": 1572,
+ "lp_iterations": 288393,
+ "load_timeout": false
+}

@@ -1,0 +1,182 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "physiciansched3-3",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "fe0b759030c39325",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  11.5810546875,
+  11.03271484375,
+  10.8154296875
+ ],
+ "peak_rss_gb": 0.467,
+ "core": 8,
+ "wall": 301.12411069869995,
+ "overrun": 1.1241106986999512,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   7.0,
+   721012.5,
+   Infinity
+  ],
+  [
+   26.1,
+   2585776.096971,
+   Infinity
+  ],
+  [
+   32.1,
+   2586476.575297,
+   Infinity
+  ],
+  [
+   38.3,
+   2593247.451195,
+   Infinity
+  ],
+  [
+   51.6,
+   2599971.687622,
+   Infinity
+  ],
+  [
+   61.3,
+   2604172.40152,
+   Infinity
+  ],
+  [
+   67.1,
+   2604571.178935,
+   Infinity
+  ],
+  [
+   74.2,
+   2605220.703778,
+   Infinity
+  ],
+  [
+   79.5,
+   2605678.071753,
+   Infinity
+  ],
+  [
+   84.8,
+   2607190.770386,
+   Infinity
+  ],
+  [
+   91.8,
+   2607787.408209,
+   Infinity
+  ],
+  [
+   97.4,
+   2608212.253064,
+   Infinity
+  ],
+  [
+   105.2,
+   2608724.184648,
+   Infinity
+  ],
+  [
+   115.4,
+   2608865.865078,
+   Infinity
+  ],
+  [
+   123.1,
+   2608948.549782,
+   Infinity
+  ],
+  [
+   129.5,
+   2608973.906798,
+   Infinity
+  ],
+  [
+   135.3,
+   2609175.513557,
+   Infinity
+  ],
+  [
+   141.7,
+   2609191.620813,
+   Infinity
+  ],
+  [
+   151.8,
+   2609228.201603,
+   Infinity
+  ],
+  [
+   165.8,
+   2610984.217884,
+   Infinity
+  ],
+  [
+   174.2,
+   2611356.878763,
+   Infinity
+  ],
+  [
+   181.2,
+   2611607.143888,
+   Infinity
+  ],
+  [
+   187.1,
+   2611695.581177,
+   Infinity
+  ],
+  [
+   193.4,
+   2611751.114142,
+   Infinity
+  ],
+  [
+   205.4,
+   2611751.141993,
+   Infinity
+  ],
+  [
+   278.5,
+   2611751.141993,
+   Infinity
+  ],
+  [
+   279.5,
+   2611751.141993,
+   Infinity
+  ],
+  [
+   297.9,
+   2611751.141993,
+   Infinity
+  ],
+  [
+   300.0,
+   2611751.141993,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 2611751.14199,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 8.78,
+ "nodes": 0,
+ "lp_iterations": 667493,
+ "load_timeout": false
+}

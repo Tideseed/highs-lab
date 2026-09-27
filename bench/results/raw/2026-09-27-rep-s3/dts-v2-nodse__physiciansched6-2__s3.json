@@ -1,0 +1,57 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "physiciansched6-2",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "6936650caa2cb6d1",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.357421875,
+  10.3916015625,
+  10.39990234375
+ ],
+ "peak_rss_gb": 0.187,
+ "core": 7,
+ "wall": 5.651765584945679,
+ "overrun": -294.3482344150543,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.9,
+   -Infinity,
+   79741.0
+  ],
+  [
+   1.6,
+   48851.083333,
+   79741.0
+  ],
+  [
+   4.9,
+   49324.0,
+   49324.0
+  ],
+  [
+   4.9,
+   49324.0,
+   49324.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 49324.0,
+ "dual_bound": 49324.0,
+ "gap": "0%",
+ "pd_integral": 1.60476402064,
+ "solver_time": 4.87,
+ "presolve_time": 0.9,
+ "nodes": 1,
+ "lp_iterations": 13015,
+ "load_timeout": false
+}

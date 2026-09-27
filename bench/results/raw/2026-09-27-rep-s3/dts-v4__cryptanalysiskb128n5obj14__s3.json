@@ -1,0 +1,187 @@
+{
+ "arm": "dts-v4",
+ "instance": "cryptanalysiskb128n5obj14",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "c1ead1187f8f3d3a",
+ "model_sha": "66ebe0bf09d29276",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.2236328125,
+  10.32080078125,
+  10.392578125
+ ],
+ "peak_rss_gb": 0.812,
+ "core": 18,
+ "wall": 300.5610682964325,
+ "overrun": 0.5610682964324951,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   5.9,
+   0.0,
+   Infinity
+  ],
+  [
+   17.4,
+   0.0,
+   Infinity
+  ],
+  [
+   23.6,
+   0.0,
+   Infinity
+  ],
+  [
+   35.3,
+   0.0,
+   Infinity
+  ],
+  [
+   42.0,
+   0.0,
+   Infinity
+  ],
+  [
+   50.6,
+   0.0,
+   Infinity
+  ],
+  [
+   55.8,
+   0.0,
+   Infinity
+  ],
+  [
+   61.8,
+   0.0,
+   Infinity
+  ],
+  [
+   68.8,
+   0.0,
+   Infinity
+  ],
+  [
+   74.4,
+   0.0,
+   Infinity
+  ],
+  [
+   82.1,
+   0.0,
+   Infinity
+  ],
+  [
+   90.1,
+   0.0,
+   Infinity
+  ],
+  [
+   98.6,
+   0.0,
+   Infinity
+  ],
+  [
+   132.2,
+   0.0,
+   Infinity
+  ],
+  [
+   138.1,
+   0.0,
+   Infinity
+  ],
+  [
+   149.8,
+   0.0,
+   Infinity
+  ],
+  [
+   158.1,
+   0.0,
+   Infinity
+  ],
+  [
+   163.2,
+   0.0,
+   Infinity
+  ],
+  [
+   169.1,
+   0.0,
+   Infinity
+  ],
+  [
+   177.7,
+   0.0,
+   Infinity
+  ],
+  [
+   187.7,
+   0.0,
+   Infinity
+  ],
+  [
+   193.4,
+   0.0,
+   Infinity
+  ],
+  [
+   198.7,
+   0.0,
+   Infinity
+  ],
+  [
+   204.7,
+   0.0,
+   Infinity
+  ],
+  [
+   210.2,
+   0.0,
+   Infinity
+  ],
+  [
+   242.4,
+   0.0,
+   Infinity
+  ],
+  [
+   265.8,
+   0.0,
+   Infinity
+  ],
+  [
+   292.1,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 6.52,
+ "nodes": 9,
+ "lp_iterations": 175444,
+ "load_timeout": false
+}

@@ -1,0 +1,197 @@
+{
+ "arm": "dev",
+ "instance": "cryptanalysiskb128n5obj14",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "66ebe0bf09d29276",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.26708984375,
+  10.494140625,
+  10.4599609375
+ ],
+ "peak_rss_gb": 0.821,
+ "core": 6,
+ "wall": 300.5951898097992,
+ "overrun": 0.5951898097991943,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   7.3,
+   0.0,
+   Infinity
+  ],
+  [
+   19.8,
+   0.0,
+   Infinity
+  ],
+  [
+   27.2,
+   0.0,
+   Infinity
+  ],
+  [
+   40.1,
+   0.0,
+   Infinity
+  ],
+  [
+   47.5,
+   0.0,
+   Infinity
+  ],
+  [
+   56.6,
+   0.0,
+   Infinity
+  ],
+  [
+   62.3,
+   0.0,
+   Infinity
+  ],
+  [
+   68.6,
+   0.0,
+   Infinity
+  ],
+  [
+   76.1,
+   0.0,
+   Infinity
+  ],
+  [
+   82.2,
+   0.0,
+   Infinity
+  ],
+  [
+   87.3,
+   0.0,
+   Infinity
+  ],
+  [
+   93.6,
+   0.0,
+   Infinity
+  ],
+  [
+   98.9,
+   0.0,
+   Infinity
+  ],
+  [
+   107.7,
+   0.0,
+   Infinity
+  ],
+  [
+   142.9,
+   0.0,
+   Infinity
+  ],
+  [
+   149.5,
+   0.0,
+   Infinity
+  ],
+  [
+   161.4,
+   0.0,
+   Infinity
+  ],
+  [
+   166.5,
+   0.0,
+   Infinity
+  ],
+  [
+   171.8,
+   0.0,
+   Infinity
+  ],
+  [
+   177.3,
+   0.0,
+   Infinity
+  ],
+  [
+   183.4,
+   0.0,
+   Infinity
+  ],
+  [
+   192.3,
+   0.0,
+   Infinity
+  ],
+  [
+   197.4,
+   0.0,
+   Infinity
+  ],
+  [
+   202.6,
+   0.0,
+   Infinity
+  ],
+  [
+   208.4,
+   0.0,
+   Infinity
+  ],
+  [
+   213.9,
+   0.0,
+   Infinity
+  ],
+  [
+   220.2,
+   0.0,
+   Infinity
+  ],
+  [
+   226.0,
+   0.0,
+   Infinity
+  ],
+  [
+   260.7,
+   0.0,
+   Infinity
+  ],
+  [
+   292.5,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 8.05,
+ "nodes": 3,
+ "lp_iterations": 145338,
+ "load_timeout": false
+}

@@ -65,3 +65,8 @@ Clarifications only; the registered rules above are unchanged and will be report
   log line is OK or FAILED with the failing steps); the running watcher was stopped and restarted on the fixed file
   (10:05); the analysis tools now exit non-zero on a missing control arm or empty input.
 - 2026-09-27 14:06 seed 3 moved from the 00:15 timer to a daytime window on Berk's word ("if the machine is empty go for seed 3"); timer cancelled, unit `highs-rep-s3-day`, lease until 20:05. Same seed, arms, set and settings as registered.
+
+## Outcome (2026-09-27 18:5x)
+A: no established aggregate effect (0.993 [0.988, 0.998], 2 crashes). B: registered verdict drop DSE (0.981 [0.967,
+0.994] but 2 crashes, which occur identically in base). Changing dev-tideseed (a force-push of a public branch) waits for
+Berk. Details: `30-results/2026-09-27 D-006 outcome.md`.

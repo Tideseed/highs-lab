@@ -1,0 +1,47 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "decomp2",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "5403484be4c27538",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.4189453125,
+  10.5556640625,
+  10.783203125
+ ],
+ "peak_rss_gb": 0.028,
+ "core": 19,
+ "wall": 1.0008013248443604,
+ "overrun": -298.99919867515564,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.2,
+   -Infinity,
+   -160.0
+  ],
+  [
+   0.2,
+   -160.0,
+   -160.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -160.0,
+ "dual_bound": -160.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 0.21,
+ "presolve_time": 0.17,
+ "nodes": 1,
+ "lp_iterations": 0,
+ "load_timeout": false
+}

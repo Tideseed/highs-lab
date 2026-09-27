@@ -134,4 +134,9 @@ a general noise floor, so small single-run differences are reported as observed,
 - **Seed 2** (2026-09-27 09:14–13:35): base vs dev 0.995 [0.990, 1.002]; v4 vs base 0.995 [0.973, 1.016]; v4 vs dev
   0.990 [0.967, 1.011]; 0 wrong; 1 cap kill each for base and v4 (bohle, 8 GiB). No contrast passes; the seed-1 gain
   is not repeated on seed 2. `2026-09-27 D-006 seed 2.md`.
-- **Seed 3** runs 2026-09-28 00:15; the registered decisions (keep base? keep DSE?) are taken on the pooled seeds.
+- **Seed 3** (14:06–18:30): base vs dev 0.993 [0.987, 0.998]; v4 vs base 0.970 [0.949, 0.989]; v4 vs dev 0.963 [0.941, 0.983].
+- **Pooled seeds 2+3:** base vs dev **0.993 [0.988, 0.998]**; v4 vs base **0.981 [0.967, 0.994]**; v4 vs dev **0.974
+  [0.959, 0.988]**; 0 wrong; bohle cap kills for base and v4 on both seeds. Registered decisions: A → no established
+  aggregate effect; B → DSE dropped (crash condition; the crashes occur identically in base). Across seeds 1–3 v4 vs dev
+  is 0.969 / 0.990 / 0.963: a ~2.5 % effect, below the 3 % gate. `2026-09-27 D-006 outcome.md`.
+- Saved-solution recheck seed 3: 632/632 feasible (all four run sets: 2,497 incumbents, two tolerance-edge rows).

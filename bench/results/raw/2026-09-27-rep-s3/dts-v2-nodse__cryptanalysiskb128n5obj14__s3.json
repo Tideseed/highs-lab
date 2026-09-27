@@ -1,0 +1,192 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "cryptanalysiskb128n5obj14",
+ "seed": 3,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "66ebe0bf09d29276",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.16748046875,
+  10.42529296875,
+  10.43798828125
+ ],
+ "peak_rss_gb": 0.815,
+ "core": 15,
+ "wall": 300.4879353046417,
+ "overrun": 0.48793530464172363,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   5.8,
+   0.0,
+   Infinity
+  ],
+  [
+   17.2,
+   0.0,
+   Infinity
+  ],
+  [
+   23.2,
+   0.0,
+   Infinity
+  ],
+  [
+   35.1,
+   0.0,
+   Infinity
+  ],
+  [
+   41.8,
+   0.0,
+   Infinity
+  ],
+  [
+   50.2,
+   0.0,
+   Infinity
+  ],
+  [
+   55.2,
+   0.0,
+   Infinity
+  ],
+  [
+   61.0,
+   0.0,
+   Infinity
+  ],
+  [
+   68.1,
+   0.0,
+   Infinity
+  ],
+  [
+   73.7,
+   0.0,
+   Infinity
+  ],
+  [
+   81.4,
+   0.0,
+   Infinity
+  ],
+  [
+   89.3,
+   0.0,
+   Infinity
+  ],
+  [
+   97.9,
+   0.0,
+   Infinity
+  ],
+  [
+   130.6,
+   0.0,
+   Infinity
+  ],
+  [
+   135.5,
+   0.0,
+   Infinity
+  ],
+  [
+   146.6,
+   0.0,
+   Infinity
+  ],
+  [
+   154.9,
+   0.0,
+   Infinity
+  ],
+  [
+   160.0,
+   0.0,
+   Infinity
+  ],
+  [
+   165.8,
+   0.0,
+   Infinity
+  ],
+  [
+   174.1,
+   0.0,
+   Infinity
+  ],
+  [
+   179.1,
+   0.0,
+   Infinity
+  ],
+  [
+   184.2,
+   0.0,
+   Infinity
+  ],
+  [
+   190.0,
+   0.0,
+   Infinity
+  ],
+  [
+   195.4,
+   0.0,
+   Infinity
+  ],
+  [
+   201.6,
+   0.0,
+   Infinity
+  ],
+  [
+   207.1,
+   0.0,
+   Infinity
+  ],
+  [
+   239.2,
+   0.0,
+   Infinity
+  ],
+  [
+   262.7,
+   0.0,
+   Infinity
+  ],
+  [
+   289.3,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 6.44,
+ "nodes": 9,
+ "lp_iterations": 180038,
+ "load_timeout": false
+}
