@@ -55,8 +55,9 @@ def main() -> None:
         lp = h.getLp(); A = lp.a_matrix_
         names = list(lp.col_names_)
         rnames = list(lp.row_names_) if len(lp.row_names_) else None
-        cols = (list(lp.col_lower_), list(lp.col_upper_), [int(t) for t in lp.integrality_], list(lp.row_lower_),
-                list(lp.row_upper_), list(A.start_), list(A.index_), list(A.value_))
+        cols = (np.array(lp.col_lower_), np.array(lp.col_upper_), np.array([int(t) for t in lp.integrality_]),
+                np.array(lp.row_lower_), np.array(lp.row_upper_), np.array(A.start_), np.array(A.index_),
+                np.array(A.value_))
         cost, off = np.array(lp.col_cost_), lp.offset_
         for r, sol in todo:
             m = re.search(r"# Columns (\d+)\n(.*?)\n# Rows", sol.read_text(), re.S)

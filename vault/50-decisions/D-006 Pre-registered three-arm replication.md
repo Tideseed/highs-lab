@@ -44,3 +44,10 @@ regressions > 25 %.
 ## Not done
 No option changes, no rebuilds, no instance selection. The feasibility checker is fixed (Codex review item 1) before
 any solution from these runs is cited as feasible.
+
+## Execution log (appended; the design above is unchanged)
+- 2026-09-27 09:14:39 seed 2 started (unit `highs-rep-s2`, lease until 15:14). During the window the ops session's
+  eptr2archive repair chain writes to ClickHouse (ceiling raised to 10.5 GB today); recorded as a contention factor
+  (per-job loadavg is in every record), not a reason to change anything.
+- Seed 3 scheduled for 2026-09-28 00:15 (transient timer `highs-rep-s3`, NOT reboot-safe); follow-up
+  `scripts/d006-after.sh` computes contrasts A/B per seed and pooled, and after seed 2 the saved-solution recheck.
