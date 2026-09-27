@@ -64,3 +64,4 @@ Clarifications only; the registered rules above are unchanged and will be report
   recheck would have been skipped silently. Fixed (named flag, every step must succeed and write its output, the final
   log line is OK or FAILED with the failing steps); the running watcher was stopped and restarted on the fixed file
   (10:05); the analysis tools now exit non-zero on a missing control arm or empty input.
+- 2026-09-27 14:06 seed 3 moved from the 00:15 timer to a daytime window on Berk's word ("if the machine is empty go for seed 3"); timer cancelled, unit `highs-rep-s3-day`, lease until 20:05. Same seed, arms, set and settings as registered.
