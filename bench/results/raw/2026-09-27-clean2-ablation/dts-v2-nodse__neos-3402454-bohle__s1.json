@@ -1,0 +1,97 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "neos-3402454-bohle",
+ "seed": 1,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "14f69099fa3304ce",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.1337890625,
+  10.18603515625,
+  9.994140625
+ ],
+ "peak_rss_gb": 6.609,
+ "core": 15,
+ "wall": 313.35206365585327,
+ "overrun": 13.352063655853271,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   128.4,
+   0.0,
+   Infinity
+  ],
+  [
+   173.5,
+   0.0,
+   Infinity
+  ],
+  [
+   191.3,
+   0.06725,
+   Infinity
+  ],
+  [
+   199.6,
+   0.06725,
+   Infinity
+  ],
+  [
+   214.2,
+   0.06725,
+   Infinity
+  ],
+  [
+   223.3,
+   0.06725,
+   Infinity
+  ],
+  [
+   249.9,
+   0.06725,
+   Infinity
+  ],
+  [
+   259.5,
+   0.06725,
+   Infinity
+  ],
+  [
+   270.3,
+   0.06725,
+   Infinity
+  ],
+  [
+   290.1,
+   0.06725,
+   Infinity
+  ],
+  [
+   300.0,
+   0.06725,
+   Infinity
+  ],
+  [
+   300.0,
+   0.06725,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.06725,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 45.0,
+ "nodes": 0,
+ "lp_iterations": 2102,
+ "load_timeout": false
+}

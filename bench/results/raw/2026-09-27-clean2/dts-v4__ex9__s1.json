@@ -1,0 +1,42 @@
+{
+ "arm": "dts-v4",
+ "instance": "ex9",
+ "seed": 1,
+ "time_limit": 300.0,
+ "binary_sha": "c1ead1187f8f3d3a",
+ "model_sha": "9c7758e2a75cb927",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.365234375,
+  10.41015625,
+  8.57470703125
+ ],
+ "peak_rss_gb": 0.077,
+ "core": 7,
+ "wall": 2.4088783264160156,
+ "overrun": -297.591121673584,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   2.0,
+   81.0,
+   81.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 81.0,
+ "dual_bound": 81.0,
+ "gap": "0%",
+ "pd_integral": 0.0,
+ "solver_time": 2.02,
+ "presolve_time": 2.02,
+ "nodes": 0,
+ "lp_iterations": 0,
+ "load_timeout": false
+}

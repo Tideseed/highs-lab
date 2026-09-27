@@ -1,0 +1,162 @@
+{
+ "arm": "dev",
+ "instance": "neos-3024952-loue",
+ "seed": 1,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "6c5f4b9dcb2bf75c",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.63818359375,
+  10.703125,
+  9.7880859375
+ ],
+ "peak_rss_gb": 1.847,
+ "core": 9,
+ "wall": 300.3753123283386,
+ "overrun": 0.37531232833862305,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.0,
+   -3965000.0,
+   Infinity
+  ],
+  [
+   0.3,
+   22882.0,
+   Infinity
+  ],
+  [
+   5.3,
+   25506.073523,
+   Infinity
+  ],
+  [
+   13.5,
+   25720.730667,
+   Infinity
+  ],
+  [
+   34.8,
+   25721.089924,
+   Infinity
+  ],
+  [
+   57.1,
+   25721.089924,
+   Infinity
+  ],
+  [
+   75.1,
+   25724.121147,
+   Infinity
+  ],
+  [
+   87.8,
+   25734.121147,
+   Infinity
+  ],
+  [
+   103.6,
+   25740.984233,
+   Infinity
+  ],
+  [
+   120.8,
+   25744.121147,
+   Infinity
+  ],
+  [
+   128.1,
+   25750.984233,
+   Infinity
+  ],
+  [
+   142.5,
+   25750.984233,
+   Infinity
+  ],
+  [
+   161.9,
+   25754.121147,
+   Infinity
+  ],
+  [
+   174.0,
+   25760.984233,
+   Infinity
+  ],
+  [
+   174.1,
+   25760.984233,
+   Infinity
+  ],
+  [
+   174.4,
+   26060.671258,
+   Infinity
+  ],
+  [
+   198.1,
+   26129.602172,
+   Infinity
+  ],
+  [
+   210.3,
+   26129.602172,
+   Infinity
+  ],
+  [
+   216.1,
+   26129.602172,
+   Infinity
+  ],
+  [
+   233.5,
+   26129.602172,
+   Infinity
+  ],
+  [
+   249.7,
+   26129.602172,
+   Infinity
+  ],
+  [
+   275.8,
+   26129.602172,
+   Infinity
+  ],
+  [
+   293.8,
+   26129.602172,
+   Infinity
+  ],
+  [
+   300.0,
+   26129.602172,
+   Infinity
+  ],
+  [
+   300.0,
+   26129.602172,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 26130.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 7.06,
+ "nodes": 22688,
+ "lp_iterations": 608547,
+ "load_timeout": false
+}

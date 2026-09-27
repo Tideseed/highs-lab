@@ -1,0 +1,67 @@
+{
+ "arm": "base-x1",
+ "instance": "comp07-2idx",
+ "seed": 0,
+ "time_limit": 300.0,
+ "binary_sha": "e9a1790fb88453ab",
+ "model_sha": "6b26d9f4ab272364",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.52685546875,
+  9.6318359375,
+  9.5986328125
+ ],
+ "peak_rss_gb": 0.244,
+ "core": 19,
+ "wall": 32.828579902648926,
+ "overrun": -267.1714200973511,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.9,
+   -Infinity,
+   43.0
+  ],
+  [
+   1.6,
+   0.0,
+   43.0
+  ],
+  [
+   7.0,
+   4.0,
+   43.0
+  ],
+  [
+   13.6,
+   6.0,
+   43.0
+  ],
+  [
+   32.6,
+   6.0,
+   6.0
+  ],
+  [
+   32.7,
+   6.0,
+   6.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 6.0,
+ "dual_bound": 6.0,
+ "gap": "0%",
+ "pd_integral": 27.958201627,
+ "solver_time": 32.65,
+ "presolve_time": 0.97,
+ "nodes": 1,
+ "lp_iterations": 64261,
+ "load_timeout": false
+}

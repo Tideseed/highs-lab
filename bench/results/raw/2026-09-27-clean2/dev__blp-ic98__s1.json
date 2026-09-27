@@ -1,0 +1,162 @@
+{
+ "arm": "dev",
+ "instance": "blp-ic98",
+ "seed": 1,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "ef71974c56ca7590",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.2470703125,
+  10.38427734375,
+  10.5185546875
+ ],
+ "peak_rss_gb": 0.116,
+ "core": 19,
+ "wall": 302.1060254573822,
+ "overrun": 2.106025457382202,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.6,
+   0.0,
+   Infinity
+  ],
+  [
+   11.5,
+   4331.168353,
+   Infinity
+  ],
+  [
+   22.6,
+   4362.346913,
+   Infinity
+  ],
+  [
+   34.3,
+   4368.530755,
+   Infinity
+  ],
+  [
+   46.3,
+   4380.434309,
+   Infinity
+  ],
+  [
+   58.2,
+   4384.420914,
+   Infinity
+  ],
+  [
+   93.8,
+   4387.304631,
+   Infinity
+  ],
+  [
+   105.3,
+   4397.329537,
+   Infinity
+  ],
+  [
+   117.3,
+   4397.867347,
+   Infinity
+  ],
+  [
+   129.3,
+   4398.309742,
+   Infinity
+  ],
+  [
+   141.5,
+   4399.693866,
+   Infinity
+  ],
+  [
+   153.7,
+   4399.977024,
+   Infinity
+  ],
+  [
+   165.5,
+   4400.542079,
+   Infinity
+  ],
+  [
+   178.1,
+   4400.747681,
+   Infinity
+  ],
+  [
+   190.4,
+   4401.572479,
+   Infinity
+  ],
+  [
+   202.9,
+   4401.989727,
+   Infinity
+  ],
+  [
+   215.4,
+   4401.989727,
+   Infinity
+  ],
+  [
+   227.8,
+   4402.161156,
+   Infinity
+  ],
+  [
+   239.9,
+   4402.233059,
+   Infinity
+  ],
+  [
+   252.0,
+   4402.354796,
+   Infinity
+  ],
+  [
+   264.6,
+   4402.502751,
+   Infinity
+  ],
+  [
+   277.1,
+   4403.075313,
+   Infinity
+  ],
+  [
+   289.2,
+   4403.116272,
+   Infinity
+  ],
+  [
+   301.9,
+   4403.152317,
+   Infinity
+  ],
+  [
+   301.9,
+   4403.152317,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 4403.15231746,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 301.95,
+ "presolve_time": 0.36,
+ "nodes": 0,
+ "lp_iterations": 1460,
+ "load_timeout": false
+}
