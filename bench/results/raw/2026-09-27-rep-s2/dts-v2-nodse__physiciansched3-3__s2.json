@@ -1,0 +1,152 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "physiciansched3-3",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "fe0b759030c39325",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.64306640625,
+  10.43408203125,
+  10.45703125
+ ],
+ "peak_rss_gb": 0.419,
+ "core": 19,
+ "wall": 301.1123938560486,
+ "overrun": 1.112393856048584,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   6.5,
+   728520.5,
+   Infinity
+  ],
+  [
+   22.2,
+   2585776.096971,
+   Infinity
+  ],
+  [
+   31.1,
+   2592922.737778,
+   Infinity
+  ],
+  [
+   36.9,
+   2592922.737778,
+   Infinity
+  ],
+  [
+   48.5,
+   2599691.437537,
+   Infinity
+  ],
+  [
+   57.3,
+   2603813.69763,
+   Infinity
+  ],
+  [
+   64.6,
+   2604498.133137,
+   Infinity
+  ],
+  [
+   87.0,
+   2605535.852765,
+   Infinity
+  ],
+  [
+   95.2,
+   2607277.391249,
+   Infinity
+  ],
+  [
+   101.2,
+   2607403.348746,
+   Infinity
+  ],
+  [
+   107.8,
+   2608080.549229,
+   Infinity
+  ],
+  [
+   115.2,
+   2608848.813134,
+   Infinity
+  ],
+  [
+   120.7,
+   2609039.956648,
+   Infinity
+  ],
+  [
+   127.2,
+   2609100.901766,
+   Infinity
+  ],
+  [
+   133.4,
+   2609175.114682,
+   Infinity
+  ],
+  [
+   216.8,
+   2609186.882262,
+   Infinity
+  ],
+  [
+   217.7,
+   2609186.882262,
+   Infinity
+  ],
+  [
+   234.8,
+   2609186.882262,
+   Infinity
+  ],
+  [
+   240.0,
+   2609186.882262,
+   Infinity
+  ],
+  [
+   245.0,
+   2609187.273681,
+   Infinity
+  ],
+  [
+   276.3,
+   2609187.273681,
+   2675736.493333
+  ],
+  [
+   300.0,
+   2609187.273681,
+   2675736.493333
+  ],
+  [
+   300.0,
+   2609187.273681,
+   2675736.493333
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": 2675736.49333,
+ "dual_bound": 2609187.27368,
+ "gap": "2.49%",
+ "pd_integral": 0.589817581907,
+ "solver_time": 300.01,
+ "presolve_time": 9.1,
+ "nodes": 2,
+ "lp_iterations": 759014,
+ "load_timeout": false
+}

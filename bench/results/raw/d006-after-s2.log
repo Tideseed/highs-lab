@@ -1,0 +1,257 @@
+# Bench analysis: `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-rep-s2`
+
+control = `dev`, 720 runs, arms: dev, dts-v2-nodse, dts-v4
+
+| arm | n inst | solved | SGM all (s) | ratio vs control [95% CI] | SGM both-solved | ratio | mean overrun (s) | max overrun (s) | wrong | crashed |
+|---|---|---|---|---|---|---|---|---|---|---|
+| dev | 240 | 96 | 136.15 | 1.000 [1.000, 1.000] | 36.52 | 1.000 | 2.1 | 208.2 | 0 | 0 |
+| dts-v2-nodse | 240 | 99 | 135.52 | 0.995 [0.990, 1.002] | 35.99 | 0.986 | 2.0 | 252.1 | 0 | 1 |
+| dts-v4 | 240 | 98 | 134.81 | 0.990 [0.967, 1.011] | 34.76 | 0.974 | 1.3 | 253.8 | 0 | 1 |
+
+Contention: 0/720 runs ended with a local LLM server active.
+
+Gate (ratio <= 0.97, CI upper < 1, no wrong answers, no crashes, solved >= control on paired runs): dts-v2-nodse no pass (speed, 1 crashed), dts-v4 no pass (speed, 1 crashed)
+
+Reference coverage: 696/720 runs have a KNOWN OPTIMUM (=opt=, checked: bounds must bracket it, 'Optimal' must match it); 3 have only a best-known value (=best=, not checked); 21 have no reference. Unchecked runs are not evidence of correctness. Objective checks do not establish primal feasibility (see bench/solcheck.py).
+Instances without a known optimum: bnatt500, cryptanalysiskb128n5obj14, fhnw-binpack4-4, neos-2075418-temuka, neos-3402454-bohle, neos-3988577-wolgan, neos859080, supportcase22
+
+## Crashes / harness timeouts
+
+- dts-v2-nodse neos-3402454-bohle s2 rc=-15 timeout=False
+- dts-v4 neos-3402454-bohle s2 rc=-15 timeout=False
+
+2026-09-27T13:36:02+02:00 ok   analyze A
+# Hard-set comparison `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-rep-s2` (control `dev`)
+
+720 runs; 0 without a logged trajectory (PDGI from final bounds); 188 whose last progress row is >60 s before the end (final bounds appended at the end).
+
+| arm | pairs (inst) | PDGI arm / ctl | ΔPDGI [95% CI, instance bootstrap] | solved (ctl) | incumbent by T (ctl) | feasible at termination (ctl) | mean final gap % (ctl) | overrun mean/max s (ctl max) | wrong | crashed | known-optimum coverage |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| dts-v2-nodse | 240 (240) | 0.3519 / 0.3513 | +0.0005 [-0.0036, +0.0064] | 99 (96) | 208 (208) | 208 (208) | 25.7 (25.9) | 2.0/252.1 (208.2) | 0 | 1 | 232/240 |
+| dts-v4 | 240 (240) | 0.3468 / 0.3513 | -0.0046 [-0.0120, +0.0033] | 98 (96) | 207 (208) | 207 (208) | 25.7 (25.9) | 1.3/253.8 (208.2) | 0 | 1 | 232/240 |
+
+PDGI: normalised primal-dual gap integral over the fixed horizon (0 best, 1 = no usable bounds throughout). ΔPDGI < 0 favours the arm; the CI resamples instances with their seeds kept together.
+
+## Instances with |ΔPDGI| ≥ 0.05 (seed mean), wrong answers, crashes
+
+| arm | instance | ΔPDGI / note |
+|---|---|---|
+| dts-v2-nodse | neos-950242 | -0.226 |
+| dts-v2-nodse | neos-4722843-widden | -0.078 |
+| dts-v2-nodse | s250r10 | -0.073 |
+| dts-v2-nodse | triptim1 | -0.052 |
+| dts-v2-nodse | bab2 | +0.054 |
+| dts-v2-nodse | blp-ar98 | +0.134 |
+| dts-v2-nodse | physiciansched3-3 | +0.543 |
+| dts-v2-nodse | neos-3402454-bohle s2 | CRASH rc=-15 |
+| dts-v4 | momentum1 | -0.444 |
+| dts-v4 | neos-950242 | -0.226 |
+| dts-v4 | comp07-2idx | -0.225 |
+| dts-v4 | traininstance6 | -0.184 |
+| dts-v4 | 30n20b8 | -0.181 |
+| dts-v4 | ns1830653 | -0.153 |
+| dts-v4 | neos-4722843-widden | -0.141 |
+| dts-v4 | satellites2-40 | -0.124 |
+| dts-v4 | s250r10 | -0.087 |
+| dts-v4 | istanbul-no-cutoff | -0.081 |
+| dts-v4 | radiationm18-12-05 | -0.076 |
+| dts-v4 | buildingenergy | -0.072 |
+| dts-v4 | mushroom-best | -0.062 |
+| dts-v4 | neos-3004026-krka | +0.060 |
+| dts-v4 | eilA101-2 | +0.063 |
+| dts-v4 | pk1 | +0.121 |
+| dts-v4 | blp-ar98 | +0.134 |
+| dts-v4 | physiciansched3-3 | +0.620 |
+| dts-v4 | neos-3402454-bohle s2 | CRASH rc=-15 |
+2026-09-27T13:36:03+02:00 ok   hard A
+# MIPFEAS-style primal integral `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-rep-s2` (control `dev`)
+
+699 runs on instances with a finite reference value; T = 300.0 s. Score per run: Mittelmann's primal integral P in [0, 2] (lower is better); table: shifted geometric mean (shift 0.001) over instances (seeds averaged first), ratio vs control with a paired instance bootstrap.
+
+| arm | inst | SGM P | ratio vs ctl [95% CI] | mean P | incumbent by T | feasible at termination | SGM t first incumbent (s, found only) | within 1 % of z* by T | within 1e-4 by T |
+|---|---|---|---|---|---|---|---|---|---|
+| dev | 233 | 0.0682 | 1.000 [1.000, 1.000] | 0.3891 | 208/233 | 208/233 | 3.0 | 151/233 | 123/233 |
+| dts-v2-nodse | 233 | 0.0670 | 0.983 [0.965, 1.000] | 0.3907 | 208/233 | 208/233 | 2.9 | 151/233 | 125/233 |
+| dts-v4 | 233 | 0.0667 | 0.977 [0.943, 1.009] | 0.3845 | 207/233 | 207/233 | 2.9 | 156/233 | 125/233 |
+
+## Runs with no incumbent by T
+
+- **dev** (25): app1-2 s2, bnatt400 s2, cryptanalysiskb128n5obj16 s2, fhnw-binpack4-48 s2, germanrr s2, gfd-schedulen180f7d50m30k18 s2, lectsched-5-obj s2, neos-1354092 s2, neos-3024952-loue s2, neos-3656078-kumeu s2, neos-4532248-waihi s2, neos-5104907-jarama s2, ns1644855 s2, ns1760995 s2, ns1952667 s2, peg-solitaire-a3 s2, radiationm40-10-02 s2, rail01 s2, rail02 s2, s100 s2, square41 s2, square47 s2, supportcase19 s2, supportcase22 s2, triptim1 s2
+- **dts-v2-nodse** (25): app1-2 s2, blp-ar98 s2, bnatt400 s2, cryptanalysiskb128n5obj16 s2, fhnw-binpack4-48 s2, germanrr s2, gfd-schedulen180f7d50m30k18 s2, lectsched-5-obj s2, neos-1354092 s2, neos-3024952-loue s2, neos-3656078-kumeu s2, neos-4532248-waihi s2, neos-5104907-jarama s2, ns1644855 s2, ns1760995 s2, ns1952667 s2, peg-solitaire-a3 s2, radiationm40-10-02 s2, rail01 s2, rail02 s2, s100 s2, square41 s2, square47 s2, supportcase19 s2, supportcase22 s2
+- **dts-v4** (26): app1-2 s2, blp-ar98 s2, bnatt400 s2, cryptanalysiskb128n5obj16 s2, fhnw-binpack4-48 s2, germanrr s2, gfd-schedulen180f7d50m30k18 s2, lectsched-5-obj s2, neos-1354092 s2, neos-3024952-loue s2, neos-3656078-kumeu s2, neos-4532248-waihi s2, neos-5104907-jarama s2, ns1644855 s2, ns1760995 s2, ns1952667 s2, peg-solitaire-a3 s2, radiationm40-10-02 s2, rail01 s2, rail02 s2, s100 s2, square41 s2, square47 s2, supportcase19 s2, supportcase22 s2, triptim1 s2
+
+## Largest per-instance differences (|ΔP| ≥ 0.05, seed mean)
+
+| arm | instance | P arm | P ctl | ΔP |
+|---|---|---|---|---|
+| dts-v2-nodse | rd-rplusc-21 | 0.722 | 1.343 | -0.621 |
+| dts-v2-nodse | s250r10 | 0.492 | 0.639 | -0.147 |
+| dts-v2-nodse | k1mushroom | 0.957 | 1.076 | -0.119 |
+| dts-v2-nodse | triptim1 | 1.897 | 2.000 | -0.103 |
+| dts-v2-nodse | neos-4763324-toguru | 0.322 | 0.407 | -0.085 |
+| dts-v2-nodse | chromaticindex1024-7 | 0.154 | 0.102 | +0.052 |
+| dts-v2-nodse | splice1k1 | 0.521 | 0.434 | +0.087 |
+| dts-v2-nodse | bab2 | 1.410 | 1.300 | +0.110 |
+| dts-v2-nodse | blp-ar98 | 2.000 | 1.728 | +0.272 |
+| dts-v2-nodse | physiciansched3-3 | 1.844 | 0.739 | +1.105 |
+| dts-v4 | momentum1 | 0.155 | 1.189 | -1.034 |
+| dts-v4 | rd-rplusc-21 | 0.591 | 1.343 | -0.752 |
+| dts-v4 | comp07-2idx | 0.123 | 0.348 | -0.225 |
+| dts-v4 | s250r10 | 0.480 | 0.639 | -0.159 |
+| dts-v4 | buildingenergy | 0.803 | 0.949 | -0.146 |
+| dts-v4 | satellites2-40 | 0.799 | 0.930 | -0.130 |
+| dts-v4 | ns1830653 | 0.149 | 0.250 | -0.101 |
+| dts-v4 | csched007 | 0.188 | 0.288 | -0.101 |
+| dts-v4 | dws008-01 | 0.659 | 0.756 | -0.098 |
+| dts-v4 | k1mushroom | 0.996 | 1.076 | -0.080 |
+| dts-v4 | neos-5107597-kakapo | 0.924 | 1.002 | -0.078 |
+| dts-v4 | mzzv11 | 0.343 | 0.418 | -0.075 |
+| dts-v4 | neos-4763324-toguru | 0.340 | 0.407 | -0.067 |
+| dts-v4 | proteindesign121hz512p9 | 0.401 | 0.342 | +0.059 |
+| dts-v4 | splice1k1 | 0.509 | 0.434 | +0.075 |
+| dts-v4 | 30n20b8 | 0.311 | 0.231 | +0.080 |
+| dts-v4 | ns1208400 | 0.213 | 0.133 | +0.081 |
+| dts-v4 | eilA101-2 | 0.980 | 0.862 | +0.119 |
+| dts-v4 | neos-3004026-krka | 0.594 | 0.475 | +0.119 |
+| dts-v4 | blp-ar98 | 2.000 | 1.728 | +0.272 |
+| dts-v4 | physiciansched3-3 | 2.000 | 0.739 | +1.261 |
+2026-09-27T13:36:03+02:00 ok   primal A
+# Bench analysis: `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-rep-s2`
+
+control = `dts-v2-nodse`, 720 runs, arms: dev, dts-v2-nodse, dts-v4
+
+| arm | n inst | solved | SGM all (s) | ratio vs control [95% CI] | SGM both-solved | ratio | mean overrun (s) | max overrun (s) | wrong | crashed |
+|---|---|---|---|---|---|---|---|---|---|---|
+| dev | 240 | 96 | 136.15 | 1.005 [0.998, 1.010] | 36.52 | 1.015 | 2.1 | 208.2 | 0 | 0 |
+| dts-v2-nodse | 240 | 99 | 135.52 | 1.000 [1.000, 1.000] | 38.63 | 1.000 | 2.0 | 252.1 | 0 | 1 |
+| dts-v4 | 240 | 98 | 134.81 | 0.995 [0.973, 1.016] | 35.65 | 0.990 | 1.3 | 253.8 | 0 | 1 |
+
+Contention: 0/720 runs ended with a local LLM server active.
+
+Gate (ratio <= 0.97, CI upper < 1, no wrong answers, no crashes, solved >= control on paired runs): dev no pass (speed, fewer solved), dts-v4 no pass (speed, 1 crashed, fewer solved)
+
+Reference coverage: 696/720 runs have a KNOWN OPTIMUM (=opt=, checked: bounds must bracket it, 'Optimal' must match it); 3 have only a best-known value (=best=, not checked); 21 have no reference. Unchecked runs are not evidence of correctness. Objective checks do not establish primal feasibility (see bench/solcheck.py).
+Instances without a known optimum: bnatt500, cryptanalysiskb128n5obj14, fhnw-binpack4-4, neos-2075418-temuka, neos-3402454-bohle, neos-3988577-wolgan, neos859080, supportcase22
+
+## Crashes / harness timeouts
+
+- dts-v2-nodse neos-3402454-bohle s2 rc=-15 timeout=False
+- dts-v4 neos-3402454-bohle s2 rc=-15 timeout=False
+
+2026-09-27T13:36:04+02:00 ok   analyze B
+# Hard-set comparison `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-rep-s2` (control `dts-v2-nodse`)
+
+720 runs; 0 without a logged trajectory (PDGI from final bounds); 188 whose last progress row is >60 s before the end (final bounds appended at the end).
+
+| arm | pairs (inst) | PDGI arm / ctl | ΔPDGI [95% CI, instance bootstrap] | solved (ctl) | incumbent by T (ctl) | feasible at termination (ctl) | mean final gap % (ctl) | overrun mean/max s (ctl max) | wrong | crashed | known-optimum coverage |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| dev | 240 (240) | 0.3513 / 0.3519 | -0.0005 [-0.0064, +0.0036] | 96 (99) | 208 (208) | 208 (208) | 25.9 (25.7) | 2.1/208.2 (252.1) | 0 | 0 | 232/240 |
+| dts-v4 | 240 (240) | 0.3468 / 0.3519 | -0.0051 [-0.0109, -0.0004] | 98 (99) | 207 (208) | 207 (208) | 25.7 (25.7) | 1.3/253.8 (252.1) | 0 | 1 | 232/240 |
+
+PDGI: normalised primal-dual gap integral over the fixed horizon (0 best, 1 = no usable bounds throughout). ΔPDGI < 0 favours the arm; the CI resamples instances with their seeds kept together.
+
+## Instances with |ΔPDGI| ≥ 0.05 (seed mean), wrong answers, crashes
+
+| arm | instance | ΔPDGI / note |
+|---|---|---|
+| dev | physiciansched3-3 | -0.543 |
+| dev | blp-ar98 | -0.134 |
+| dev | bab2 | -0.054 |
+| dev | triptim1 | +0.052 |
+| dev | s250r10 | +0.073 |
+| dev | neos-4722843-widden | +0.078 |
+| dev | neos-950242 | +0.226 |
+| dts-v4 | momentum1 | -0.445 |
+| dts-v4 | comp07-2idx | -0.218 |
+| dts-v4 | 30n20b8 | -0.181 |
+| dts-v4 | traininstance6 | -0.170 |
+| dts-v4 | ns1830653 | -0.147 |
+| dts-v4 | satellites2-40 | -0.113 |
+| dts-v4 | istanbul-no-cutoff | -0.088 |
+| dts-v4 | radiationm18-12-05 | -0.075 |
+| dts-v4 | buildingenergy | -0.073 |
+| dts-v4 | neos-4722843-widden | -0.063 |
+| dts-v4 | bab2 | -0.054 |
+| dts-v4 | triptim1 | +0.052 |
+| dts-v4 | eilA101-2 | +0.066 |
+| dts-v4 | physiciansched3-3 | +0.077 |
+| dts-v4 | neos-3004026-krka | +0.077 |
+| dts-v4 | pk1 | +0.130 |
+| dts-v4 | neos-3402454-bohle s2 | CRASH rc=-15 |
+2026-09-27T13:36:04+02:00 ok   hard B
+# MIPFEAS-style primal integral `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-rep-s2` (control `dts-v2-nodse`)
+
+699 runs on instances with a finite reference value; T = 300.0 s. Score per run: Mittelmann's primal integral P in [0, 2] (lower is better); table: shifted geometric mean (shift 0.001) over instances (seeds averaged first), ratio vs control with a paired instance bootstrap.
+
+| arm | inst | SGM P | ratio vs ctl [95% CI] | mean P | incumbent by T | feasible at termination | SGM t first incumbent (s, found only) | within 1 % of z* by T | within 1e-4 by T |
+|---|---|---|---|---|---|---|---|---|---|
+| dev | 233 | 0.0682 | 1.018 [1.000, 1.037] | 0.3891 | 208/233 | 208/233 | 3.0 | 151/233 | 123/233 |
+| dts-v2-nodse | 233 | 0.0670 | 1.000 [1.000, 1.000] | 0.3907 | 208/233 | 208/233 | 2.9 | 151/233 | 125/233 |
+| dts-v4 | 233 | 0.0667 | 0.994 [0.963, 1.021] | 0.3845 | 207/233 | 207/233 | 2.9 | 156/233 | 125/233 |
+
+## Runs with no incumbent by T
+
+- **dev** (25): app1-2 s2, bnatt400 s2, cryptanalysiskb128n5obj16 s2, fhnw-binpack4-48 s2, germanrr s2, gfd-schedulen180f7d50m30k18 s2, lectsched-5-obj s2, neos-1354092 s2, neos-3024952-loue s2, neos-3656078-kumeu s2, neos-4532248-waihi s2, neos-5104907-jarama s2, ns1644855 s2, ns1760995 s2, ns1952667 s2, peg-solitaire-a3 s2, radiationm40-10-02 s2, rail01 s2, rail02 s2, s100 s2, square41 s2, square47 s2, supportcase19 s2, supportcase22 s2, triptim1 s2
+- **dts-v2-nodse** (25): app1-2 s2, blp-ar98 s2, bnatt400 s2, cryptanalysiskb128n5obj16 s2, fhnw-binpack4-48 s2, germanrr s2, gfd-schedulen180f7d50m30k18 s2, lectsched-5-obj s2, neos-1354092 s2, neos-3024952-loue s2, neos-3656078-kumeu s2, neos-4532248-waihi s2, neos-5104907-jarama s2, ns1644855 s2, ns1760995 s2, ns1952667 s2, peg-solitaire-a3 s2, radiationm40-10-02 s2, rail01 s2, rail02 s2, s100 s2, square41 s2, square47 s2, supportcase19 s2, supportcase22 s2
+- **dts-v4** (26): app1-2 s2, blp-ar98 s2, bnatt400 s2, cryptanalysiskb128n5obj16 s2, fhnw-binpack4-48 s2, germanrr s2, gfd-schedulen180f7d50m30k18 s2, lectsched-5-obj s2, neos-1354092 s2, neos-3024952-loue s2, neos-3656078-kumeu s2, neos-4532248-waihi s2, neos-5104907-jarama s2, ns1644855 s2, ns1760995 s2, ns1952667 s2, peg-solitaire-a3 s2, radiationm40-10-02 s2, rail01 s2, rail02 s2, s100 s2, square41 s2, square47 s2, supportcase19 s2, supportcase22 s2, triptim1 s2
+
+## Largest per-instance differences (|ΔP| ≥ 0.05, seed mean)
+
+| arm | instance | P arm | P ctl | ΔP |
+|---|---|---|---|---|
+| dev | physiciansched3-3 | 0.739 | 1.844 | -1.105 |
+| dev | blp-ar98 | 1.728 | 2.000 | -0.272 |
+| dev | bab2 | 1.300 | 1.410 | -0.110 |
+| dev | splice1k1 | 0.434 | 0.521 | -0.087 |
+| dev | chromaticindex1024-7 | 0.102 | 0.154 | -0.052 |
+| dev | neos-4763324-toguru | 0.407 | 0.322 | +0.085 |
+| dev | triptim1 | 2.000 | 1.897 | +0.103 |
+| dev | k1mushroom | 1.076 | 0.957 | +0.119 |
+| dev | s250r10 | 0.639 | 0.492 | +0.147 |
+| dev | rd-rplusc-21 | 1.343 | 0.722 | +0.621 |
+| dts-v4 | momentum1 | 0.155 | 1.191 | -1.037 |
+| dts-v4 | comp07-2idx | 0.123 | 0.342 | -0.218 |
+| dts-v4 | buildingenergy | 0.803 | 0.951 | -0.147 |
+| dts-v4 | rd-rplusc-21 | 0.591 | 0.722 | -0.131 |
+| dts-v4 | satellites2-40 | 0.799 | 0.919 | -0.119 |
+| dts-v4 | bab2 | 1.300 | 1.410 | -0.110 |
+| dts-v4 | csched007 | 0.188 | 0.287 | -0.099 |
+| dts-v4 | ns1830653 | 0.149 | 0.247 | -0.098 |
+| dts-v4 | dws008-01 | 0.659 | 0.748 | -0.089 |
+| dts-v4 | mzzv11 | 0.343 | 0.426 | -0.083 |
+| dts-v4 | neos-5107597-kakapo | 0.924 | 0.999 | -0.075 |
+| dts-v4 | map16715-04 | 0.328 | 0.384 | -0.056 |
+| dts-v4 | 30n20b8 | 0.311 | 0.233 | +0.078 |
+| dts-v4 | ns1208400 | 0.213 | 0.131 | +0.083 |
+| dts-v4 | triptim1 | 2.000 | 1.897 | +0.103 |
+| dts-v4 | eilA101-2 | 0.980 | 0.860 | +0.121 |
+| dts-v4 | neos-3004026-krka | 0.594 | 0.439 | +0.155 |
+| dts-v4 | physiciansched3-3 | 2.000 | 1.844 | +0.156 |
+2026-09-27T13:36:05+02:00 ok   primal B
+# Saved-solution recheck `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-26-clean1` (solcheck with local tolerances, tol 1e-6, int 1e-5)
+
+runs 960; with a finite final incumbent 826; no saved solution file 0; unparsable 0; **checked 826: FEASIBLE 825, INFEASIBLE 1**; objective mismatches 0.
+
+Worst normalised row violation 1.00e-06 (stable rocI-4-11 s0); worst normalised bound violation 1.00e-06 (dev momentum1 s0); worst integrality 2.28e-07 (stable traininstance6 s0).
+
+## Failures
+
+- stable rocI-4-11 s0: row_rel 1.00e-06@CampaignPull@1a0, bound_rel 0.00e+00@n_votes#1 (abs 0.00e+00), int 0.00e+00@n_votes#1, finite True
+2026-09-27T13:41:00+02:00 ok   recheck 2026-09-26-clean1
+# Saved-solution recheck `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-clean2` (solcheck with local tolerances, tol 1e-6, int 1e-5)
+
+runs 480; with a finite final incumbent 416; no saved solution file 0; unparsable 0; **checked 416: FEASIBLE 415, INFEASIBLE 1**; objective mismatches 0.
+
+Worst normalised row violation 1.00e-06 (dts-v4 rocI-4-11 s1); worst normalised bound violation 5.09e-07 (dts-v4 ran14x18-disj-8 s1); worst integrality 6.71e-08 (dev traininstance6 s1).
+
+## Failures
+
+- dts-v4 rocI-4-11 s1: row_rel 1.00e-06@CampaignCont@5ff, bound_rel 0.00e+00@n_votes#1 (abs 0.00e+00), int 0.00e+00@n_votes#1, finite True
+2026-09-27T13:44:09+02:00 ok   recheck 2026-09-27-clean2
+# Saved-solution recheck `/home/coulson/git_repositories/highs-lab/bench/results/raw/2026-09-27-rep-s2` (solcheck with local tolerances, tol 1e-6, int 1e-5)
+
+runs 720; with a finite final incumbent 623; no saved solution file 0; unparsable 0; **checked 623: FEASIBLE 623, INFEASIBLE 0**; objective mismatches 0.
+
+Worst normalised row violation 7.61e-07 (dts-v2-nodse rocII-5-11 s2); worst normalised bound violation 6.06e-07 (dts-v4 momentum1 s2); worst integrality 8.70e-07 (dev rocII-5-11 s2).
+
+2026-09-27T13:48:08+02:00 ok   recheck 2026-09-27-rep-s2

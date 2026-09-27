@@ -1,0 +1,117 @@
+{
+ "arm": "dts-v4",
+ "instance": "satellites2-60-fs",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "c1ead1187f8f3d3a",
+ "model_sha": "d1d65fa77f37edcd",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.32470703125,
+  10.39111328125,
+  10.44482421875
+ ],
+ "peak_rss_gb": 0.527,
+ "core": 18,
+ "wall": 143.40014934539795,
+ "overrun": -156.59985065460205,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   2.6,
+   -37.0,
+   Infinity
+  ],
+  [
+   9.9,
+   -29.875,
+   Infinity
+  ],
+  [
+   34.0,
+   -29.0,
+   Infinity
+  ],
+  [
+   51.5,
+   -29.0,
+   Infinity
+  ],
+  [
+   66.5,
+   -29.0,
+   Infinity
+  ],
+  [
+   73.2,
+   -29.0,
+   Infinity
+  ],
+  [
+   90.2,
+   -29.0,
+   Infinity
+  ],
+  [
+   94.5,
+   -29.0,
+   27.0
+  ],
+  [
+   114.2,
+   -29.0,
+   27.0
+  ],
+  [
+   116.5,
+   -29.0,
+   27.0
+  ],
+  [
+   127.9,
+   -28.0,
+   4.0
+  ],
+  [
+   131.1,
+   -28.0,
+   4.0
+  ],
+  [
+   131.8,
+   -27.5,
+   4.0
+  ],
+  [
+   137.0,
+   -26.0,
+   4.0
+  ],
+  [
+   138.3,
+   -26.0,
+   -19.0
+  ],
+  [
+   143.2,
+   -19.0,
+   -19.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -19.0,
+ "dual_bound": -19.0,
+ "gap": "0%",
+ "pd_integral": 151.212975342,
+ "solver_time": 143.21,
+ "presolve_time": 5.6,
+ "nodes": 94,
+ "lp_iterations": 325306,
+ "load_timeout": false
+}

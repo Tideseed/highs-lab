@@ -1,0 +1,57 @@
+{
+ "arm": "dev",
+ "instance": "piperout-08",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "9000694c9a77ac82",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.45458984375,
+  10.453125,
+  10.46533203125
+ ],
+ "peak_rss_gb": 0.256,
+ "core": 16,
+ "wall": 17.758394241333008,
+ "overrun": -282.241605758667,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   16.0,
+   -2392592.0,
+   Infinity
+  ],
+  [
+   16.1,
+   124991.0,
+   Infinity
+  ],
+  [
+   17.6,
+   124991.0,
+   125055.0
+  ],
+  [
+   17.6,
+   125055.0,
+   125055.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 125055.0,
+ "dual_bound": 125055.0,
+ "gap": "0%",
+ "pd_integral": 1.70504811867e-05,
+ "solver_time": 17.61,
+ "presolve_time": 15.93,
+ "nodes": 1,
+ "lp_iterations": 3968,
+ "load_timeout": false
+}

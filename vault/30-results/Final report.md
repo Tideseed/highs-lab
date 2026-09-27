@@ -36,9 +36,8 @@ honest measurement? Upstream `latest` = 6293630a84 throughout (no upstream commi
   in 48.7 s (X925), same reductions, then reached the LP, toguru presolve 12.5 → 6.2 s, chromaticindex −47 % after presolve, DSE cache −8 to −23 % on binkar10_1,
   roll3000, timtab1, seymour1 (search changes), neos-787933 unsolved → 3–5 s (X1, search changes).
 - **Correctness:** a real HiGHS bug (HighsHashTree::find_common false negatives) with a fix; 0 wrong answers in all
-  runs; 385 reported-optimal solutions of clean1 passed the feasibility checker — **qualified**: that checker scaled the
-  bound test by the largest |x| in the solution (review #5); fixed to per-variable tolerances with regression tests,
-  recheck of all saved solutions pending the end of the D-006 window (see "Saved-solution recheck").
+  runs; every saved incumbent of clean1, clean2 and D-006 seed 2 (1,865) rechecked with a fixed, locally-scaled
+  checker: all feasible except two tolerance-edge rows on rocI-4-11 (see "Saved-solution recheck").
 
 ## Branch status (Tideseed/HiGHS)
 | branch | kind | status | evidence |
@@ -84,9 +83,19 @@ resumed on a stopped server (script now restores before resuming). Reviews: #3, 
    note) and v4 does not change that count — MIPFEAS (600 s, 24 threads) has HiGHS 1.15.1 at 214/233 feasible, 4th of
    the open solvers on the primal integral although it proves the most optima (107). The natural next iteration.
 
-## Saved-solution recheck
-Pending: `bench/recheck.py` (per-variable tolerances) over clean1 and clean2 saved solutions after the D-006 seed-2
-window closes; results and coverage (runs, incumbents, missing files, checked, feasible) will be appended here.
+## Saved-solution recheck (fixed checker, local tolerances: row and bound 1e-6 relative to their own magnitude, integrality 1e-5)
+| run set | runs | with a final incumbent | missing / unparsable files | checked | feasible | beyond tolerance | objective mismatches |
+|---|---|---|---|---|---|---|---|
+| clean1 (seed 0) | 960 | 826 | 0 / 0 | 826 | 825 | 1 | 0 |
+| clean2 (seed 1) | 480 | 416 | 0 / 0 | 416 | 415 | 1 | 0 |
+| D-006 seed 2 | 720 | 623 | 0 / 0 | 623 | 623 | 0 | 0 |
+
+Both "beyond tolerance" cases are rocI-4-11 (stable s0, v4 s1): one row residual of exactly 1.0e-6 on a row of
+magnitude 1 (1.00000000003e-6 and 1.00000000014e-6), i.e. at HiGHS's own primal feasibility tolerance, exceeding the
+checker's equal tolerance only by floating-point rounding. Reported as tolerance-edge, not as infeasible solutions;
+the tolerance was not changed after seeing them. Coverage gap: runs without a final incumbent (134 / 64 / 97) have
+nothing to check; no solution file was missing. Worst values elsewhere: row 7.6e-7, bound 6.1e-7, integrality 8.7e-7.
+This replaces the earlier "385 checked" claim.
 
 ## Memory on bohle (review #5)
 Builds that leave presolve on this 2.9M-row model reached ~6 GB in the LP (lab-pcc 6.1 GB, base 6.4 GB); builds that
@@ -120,3 +129,9 @@ Earlier identical-search evidence: small set 28/28 (v2-nodse vs dev, 2026-09-25)
 no solution → 62 s, feasible), toguru presolve 12.5 → 6.2 s, chromaticindex after presolve 27.7 → 14.7 s (A725, single
 runs). unitcal_7 varied by +12 % / −9 % between runs on an identical path; that is one instance's observed variation, not
 a general noise floor, so small single-run differences are reported as observed, not declared noise.
+
+## Appended after the freeze: D-006 replication (pre-registered; results appended, not merged into the text above)
+- **Seed 2** (2026-09-27 09:14–13:35): base vs dev 0.995 [0.990, 1.002]; v4 vs base 0.995 [0.973, 1.016]; v4 vs dev
+  0.990 [0.967, 1.011]; 0 wrong; 1 cap kill each for base and v4 (bohle, 8 GiB). No contrast passes; the seed-1 gain
+  is not repeated on seed 2. `2026-09-27 D-006 seed 2.md`.
+- **Seed 3** runs 2026-09-28 00:15; the registered decisions (keep base? keep DSE?) are taken on the pooled seeds.

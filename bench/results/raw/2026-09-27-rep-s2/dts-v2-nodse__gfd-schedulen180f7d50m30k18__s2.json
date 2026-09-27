@@ -1,0 +1,77 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "gfd-schedulen180f7d50m30k18",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "4a98fe1d8e019315",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.21484375,
+  10.349609375,
+  10.455078125
+ ],
+ "peak_rss_gb": 1.166,
+ "core": 5,
+ "wall": 305.8139452934265,
+ "overrun": 5.813945293426514,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   55.4,
+   1.0,
+   Infinity
+  ],
+  [
+   189.1,
+   1.0,
+   Infinity
+  ],
+  [
+   236.7,
+   1.0,
+   Infinity
+  ],
+  [
+   253.4,
+   1.0,
+   Infinity
+  ],
+  [
+   265.6,
+   1.0,
+   Infinity
+  ],
+  [
+   277.8,
+   1.0,
+   Infinity
+  ],
+  [
+   298.7,
+   1.0,
+   Infinity
+  ],
+  [
+   303.2,
+   1.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 1.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 303.22,
+ "presolve_time": 53.03,
+ "nodes": 0,
+ "lp_iterations": 86263,
+ "load_timeout": false
+}

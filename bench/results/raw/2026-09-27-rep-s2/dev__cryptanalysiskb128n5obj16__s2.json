@@ -1,0 +1,177 @@
+{
+ "arm": "dev",
+ "instance": "cryptanalysiskb128n5obj16",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "9d9b5ca79b0c8f2b",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.39990234375,
+  10.67529296875,
+  10.68115234375
+ ],
+ "peak_rss_gb": 0.761,
+ "core": 8,
+ "wall": 300.5693702697754,
+ "overrun": 0.5693702697753906,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   9.2,
+   0.0,
+   Infinity
+  ],
+  [
+   21.3,
+   0.0,
+   Infinity
+  ],
+  [
+   27.7,
+   0.0,
+   Infinity
+  ],
+  [
+   36.0,
+   0.0,
+   Infinity
+  ],
+  [
+   41.1,
+   0.0,
+   Infinity
+  ],
+  [
+   46.7,
+   0.0,
+   Infinity
+  ],
+  [
+   52.0,
+   0.0,
+   Infinity
+  ],
+  [
+   57.9,
+   0.0,
+   Infinity
+  ],
+  [
+   63.4,
+   0.0,
+   Infinity
+  ],
+  [
+   101.3,
+   0.0,
+   Infinity
+  ],
+  [
+   110.4,
+   0.0,
+   Infinity
+  ],
+  [
+   122.3,
+   0.0,
+   Infinity
+  ],
+  [
+   129.3,
+   0.0,
+   Infinity
+  ],
+  [
+   135.9,
+   0.0,
+   Infinity
+  ],
+  [
+   145.5,
+   0.0,
+   Infinity
+  ],
+  [
+   153.2,
+   0.0,
+   Infinity
+  ],
+  [
+   158.3,
+   0.0,
+   Infinity
+  ],
+  [
+   165.5,
+   0.0,
+   Infinity
+  ],
+  [
+   173.9,
+   0.0,
+   Infinity
+  ],
+  [
+   179.8,
+   0.0,
+   Infinity
+  ],
+  [
+   187.5,
+   0.0,
+   Infinity
+  ],
+  [
+   194.2,
+   0.0,
+   Infinity
+  ],
+  [
+   234.5,
+   0.0,
+   Infinity
+  ],
+  [
+   256.2,
+   0.0,
+   Infinity
+  ],
+  [
+   286.1,
+   0.0,
+   Infinity
+  ],
+  [
+   294.8,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 9.4,
+ "nodes": 13,
+ "lp_iterations": 183738,
+ "load_timeout": false
+}

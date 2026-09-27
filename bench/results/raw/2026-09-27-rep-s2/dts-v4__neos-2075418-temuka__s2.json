@@ -1,0 +1,57 @@
+{
+ "arm": "dts-v4",
+ "instance": "neos-2075418-temuka",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "c1ead1187f8f3d3a",
+ "model_sha": "255260ed769498c6",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.70166015625,
+  10.54248046875,
+  10.43408203125
+ ],
+ "peak_rss_gb": 1.879,
+ "core": 19,
+ "wall": 102.2177984714508,
+ "overrun": -197.7822015285492,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   35.4,
+   0.0,
+   Infinity
+  ],
+  [
+   49.3,
+   0.0,
+   Infinity
+  ],
+  [
+   62.9,
+   15741.559655,
+   Infinity
+  ],
+  [
+   98.4,
+   Infinity,
+   Infinity
+  ]
+ ],
+ "status": "Infeasible",
+ "primal_bound": Infinity,
+ "dual_bound": Infinity,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 98.37,
+ "presolve_time": 10.16,
+ "nodes": 1,
+ "lp_iterations": 66677,
+ "load_timeout": false
+}

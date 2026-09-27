@@ -1,0 +1,57 @@
+{
+ "arm": "dts-v4",
+ "instance": "hypothyroid-k1",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "c1ead1187f8f3d3a",
+ "model_sha": "489ffe662de76b8d",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  11.20458984375,
+  10.75634765625,
+  10.6259765625
+ ],
+ "peak_rss_gb": 0.154,
+ "core": 18,
+ "wall": 7.361725091934204,
+ "overrun": -292.6382749080658,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   1.4,
+   -Infinity,
+   -44.0
+  ],
+  [
+   3.3,
+   -2902.852586,
+   -2692.0
+  ],
+  [
+   7.1,
+   -2851.0,
+   -2851.0
+  ],
+  [
+   7.1,
+   -2851.0,
+   -2851.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": -2851.0,
+ "dual_bound": -2851.0,
+ "gap": "0%",
+ "pd_integral": 121.962517114,
+ "solver_time": 7.11,
+ "presolve_time": 1.11,
+ "nodes": 1,
+ "lp_iterations": 3111,
+ "load_timeout": false
+}

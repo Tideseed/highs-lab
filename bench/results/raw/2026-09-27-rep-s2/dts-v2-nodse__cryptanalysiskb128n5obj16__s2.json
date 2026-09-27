@@ -1,0 +1,182 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "cryptanalysiskb128n5obj16",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "9d9b5ca79b0c8f2b",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.36767578125,
+  10.6640625,
+  10.67724609375
+ ],
+ "peak_rss_gb": 0.76,
+ "core": 15,
+ "wall": 300.48981833457947,
+ "overrun": 0.4898183345794678,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   7.0,
+   0.0,
+   Infinity
+  ],
+  [
+   18.1,
+   0.0,
+   Infinity
+  ],
+  [
+   23.3,
+   0.0,
+   Infinity
+  ],
+  [
+   30.6,
+   0.0,
+   Infinity
+  ],
+  [
+   37.1,
+   0.0,
+   Infinity
+  ],
+  [
+   42.3,
+   0.0,
+   Infinity
+  ],
+  [
+   47.6,
+   0.0,
+   Infinity
+  ],
+  [
+   53.0,
+   0.0,
+   Infinity
+  ],
+  [
+   58.5,
+   0.0,
+   Infinity
+  ],
+  [
+   91.9,
+   0.0,
+   Infinity
+  ],
+  [
+   100.0,
+   0.0,
+   Infinity
+  ],
+  [
+   111.7,
+   0.0,
+   Infinity
+  ],
+  [
+   122.7,
+   0.0,
+   Infinity
+  ],
+  [
+   131.8,
+   0.0,
+   Infinity
+  ],
+  [
+   139.1,
+   0.0,
+   Infinity
+  ],
+  [
+   144.2,
+   0.0,
+   Infinity
+  ],
+  [
+   151.1,
+   0.0,
+   Infinity
+  ],
+  [
+   159.3,
+   0.0,
+   Infinity
+  ],
+  [
+   165.1,
+   0.0,
+   Infinity
+  ],
+  [
+   172.5,
+   0.0,
+   Infinity
+  ],
+  [
+   179.0,
+   0.0,
+   Infinity
+  ],
+  [
+   218.8,
+   0.0,
+   Infinity
+  ],
+  [
+   239.7,
+   0.0,
+   Infinity
+  ],
+  [
+   268.9,
+   0.0,
+   Infinity
+  ],
+  [
+   277.3,
+   0.0,
+   Infinity
+  ],
+  [
+   282.5,
+   0.0,
+   Infinity
+  ],
+  [
+   290.0,
+   0.0,
+   Infinity
+  ],
+  [
+   297.1,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 7.16,
+ "nodes": 20,
+ "lp_iterations": 204874,
+ "load_timeout": false
+}

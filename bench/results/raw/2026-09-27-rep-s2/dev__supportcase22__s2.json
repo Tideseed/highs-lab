@@ -1,0 +1,102 @@
+{
+ "arm": "dev",
+ "instance": "supportcase22",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "6dd634ca13f13c42",
+ "model_sha": "69b86a13d312e653",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  11.666015625,
+  11.080078125,
+  10.751953125
+ ],
+ "peak_rss_gb": 1.444,
+ "core": 8,
+ "wall": 301.8250935077667,
+ "overrun": 1.8250935077667236,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   9.6,
+   0.0,
+   Infinity
+  ],
+  [
+   16.6,
+   0.0,
+   Infinity
+  ],
+  [
+   28.7,
+   0.0,
+   Infinity
+  ],
+  [
+   34.8,
+   0.0,
+   Infinity
+  ],
+  [
+   45.2,
+   0.0,
+   Infinity
+  ],
+  [
+   52.2,
+   0.0,
+   Infinity
+  ],
+  [
+   61.9,
+   0.0,
+   Infinity
+  ],
+  [
+   101.9,
+   0.1125,
+   Infinity
+  ],
+  [
+   107.4,
+   0.1125,
+   Infinity
+  ],
+  [
+   112.4,
+   0.1125,
+   Infinity
+  ],
+  [
+   121.0,
+   0.1125,
+   Infinity
+  ],
+  [
+   129.6,
+   0.1125,
+   Infinity
+  ],
+  [
+   300.0,
+   0.1125,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.2,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.04,
+ "presolve_time": 13.03,
+ "nodes": 0,
+ "lp_iterations": 73462,
+ "load_timeout": false
+}

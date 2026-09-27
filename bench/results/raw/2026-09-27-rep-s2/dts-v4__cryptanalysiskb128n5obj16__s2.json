@@ -1,0 +1,182 @@
+{
+ "arm": "dts-v4",
+ "instance": "cryptanalysiskb128n5obj16",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "c1ead1187f8f3d3a",
+ "model_sha": "9d9b5ca79b0c8f2b",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.265625,
+  10.55517578125,
+  10.63427734375
+ ],
+ "peak_rss_gb": 0.798,
+ "core": 17,
+ "wall": 300.51959800720215,
+ "overrun": 0.5195980072021484,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   7.8,
+   0.0,
+   Infinity
+  ],
+  [
+   19.1,
+   0.0,
+   Infinity
+  ],
+  [
+   24.3,
+   0.0,
+   Infinity
+  ],
+  [
+   31.8,
+   0.0,
+   Infinity
+  ],
+  [
+   38.2,
+   0.0,
+   Infinity
+  ],
+  [
+   43.4,
+   0.0,
+   Infinity
+  ],
+  [
+   48.6,
+   0.0,
+   Infinity
+  ],
+  [
+   53.7,
+   0.0,
+   Infinity
+  ],
+  [
+   59.0,
+   0.0,
+   Infinity
+  ],
+  [
+   92.8,
+   0.0,
+   Infinity
+  ],
+  [
+   101.1,
+   0.0,
+   Infinity
+  ],
+  [
+   112.4,
+   0.0,
+   Infinity
+  ],
+  [
+   123.0,
+   0.0,
+   Infinity
+  ],
+  [
+   132.0,
+   0.0,
+   Infinity
+  ],
+  [
+   139.2,
+   0.0,
+   Infinity
+  ],
+  [
+   148.5,
+   0.0,
+   Infinity
+  ],
+  [
+   153.5,
+   0.0,
+   Infinity
+  ],
+  [
+   163.9,
+   0.0,
+   Infinity
+  ],
+  [
+   170.7,
+   0.0,
+   Infinity
+  ],
+  [
+   176.7,
+   0.0,
+   Infinity
+  ],
+  [
+   211.7,
+   0.0,
+   Infinity
+  ],
+  [
+   229.0,
+   0.0,
+   Infinity
+  ],
+  [
+   257.1,
+   0.0,
+   Infinity
+  ],
+  [
+   263.6,
+   0.0,
+   Infinity
+  ],
+  [
+   275.1,
+   0.0,
+   Infinity
+  ],
+  [
+   280.5,
+   0.0,
+   Infinity
+  ],
+  [
+   285.6,
+   0.0,
+   Infinity
+  ],
+  [
+   295.6,
+   0.0,
+   Infinity
+  ],
+  [
+   300.0,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.01,
+ "presolve_time": 7.98,
+ "nodes": 26,
+ "lp_iterations": 221336,
+ "load_timeout": false
+}

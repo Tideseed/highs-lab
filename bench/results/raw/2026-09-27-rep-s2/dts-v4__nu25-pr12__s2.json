@@ -1,0 +1,72 @@
+{
+ "arm": "dts-v4",
+ "instance": "nu25-pr12",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "c1ead1187f8f3d3a",
+ "model_sha": "161c4c89b351d867",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.5478515625,
+  10.5595703125,
+  10.5703125
+ ],
+ "peak_rss_gb": 0.12,
+ "core": 6,
+ "wall": 3.0697531700134277,
+ "overrun": -296.9302468299866,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.0,
+   9455.0,
+   Infinity
+  ],
+  [
+   0.1,
+   52957.5,
+   54880.0
+  ],
+  [
+   0.2,
+   53553.302083,
+   54630.0
+  ],
+  [
+   1.1,
+   53772.990987,
+   53905.0
+  ],
+  [
+   1.5,
+   53777.484667,
+   53905.0
+  ],
+  [
+   1.5,
+   53777.484667,
+   53905.0
+  ],
+  [
+   3.0,
+   53905.0,
+   53905.0
+  ]
+ ],
+ "status": "Optimal",
+ "primal_bound": 53905.0,
+ "dual_bound": 53905.0,
+ "gap": "0%",
+ "pd_integral": 0.0218166309402,
+ "solver_time": 3.01,
+ "presolve_time": 0.15,
+ "nodes": 11,
+ "lp_iterations": 14237,
+ "load_timeout": false
+}

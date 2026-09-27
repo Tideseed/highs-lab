@@ -1,0 +1,147 @@
+{
+ "arm": "dts-v2-nodse",
+ "instance": "bnatt500",
+ "seed": 2,
+ "time_limit": 300.0,
+ "binary_sha": "1ba8373f0328be14",
+ "model_sha": "2bda2b86ec5e3a52",
+ "serving_units": {
+  "ornith-vllm": "inactive",
+  "llama-qwen38": "inactive"
+ },
+ "loadavg": [
+  10.4775390625,
+  10.56005859375,
+  10.50537109375
+ ],
+ "peak_rss_gb": 0.213,
+ "core": 7,
+ "wall": 300.0892450809479,
+ "overrun": 0.08924508094787598,
+ "rc": 0,
+ "harness_timeout": false,
+ "options": {},
+ "has_solution": true,
+ "trajectory": [
+  [
+   0.1,
+   0.0,
+   Infinity
+  ],
+  [
+   0.2,
+   0.0,
+   Infinity
+  ],
+  [
+   2.7,
+   0.0,
+   Infinity
+  ],
+  [
+   2.8,
+   0.0,
+   Infinity
+  ],
+  [
+   8.2,
+   0.0,
+   Infinity
+  ],
+  [
+   13.3,
+   0.0,
+   Infinity
+  ],
+  [
+   18.3,
+   0.0,
+   Infinity
+  ],
+  [
+   23.4,
+   0.0,
+   Infinity
+  ],
+  [
+   28.4,
+   0.0,
+   Infinity
+  ],
+  [
+   29.0,
+   0.0,
+   Infinity
+  ],
+  [
+   29.1,
+   0.0,
+   Infinity
+  ],
+  [
+   35.5,
+   0.0,
+   Infinity
+  ],
+  [
+   40.5,
+   0.0,
+   Infinity
+  ],
+  [
+   45.5,
+   0.0,
+   Infinity
+  ],
+  [
+   50.6,
+   0.0,
+   Infinity
+  ],
+  [
+   53.8,
+   0.0,
+   Infinity
+  ],
+  [
+   54.0,
+   0.0,
+   Infinity
+  ],
+  [
+   59.0,
+   0.0,
+   Infinity
+  ],
+  [
+   68.4,
+   0.0,
+   Infinity
+  ],
+  [
+   79.3,
+   0.0,
+   Infinity
+  ],
+  [
+   90.3,
+   0.0,
+   Infinity
+  ],
+  [
+   105.4,
+   0.0,
+   Infinity
+  ]
+ ],
+ "status": "Time limit reached",
+ "primal_bound": Infinity,
+ "dual_bound": 0.0,
+ "gap": "inf",
+ "pd_integral": 0.0,
+ "solver_time": 300.0,
+ "presolve_time": 4.14,
+ "nodes": 15586,
+ "lp_iterations": 2954314,
+ "load_timeout": false
+}
