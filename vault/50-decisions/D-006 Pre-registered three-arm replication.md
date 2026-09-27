@@ -70,3 +70,4 @@ Clarifications only; the registered rules above are unchanged and will be report
 A: no established aggregate effect (0.993 [0.988, 0.998], 2 crashes). B: registered verdict drop DSE (0.981 [0.967,
 0.994] but 2 crashes, which occur identically in base). Changing dev-tideseed (a force-push of a public branch) waits for
 Berk. Details: `30-results/2026-09-27 D-006 outcome.md`.
+- 2026-09-27 19:0x: Berk chose to follow the rule; `dev-tideseed` force-pushed to base (23395de1c6).

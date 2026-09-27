@@ -17,4 +17,4 @@ diffs, use `git diff 6293630a84...<branch>`. Size = files, +lines, −lines. Evi
 | lab/one-opt | bdf9d289c7 | 2, +70 | rejected | one-opt heuristic (never fired) |
 | lab/locks-heuristic | 13995338e9 | 3, +106 | rejected | locks root heuristic (no effect) |
 
-Combined arms: `dev-tideseed` = **v4** (tag dev-tideseed-v4, cfa835da83) = the claim candidate without X1; v3 (tag dev-tideseed-v3, 4a7937f32e) = v4 + X1; branch arm/dev-tideseed-v4 = v4; tags dev-tideseed-v1/v2 are historical. See `bench/COMPOSITION.md`.
+Combined arms: `dev-tideseed` = **base** (tag dev-tideseed-base, 23395de1c6: clique marking + find_common fix, symmetry dense hash, free wins, P1) since 2026-09-27 19:0x, per D-006's registered verdict (DSE dropped); v4 (tag dev-tideseed-v4, branch arm/dev-tideseed-v4, cfa835da83) = base + DSE cache; v3 (tag dev-tideseed-v3, 4a7937f32e) = v4 + X1; tags dev-tideseed-v1/v2 are historical. See `bench/COMPOSITION.md`.

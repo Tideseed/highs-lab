@@ -140,3 +140,4 @@ a general noise floor, so small single-run differences are reported as observed,
   aggregate effect; B → DSE dropped (crash condition; the crashes occur identically in base). Across seeds 1–3 v4 vs dev
   is 0.969 / 0.990 / 0.963: a ~2.5 % effect, below the 3 % gate. `2026-09-27 D-006 outcome.md`.
 - Saved-solution recheck seed 3: 632/632 feasible (all four run sets: 2,497 incumbents, two tolerance-edge rows).
+- **dev-tideseed = base** since 2026-09-27 19:0x (Berk followed the registered verdict); v4 remains as tag/branch.

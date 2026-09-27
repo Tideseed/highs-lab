@@ -10,7 +10,8 @@ effective flags, `source_dirty`) and per result (`binary_sha` = executable + lib
 | dev-tideseed (v1, historical) | tag dev-tideseed-v1 | see tag | clique marking (count bug: query count differed from pairwise) + symmetry + free-wins + DSE |
 | dts-v2 (historical) | tag dev-tideseed-v2 | 9e9a3f98f2 | latest + clique-partition-marking 39367bfe61 + symmetry-dense-hash 51ebf64d2f + free-wins e1983642bf + dse-carry-weights 8dc4f6a81e + presolve-changed-col 5816d69698 |
 | dts-v2-nodse | branch dev-tideseed-nodse | 23395de1c6 | dts-v2 without dse-carry-weights |
-| dts-v4 | **branch dev-tideseed**, tag dev-tideseed-v4 | cfa835da83 | v3 without X1 (lab/dual-substitution-mirrored): the claim candidate |
+| dts-v2-nodse (base) | **branch dev-tideseed** since 2026-09-27 (D-006), tag dev-tideseed-base | 23395de1c6 | clique marking + find_common fix, symmetry, free wins, P1 |
+| dts-v4 | tag dev-tideseed-v4 | cfa835da83 | v3 without X1 (lab/dual-substitution-mirrored): the claim candidate |
 | dts-v3 | tag dev-tideseed-v3 | 4a7937f32e | latest + clique-partition-marking 39367bfe61 + symmetry-dense-hash 51ebf64d2f + free-wins e1983642bf + presolve-changed-col 5816d69698 + dse-cache 99b1bf1f8a + dual-substitution-mirrored c81725e48f |
 | dts-v3-pgo | same source as dts-v3 | 4a7937f32e | PGO build (-mcpu=native, trained on 12 non-MIPLIB instances; scripts/pgo-build.sh). NOT identical search: 90/95 both-solved instances identical to dts-v3 in clean1 (csched008, net12, neos-1171448, comp07-2idx, ns1208400 differ); judged under the full gate. Cause (PGO vs -mcpu=native vs FMA contraction) not isolated |
 | dts-native / dts-pgo | v1 source | — | build-flag arms (see vault note Build flags) |
