@@ -15,7 +15,7 @@ JOBS="f663edfdcbff 36f278b0ee63"   # local-model-canary, canary-hello (tr-power-
 [ "$(date +%H)" -lt 12 ] && DAY=today || DAY=tomorrow
 UNTIL=$(date -d "$DAY 07:30" +%Y-%m-%dT07:30:00%:z)
 # a daytime start (FORCE_NIGHT_BENCH, Berk's go) holds the servers for the run's own horizon instead
-if [ -n "${FORCE_NIGHT_BENCH:-}" ]; then UNTIL=$(date -d '+11 hours' +%Y-%m-%dT%H:%M:%S%:z); fi
+if [ -n "${FORCE_NIGHT_BENCH:-}" ]; then UNTIL=$(date -d "+${FORCE_HOURS:-4} hours" +%Y-%m-%dT%H:%M:%S%:z); fi
 mkdir -p "$(dirname "$LOG")"
 exec >>"$LOG" 2>&1
 # a persistent timer fires at boot if the box was down at the scheduled time: never start in the daytime
@@ -60,9 +60,11 @@ trap restore EXIT
 #    if another session holds the box, wait up to 15 min, then give up without touching the servers
 WHO="HiGHS lab (coulson-ca)"
 CLAIMED=""
+LEASE_UNTIL=06:30
+[ -n "${FORCE_NIGHT_BENCH:-}" ] && LEASE_UNTIL=$(date -d "+${FORCE_HOURS:-4} hours" +%H:%M)   # daytime: short lease
 for i in $(seq 1 30); do
   if box-window claim --who "$WHO" --why "HiGHS benchmark $RUN (stops both local LLM servers, restores them)" \
-       --until 06:30 --stops ornith-vllm,llama-qwen38 --mem 100 >/dev/null 2>&1; then CLAIMED=1; break; fi
+       --until "$LEASE_UNTIL" --stops ornith-vllm,llama-qwen38 --mem 100 >/dev/null 2>&1; then CLAIMED=1; break; fi
   sleep 30
 done
 if [ -z "$CLAIMED" ]; then
@@ -104,7 +106,7 @@ echo "budget: $NI instances x $NA arms x $NS seeds = $((NI*NA*NS)) jobs, <= ${TL
 # hard stop at 06:30 so that Agent Think is back well before the morning (the runner is resumable)
 START=$(date +%s)
 DEADLINE=$(( $(date -d '06:30' +%s) - $(date +%s) )); [ $DEADLINE -lt 0 ] && DEADLINE=$(( DEADLINE + 86400 ))
-[ -n "${FORCE_NIGHT_BENCH:-}" ] && DEADLINE=36000   # daytime start: 10 h
+[ -n "${FORCE_NIGHT_BENCH:-}" ] && DEADLINE=$(( ${FORCE_HOURS:-4} * 3600 - 1800 ))   # daytime: lease minus 30 min for restore
 timeout $DEADLINE python3 bench/run.py --arms bench/arms.toml --only-arms $ARMS --set bench/sets/miplib-bench-all.txt \
   --seeds $SEEDS --time-limit "$TL" --cores 5-9,15-19 --mem-reserve-gb 20 --out "$OUT" > "$OUT.run.log" 2>&1
 python3 bench/analyze.py "$OUT" --control dev --md bench/results/$RUN.md > /dev/null 2>&1
