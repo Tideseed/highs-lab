@@ -10,7 +10,7 @@ honest measurement? Upstream `latest` = 6293630a84 throughout (no upstream commi
   0 crashed → **passes the gate on one seed; not replicated** (no v4 seed-0 run). The same branches plus X1 (v3) on
   seed 0: 0.985 [0.942, 1.022], solved 96 vs 99 — no pass.
 - **How much one seed carries** (review #5, recomputed): dev against itself, seed 1 vs seed 0, same binary, both clean
-  windows = **1.028**, and 92 of 240 instances move by more than 5 % — the control drifts by the size of the claimed
+  windows = **1.028**, and 92 of 240 instances move by more than 5 % (raw times; 77 on the shifted t+10 s times the SGM uses) — the control drifts by the size of the claimed
   effect. On the 213 instances outside X1's known set, v3 on seed 0 gives 0.999 and v4 on seed 1 gives 0.973. In favour
   of seed 1: the paired sign test is positive (38 faster by >5 %, 19 slower, p = 0.016), so the win is broad.
   **Truthful sentence: a 0–3 % effect, sign positive on the better-powered seed, not established.**
