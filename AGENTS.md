@@ -58,4 +58,4 @@ Read `vault/00-index/Home.md` first. It holds the current state, the three bench
   branch on the instances they touch.
 - **One seed is not replication**, and a single seed's overrun is not a regression (kasavu).
 - **Solver scopes are named `hlab-*`**; stop and await them before restoring servers.
-- **Experiments are frozen since 2026-09-27 07:15** (D-005): no new runs or builds without Berk's OK.
+- **Experiments ceased 2026-09-27 evening; the lab is closed.** No new runs or builds without Berk's OK; future work is listed at the end of the Final report.

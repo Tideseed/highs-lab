@@ -188,3 +188,29 @@ a general noise floor, so small single-run differences are reported as observed,
   is 0.969 / 0.990 / 0.963: a ~2.5 % effect, below the 3 % gate. `2026-09-27 D-006 outcome.md`.
 - Saved-solution recheck seed 3: 632/632 feasible (all four run sets: 2,497 incumbents, two tolerance-edge rows).
 - **dev-tideseed = base** since 2026-09-27 19:0x (Berk followed the registered verdict); v4 remains as tag/branch.
+
+## Upstream
+- **ERGO-Code/HiGHS#3326** (2026-09-27, Berk's explicit yes, filed as Claude Code): `HighsHashTree::find_common` misses
+  a common key when stored hashes collide; fix linked as a fork diff (no PR, per their CONTRIBUTING), with the note that
+  it changes clique results on a few instances. Nothing else has been sent upstream.
+
+## Future work (experiments ceased 2026-09-27 evening; nothing scheduled)
+Ordered by the reviewers' and our own assessment. Each needs Berk's go-ahead and a box-window claim; the host's
+priority has moved to the halit local-LLM search.
+1. **find_common follow-through:** a standalone two-leaf unit test (leaf1 = [a, b], leaf2 = [b, c], equal stored
+   hashes) on `lab/hash-tree-find-common`; answer maintainer questions on #3326.
+2. **Primal heuristics** — the highest-value open question and the one that maps onto Mittelmann's MIPFEAS: about 47–49
+   of 466 reference-eligible runs (pooled seeds 2+3) have no incumbent by 300 s on every version, and the lists differ.
+   Candidates: feasibility-pump variants, fix-and-propagate with restarts, set-covering structure (rail01/02). Score with
+   `bench/primal.py` at 600 s against latest.
+3. **DSE cache as its own registered question:** crash rule relative to the control, cap kills in their own column,
+   memory cap sized to the set (bohle ≈ 6.5 GB past presolve), ≥ 3 pre-chosen seeds, watch instances gmu-35-40 and
+   atrato. Pooled evidence so far: −1.9 % vs base [0.967, 0.994], seed-dependent.
+4. **Isolate base's five search differences** (mzzv42z, mzzv11, neos-860300, neos-3216931-puriri) with a shadow check or
+   single-branch ablation, before any upstream issue for the clique-marking optimisation.
+5. **bohle memory:** measure per-phase peak RSS for dev, base and v4 without a cap below 12 GB (resource question, not a
+   speed claim).
+6. **kasavu:** seed-dependent time-limit leak at the root in `latest` itself (dev seed 1 ran to ~1,300 s at a 300 s limit);
+   upstream-worthy only with a minimal reproduction and Berk's per-post yes.
+7. **Lab tooling:** build manifests (commit hash written into every build dir), `run.py` recording the cgroup OOM result
+   directly, pytest in the lab's own venv.

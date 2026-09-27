@@ -1,3 +1,5 @@
+# FILED 2026-09-27 as ERGO-Code/HiGHS#3326 (Berk's yes). Kept below as the original draft.
+
 # DRAFT — new issue ERGO-Code/HiGHS (not posted; needs Berk's yes)
 
 Prior art searched 2026-09-25: "find_common", "HighsHashTree" (#2141 insert out-of-bounds, #2326 presolve behaviour —

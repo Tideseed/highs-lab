@@ -19,3 +19,5 @@ Latest results: `vault/30-results/` (newest first). Reviews: highs-lab #3 (Codex
 ## Ground rules
 No PRs upstream (HiGHS CONTRIBUTING: no AI-generated solver PRs); issues with evidence only, each approved by Berk.
 Every claim is measured against `dev` in the same session.
+
+**Status 2026-09-27: CLOSED.** Final report → `30-results/Final report.md` (Final account at the top, Future work at the end). Upstream: ERGO-Code/HiGHS#3326. Reviews: issue #6.
