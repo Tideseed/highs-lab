@@ -51,3 +51,16 @@ any solution from these runs is cited as feasible.
   (per-job loadavg is in every record), not a reason to change anything.
 - Seed 3 scheduled for 2026-09-28 00:15 (transient timer `highs-rep-s3`, NOT reboot-safe); follow-up
   `scripts/d006-after.sh` computes contrasts A/B per seed and pooled, and after seed 2 the saved-solution recheck.
+
+## Addendum 2026-09-27 10:1x (after Codex follow-up review; before any seed-2 result was looked at)
+Clarifications only; the registered rules above are unchanged and will be reported as written.
+- **Contention wording:** seed 2 is described as "both LLM servers stopped, **with recorded background contention**"
+  (the ClickHouse repair chain). Fresh paired controls and shuffled order spread it across arms; load average alone
+  cannot show it had no effect.
+- **Contrast B and solved counts:** the registered B rule has no solved-count safeguard. The B result is reported as
+  registered, and separately the general acceptance gate of AGENTS.md (ratio, CI, 0 wrong, 0 crashes, solved ≥ control)
+  is checked before the combined branch is promoted; a favourable B interval does not waive a loss of solves.
+- **Follow-up script bug (found by the reviewer):** `scripts/d006-after.sh` overwrote its positional arguments, so the
+  recheck would have been skipped silently. Fixed (named flag, every step must succeed and write its output, the final
+  log line is OK or FAILED with the failing steps); the running watcher was stopped and restarted on the fixed file
+  (10:05); the analysis tools now exit non-zero on a missing control arm or empty input.

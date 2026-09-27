@@ -32,6 +32,8 @@ def main() -> None:
     d = Path(a.dir)
     runs = [json.loads(p.read_text()) for p in d.glob("*.json")
             if not p.name.startswith("RESOURCES") and not p.name.endswith(".stale.json")]
+    if not runs:
+        raise SystemExit(f"no runs in {d}")
     by_inst = defaultdict(list)
     for r in runs:
         by_inst[r["instance"]].append(r)
@@ -98,6 +100,8 @@ def main() -> None:
     print(text)
     if a.md:
         Path(a.md).write_text(text + "\n")
+    if cnt["checked"] == 0:
+        raise SystemExit("nothing checked")
 
 
 if __name__ == "__main__":

@@ -96,6 +96,8 @@ def main() -> None:
     ref = load_solu()
     runs = [json.loads(p.read_text()) for p in Path(a.dir).glob("*.json")
             if not p.name.startswith("RESOURCES") and not p.name.endswith(".stale.json")]
+    if not runs or a.control not in {r["arm"] for r in runs} or len({r["arm"] for r in runs}) < 2:
+        raise SystemExit(f"no comparison possible: {len(runs)} runs, arms {sorted({r['arm'] for r in runs})}, control {a.control}")
     by = defaultdict(dict)
     for r in runs:
         by[(r["instance"], r["seed"])][r["arm"]] = r
