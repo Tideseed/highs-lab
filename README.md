@@ -13,5 +13,13 @@ decide whether and how to implement them.
   bootstrap CI, wrong-answer check against MIPLIB 2017 `solu.txt`, identical-search check)
 - Start at `vault/00-index/Home.md`; agent rules in `AGENTS.md`.
 
+## Results (frozen 2026-09-27; see `vault/30-results/Final report.md`)
+- `dev-tideseed` v4 (five branches, no X1) vs upstream latest, MIPLIB 2017 benchmark set, 300 s, clean window, one
+  seed: SGM **0.969 [0.939, 0.996]**, solved 101 vs 98, 0 wrong — passes the gate on that seed, **not replicated**.
+- Local wins: s100 time-limit fix, toguru presolve −50 %, chromaticindex −47 % after presolve, neos-787933 unsolved →
+  3–5 s (experimental presolve rule X1, with losses elsewhere).
+- A HiGHS correctness bug (HighsHashTree::find_common) with a fix; 0 wrong answers in every run.
+- Tutorials: `tutorials/` (screen, clean benchmark, profile, new branch).
+
 Author: Berk Orbay. Work carried out with Claude Code (Anthropic) as research assistant.
 License: MIT (same as HiGHS).
