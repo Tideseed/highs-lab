@@ -3,7 +3,51 @@
 **Question.** Can HiGHS be made faster, or better at closing MIP gaps, on top of upstream `latest`, in two days, with
 honest measurement? Upstream `latest` = 6293630a84 throughout (no upstream commits during the project).
 
-## Headline
+## Final account (after the two final reviews on #6; supersedes the Headline below where they differ)
+- **Scope:** MIPLIB 2017 benchmark set (240), 300 s, 1 thread, one X925 core per run, 8 GiB per run, two pre-registered
+  seeds (D-006) with fresh same-window controls. Scoring: actual solve time for solved runs, max(limit, observed time)
+  for unsolved runs (overruns included); shifted geometric mean, shift 10 s. The instance-bootstrap intervals condition
+  on these seeds and windows; they are not intervals over future seeds or other hardware.
+- **v4 (base + DSE cache) reduced this SGM by 2.59 % (95 % instance-bootstrap interval 1.22–4.08 %)** against latest, but
+  failed the lab's 3 % point-estimate threshold and the zero-failure requirement. **Base reduced it by 0.69 %
+  (0.24–1.16 %)** and also failed both. The interval for v4 spans effects above and below 3 %; the point estimate being
+  below the gate does not show the underlying effect is below 3 %.
+- **What 3 % was for:** "worth maintaining a combined branch" — a size judgement, not a significance threshold. Failing it
+  says the effect is small, not that it is absent. The registered label "no established aggregate effect" is a
+  **decision label** (acceptance criteria not met), not a claim that no timing difference was detected.
+- **Component evidence differs** (pooled sign tests, faster / slower by > 5 %): base vs latest 32 / 11 (p = 0.002),
+  consistent across seeds; DSE cache vs base 63 / 39 (p = 0.022) but seed-dependent (seed 2: 0.995, seed 3: 0.970) — the
+  signature of a search-perturbing change, needing more than two seeds before any claim.
+- **Base is not universally identical-search:** 184 of 189 both-solved pairs in D-006 have the same node and LP-iteration
+  totals as latest (93/96 seed 2, 91/93 seed 3). The five that differ: mzzv42z (s2, s3), mzzv11 (s3), neos-860300 (s2),
+  neos-3216931-puriri (s2: latest 1 node, 30 s; base 30 nodes, 53 s). The corrected clique table (find_common fix) is a
+  plausible cause, but counters alone do not attribute each case — cause unisolated.
+- **Working branch ≠ accepted branch:** `dev-tideseed` = base is a documented research choice (keep the smaller,
+  mostly-deterministic set), not a passed gate; base also misses the threshold and has two failures.
+- **Failures:** four runs, all bohle (seeds 2 and 3, base and v4), recorded rc −15 with no peak RSS; the journal shows
+  them as cgroup OOM kills at the 8 GiB cap (`hlab-…-190/192.scope: Failed with result 'oom-kill'` at 10:20/10:22 and
+  15:14/15:15). DSE is therefore not *necessary* for the failure; this does not show DSE adds no memory, and it is not a
+  claim that every run reaching bohle's LP needs more than 8 GiB. Raising the cap would answer a different question and
+  would not erase these failures.
+- **Registered >25 % regression diagnostic (pooled, shifted times):** v4 vs base — slower: gmu-35-40 1.43×,
+  neos-4738912-atrato 1.29×; faster: 9 instances (murg 0.46×, pg5_34 0.53×, 30n20b8 0.63×, neos-1456979 0.67×,
+  comp07-2idx 0.69×, neos-933966 0.69×, binkar10_1, mcsched, fiball). base vs latest — slower: none; faster: 1.
+  v4 vs latest — slower: gmu-35-40 1.44×; faster: 14.
+- **Correctness coverage:** four run sets, 960 + 480 + 720 + 720 = **2,880 runs** (clean1 includes its PGO arm), **2,497**
+  saved final incumbents: **2,495 pass the strict checker, 2 exceed it** (rocI-4-11, row residuals 1.00000000003e-6 and
+  1.00000000014e-6 against a 1e-6 threshold: tolerance-edge, not evidence of a wrong solution), 0 objective mismatches,
+  no missing or unparsable files. D-006 alone: 1,255 / 1,255. Reference check: **no detected reference errors within
+  coverage** (D-006: 1,392 / 1,440 runs have a known optimum). Run counts: 2,880 = the four sets above;
+  2,970 with the clean2 ablation (90 runs); the "2,640" first quoted in #6 was the same without clean1's PGO arm.
+- **Primal side:** runs without an incumbent by T (466 reference-eligible instance-seed runs, pooled): latest 47, base 48,
+  v4 49, **and the lists differ** — not "the same instances for every arm" as #6 first said. The lower primal integral of
+  base vs latest (0.977 [0.961, 0.991]) is diagnostic evidence of earlier/better incumbents, not of better first-incumbent
+  coverage; v4 vs base 0.988 [0.959, 1.017] shows no established DSE primal gain.
+- **Lessons for any next registration:** crash rule relative to the control ("no failures absent in the control"), cap
+  kills in their own column, memory cap sized to the set (bohle ≈ 6.5 GB past presolve), at least three seeds for a
+  search-changing branch, named watch instances (gmu-35-40, atrato).
+
+## Headline (at the freeze; see the Final account above)
 - **dev-tideseed v4** (clique marking + find_common fix, symmetry dense hash, free wins, P1 presolve counter,
   DSE cache) vs latest, MIPLIB 2017 benchmark set (240), 300 s, 1 thread, clean window, **seed 1**:
   SGM **0.969 [0.939, 0.996]**, both-solved 0.933, solved **101 vs 98**, ΔPDGI **−0.010 [−0.019, −0.002]**, 0 wrong,
@@ -32,10 +76,10 @@ honest measurement? Upstream `latest` = 6293630a84 throughout (no upstream commi
   integral 14 % better for latest (1/1.165).
 - **Local wins (identical search unless stated):** s100 (at a 60 s limit: overrun 170 s → stops on time with a feasible solution; at 300 s neither
   latest nor v4 finds an incumbent, v4 leaves the root at 23 s instead of 176 s), **bohle**: dev spends 349 s in presolve (limit hit in probing, X925,
-  clean run); a P1-only build finished presolve in 78 s (A725, single diagnostic run, review #5) and the combined base
-  in 48.7 s (X925), same reductions, then reached the LP, toguru presolve 12.5 → 6.2 s, chromaticindex −47 % after presolve, DSE cache −8 to −23 % on binkar10_1,
+  clean run); base finished presolve in 48.7 s in the clean windows (X925; the number to quote), and a P1-only
+  diagnostic build in 78 s (A725, single run, review #5), same reductions, then reached the LP, toguru presolve 12.5 → 6.2 s, chromaticindex −47 % after presolve, DSE cache −8 to −23 % on binkar10_1,
   roll3000, timtab1, seymour1 (search changes), neos-787933 unsolved → 3–5 s (X1, search changes).
-- **Correctness:** a real HiGHS bug (HighsHashTree::find_common false negatives) with a fix; 0 wrong answers in all
+- **Correctness:** a real HiGHS bug (HighsHashTree::find_common false negatives) with a fix; no detected reference errors in all
   runs; every saved incumbent of clean1, clean2 and D-006 seed 2 (1,865) rechecked with a fixed, locally-scaled
   checker: all feasible except two tolerance-edge rows on rocI-4-11 (see "Saved-solution recheck").
 
@@ -89,6 +133,8 @@ resumed on a stopped server (script now restores before resuming). Reviews: #3, 
 | clean1 (seed 0) | 960 | 826 | 0 / 0 | 826 | 825 | 1 | 0 |
 | clean2 (seed 1) | 480 | 416 | 0 / 0 | 416 | 415 | 1 | 0 |
 | D-006 seed 2 | 720 | 623 | 0 / 0 | 623 | 623 | 0 | 0 |
+| D-006 seed 3 | 720 | 632 | 0 / 0 | 632 | 632 | 0 | 0 |
+| **total** | **2,880** | **2,497** | 0 / 0 | 2,497 | **2,495** | 2 | 0 |
 
 Both "beyond tolerance" cases are rocI-4-11 (stable s0, v4 s1): one row residual of exactly 1.0e-6 on a row of
 magnitude 1 (1.00000000003e-6 and 1.00000000014e-6), i.e. at HiGHS's own primal feasibility tolerance, exceeding the
@@ -112,11 +158,12 @@ that measurement error. In clean2, 124 of 480 runs have their last progress row 
 coverage statistic. The final bound is appended at the run's completion time (never applied backward over the
 unlogged tail), so an optimum proven late counts only from then — regression test `bench/tests/test_checkers.py`
 (gap 0.5 from t=0, optimum at t=80, T=100 → 0.4). "Incumbent by T" and "feasible at termination" are now separate
-columns in hard.py and primal.py; on the saved records of clean1 and clean2 they coincide for every arm.
+columns in hard.py and primal.py; on the saved records of clean1 and clean2 they coincide for every arm; in D-006 base has 418 incumbents by T and 419 at termination.
 
 ## Per-branch evidence for the identical-search branches (from existing data; reviewers' request)
 **base** = clique marking + symmetry dense hash + free wins + P1 (dts-v2-nodse, 23395de1c6) vs dev, ablation of clean2
-(clean window, 300 s, 2 seeds): **identical search on 12/12 both-solved runs** (same nodes and LP iterations). Timing on
+(clean window, 300 s, 2 seeds): **identical search on 12/12 both-solved runs** (same nodes and LP iterations). The full
+D-006 set later found 184/189 identical — see the Final account. Timing on
 identical paths (pure speed):
 | instance | dev (s0, s1) | base (s0, s1) | note |
 |---|---|---|---|

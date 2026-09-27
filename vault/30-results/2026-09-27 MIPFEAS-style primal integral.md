@@ -60,3 +60,9 @@ SCIP-derived heuristics (one-opt, locks) improve an incumbent or needed one to e
 propagate with restarts; rail01/02 are set-covering), scored by this metric at 600 s against latest.
 
 Files: `bench/primal.py`, `bench/results/raw/2026-09-26-clean1.primal.md`, `bench/results/raw/2026-09-27-clean2.primal.md`.
+
+## Addendum after D-006 (2026-09-27 evening)
+Pooled seeds 2+3 (466 reference-eligible instance-seed runs): no incumbent by 300 s for latest 47, base 48, v4 49, and
+the lists differ between arms. Primal integral: base vs latest 0.977 [0.961, 0.991]; v4 vs latest 0.964 [0.934, 0.997];
+v4 vs base 0.988 [0.959, 1.017]. The branches improve incumbent quality over time a little; they do not improve
+first-incumbent coverage.
