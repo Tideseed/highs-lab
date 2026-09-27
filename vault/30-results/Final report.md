@@ -48,3 +48,18 @@ resumed on a stopped server (script now restores before resuming). Reviews: #3, 
 ## Open (not done before the freeze)
 Replication of v4 on a second seed; neos-873061 is X1's clearest loss; kasavu/bohle time-limit leaks exist in latest
 itself; per-branch paired tables for the identical-search branches (in progress for the report).
+
+## Per-branch evidence for the identical-search branches (from existing data; reviewers' request)
+**base** = clique marking + symmetry dense hash + free wins + P1 (dts-v2-nodse, 23395de1c6) vs dev, ablation of clean2
+(clean window, 300 s, 2 seeds): **identical search on 12/12 both-solved runs** (same nodes and LP iterations). Timing on
+identical paths (pure speed):
+| instance | dev (s0, s1) | base (s0, s1) | note |
+|---|---|---|---|
+| neos-4722843-widden | 164.0, 165.6 | **112.8, 146.6** | −31 %, −11 % |
+| neos-3402454-bohle | 348.9, 340.1 (overrun) | **300.3, 300.0** (stops on time) | unsolved both |
+| neos-873061 | 98.8, 236.7 | 96.6, 227.8 | −2 %, −4 % |
+| comp07-2idx, csched008, n5-3, kasavu, neos-787933 | | | within ±3 % |
+| unitcal_7 | 38.5, 47.0 | 43.5, 42.6 | +12 %, −9 %: the timing noise floor on identical paths |
+Earlier identical-search evidence: small set 28/28 (v2-nodse vs dev, 2026-09-25); targeted: s100 (60 s limit: 172 s,
+no solution → 62 s, feasible), toguru presolve 12.5 → 6.2 s, chromaticindex after presolve 27.7 → 14.7 s (A725, single
+runs). Timing differences within ±12 % on identical paths are noise at n = 1–2.
