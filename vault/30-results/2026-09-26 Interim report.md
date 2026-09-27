@@ -82,7 +82,7 @@ the 300 s limit; neos-873061 is the clear loss). Seed 1 (dev vs v3) tonight deci
 - The combined SGM is driven by X1's 27 instances (excluding them: ~0.996); X1 is presented separately and kept out of the
   claim for dev-tideseed.
 
-## Regression found 17:xx: time-limit overrun on neos-5114902-kasavu
+## (Superseded 2026-09-27) "Regression" on neos-5114902-kasavu — NOT a regression: dev overruns on seed 1 too (1,300 s); see [[2026-09-27 Clean2 and ablation]]
 dev (latest) stops at 300 s (overrun 7 s); v3 and v3-PGO run to 1,190 / 1,178 s (overrun ~880 s), still at the root
 (0 nodes, separation 17,380 rounds vs 16,872) — the same overrun as stable v1.15.1 (881 s). Upstream fixed this leak
 after the release and one of our branches brings it back. Earlier I called it "pre-existing (stable too)" — wrong: it
