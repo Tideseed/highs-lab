@@ -12,3 +12,4 @@ description: Start a new HiGHS improvement as a lab branch on top of upstream la
 5. **Measure:** the `highs-bench` skill against `dev`. Use `--identical` for pure speed-ups.
 6. **Record:** set the candidate note's status to `branch`, then `gated`, then accepted or rejected, with a log line each time. Put the results note in `vault/30-results/`. Commit as Berk Orbay (noreply).
 7. **If accepted,** mark it `accepted` in `bench/queue.txt`; the next sync merges it into `dev-tideseed`. Push with `git push -u origin lab/<idea>`, using `--force-with-lease` after rebases.
+8. **Exactness:** if the branch claims identical results, add a temporary shadow check (old and new computed on every call, abort on mismatch; example in `bench/patches/`) and run it on ~10 instances before any benchmark. Verify identical search on the full set before claiming it.

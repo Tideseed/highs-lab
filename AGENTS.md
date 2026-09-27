@@ -41,3 +41,21 @@ Read `vault/00-index/Home.md` first. It holds the current state, the three bench
 ## Machine notes (DGX Spark, GB10)
 - 10 × Cortex-X925 (cores 5–9, 15–19) and 10 × Cortex-A725 (cores 0–4, 10–14). **Benchmark only on the X925 cores**; an A725 is about 2× slower.
 - The CPU and GPU share 121 GiB of memory with resident LLM servers. Clean measurements need those servers stopped, which happens only in declared windows (the host's own operator rules).
+
+## Lessons that are now rules (2026-09-25/27)
+- **Memory:** cap the run set, not only each run — `run.py --mem-reserve-gb 20` (lanes = (MemAvailable − reserve)/cap,
+  admission check before every job). A run set once pushed the box to memwatch's hard floor and shed Berk's sessions.
+- **Shared box:** `box-window status/claim/release` before stopping a server or running a long/heavy set; never
+  `--force` over another session's lease without Berk's OK. Tell peer sessions (`ListAgents`, `SendMessage`).
+- **Never rebuild a build directory that a running set uses** (run.py hashes executable + libhighs before every job and
+  aborts on a change).
+- **Exactness claims need a shadow check** (compute old and new on every call, abort on mismatch); it found two edge
+  cases and a HiGHS bug. Identical-search claims are verified on the FULL set — a 33-instance screen missed PGO's
+  divergence.
+- **PDGI is a log-sampled estimate** (bench/hard.py appends final bounds at the end time). HiGHS's own "P-D integral"
+  scores missing bounds as 0 — never use it for comparisons.
+- **Screens overstate; full sets decide.** Hot-spot fixes rarely move a 240-instance geometric mean; claim them per
+  branch on the instances they touch.
+- **One seed is not replication**, and a single seed's overrun is not a regression (kasavu).
+- **Solver scopes are named `hlab-*`**; stop and await them before restoring servers.
+- **Experiments are frozen since 2026-09-27 07:15** (D-005): no new runs or builds without Berk's OK.

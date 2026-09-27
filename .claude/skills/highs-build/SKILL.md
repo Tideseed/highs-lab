@@ -6,7 +6,7 @@ description: Build a HiGHS arm or lab branch safely on the shared DGX Spark (cap
 
 1. **Worktree, not the main checkout:** `git -C ~/git_repositories/highs worktree add ../highs-wt/<name> <ref>`.
    Arms: `main` = `upstream/master`, `dev` = `upstream/latest`, `dev-tideseed`, and `lab/<idea>`.
-2. **Memory gate:** `scripts/build-arm.sh` refuses below 30 GB `MemAvailable`. If it refuses:
+2. **Box lease + memory gate:** `box-window status` first (claim it if the build overlaps another session's window). `scripts/build-arm.sh` refuses below 30 GB `MemAvailable`. If it refuses:
    - Check whether the local agents are busy (`deep-status`, `agent-status`).
    - Idle: they may be stopped for the build and must be restarted and verified afterwards (D-002).
    - Busy: skip the build and notify #agentlog. Never lower the gate or raise the cap.
