@@ -1,4 +1,4 @@
-# HiGHS lab — final report (at the freeze, 2026-09-27; second review on #5 addressed 08:xx from existing data, no new runs)
+# HiGHS lab — final report (frozen snapshot 2026-09-27; reviews on #5 addressed; replication D-006 running — results will be appended, not merged in)
 
 **Question.** Can HiGHS be made faster, or better at closing MIP gaps, on top of upstream `latest`, in two days, with
 honest measurement? Upstream `latest` = 6293630a84 throughout (no upstream commits during the project).
@@ -9,27 +9,36 @@ honest measurement? Upstream `latest` = 6293630a84 throughout (no upstream commi
   SGM **0.969 [0.939, 0.996]**, both-solved 0.933, solved **101 vs 98**, ΔPDGI **−0.010 [−0.019, −0.002]**, 0 wrong,
   0 crashed → **passes the gate on one seed; not replicated** (no v4 seed-0 run). The same branches plus X1 (v3) on
   seed 0: 0.985 [0.942, 1.022], solved 96 vs 99 — no pass.
-- **How much one seed carries** (review #5, recomputed): dev against itself, seed 1 vs seed 0, same binary, both clean
-  windows = **1.028**, and 92 of 240 instances move by more than 5 % (raw times; 77 on the shifted t+10 s times the SGM uses) — the control drifts by the size of the claimed
-  effect. On the 213 instances outside X1's known set, v3 on seed 0 gives 0.999 and v4 on seed 1 gives 0.973. In favour
-  of seed 1: the paired sign test is positive (38 faster by >5 %, 19 slower, p = 0.016), so the win is broad.
-  **Truthful sentence: a 0–3 % effect, sign positive on the better-powered seed, not established.**
-- **Where the seed-1 gain sits:** both solved on an identical path (the four deterministic branches' pure speed) 24
-  instances, 0.961; both solved on a different path (dse-cache perturbs the search on 70 of 94) 0.925; not both solved
-  146, 0.986. Most of the 3 % is path perturbation, the least replicable kind (krka 181 → 15 s; pg5_34 122 → 225 s).
+- **Result as measured:** seed-1 SGM ratio 0.969 [0.939, 0.996] (a 0.4–6.1 % reduction of this SGM on this paired
+  comparison), 101 vs 98 solved; **generalisation across seeds unestablished.** The instance bootstrap does not
+  capture seed-to-seed uncertainty.
+- **Sensitivity, exploratory** (review #5): dev against itself, seed 1 vs seed 0, same binary, different clean
+  windows = **1.028**, and 92 of 240 instances move by more than 5 % (raw times; 77 on the shifted t+10 s times the SGM
+  uses). This changes seed AND window, so it shows sensitivity; it does not invalidate the within-window paired
+  result. v3 on seed 0 restricted to the 213 instances outside X1's *known* set gives 0.999 (v4 on seed 1, same
+  instances: 0.973); X1's reach beyond the known set is unmeasured, so this is not a v4 replication. Paired sign test
+  on seed 1: 38 faster by >5 %, 19 slower, p = 0.016.
+- **Descriptive split of seed 1** (identical = same node and LP-iteration totals, the lab's operational check, not a
+  proof of an identical internal path): both solved, identical totals 24 instances, 0.961; both solved, different
+  totals 70, 0.925; not both solved 146, 0.986. DSE cache is the only branch meant to change the search, but the
+  clique branch also carries a correctness fix, so the 70 are not all attributed to DSE (krka 181 → 15 s; pg5_34
+  122 → 225 s).
 - **Primal side (MIPFEAS-style primal integral, Mittelmann's metric, on the same runs):** v4 vs dev **0.960 [0.913,
-  1.010]**, runs within 1 % of the reference by 300 s 155 vs 148; v3 vs dev on seed 0 0.959 [0.918, 1.001]; stable vs dev
+  1.010]**, runs within 1 % of the reference by 300 s 155 vs 148 (estimates from sparse log rows); v3 vs dev on seed 0 0.959 [0.918, 1.001]; stable vs dev
   **1.165 [1.076, 1.273]**. Not established for v4 (CI crosses 1). See `2026-09-27 MIPFEAS-style primal integral.md`.
 - **Upstream progress, measured:** latest vs release v1.15.1 = 3.6 % faster on the full set (stable 1.036
   [1.001, 1.073]); on the 42 hard instances PDGI 0.605 vs 0.654, ΔPDGI −0.049 [−0.103, −0.008] for latest (~8 %
   relative; an earlier "~25 %" came from HiGHS's own P-D integral, the metric this lab replaced); MIPFEAS-style primal
   integral 14 % better for latest (1/1.165).
 - **Local wins (identical search unless stated):** s100 (at a 60 s limit: overrun 170 s → stops on time with a feasible solution; at 300 s neither
-  latest nor v4 finds an incumbent, v4 leaves the root at 23 s instead of 176 s), **bohle presolve 349 s (limit hit in probing) → ~50 s with P1 alone**, same reductions, so the solver
-  reaches the LP (single-branch builds, review #5), toguru presolve 12.5 → 6.2 s, chromaticindex −47 % after presolve, DSE cache −8 to −23 % on binkar10_1,
+  latest nor v4 finds an incumbent, v4 leaves the root at 23 s instead of 176 s), **bohle**: dev spends 349 s in presolve (limit hit in probing, X925,
+  clean run); a P1-only build finished presolve in 78 s (A725, single diagnostic run, review #5) and the combined base
+  in 48.7 s (X925), same reductions, then reached the LP, toguru presolve 12.5 → 6.2 s, chromaticindex −47 % after presolve, DSE cache −8 to −23 % on binkar10_1,
   roll3000, timtab1, seymour1 (search changes), neos-787933 unsolved → 3–5 s (X1, search changes).
 - **Correctness:** a real HiGHS bug (HighsHashTree::find_common false negatives) with a fix; 0 wrong answers in all
-  runs; 385 reported-optimal solutions of clean1 independently checked feasible against the original models.
+  runs; 385 reported-optimal solutions of clean1 passed the feasibility checker — **qualified**: that checker scaled the
+  bound test by the largest |x| in the solution (review #5); fixed to per-variable tolerances with regression tests,
+  recheck of all saved solutions pending the end of the D-006 window (see "Saved-solution recheck").
 
 ## Branch status (Tideseed/HiGHS)
 | branch | kind | status | evidence |
@@ -38,7 +47,7 @@ honest measurement? Upstream `latest` = 6293630a84 throughout (no upstream commi
 | lab/hash-tree-find-common | correctness | reference (also inside the clique branch) | sorrell3 clique 149967 |
 | lab/symmetry-dense-hash | speed, identical | in v4 | chromaticindex 27.7 → 14.7 s after presolve |
 | lab/free-wins | speed, identical | in v4 | 1–2 % of MIP time; toguru 13 % |
-| lab/presolve-changed-col (P1) | speed, identical | in v4 | bohle presolve 349 → ~50 s; toguru presolve −50 %; 28/28 identical |
+| lab/presolve-changed-col (P1) | speed, identical | in v4 | bohle presolve 349 s (dev, X925) vs 78 s (P1 only, A725, 1 run); toguru presolve −50 %; 28/28 identical |
 | lab/dse-cache | speed, search changes | in v4, **net sign unestablished** | dse9 (selected where DSE recompute was expensive) 0.959, CI crosses 1; ablation (loss-selected) v4 vs base 1.041 [1.001, 1.094]: widden s0 113 → 168 s, csched008 s0 177 → 216, neos-873061 s0 97 → 116 |
 | lab/dual-substitution-mirrored (X1) | quality, search changes | experimental, OUT of the claim | neos-787933 win; losses on neos-873061, comp07 s1, widden |
 | lab/dse-carry-weights | — | superseded (carry half dropped: 1.003) | DSE split |
@@ -59,28 +68,42 @@ mismatch changed a search path (fixed); my wrong attribution of kasavu (fixed af
 resumed on a stopped server (script now restores before resuming). Reviews: #3, #4, #5.
 
 ## Open (not done before the freeze)
-1. **Replicate v4 on seed 0 first** — one arm, 240 runs, ~2 h in a clean window; the clean1 dev seed-0 control exists:
-   `box-window claim ...` then
-   `bench/run.py --arms bench/arms.toml --only-arms dts-v4 --set bench/sets/miplib-bench-all.txt --seeds 0 --time-limit 300 --mem-reserve-gb 20 --out bench/results/raw/2026-09-26-clean1`
-   and `bench/analyze.py bench/results/raw/2026-09-26-clean1 --control dev`. This settles the headline.
-2. dse-cache's net sign (see its row); if negative, v4 minus dse-cache is the claim candidate (identical-path only).
+1. **Replication with fresh controls — pre-registered as D-006** (review #5: a historical control breaks AGENTS.md
+   rule 2): three arms dev / base / base+DSE in the same window, seeds 2 and 3 fixed in advance, new result
+   directories, pinned binaries, shuffled run order, decision and stopping rules written before the first job.
+   Seed 2 started 2026-09-27 09:14 on Berk's go-ahead. It strengthens or weakens the evidence; it does not by itself
+   "settle" a population effect.
+2. dse-cache's net sign: contrast B of D-006.
 3. **kasavu on latest itself:** seed-dependent time-limit leak at the root (dev seed 1 runs to ~1,300 s at a 300 s
    limit) — upstream-worthy on its own, evidence = the two seeds + the latest binary. Not filed (Berk: no issues yet).
 4. neos-873061 is X1's clearest loss.
-5. **Primal heuristics:** latest finds no incumbent by 300 s on 25/233 feasible instances (seed 1; list in the MIPFEAS
+5. **First upstream candidate, if Berk approves any filing:** the `find_common` correctness fix alone, with a
+   minimal reproducer, a regression test and the invariant it restores, kept separate from the marking optimisation
+   (Codex addendum). Its value does not depend on an aggregate speed-up. Subject to prior-art search and Berk's per-post yes.
+6. **Primal heuristics:** latest finds no incumbent by 300 s on 25/233 feasible instances (seed 1; list in the MIPFEAS
    note) and v4 does not change that count — MIPFEAS (600 s, 24 threads) has HiGHS 1.15.1 at 214/233 feasible, 4th of
    the open solvers on the primal integral although it proves the most optima (107). The natural next iteration.
 
-## Memory on bohle is a phase effect, not a branch (review #5)
-Every build that leaves presolve on this 2.9M-row model reaches ~6 GB in the LP; builds that stay in probing until the
-limit peak at 1.6 GB (lab-cpm/sym/fw 1.6 GB, lab-pcc 6.1 GB). The seed-0 v3 OOM at the 8 GB cap was v3 reaching the LP
-with a slightly larger footprint. Build provenance: `highs-builds/lab-sym`, `lab-fw`, `lab-pcc` print git hash
-6293630a84 (configured before their branch commit existed); their source dir is the branch worktree, so the code is the
-branch — rebuild before citing their banners.
+## Saved-solution recheck
+Pending: `bench/recheck.py` (per-variable tolerances) over clean1 and clean2 saved solutions after the D-006 seed-2
+window closes; results and coverage (runs, incumbents, missing files, checked, feasible) will be appended here.
 
-## PDGI coverage
-In clean2, 124 of 480 runs have their last progress row more than 60 s before the end, so a quarter of the ΔPDGI
-(−0.010 [−0.019, −0.002]) is carried by the final bound appended at the end time. Quote it with that qualifier.
+## Memory on bohle (review #5)
+Builds that leave presolve on this 2.9M-row model reached ~6 GB in the LP (lab-pcc 6.1 GB, base 6.4 GB); builds that
+stay in probing until the limit peak at 1.6 GB (lab-cpm/sym/fw). The phase transition is a plausible explanation for
+most of the increase, and the kernel log settles the seed-0 v3 OOM as an 8 GB-cap kill, not a crash; it does not prove
+that branch-dependent memory overhead is absent. Build provenance: `highs-builds/lab-sym`, `lab-fw`, `lab-pcc` print git
+hash 6293630a84 (configured before their branch commit existed). Their CMake source dir is the branch worktree, but that
+alone does not prove which revision was compiled into the existing binary and there is no build manifest; the
+provenance of those three diagnostic builds stays uncertain (no rebuild during the freeze).
+
+## PDGI and primal-integral estimates
+Both are computed from sparse logged rows: changes between rows are not observed, and the bootstrap does not quantify
+that measurement error. In clean2, 124 of 480 runs have their last progress row more than 60 s before the end; that is a
+coverage statistic. The final bound is appended at the run's completion time (never applied backward over the
+unlogged tail), so an optimum proven late counts only from then — regression test `bench/tests/test_checkers.py`
+(gap 0.5 from t=0, optimum at t=80, T=100 → 0.4). "Incumbent by T" and "feasible at termination" are now separate
+columns in hard.py and primal.py; on the saved records of clean1 and clean2 they coincide for every arm.
 
 ## Per-branch evidence for the identical-search branches (from existing data; reviewers' request)
 **base** = clique marking + symmetry dense hash + free wins + P1 (dts-v2-nodse, 23395de1c6) vs dev, ablation of clean2
@@ -88,11 +111,12 @@ In clean2, 124 of 480 runs have their last progress row more than 60 s before th
 identical paths (pure speed):
 | instance | dev (s0, s1) | base (s0, s1) | note |
 |---|---|---|---|
-| neos-4722843-widden | 164.0, 165.6 | **112.8, 146.6** | −31 %, −11 %: one run per seed, noise floor ±12 % |
+| neos-4722843-widden | 164.0, 165.6 | **112.8, 146.6** | −31 %, −11 %: one run per seed |
 | neos-3402454-bohle | 348.9, 340.1 (overrun) | **300.3, 300.0** (stops on time) | unsolved both |
 | neos-873061 | 98.8, 236.7 | 96.6, 227.8 | −2 %, −4 % |
 | comp07-2idx, csched008, n5-3, kasavu, neos-787933 | | | within ±3 % |
-| unitcal_7 | 38.5, 47.0 | 43.5, 42.6 | +12 %, −9 %: the timing noise floor on identical paths |
+| unitcal_7 | 38.5, 47.0 | 43.5, 42.6 | +12 %, −9 %: observed variation on an identical path (two seeds) |
 Earlier identical-search evidence: small set 28/28 (v2-nodse vs dev, 2026-09-25); targeted: s100 (60 s limit: 172 s,
 no solution → 62 s, feasible), toguru presolve 12.5 → 6.2 s, chromaticindex after presolve 27.7 → 14.7 s (A725, single
-runs). Timing differences within ±12 % on identical paths are noise at n = 1–2.
+runs). unitcal_7 varied by +12 % / −9 % between runs on an identical path; that is one instance's observed variation, not
+a general noise floor, so small single-run differences are reported as observed, not declared noise.

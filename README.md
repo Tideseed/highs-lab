@@ -16,7 +16,7 @@ decide whether and how to implement them.
 ## Results (frozen 2026-09-27; see `vault/30-results/Final report.md`)
 - `dev-tideseed` v4 (five branches, no X1) vs upstream latest, MIPLIB 2017 benchmark set, 300 s, clean window, one
   seed: SGM **0.969 [0.939, 0.996]**, solved 101 vs 98, 0 wrong — passes the gate on that seed, **not replicated**.
-  dev itself drifts 2.8 % between seeds, so read it as a 0–3 % effect, sign positive, not established.
+  Generalisation across seeds is unestablished; a pre-registered three-arm replication (D-006) is running.
 - Primal side (Mittelmann's MIPFEAS primal integral on the same runs): v4 vs latest 0.960 [0.913, 1.010]; latest vs
   v1.15.1 14 % better. Latest finds no incumbent on 25/233 feasible instances in 300 s: the next target.
 - Local wins: s100 time-limit fix, bohle presolve 349 → ~50 s (P1), toguru presolve −50 %, chromaticindex −47 % after presolve, neos-787933 unsolved →

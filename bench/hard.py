@@ -43,7 +43,8 @@ def pdgi(r: dict) -> float:
     The gap between logged rows is the gap of the last observation (last observation held). The final bounds are
     appended as an observation at the run's actual end time (solver_time), so an optimum reached after the last
     progress row counts only from the moment it was reached, and nothing is credited beyond T (a run that ends after
-    T keeps its last in-horizon gap). Unlogged improvements between rows cannot be recovered: this is an estimate.
+    T keeps its last in-horizon gap). Unlogged improvements between rows cannot be recovered: this is an estimate, and the
+    bootstrap CI does not include that measurement error.
     """
     T = float(r["time_limit"])
     obs = sorted(((row[0], row[1], row[2]) for row in r.get("trajectory", []) if row[0] is not None),
@@ -70,6 +71,15 @@ def gap_pct(r: dict) -> float:
 def feasible(r: dict) -> bool:
     p = r.get("primal_bound")
     return p is not None and math.isfinite(p)
+
+
+def by_t(r: dict) -> bool:
+    """An incumbent was logged (or the run ended with one) within the horizon T."""
+    T = float(r["time_limit"])
+    rows = [(row[0], row[2]) for row in r.get("trajectory", []) if row[0] is not None]
+    if r.get("solver_time") is not None:
+        rows.append((r["solver_time"], r.get("primal_bound")))
+    return any(p is not None and math.isfinite(p) and t <= T for t, p in rows)
 
 
 def crashed(r: dict) -> bool:
@@ -102,9 +112,9 @@ def main() -> None:
     out = [f"# Hard-set comparison `{a.dir}` (control `{a.control}`)", "",
            f"{len(runs)} runs; {no_traj} without a logged trajectory (PDGI from final bounds); "
            f"{len(truncated)} whose last progress row is >60 s before the end (final bounds appended at the end).", "",
-           "| arm | pairs (inst) | PDGI arm / ctl | ΔPDGI [95% CI, instance bootstrap] | solved (ctl) | feasible (ctl) | "
+           "| arm | pairs (inst) | PDGI arm / ctl | ΔPDGI [95% CI, instance bootstrap] | solved (ctl) | incumbent by T (ctl) | feasible at termination (ctl) | "
            "mean final gap % (ctl) | overrun mean/max s (ctl max) | wrong | crashed | known-optimum coverage |",
-           "|---" * 11 + "|"]
+           "|---" * 12 + "|"]
     details = []
     for arm in arms:
         per_inst = defaultdict(list)  # instance -> [(pdgi_arm, pdgi_ctl)]
@@ -130,6 +140,7 @@ def main() -> None:
         ovy = [y["overrun"] for _, y in P if not solved(y)]
         out.append(f"| {arm} | {len(P)} ({len(insts)}) | {mx:.4f} / {my:.4f} | {mx - my:+.4f} [{lo:+.4f}, {hi:+.4f}] | "
                    f"{sum(solved(x) for x, _ in P)} ({sum(solved(y) for _, y in P)}) | "
+                   f"{sum(by_t(x) for x, _ in P)} ({sum(by_t(y) for _, y in P)}) | "
                    f"{sum(feasible(x) for x, _ in P)} ({sum(feasible(y) for _, y in P)}) | "
                    f"{sum(gap_pct(x) for x, _ in P) / len(P):.1f} ({sum(gap_pct(y) for _, y in P) / len(P):.1f}) | "
                    f"{sum(ovx) / max(1, len(ovx)):.1f}/{max(ovx, default=0):.1f} ({max(ovy, default=0):.1f}) | "

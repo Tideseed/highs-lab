@@ -9,7 +9,8 @@ and solvers are ranked by the shifted geometric mean of P (shift 0.001). z* come
 instances without a finite reference are skipped (MIPFEAS uses only feasible instances).
 
 Only the primal column of the logged trajectory is used; the final primal bound is appended at solver_time, and nothing
-is credited beyond T (as in hard.py). T is OUR time limit (300 s, 1 thread, X925 core), not MIPFEAS's 600 s / 24 threads:
+is credited beyond T (as in hard.py). Like PDGI this is an ESTIMATE from sparse logged rows: incumbent changes between
+rows are not observed, and the bootstrap does not quantify that measurement error. T is OUR time limit (300 s, 1 thread, X925 core), not MIPFEAS's 600 s / 24 threads:
 absolute values are not comparable with the published table, only arms on the same data are.
 """
 from __future__ import annotations
@@ -66,6 +67,16 @@ def first_time(r: dict, zs: float, tol: float | None) -> float | None:
     return None
 
 
+def feasible_by_t(r: dict) -> bool:
+    """An incumbent existed within the horizon T (a finite final bound found after T does not count)."""
+    T = float(r["time_limit"])
+    return any(z is not None and math.isfinite(z) and t <= T for t, z in primal_obs(r))
+
+
+def feasible_at_end(r: dict) -> bool:
+    return r.get("primal_bound") is not None and math.isfinite(r["primal_bound"])
+
+
 def sgm(xs: list[float], shift: float) -> float:
     return math.exp(sum(math.log(x + shift) for x in xs) / len(xs)) - shift
 
@@ -90,8 +101,8 @@ def main() -> None:
            f"{len(runs)} runs on instances with a finite reference value; T = {', '.join(map(str, sorted(T)))} s. "
            "Score per run: Mittelmann's primal integral P in [0, 2] (lower is better); table: shifted geometric mean "
            f"(shift {SHIFT}) over instances (seeds averaged first), ratio vs control with a paired instance bootstrap.", "",
-           "| arm | inst | SGM P | ratio vs ctl [95% CI] | mean P | feasible runs | SGM t first incumbent (s, found only) "
-           "| within 1 % of z* by T | within 1e-4 by T |", "|---" * 9 + "|"]
+           "| arm | inst | SGM P | ratio vs ctl [95% CI] | mean P | incumbent by T | feasible at termination "
+           "| SGM t first incumbent (s, found only) | within 1 % of z* by T | within 1e-4 by T |", "|---" * 10 + "|"]
     no_inc = defaultdict(list)
     per_inst_all = {}
     for arm in arms:
@@ -115,7 +126,8 @@ def main() -> None:
         boots.sort()
         ci = (boots[int(0.025 * len(boots))], boots[int(0.975 * len(boots)) - 1]) if boots else (1.0, 1.0)
         ar = [d[arm] for d in by.values() if arm in d and a.control in d]
-        feas = sum(1 for r in ar if r.get("primal_bound") is not None and math.isfinite(r["primal_bound"]))
+        feas = sum(1 for r in ar if feasible_at_end(r))
+        byt = sum(1 for r in ar if feasible_by_t(r))
         t1 = [t for r in ar if (t := first_time(r, ref[r["instance"]], None)) is not None]
         w1 = sum(1 for r in ar if first_time(r, ref[r["instance"]], 0.01) is not None)
         w4 = sum(1 for r in ar if first_time(r, ref[r["instance"]], 1e-4) is not None)
@@ -123,7 +135,7 @@ def main() -> None:
             if first_time(r, ref[r["instance"]], None) is None:
                 no_inc[arm].append(f"{r['instance']} s{r['seed']}")
         out.append(f"| {arm} | {len(insts)} | {sgm(pa, SHIFT):.4f} | {ratio:.3f} [{ci[0]:.3f}, {ci[1]:.3f}] | "
-                   f"{sum(pa) / len(pa):.4f} | {feas}/{len(ar)} | {sgm(t1, 1.0) if t1 else float('nan'):.1f} | "
+                   f"{sum(pa) / len(pa):.4f} | {byt}/{len(ar)} | {feas}/{len(ar)} | {sgm(t1, 1.0) if t1 else float('nan'):.1f} | "
                    f"{w1}/{len(ar)} | {w4}/{len(ar)} |")
     out += ["", "## Runs with no incumbent by T", ""]
     for arm in arms:
