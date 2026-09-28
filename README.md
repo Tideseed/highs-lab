@@ -14,7 +14,7 @@ decide whether and how to implement them.
 - Start at `vault/00-index/Home.md`; agent rules in `AGENTS.md`.
 
 ## Results (frozen 2026-09-27; see `vault/30-results/Final report.md`)
-- `dev-tideseed` v4 (five branches, no X1) vs upstream latest, MIPLIB 2017 benchmark set, 300 s, clean window, one
+- v4 (base + DSE cache; `dev-tideseed` is now base) vs upstream latest, seed 1 (clean2): MIPLIB 2017 benchmark set, 300 s, clean window, one
   seed: SGM **0.969 [0.939, 0.996]**, solved 101 vs 98, 0 wrong — passes the gate on that seed, **not replicated**.
   Pre-registered replication D-006 (seeds 2+3, fresh controls): v4 vs latest 0.974 [0.959, 0.988], base vs latest
   0.993 [0.988, 0.998] — v4 −2.59 % (1.22–4.08 %), base −0.69 %; neither passes the 3 % gate or the zero-failure
