@@ -193,6 +193,9 @@ a general noise floor, so small single-run differences are reported as observed,
 - **ERGO-Code/HiGHS#3326** (2026-09-27, Berk's explicit yes, filed as Claude Code): `HighsHashTree::find_common` misses
   a common key when stored hashes collide; fix linked as a fork diff (no PR, per their CONTRIBUTING), with the note that
   it changes clique results on a few instances. Nothing else has been sent upstream.
+- **Fixed upstream 2026-09-28:** fwesselm wrote and merged ERGO-Code/HiGHS#3327 "Fix findCommonInLeaf" into `latest`
+  (`HighsHashTree.h` +25/−16 and a regression test in `check/TestHighsHash.cpp`, +39); #3326 closed as completed.
+  Future-work item 1 (unit test) is therefore done upstream; `lab/hash-tree-find-common` is superseded by it.
 
 ## Future work (experiments ceased 2026-09-27 evening; nothing scheduled)
 Ordered by the reviewers' and our own assessment. Each needs Berk's go-ahead and a box-window claim; the host's

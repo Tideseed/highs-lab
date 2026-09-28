@@ -23,7 +23,7 @@ decide whether and how to implement them.
   v1.15.1 14 % better. Latest finds no incumbent on 25/233 feasible instances in 300 s: the next target.
 - Local wins: s100 time-limit fix, bohle presolve 349 → ~50 s (P1), toguru presolve −50 %, chromaticindex −47 % after presolve, neos-787933 unsolved →
   3–5 s (experimental presolve rule X1, with losses elsewhere).
-- A HiGHS correctness bug (HighsHashTree::find_common) with a fix; 0 wrong answers in every run.
+- A HiGHS correctness bug (HighsHashTree::find_common), **fixed upstream in ERGO-Code/HiGHS#3327** (2026-09-28) after our report #3326; 0 wrong answers in every run.
 - Tutorials: `tutorials/` (screen, clean benchmark, profile, new branch).
 
 Author: Berk Orbay. Work carried out with Claude Code (Anthropic) as research assistant.
