@@ -198,6 +198,10 @@ a general noise floor, so small single-run differences are reported as observed,
   Future-work item 1 (unit test) is therefore done upstream; `lab/hash-tree-find-common` is superseded by it.
 
 ## Future work (experiments ceased 2026-09-27 evening; nothing scheduled)
+*Upstream feedback (2026-09-28): Julian Hall forwarded the work to the senior HiGHS team (discussion Thursday 2026-10-01)
+and noted that AI is most useful to them for bug-fix ideas and for small examples exposing defects, which they then fix
+by hand — exactly how #3326 → #3327 went. So a reopened lab should lead with defects and minimal reproducers (e.g. the
+kasavu time-limit leak, the neos-3216931-puriri search difference) rather than performance branches.*
 Ordered by the reviewers' and our own assessment. Each needs Berk's go-ahead and a box-window claim; the host's
 priority has moved to the halit local-LLM search.
 1. **find_common follow-through:** a standalone two-leaf unit test (leaf1 = [a, b], leaf2 = [b, c], equal stored
